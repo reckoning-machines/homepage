@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reckoning Machines — AI Integration for Financial Services</title>
+    <meta name="description"
+        content="Reckoning Machines is a full‑stack development studio specializing in AI integration for financial services: agentic workflows, front‑end editors, workflow runners, and database integration—operating at a custom layer below LangChain and CrewAI." />
+    <meta name="theme-color" content="#0f172a" />
+    <meta property="og:title" content="Reckoning Machines — AI Integration for Financial Services" />
+    <meta property="og:description"
+        content="Agentic workflows, editors and runners, dataset + unstructured data integration, and secure database connectivity—purpose‑built for finance." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://reckoning-machines.github.io/" />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Cpath d='M20,70 L40,30 L55,55 L80,20' stroke='%23a3e635' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='80' cy='20' r='6' fill='%23a3e635'/%3E%3C/svg%3E" />
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Reckoning Machines",
+    "url": "https://reckoning-machines.github.io/",
+    "description": "Full‑stack AI integration for financial services: agentic workflows, editors, runners, database + data integration.",
+    "email": "reckoningmachines@gmail.com"
+  }
+  </script>
+    <style>
+        :root {
+            --bg: #0b1020;
+            /* deep navy */
+            --card: #0f172a;
+            /* slate-900 */
+            --ink: #e5e7eb;
+            /* gray-200 */
+            --muted: #94a3b8;
+            /* slate-400 */
+            --brand: #a3e635;
+            /* lime-400 */
+            --accent: #38bdf8;
+            /* sky-400 */
+            --ring: rgba(163, 230, 53, .35);
+            --max: 1200px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+            background: radial-gradient(1200px 600px at 80% -10%, rgba(56, 189, 248, .12), transparent 60%),
+                radial-gradient(1000px 500px at 10% 10%, rgba(163, 230, 53, .10), transparent 60%),
+                var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .wrap {
+            max-width: var(--max);
+            margin-inline: auto;
+            padding: clamp(16px, 2vw, 24px)
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(8px);
+            background: color-mix(in oklab, var(--bg) 85%, transparent);
+            border-bottom: 1px solid #1f2937
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .brand {
+            display: flex;
+            gap: .75rem;
+            align-items: center
+        }
+
+        .brand svg {
+            width: 28px;
+            height: 28px
+        }
+
+        .brand span {
+            font-weight: 700;
+            letter-spacing: .2px
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .4rem .75rem;
+            border: 1px solid #1f2937;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: clamp(16px, 4vw, 48px);
+            padding: clamp(32px, 6vw, 80px) 0
+        }
+
+        .h1 {
+            font-size: clamp(28px, 5vw, 54px);
+            line-height: 1.1;
+            margin: 0 0 12px;
+            letter-spacing: .3px
+        }
+
+        .sub {
+            color: var(--muted);
+            font-size: clamp(16px, 2vw, 18px)
+        }
+
+        .cta {
+            margin-top: 24px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 70%, #fff 0%), var(--brand));
+            border: none;
+            color: #08120a;
+            font-weight: 700;
+            padding: 12px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 var(--ring);
+            transition: box-shadow .2s, transform .06s
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 0 6px var(--ring)
+        }
+
+        .ghost {
+            background: transparent;
+            border: 1px solid #1f2937;
+            color: var(--ink)
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px
+        }
+
+        .card {
+            grid-column: span 6;
+            background: linear-gradient(180deg, rgba(148, 163, 184, .08), rgba(15, 23, 42, .6));
+            border: 1px solid #1f2937;
+            border-radius: 18px;
+            padding: 20px;
+            transition: border-color .15s
+        }
+
+        .card:hover {
+            border-color: #334155
+        }
+
+        .card h3 {
+            margin: 0 0 6px;
+            font-size: 18px
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .emoji {
+            font-size: 20px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        .mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: .95rem
+        }
+
+        .section {
+            padding: clamp(28px, 5vw, 60px) 0
+        }
+
+        .stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        .list {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding-left: 20px
+        }
+
+        .list li {
+            margin: 0
+        }
+
+        footer {
+            border-top: 1px solid #1f2937;
+            padding: 24px 0;
+            color: var(--muted);
+            font-size: .95rem
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+
+            .card {
+                grid-column: span 12
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav" aria-label="Top Navigation">
+            <a class="brand" href="#home" aria-label="Reckoning Machines">
+                <svg viewBox="0 0 100 100" aria-hidden="true" role="img">
+                    <rect width="100" height="100" rx="20" fill="#0f172a" />
+                    <path d="M20,70 L40,30 L55,55 L80,20" stroke="#a3e635" stroke-width="8" fill="none"
+                        stroke-linecap="round" />
+                    <circle cx="80" cy="20" r="6" fill="#a3e635" />
+                </svg>
+                <span>Reckoning Machines</span>
+            </a>
+            <nav class="muted" aria-label="Site">
+                <a href="#services">Services</a>
+                &nbsp;&nbsp;·&nbsp;&nbsp;
+                <a href="#approach">Approach</a>
+                &nbsp;&nbsp;·&nbsp;&nbsp;
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="wrap hero" aria-labelledby="tagline">
+            <div>
+                <div class="pill mono" aria-label="Specialization">AI Integration for Financial Services</div>
+                <h1 id="tagline" class="h1">Agentic workflows tailored to your data, stack, and controls.</h1>
+                <p class="sub">We build end‑to‑end systems that turn messy, distributed data into reliable decisions:
+                    front‑end editors, workflow runners, dataset + unstructured data integration, and secure database
+                    connectivity. We operate at a custom layer <em>below</em> LangChain and CrewAI to meet
+                    domain‑specific needs.</p>
+                <div class="cta" role="group" aria-label="Primary calls to action">
+                    <a class="btn"
+                        href="mailto:reckoningmachines@gmail.com?subject=Project%20inquiry%20from%20website">Start a
+                        conversation</a>
+                    <a class="btn ghost" href="#services" aria-label="Jump to services">Explore services</a>
+                </div>
+            </div>
+            <aside aria-label="At a glance" class="stack">
+                <div class="card">
+                    <h3><span class="emoji" aria-hidden="true">🧩</span> Agentic Workflows</h3>
+                    <p>Composable task graphs, human‑in‑the‑loop review, A/B runnable context packs, and cost‑aware
+                        execution.</p>
+                </div>
+                <div class="card">
+                    <h3><span class="emoji" aria-hidden="true">🗄️</span> Data Integration</h3>
+                    <p>Postgres/warehouse connectivity, vector + structured retrieval, and policy‑aware prompt assembly.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3><span class="emoji" aria-hidden="true">🔒</span> Governance</h3>
+                    <p>Audit trails, red‑team prompts, PII controls, and environment‑segmented deployments.</p>
+                </div>
+            </aside>
+        </section>
+
+        <section id="services" class="wrap section" aria-labelledby="services-title">
+            <h2 id="services-title">Services</h2>
+            <div class="card-grid" role="list">
+                <article class="card" role="listitem">
+                    <h3>Agentic systems</h3>
+                    <p>Design and implementation of workflow runners, planners, and executive agents tuned to financial
+                        data cadence and controls.</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>Front‑end editors</h3>
+                    <p>Lightweight web UIs for prompt design, dataset selection, A/B testing, and step‑by‑step
+                        execution.</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>Database integration</h3>
+                    <p>Secure connections to Postgres/warehouse, schema‑aware filtering, and structured result logging.
+                    </p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>Data + unstructured fusion</h3>
+                    <p>Merge tables, files, and text into precision prompts via retrieval and task‑specific context
+                        packs.</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>Evaluation + cost controls</h3>
+                    <p>Offline harnesses, self‑play refinement, change‑impact diffs, and token budgeting.</p>
+                </article>
+                <article class="card" role="listitem">
+                    <h3>Delivery + ops</h3>
+                    <p>CI/CD for agents, observability, RBAC, and environment promotion strategies.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="approach" class="wrap section" aria-labelledby="approach-title">
+            <h2 id="approach-title">Our approach</h2>
+            <ul class="list">
+                <li><strong>Custom layer beneath frameworks:</strong> We integrate <em>below</em> LangChain/CrewAI when
+                    necessary for tighter control and better performance.</li>
+                <li><strong>Data‑first engineering:</strong> We treat schemas, fiscal calendars, and governance as
+                    first‑class citizens.</li>
+                <li><strong>Human‑in‑the‑loop:</strong> Editors and review steps where they add leverage; automation
+                    where it’s safe.</li>
+                <li><strong>Measurable results:</strong> Built‑in evaluation harnesses and change‑impact comparisons
+                    before rollout.</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="wrap section" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <p>Have a project in mind or want to explore what’s possible in your stack? Email us at
+                <a href="mailto:reckoningmachines@gmail.com">reckoningmachines@gmail.com</a>.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div>© <span id="y"></span> Reckoning Machines • Built for precision AI in finance.</div>
+        </div>
+    </footer>
+
+    <script>
+        // set year and enable smooth internal links
+        document.getElementById('y').textContent = new Date().getFullYear();
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => { const id = a.getAttribute('href').slice(1); const el = document.getElementById(id); if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
+        });
+    </script>
+</body>
+
+</html>
