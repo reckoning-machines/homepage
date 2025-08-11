@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Reckoning Machines — AI Integration for Financial Services</title>
     <meta name="description"
-        content="Reckoning Machines is a full‑stack development studio specializing in AI integration for financial services: agentic workflows, front‑end editors, workflow runners, and database integration—operating at a custom layer below LangChain and CrewAI." />
+        content="Reckoning Machines is a full-stack development studio specializing in AI integration for financial services: agentic workflows, front-end editors, workflow runners, and database integration—operating at a custom layer below LangChain and CrewAI." />
     <meta name="theme-color" content="#0f172a" />
     <meta property="og:title" content="Reckoning Machines — AI Integration for Financial Services" />
     <meta property="og:description"
-        content="Agentic workflows, editors and runners, dataset + unstructured data integration, and secure database connectivity—purpose‑built for finance." />
+        content="Agentic workflows, editors and runners, dataset + unstructured data integration, and secure database connectivity—purpose-built for finance." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.png" />
     <meta property="og:url" content="https://reckoning-machines.github.io/" />
@@ -22,10 +22,15 @@
     "@type": "Organization",
     "name": "Reckoning Machines",
     "url": "https://reckoning-machines.github.io/",
-    "description": "Full‑stack AI integration for financial services: agentic workflows, editors, runners, database + data integration.",
+    "description": "Full-stack AI integration for financial services: agentic workflows, editors, runners, database + data integration.",
     "email": "reckoningmachines@gmail.com"
   }
   </script>
+
+    <!-- Pro typography: Inter variable (fast + widely available) -->
+    <link rel="preconnect" href="https://rsms.me" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
     <style>
         :root {
             --bg: #0b1020;
@@ -34,14 +39,18 @@
             /* slate-900 */
             --ink: #e5e7eb;
             /* gray-200 */
-            --muted: #94a3b8;
-            /* slate-400 */
+            --muted: #9aa6b2;
+            /* slightly brighter for readability */
             --brand: #a3e635;
             /* lime-400 */
             --accent: #38bdf8;
             /* sky-400 */
-            --ring: rgba(163, 230, 53, .35);
+            --ring: rgba(163, 230, 53, .32);
             --max: 1200px;
+            --radius: 18px;
+            --border: #1f2937;
+            /* slate-800 */
+            --shadow: 0 10px 30px rgba(2, 6, 23, .35);
         }
 
         * {
@@ -55,12 +64,19 @@
 
         body {
             margin: 0;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-            background: radial-gradient(1200px 600px at 80% -10%, rgba(56, 189, 248, .12), transparent 60%),
+            font-family: "Inter var", Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+            font-feature-settings: "ss01" 1, "ss02" 1;
+            font-variation-settings: "opsz" 14;
+            /* optical size */
+            background:
+                radial-gradient(1200px 600px at 80% -10%, rgba(56, 189, 248, .12), transparent 60%),
                 radial-gradient(1000px 500px at 10% 10%, rgba(163, 230, 53, .10), transparent 60%),
                 var(--bg);
             color: var(--ink);
-            line-height: 1.6;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: .1px;
         }
 
         a {
@@ -82,8 +98,8 @@
             position: sticky;
             top: 0;
             backdrop-filter: blur(8px);
-            background: color-mix(in oklab, var(--bg) 85%, transparent);
-            border-bottom: 1px solid #1f2937
+            background: color-mix(in oklab, var(--bg) 82%, transparent);
+            border-bottom: 1px solid var(--border);
         }
 
         .nav {
@@ -104,57 +120,76 @@
         }
 
         .brand span {
-            font-weight: 700;
+            font-weight: 750;
             letter-spacing: .2px
+        }
+
+        nav a {
+            color: var(--muted)
+        }
+
+        nav a:hover {
+            color: var(--ink)
         }
 
         .pill {
             display: inline-flex;
             align-items: center;
-            gap: .5rem;
-            padding: .4rem .75rem;
-            border: 1px solid #1f2937;
+            gap: .6rem;
+            padding: .6rem 1rem;
+            /* bigger */
+            border: 1px solid var(--border);
             border-radius: 999px;
-            color: var(--muted);
-            font-size: .9rem
+            color: #d9f99d;
+            /* lime-200 */
+            background: linear-gradient(180deg, rgba(163, 230, 53, .10), rgba(15, 23, 42, .5));
+            font-size: clamp(15px, 1.6vw, 18px);
+            /* bigger */
+            font-weight: 650;
+            /* crisper */
+            letter-spacing: .2px;
+            box-shadow: 0 0 0 0 var(--ring);
         }
 
         .hero {
             display: grid;
             grid-template-columns: 1.1fr .9fr;
             gap: clamp(16px, 4vw, 48px);
-            padding: clamp(32px, 6vw, 80px) 0
+            padding: clamp(32px, 6vw, 80px) 0;
         }
 
         .h1 {
-            font-size: clamp(28px, 5vw, 54px);
-            line-height: 1.1;
-            margin: 0 0 12px;
-            letter-spacing: .3px
+            font-size: clamp(32px, 5.6vw, 64px);
+            /* touch bigger */
+            line-height: 1.08;
+            margin: 10px 0 12px;
+            letter-spacing: .2px;
+            font-weight: 800;
         }
 
         .sub {
             color: var(--muted);
-            font-size: clamp(16px, 2vw, 18px)
+            font-size: clamp(16px, 1.9vw, 18px);
+            max-width: 70ch;
         }
 
         .cta {
-            margin-top: 24px;
+            margin-top: 26px;
             display: flex;
             gap: 12px;
             flex-wrap: wrap
         }
 
         .btn {
-            background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 70%, #fff 0%), var(--brand));
+            background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 72%, #fff 0%), var(--brand));
             border: none;
             color: #08120a;
-            font-weight: 700;
+            font-weight: 800;
             padding: 12px 16px;
             border-radius: 12px;
             cursor: pointer;
             box-shadow: 0 0 0 0 var(--ring);
-            transition: box-shadow .2s, transform .06s
+            transition: box-shadow .18s, transform .06s;
         }
 
         .btn:hover {
@@ -164,8 +199,13 @@
 
         .ghost {
             background: transparent;
-            border: 1px solid #1f2937;
-            color: var(--ink)
+            border: 1px solid var(--border);
+            color: var(--ink);
+            backdrop-filter: saturate(120%);
+        }
+
+        .ghost:hover {
+            border-color: #334155
         }
 
         .card-grid {
@@ -176,20 +216,24 @@
 
         .card {
             grid-column: span 6;
-            background: linear-gradient(180deg, rgba(148, 163, 184, .08), rgba(15, 23, 42, .6));
-            border: 1px solid #1f2937;
-            border-radius: 18px;
-            padding: 20px;
-            transition: border-color .15s
+            background: linear-gradient(180deg, rgba(148, 163, 184, .08), rgba(15, 23, 42, .66));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            transition: border-color .15s, transform .15s;
+            box-shadow: 0 4px 18px rgba(2, 6, 23, .28);
         }
 
         .card:hover {
-            border-color: #334155
+            border-color: #334155;
+            transform: translateY(-1px)
         }
 
         .card h3 {
             margin: 0 0 6px;
-            font-size: 18px
+            font-size: 18px;
+            font-weight: 750;
+            letter-spacing: .2px
         }
 
         .card p {
@@ -207,7 +251,7 @@
 
         .mono {
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: .95rem
+            font-size: .95rem;
         }
 
         .section {
@@ -232,10 +276,10 @@
         }
 
         footer {
-            border-top: 1px solid #1f2937;
+            border-top: 1px solid var(--border);
             padding: 24px 0;
             color: var(--muted);
-            font-size: .95rem
+            font-size: .95rem;
         }
 
         @media (max-width: 900px) {
@@ -245,6 +289,10 @@
 
             .card {
                 grid-column: span 12
+            }
+
+            .pill {
+                font-size: 16px
             }
         }
     </style>
@@ -277,11 +325,12 @@
             <div>
                 <div class="pill mono" aria-label="Specialization">AI Integration for Financial Services</div>
                 <h1 id="tagline" class="h1">Agentic workflows tailored to your data, stack, and controls.</h1>
-                <p class="sub">We build end‑to‑end systems that turn messy, distributed data into reliable decisions:
-                    front‑end editors, workflow runners, dataset + unstructured data integration, and secure database
-                    connectivity. We operate at a custom layer <em>below</em> or in addition to generic frameworks like
-                    LangChain and CrewAI to meet
-                    domain‑specific needs.</p>
+                <p class="sub">We build end-to-end systems that turn messy, distributed data into reliable decisions:
+                    front-end editors, workflow runners, dataset + unstructured data integration, and secure database
+                    connectivity.
+                    We operate at a custom layer <em>below</em> or in addition to generic frameworks like LangChain and
+                    CrewAI to meet
+                    domain-specific needs.</p>
                 <div class="cta" role="group" aria-label="Primary calls to action">
                     <a class="btn"
                         href="mailto:reckoningmachines@gmail.com?subject=Project%20inquiry%20from%20website">Start a
@@ -292,17 +341,17 @@
             <aside aria-label="At a glance" class="stack">
                 <div class="card">
                     <h3><span class="emoji" aria-hidden="true"></span> Agentic Workflows</h3>
-                    <p>Composable task graphs, human‑in‑the‑loop review, A/B runnable context packs, and cost‑aware
+                    <p>Composable task graphs, human-in-the-loop review, A/B runnable context packs, and cost-aware
                         execution.</p>
                 </div>
                 <div class="card">
                     <h3><span class="emoji" aria-hidden="true"></span> Data Integration</h3>
-                    <p>Postgres/warehouse connectivity, vector + structured retrieval, and policy‑aware prompt assembly.
+                    <p>Postgres/warehouse connectivity, vector + structured retrieval, and policy-aware prompt assembly.
                     </p>
                 </div>
                 <div class="card">
                     <h3><span class="emoji" aria-hidden="true"></span> Governance</h3>
-                    <p>Audit trails, red‑team prompts, PII controls, and environment‑segmented deployments.</p>
+                    <p>Audit trails, red-team prompts, PII controls, and environment-segmented deployments.</p>
                 </div>
             </aside>
         </section>
@@ -316,23 +365,23 @@
                         data cadence and controls.</p>
                 </article>
                 <article class="card" role="listitem">
-                    <h3>Front‑end editors</h3>
-                    <p>Lightweight web UIs for prompt design, dataset selection, A/B testing, and step‑by‑step
+                    <h3>Front-end editors</h3>
+                    <p>Lightweight web UIs for prompt design, dataset selection, A/B testing, and step-by-step
                         execution.</p>
                 </article>
                 <article class="card" role="listitem">
                     <h3>Database integration</h3>
-                    <p>Secure connections to Postgres/warehouse, schema‑aware filtering, and structured result logging.
+                    <p>Secure connections to Postgres/warehouse, schema-aware filtering, and structured result logging.
                     </p>
                 </article>
                 <article class="card" role="listitem">
                     <h3>Data + unstructured fusion</h3>
-                    <p>Merge tables, files, and text into precision prompts via retrieval and task‑specific context
+                    <p>Merge tables, files, and text into precision prompts via retrieval and task-specific context
                         packs.</p>
                 </article>
                 <article class="card" role="listitem">
                     <h3>Evaluation + cost controls</h3>
-                    <p>Offline harnesses, self‑play refinement, change‑impact diffs, and token budgeting.</p>
+                    <p>Offline harnesses, self-play refinement, change-impact diffs, and token budgeting.</p>
                 </article>
                 <article class="card" role="listitem">
                     <h3>Delivery + ops</h3>
@@ -346,11 +395,11 @@
             <ul class="list">
                 <li><strong>Custom layer beneath frameworks:</strong> We integrate <em>below</em> LangChain/CrewAI when
                     necessary for tighter control and better performance.</li>
-                <li><strong>Data‑first engineering:</strong> We treat schemas, fiscal calendars, and governance as
-                    first‑class citizens.</li>
-                <li><strong>Human‑in‑the‑loop:</strong> Editors and review steps where they add leverage; automation
+                <li><strong>Data-first engineering:</strong> We treat schemas, fiscal calendars, and governance as
+                    first-class citizens.</li>
+                <li><strong>Human-in-the-loop:</strong> Editors and review steps where they add leverage; automation
                     where it’s safe.</li>
-                <li><strong>Measurable results:</strong> Built‑in evaluation harnesses and change‑impact comparisons
+                <li><strong>Measurable results:</strong> Built-in evaluation harnesses and change-impact comparisons
                     before rollout.</li>
             </ul>
         </section>
@@ -370,10 +419,13 @@
     </footer>
 
     <script>
-        // set year and enable smooth internal links
         document.getElementById('y').textContent = new Date().getFullYear();
         document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => { const id = a.getAttribute('href').slice(1); const el = document.getElementById(id); if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
+            a.addEventListener('click', e => {
+                const id = a.getAttribute('href').slice(1);
+                const el = document.getElementById(id);
+                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
         });
     </script>
 </body>
