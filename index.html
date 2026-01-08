@@ -209,26 +209,26 @@
 
             <aside class="stack">
                 <div class="card">
-                    <h3>Concretized decision processes</h3>
-                    <p>
-                        Investment reasoning is made explicit as structured workflows—assumptions,
-                        dependencies, and decision points are encoded so they can be executed,
-                        audited, backtested, and improved over time.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Agentic and machine-learning systems</h3>
-                    <p>
-                        Machine learning and agentic components are used to explore, evaluate,
-                        and synthesize analysis within defined constraints.
-                    </p>
-                </div>
-                <div class="card">
                     <h3>People, leveraged by technology</h3>
                     <p>
                         Architecture designed to scale experienced judgment: machines handle
                         enumeration, analysis, and reporting, while investors retain responsibility for decisioning
                         rules, evaluation, and feedback.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Explainable agentic and machine-learning systems</h3>
+                    <p>
+                        Machine learning and agentic components used to explore, evaluate,
+                        and synthesize analysis within defined guardrails.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Enhanced decision processes</h3>
+                    <p>
+                        Investment reasoning made explicit as structured workflows—assumptions,
+                        dependencies, and decision points are encoded so they can be executed,
+                        audited, backtested, and improved over time.
                     </p>
                 </div>
             </aside>
@@ -240,17 +240,36 @@
         <section id="principles" class="wrap section">
             <h2>Core principles</h2>
             <ul>
-                <li><strong>Determinism:</strong> Research outcomes should be reconstructible given the same inputs.
+                <li>
+                    <strong>Deterministic execution:</strong>
+                    Research is treated as a sequence of governed steps. Given the same inputs,
+                    the same execution path and outputs can be reconstructed, inspected, and compared.
                 </li>
-                <li><strong>Explicit dependencies:</strong> Assumptions and prerequisites are surfaced, not implicit.
+                <li>
+                    <strong>Control plane vs. data plane:</strong>
+                    Execution logic, dependency gating, and provenance live in a control plane,
+                    while data access and slicing are handled independently. This separation
+                    keeps experimentation flexible without sacrificing reproducibility.
                 </li>
-                <li><strong>Separation of concerns:</strong> Execution control, data handling, and computation remain
-                    distinct.</li>
-                <li><strong>Failure visibility:</strong> Missing data or invalid assumptions stop work early.</li>
-                <li><strong>Longevity:</strong> Systems are designed to support post-hoc review, not just forward
-                    motion.</li>
+                <li>
+                    <strong>Explicit decision structure:</strong>
+                    Assumptions, prerequisites, and decision points are made concrete rather than
+                    implicit, so both people and machines operate against the same declared logic.
+                </li>
+                <li>
+                    <strong>Failure as signal:</strong>
+                    Missing data, invalid assumptions, or broken dependencies halt execution early
+                    and visibly—preventing silent degradation and false confidence.
+                </li>
+                <li>
+                    <strong>Systems that learn over time:</strong>
+                    Research systems are designed for iteration and review, enabling post-hoc
+                    analysis, comparison across runs, and continuous improvement of both models
+                    and decision processes.
+                </li>
             </ul>
         </section>
+
 
         <section class="wrap section" aria-labelledby="work-title">
             <h2 id="work-title">Representative work</h2>
