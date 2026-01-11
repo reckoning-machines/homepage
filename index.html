@@ -32,6 +32,64 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
     <style>
+        .repo-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .repo-card {
+            display: block;
+            padding: 14px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(148, 163, 184, .06), rgba(15, 23, 42, .55));
+            color: var(--ink);
+        }
+
+        .repo-card:hover {
+            text-decoration: none;
+            border-color: color-mix(in oklab, var(--border) 55%, var(--accent));
+        }
+
+        .repo-title {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            font-weight: 750;
+            margin-bottom: 6px;
+        }
+
+        .repo-meta {
+            color: var(--muted);
+            font-size: .95rem;
+            line-height: 1.45;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: .85rem;
+            white-space: nowrap;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .list {
+            color: var(--muted);
+        }
+
+        #repos {
+            scroll-margin-top: 90px;
+        }
+
         :root {
             --bg: #0b1020;
             --card: #0f172a;
@@ -182,7 +240,9 @@
             <nav>
                 <a href="#principles">Principles</a> ·
                 <a href="#approach">Approach</a> ·
-                <a href="#contact">Contact</a>
+                <a href="#repos">Repos</a> ·
+                <a href="#contact">Contact</a> ·
+                <a href="https://github.com/reckoning-machines" target="_blank" rel="noopener">GitHub</a>
             </nav>
         </div>
     </header>
@@ -212,6 +272,36 @@
                     still depend on complex data pipelines and spreadsheet models.
                 </p>
 
+                <div id="repos" class="card" style="margin-top: 16px;">
+                    <div style="font-weight: 700; margin-bottom: 8px;">Public repos</div>
+
+                    <div class="repo-grid">
+                        <a class="repo-card" href="https://github.com/reckoning-machines/reckoning-machine"
+                            target="_blank" rel="noopener">
+                            <div class="repo-title">
+                                <span>reckoning-machine</span>
+                                <span class="badge">Deterministic execution engine</span>
+                            </div>
+                            <div class="repo-meta">
+                                Policy-governed, ledger-backed DAG execution for LLM workflows with audit-grade
+                                persistence.
+                            </div>
+                        </a>
+
+                        <a class="repo-card" href="https://github.com/reckoning-machines/pm-decision-os" target="_blank"
+                            rel="noopener">
+                            <div class="repo-title">
+                                <span>pm-decision-os</span>
+                                <span class="badge">Portfolio decision stack</span>
+                            </div>
+                            <div class="repo-meta">
+                                PM-oriented decision workflows: constraints, sizing, governance primitives, and
+                                operator-facing tooling.
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="card" style="margin-top: 16px;">
                     <div style="font-weight: 700; margin-bottom: 8px;">Business impact</div>
                     <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
@@ -222,7 +312,6 @@
                     </ul>
                 </div>
             </div>
-
 
             <aside class="stack">
                 <div class="card">
@@ -249,114 +338,114 @@
                     </p>
                 </div>
             </aside>
+        </section>
 
+        <section id="principles" class="wrap section">
+            <h2>Core principles</h2>
+            <ul>
+                <li>
+                    <strong>Deterministic execution:</strong>
+                    Research is treated as a sequence of governed steps. Given the same inputs,
+                    the same execution path and outputs can be reconstructed, inspected, and compared.
+                </li>
+                <li>
+                    <strong>Control plane vs. data plane:</strong>
+                    Execution logic, dependency gating, and provenance live in a control plane,
+                    while data access and slicing are handled independently. This separation
+                    keeps experimentation flexible without sacrificing reproducibility.
+                </li>
+                <li>
+                    <strong>Explicit decision structure:</strong>
+                    Assumptions, prerequisites, and decision points are made concrete rather than
+                    implicit, so both people and machines operate against the same declared logic.
+                </li>
+                <li>
+                    <strong>Failure as signal:</strong>
+                    Missing data, invalid assumptions, or broken dependencies halt execution early
+                    and visibly—preventing silent degradation and false confidence.
+                </li>
+                <li>
+                    <strong>Systems that learn over time:</strong>
+                    Research systems are designed for iteration and review, enabling post-hoc
+                    analysis, comparison across runs, and continuous improvement of both models
+                    and decision processes.
+                </li>
+            </ul>
+        </section>
 
+        <section class="wrap section" aria-labelledby="work-title">
+            <h2 id="work-title">Representative work</h2>
+            <p class="muted" style="max-width: 80ch;">
+                The following examples are illustrative of the kinds of systems and
+                architectural problems this work draws from. They are not packaged
+                products or transferable platforms.
+            </p>
+            <ul class="list">
+                <li>
+                    <strong>Machine-learning–driven portfolio research:</strong>
+                    systematic research workflows combining traditional financial signals
+                    with modern modeling techniques, designed to remain interpretable
+                    and reviewable by portfolio managers.
+                </li>
+                <li>
+                    <strong>LLM-assisted portfolio explainability:</strong>
+                    research layers that augment investment analysis with structured,
+                    natural-language explanations intended for PM review rather than automation.
+                </li>
+                <li>
+                    <strong>Distributed spreadsheet computation:</strong>
+                    architectures for orchestrating and observing large numbers of
+                    spreadsheet-based models as part of governed research processes.
+                </li>
+                <li>
+                    <strong>Model routing and orchestration:</strong>
+                    systems that coordinate multiple analytical and language models
+                    under explicit execution and evaluation constraints.
+                </li>
+                <li>
+                    <strong>Deterministic research execution graphs:</strong>
+                    directed, dependency-aware research workflows designed for replay,
+                    auditability, and controlled experimentation.
+                </li>
+                <li>
+                    <strong>PM-oriented research interfaces:</strong>
+                    interfaces and review tools designed to fit how portfolio managers
+                    actually work, rather than forcing new abstractions onto them.
+                </li>
+            </ul>
+        </section>
 
+        <section id="approach" class="wrap section">
+            <h2>How we work</h2>
+            <p class="sub">
+                Engagements are exploratory and architecture-focused. The emphasis is on
+                understanding how research is actually conducted, where hidden state accumulates,
+                and how execution discipline can be improved without disrupting existing workflows.
+                <br /><br />
+                This work reflects experience designing and operating internal research systems
+                inside investment organizations. It is not a packaged platform or hosted service,
+                and implementations are organization-specific.
+            </p>
+        </section>
 
-            <section id="principles" class="wrap section">
-                <h2>Core principles</h2>
-                <ul>
-                    <li>
-                        <strong>Deterministic execution:</strong>
-                        Research is treated as a sequence of governed steps. Given the same inputs,
-                        the same execution path and outputs can be reconstructed, inspected, and compared.
-                    </li>
-                    <li>
-                        <strong>Control plane vs. data plane:</strong>
-                        Execution logic, dependency gating, and provenance live in a control plane,
-                        while data access and slicing are handled independently. This separation
-                        keeps experimentation flexible without sacrificing reproducibility.
-                    </li>
-                    <li>
-                        <strong>Explicit decision structure:</strong>
-                        Assumptions, prerequisites, and decision points are made concrete rather than
-                        implicit, so both people and machines operate against the same declared logic.
-                    </li>
-                    <li>
-                        <strong>Failure as signal:</strong>
-                        Missing data, invalid assumptions, or broken dependencies halt execution early
-                        and visibly—preventing silent degradation and false confidence.
-                    </li>
-                    <li>
-                        <strong>Systems that learn over time:</strong>
-                        Research systems are designed for iteration and review, enabling post-hoc
-                        analysis, comparison across runs, and continuous improvement of both models
-                        and decision processes.
-                    </li>
-                </ul>
-            </section>
-
-
-            <section class="wrap section" aria-labelledby="work-title">
-                <h2 id="work-title">Representative work</h2>
-                <p class="muted" style="max-width: 80ch;">
-                    The following examples are illustrative of the kinds of systems and
-                    architectural problems this work draws from. They are not packaged
-                    products or transferable platforms.
-                </p>
-                <ul class="list">
-                    <li>
-                        <strong>Machine-learning–driven portfolio research:</strong>
-                        systematic research workflows combining traditional financial signals
-                        with modern modeling techniques, designed to remain interpretable
-                        and reviewable by portfolio managers.
-                    </li>
-                    <li>
-                        <strong>LLM-assisted portfolio explainability:</strong>
-                        research layers that augment investment analysis with structured,
-                        natural-language explanations intended for PM review rather than automation.
-                    </li>
-                    <li>
-                        <strong>Distributed spreadsheet computation:</strong>
-                        architectures for orchestrating and observing large numbers of
-                        spreadsheet-based models as part of governed research processes.
-                    </li>
-                    <li>
-                        <strong>Model routing and orchestration:</strong>
-                        systems that coordinate multiple analytical and language models
-                        under explicit execution and evaluation constraints.
-                    </li>
-                    <li>
-                        <strong>Deterministic research execution graphs:</strong>
-                        directed, dependency-aware research workflows designed for replay,
-                        auditability, and controlled experimentation.
-                    </li>
-                    <li>
-                        <strong>PM-oriented research interfaces:</strong>
-                        interfaces and review tools designed to fit how portfolio managers
-                        actually work, rather than forcing new abstractions onto them.
-                    </li>
-                </ul>
-            </section>
-
-
-            <section id="approach" class="wrap section">
-                <h2>How we work</h2>
-                <p class="sub">
-                    Engagements are exploratory and architecture-focused. The emphasis is on
-                    understanding how research is actually conducted, where hidden state accumulates,
-                    and how execution discipline can be improved without disrupting existing workflows.
-                    <br /><br />
-                    This work reflects experience designing and operating internal research systems
-                    inside investment organizations. It is not a packaged platform or hosted service,
-                    and implementations are organization-specific.
-                </p>
-            </section>
-
-            <section id="contact" class="wrap section">
-                <h2>Contact</h2>
-                <p class="sub">
-                    If you are responsible for research infrastructure, portfolio systems,
-                    or decision governance,
-                    email <a href="mailto:reckoningmachines@gmail.com">reckoningmachines@gmail.com</a>.
-                </p>
-            </section>
+        <section id="contact" class="wrap section">
+            <h2>Contact</h2>
+            <p class="sub">
+                If you are responsible for research infrastructure, portfolio systems,
+                or decision governance,
+                email <a href="mailto:reckoningmachines@gmail.com">reckoningmachines@gmail.com</a>.
+            </p>
+        </section>
 
     </main>
 
     <footer>
         <div class="wrap">
             © <span id="y"></span> Reckoning Machines • Research systems architecture for investment organizations
+            <div style="margin-top: 6px;">
+                <a href="https://github.com/reckoning-machines" target="_blank"
+                    rel="noopener">github.com/reckoning-machines</a>
+            </div>
         </div>
     </footer>
 
