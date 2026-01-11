@@ -223,6 +223,7 @@
                 </div>
             </div>
 
+
             <aside class="stack">
                 <div class="card">
                     <h3>People, leveraged by technology</h3>
@@ -248,137 +249,108 @@
                     </p>
                 </div>
             </aside>
-        </section>
 
 
-        <aside class="stack">
-            <div class="card">
-                <h3>People, leveraged by technology</h3>
-                <p>
-                    Architecture designed to scale experienced judgment: machines handle
-                    enumeration, analysis, and reporting, while investors retain responsibility for decisioning
-                    rules, evaluation, and feedback.
+
+
+            <section id="principles" class="wrap section">
+                <h2>Core principles</h2>
+                <ul>
+                    <li>
+                        <strong>Deterministic execution:</strong>
+                        Research is treated as a sequence of governed steps. Given the same inputs,
+                        the same execution path and outputs can be reconstructed, inspected, and compared.
+                    </li>
+                    <li>
+                        <strong>Control plane vs. data plane:</strong>
+                        Execution logic, dependency gating, and provenance live in a control plane,
+                        while data access and slicing are handled independently. This separation
+                        keeps experimentation flexible without sacrificing reproducibility.
+                    </li>
+                    <li>
+                        <strong>Explicit decision structure:</strong>
+                        Assumptions, prerequisites, and decision points are made concrete rather than
+                        implicit, so both people and machines operate against the same declared logic.
+                    </li>
+                    <li>
+                        <strong>Failure as signal:</strong>
+                        Missing data, invalid assumptions, or broken dependencies halt execution early
+                        and visibly—preventing silent degradation and false confidence.
+                    </li>
+                    <li>
+                        <strong>Systems that learn over time:</strong>
+                        Research systems are designed for iteration and review, enabling post-hoc
+                        analysis, comparison across runs, and continuous improvement of both models
+                        and decision processes.
+                    </li>
+                </ul>
+            </section>
+
+
+            <section class="wrap section" aria-labelledby="work-title">
+                <h2 id="work-title">Representative work</h2>
+                <p class="muted" style="max-width: 80ch;">
+                    The following examples are illustrative of the kinds of systems and
+                    architectural problems this work draws from. They are not packaged
+                    products or transferable platforms.
                 </p>
-            </div>
-            <div class="card">
-                <h3>Explainable agentic and machine-learning systems</h3>
-                <p>
-                    Machine learning and agentic components used to explore, evaluate,
-                    and synthesize analysis within defined guardrails.
+                <ul class="list">
+                    <li>
+                        <strong>Machine-learning–driven portfolio research:</strong>
+                        systematic research workflows combining traditional financial signals
+                        with modern modeling techniques, designed to remain interpretable
+                        and reviewable by portfolio managers.
+                    </li>
+                    <li>
+                        <strong>LLM-assisted portfolio explainability:</strong>
+                        research layers that augment investment analysis with structured,
+                        natural-language explanations intended for PM review rather than automation.
+                    </li>
+                    <li>
+                        <strong>Distributed spreadsheet computation:</strong>
+                        architectures for orchestrating and observing large numbers of
+                        spreadsheet-based models as part of governed research processes.
+                    </li>
+                    <li>
+                        <strong>Model routing and orchestration:</strong>
+                        systems that coordinate multiple analytical and language models
+                        under explicit execution and evaluation constraints.
+                    </li>
+                    <li>
+                        <strong>Deterministic research execution graphs:</strong>
+                        directed, dependency-aware research workflows designed for replay,
+                        auditability, and controlled experimentation.
+                    </li>
+                    <li>
+                        <strong>PM-oriented research interfaces:</strong>
+                        interfaces and review tools designed to fit how portfolio managers
+                        actually work, rather than forcing new abstractions onto them.
+                    </li>
+                </ul>
+            </section>
+
+
+            <section id="approach" class="wrap section">
+                <h2>How we work</h2>
+                <p class="sub">
+                    Engagements are exploratory and architecture-focused. The emphasis is on
+                    understanding how research is actually conducted, where hidden state accumulates,
+                    and how execution discipline can be improved without disrupting existing workflows.
+                    <br /><br />
+                    This work reflects experience designing and operating internal research systems
+                    inside investment organizations. It is not a packaged platform or hosted service,
+                    and implementations are organization-specific.
                 </p>
-            </div>
-            <div class="card">
-                <h3>Enhanced decision processes</h3>
-                <p>
-                    Investment reasoning made explicit as structured workflows—assumptions,
-                    dependencies, and decision points are encoded so they can be executed,
-                    audited, backtested, and improved over time.
+            </section>
+
+            <section id="contact" class="wrap section">
+                <h2>Contact</h2>
+                <p class="sub">
+                    If you are responsible for research infrastructure, portfolio systems,
+                    or decision governance,
+                    email <a href="mailto:reckoningmachines@gmail.com">reckoningmachines@gmail.com</a>.
                 </p>
-            </div>
-        </aside>
-
-
-        </section>
-
-
-        <section id="principles" class="wrap section">
-            <h2>Core principles</h2>
-            <ul>
-                <li>
-                    <strong>Deterministic execution:</strong>
-                    Research is treated as a sequence of governed steps. Given the same inputs,
-                    the same execution path and outputs can be reconstructed, inspected, and compared.
-                </li>
-                <li>
-                    <strong>Control plane vs. data plane:</strong>
-                    Execution logic, dependency gating, and provenance live in a control plane,
-                    while data access and slicing are handled independently. This separation
-                    keeps experimentation flexible without sacrificing reproducibility.
-                </li>
-                <li>
-                    <strong>Explicit decision structure:</strong>
-                    Assumptions, prerequisites, and decision points are made concrete rather than
-                    implicit, so both people and machines operate against the same declared logic.
-                </li>
-                <li>
-                    <strong>Failure as signal:</strong>
-                    Missing data, invalid assumptions, or broken dependencies halt execution early
-                    and visibly—preventing silent degradation and false confidence.
-                </li>
-                <li>
-                    <strong>Systems that learn over time:</strong>
-                    Research systems are designed for iteration and review, enabling post-hoc
-                    analysis, comparison across runs, and continuous improvement of both models
-                    and decision processes.
-                </li>
-            </ul>
-        </section>
-
-
-        <section class="wrap section" aria-labelledby="work-title">
-            <h2 id="work-title">Representative work</h2>
-            <p class="muted" style="max-width: 80ch;">
-                The following examples are illustrative of the kinds of systems and
-                architectural problems this work draws from. They are not packaged
-                products or transferable platforms.
-            </p>
-            <ul class="list">
-                <li>
-                    <strong>Machine-learning–driven portfolio research:</strong>
-                    systematic research workflows combining traditional financial signals
-                    with modern modeling techniques, designed to remain interpretable
-                    and reviewable by portfolio managers.
-                </li>
-                <li>
-                    <strong>LLM-assisted portfolio explainability:</strong>
-                    research layers that augment investment analysis with structured,
-                    natural-language explanations intended for PM review rather than automation.
-                </li>
-                <li>
-                    <strong>Distributed spreadsheet computation:</strong>
-                    architectures for orchestrating and observing large numbers of
-                    spreadsheet-based models as part of governed research processes.
-                </li>
-                <li>
-                    <strong>Model routing and orchestration:</strong>
-                    systems that coordinate multiple analytical and language models
-                    under explicit execution and evaluation constraints.
-                </li>
-                <li>
-                    <strong>Deterministic research execution graphs:</strong>
-                    directed, dependency-aware research workflows designed for replay,
-                    auditability, and controlled experimentation.
-                </li>
-                <li>
-                    <strong>PM-oriented research interfaces:</strong>
-                    interfaces and review tools designed to fit how portfolio managers
-                    actually work, rather than forcing new abstractions onto them.
-                </li>
-            </ul>
-        </section>
-
-
-        <section id="approach" class="wrap section">
-            <h2>How we work</h2>
-            <p class="sub">
-                Engagements are exploratory and architecture-focused. The emphasis is on
-                understanding how research is actually conducted, where hidden state accumulates,
-                and how execution discipline can be improved without disrupting existing workflows.
-                <br /><br />
-                This work reflects experience designing and operating internal research systems
-                inside investment organizations. It is not a packaged platform or hosted service,
-                and implementations are organization-specific.
-            </p>
-        </section>
-
-        <section id="contact" class="wrap section">
-            <h2>Contact</h2>
-            <p class="sub">
-                If you are responsible for research infrastructure, portfolio systems,
-                or decision governance,
-                email <a href="mailto:reckoningmachines@gmail.com">reckoningmachines@gmail.com</a>.
-            </p>
-        </section>
+            </section>
 
     </main>
 
