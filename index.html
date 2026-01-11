@@ -16,7 +16,6 @@
     <meta property="og:url" content="https://reckoning-machines.github.io/" />
     <link rel="icon"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Cpath d='M20,70 L40,30 L55,55 L80,20' stroke='%23a3e635' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='80' cy='20' r='6' fill='%23a3e635'/%3E%3C/svg%3E" />
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,11 +26,236 @@
       "email": "reckoningmachines@gmail.com"
     }
     </script>
-
     <link rel="preconnect" href="https://rsms.me" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-
     <style>
+        :root {
+            --bg: #0b1020;
+            --card: #0f172a;
+            --ink: #e5e7eb;
+            --muted: #9aa6b2;
+            --brand: #a3e635;
+            --accent: #38bdf8;
+            --ring: rgba(163, 230, 53, .32);
+            --max: 1200px;
+            --radius: 18px;
+            --border: #1f2937;
+            --shadow: 0 10px 30px rgba(2, 6, 23, .35);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter var", Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+            background:
+                radial-gradient(1200px 600px at 80% -10%, rgba(56, 189, 248, .14), transparent 60%),
+                radial-gradient(1000px 500px at 10% 10%, rgba(163, 230, 53, .11), transparent 60%),
+                radial-gradient(circle at 50% 80%, rgba(59, 130, 246, .07), transparent 60%),
+                var(--bg);
+            color: var(--ink);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .wrap {
+            max-width: var(--max);
+            margin-inline: auto;
+            padding: clamp(16px, 2vw, 24px)
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(8px);
+            background: color-mix(in oklab, var(--bg) 82%, transparent);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .brand {
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+            font-weight: 750
+        }
+
+        nav a {
+            color: var(--muted)
+        }
+
+        nav a:hover {
+            color: var(--ink)
+        }
+
+        .tagline-banner {
+            width: 100%;
+            background: linear-gradient(180deg, rgba(163, 230, 53, .09), rgba(15, 23, 42, .4));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, var(--brand) 30%);
+            padding: clamp(0.8rem, 1.5vw, 1.2rem) 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .tagline-banner .pill {
+            margin: 0 auto;
+            width: fit-content;
+            max-width: var(--max);
+            padding: clamp(0.6rem, 1vw, 0.9rem) clamp(1.2rem, 2vw, 1.8rem);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            font-weight: 650;
+            letter-spacing: 0.02em;
+            background: color-mix(in srgb, var(--brand) 15%, transparent);
+            border: 1px solid color-mix(in srgb, var(--brand) 40%, var(--border));
+            box-shadow: 0 4px 20px rgba(163, 230, 53, .08);
+            color: #d9f99d;
+            border-radius: 999px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr minmax(300px, 0.9fr);
+            gap: clamp(2rem, 5vw, 6rem);
+            padding: clamp(6rem, 12vh, 10rem) 0 8rem;
+            align-items: start;
+        }
+
+        .h1 {
+            font-size: clamp(2.25rem, 4.8vw, 3.25rem);
+            line-height: 1.1;
+            font-weight: 780;
+            margin: 0.8rem 0 1.2rem;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-left: 1.4rem;
+        }
+
+        .h1::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.15em;
+            bottom: 0.15em;
+            width: 5px;
+            background: linear-gradient(180deg, var(--brand) 30%, transparent 90%);
+            opacity: 0.65;
+            border-radius: 3px;
+        }
+
+        .sub {
+            font-size: 1.15rem;
+            font-weight: 420;
+            max-width: 65ch;
+            opacity: 0.92;
+            margin-bottom: 2rem;
+        }
+
+        .impact-card {
+            position: relative;
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(163, 230, 53, 0.12);
+            border-left: 6px solid transparent;
+            border-image: linear-gradient(to bottom,
+                    color-mix(in srgb, var(--brand) 60%, transparent),
+                    color-mix(in srgb, var(--accent) 40%, transparent) 70%,
+                    transparent) 1;
+            box-shadow:
+                inset 0 0 40px rgba(163, 230, 53, 0.09),
+                inset 0 0 20px rgba(56, 189, 248, 0.07),
+                0 12px 48px rgba(2, 6, 23, 0.5);
+            padding: 36px 32px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: 2.5rem 0 2rem;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .impact-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 20% 30%,
+                    rgba(163, 230, 53, 0.14),
+                    transparent 60%);
+            opacity: 0.7;
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-8px) scale(1.015);
+            box-shadow:
+                inset 0 0 56px rgba(163, 230, 53, 0.14),
+                0 20px 60px rgba(163, 230, 53, 0.18);
+        }
+
+        .impact-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 1.4rem;
+            color: var(--brand);
+            opacity: 0.95;
+        }
+
+        .impact-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .impact-card li {
+            position: relative;
+            padding-left: 2.2rem;
+            margin-bottom: 1.1rem;
+            font-size: 1.08rem;
+            color: var(--ink);
+        }
+
+        .impact-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            opacity: 0.85;
+            font-weight: bold;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(148, 163, 184, .08), rgba(15, 23, 42, .66));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            box-shadow: 0 4px 18px rgba(2, 6, 23, .28);
+        }
+
         .repo-grid {
             display: grid;
             gap: 12px;
@@ -78,142 +302,6 @@
             white-space: nowrap;
         }
 
-        .muted {
-            color: var(--muted);
-        }
-
-        .list {
-            color: var(--muted);
-        }
-
-        #repos {
-            scroll-margin-top: 90px;
-        }
-
-        :root {
-            --bg: #0b1020;
-            --card: #0f172a;
-            --ink: #e5e7eb;
-            --muted: #9aa6b2;
-            --brand: #a3e635;
-            --accent: #38bdf8;
-            --ring: rgba(163, 230, 53, .32);
-            --max: 1200px;
-            --radius: 18px;
-            --border: #1f2937;
-            --shadow: 0 10px 30px rgba(2, 6, 23, .35);
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        html,
-        body {
-            height: 100%
-        }
-
-        body {
-            margin: 0;
-            font-family: "Inter var", Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-            background:
-                radial-gradient(1200px 600px at 80% -10%, rgba(56, 189, 248, .12), transparent 60%),
-                radial-gradient(1000px 500px at 10% 10%, rgba(163, 230, 53, .10), transparent 60%),
-                var(--bg);
-            color: var(--ink);
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none
-        }
-
-        a:hover {
-            text-decoration: underline
-        }
-
-        .wrap {
-            max-width: var(--max);
-            margin-inline: auto;
-            padding: clamp(16px, 2vw, 24px)
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(8px);
-            background: color-mix(in oklab, var(--bg) 82%, transparent);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
-
-        .brand {
-            display: flex;
-            gap: .75rem;
-            align-items: center;
-            font-weight: 750
-        }
-
-        nav a {
-            color: var(--muted)
-        }
-
-        nav a:hover {
-            color: var(--ink)
-        }
-
-        .pill {
-            display: inline-flex;
-            gap: .6rem;
-            padding: .6rem 1rem;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: linear-gradient(180deg, rgba(163, 230, 53, .10), rgba(15, 23, 42, .5));
-            color: #d9f99d;
-            font-weight: 650;
-            font-size: 16px;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            gap: clamp(16px, 4vw, 48px);
-            padding: clamp(32px, 6vw, 80px) 0;
-        }
-
-        .h1 {
-            font-size: clamp(32px, 5.6vw, 64px);
-            line-height: 1.08;
-            font-weight: 800;
-            margin: 10px 0 12px;
-        }
-
-        .sub {
-            color: var(--muted);
-            max-width: 78ch
-        }
-
-        .card {
-            background: linear-gradient(180deg, rgba(148, 163, 184, .08), rgba(15, 23, 42, .66));
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 22px;
-            box-shadow: 0 4px 18px rgba(2, 6, 23, .28);
-        }
-
-        .stack {
-            display: flex;
-            flex-direction: column;
-            gap: 12px
-        }
-
         .section {
             padding: clamp(28px, 5vw, 60px) 0
         }
@@ -228,6 +316,10 @@
         @media (max-width: 900px) {
             .hero {
                 grid-template-columns: 1fr
+            }
+
+            .impact-card {
+                margin: 2rem 0;
             }
         }
     </style>
@@ -247,34 +339,41 @@
         </div>
     </header>
 
-    <main id="home">
+    <div class="tagline-banner">
+        <div class="pill">
+            Research Systems Architecture • Better Reckoning, With Machines
+        </div>
+    </div>
 
+    <main id="home">
         <section class="wrap hero">
             <div>
-                <div class="pill">
-                    Research Systems Architecture • Better Reckoning, With Machines
-                </div>
-
                 <h1 class="h1">
                     Modern architecture for investment research, in practice.
                 </h1>
-
                 <p class="sub">
                     Reckoning Machines builds secure, auditable, reproducible AI-augmented research
                     and decision systems, designed for environments where errors are expensive.
                 </p>
-
                 <p class="sub">
                     Our work is informed by experience on both sides of the problem: portfolio
                     management and systems engineering. That combination shapes how we explore new
                     technologies, experiment responsibly, and design research workflows that scale
-                    without losing clarity, auditability, or judgment—especially in environments that
-                    still depend on complex data pipelines and spreadsheet models.
+                    without losing clarity, auditability, or judgment.
                 </p>
 
-                <div id="repos" class="card" style="margin-top: 16px;">
-                    <div style="font-weight: 700; margin-bottom: 8px;">Public repos</div>
+                <div class="impact-card">
+                    <h3>Business impact</h3>
+                    <ul>
+                        <li>Scaled research processes without loss of rigor</li>
+                        <li>Reproducible decision logic across teams</li>
+                        <li>De-risked LLM usage through governed execution</li>
+                        <li>Observable research workflows for compliance and review</li>
+                    </ul>
+                </div>
 
+                <div id="repos" class="card">
+                    <div style="font-weight: 700; margin-bottom: 8px;">Public repos</div>
                     <div class="repo-grid">
                         <a class="repo-card" href="https://github.com/reckoning-machines/reckoning-machine"
                             target="_blank" rel="noopener">
@@ -287,7 +386,6 @@
                                 persistence.
                             </div>
                         </a>
-
                         <a class="repo-card" href="https://github.com/reckoning-machines/pm-decision-os" target="_blank"
                             rel="noopener">
                             <div class="repo-title">
@@ -300,16 +398,6 @@
                             </div>
                         </a>
                     </div>
-                </div>
-
-                <div class="card" style="margin-top: 16px;">
-                    <div style="font-weight: 700; margin-bottom: 8px;">Business impact</div>
-                    <ul style="margin: 0; padding-left: 18px; color: var(--muted);">
-                        <li>Scaled research processes without loss of rigor</li>
-                        <li>Reproducible decision logic across teams</li>
-                        <li>De-risked LLM usage through governed execution</li>
-                        <li>Observable research workflows for compliance and review</li>
-                    </ul>
                 </div>
             </div>
 
@@ -343,100 +431,63 @@
         <section id="principles" class="wrap section">
             <h2>Core principles</h2>
             <ul>
-                <li>
-                    <strong>Deterministic execution:</strong>
-                    Research is treated as a sequence of governed steps. Given the same inputs,
-                    the same execution path and outputs can be reconstructed, inspected, and compared.
+                <li><strong>Deterministic execution:</strong> Research is treated as a sequence of governed steps. Given
+                    the same inputs, the same execution path and outputs can be reconstructed, inspected, and compared.
                 </li>
-                <li>
-                    <strong>Control plane vs. data plane:</strong>
-                    Execution logic, dependency gating, and provenance live in a control plane,
-                    while data access and slicing are handled independently. This separation
-                    keeps experimentation flexible without sacrificing reproducibility.
-                </li>
-                <li>
-                    <strong>Explicit decision structure:</strong>
-                    Assumptions, prerequisites, and decision points are made concrete rather than
-                    implicit, so both people and machines operate against the same declared logic.
-                </li>
-                <li>
-                    <strong>Failure as signal:</strong>
-                    Missing data, invalid assumptions, or broken dependencies halt execution early
-                    and visibly—preventing silent degradation and false confidence.
-                </li>
-                <li>
-                    <strong>Systems that learn over time:</strong>
-                    Research systems are designed for iteration and review, enabling post-hoc
-                    analysis, comparison across runs, and continuous improvement of both models
-                    and decision processes.
-                </li>
+                <li><strong>Control plane vs. data plane:</strong> Execution logic, dependency gating, and provenance
+                    live in a control plane, while data access and slicing are handled independently.</li>
+                <li><strong>Explicit decision structure:</strong> Assumptions, prerequisites, and decision points are
+                    made concrete rather than implicit.</li>
+                <li><strong>Failure as signal:</strong> Missing data, invalid assumptions, or broken dependencies halt
+                    execution early and visibly.</li>
+                <li><strong>Systems that learn over time:</strong> Research systems are designed for iteration and
+                    review, enabling post-hoc analysis, comparison across runs, and continuous improvement.</li>
             </ul>
         </section>
 
         <section class="wrap section" aria-labelledby="work-title">
             <h2 id="work-title">Representative work</h2>
             <p class="muted" style="max-width: 80ch;">
-                The following examples are illustrative of the kinds of systems and
-                architectural problems this work draws from. They are not packaged
-                products or transferable platforms.
+                The following examples are illustrative of the kinds of systems and architectural problems this work
+                draws from. They are not packaged products or transferable platforms.
             </p>
             <ul class="list">
-                <li>
-                    <strong>Machine-learning–driven portfolio research:</strong>
-                    systematic research workflows combining traditional financial signals
-                    with modern modeling techniques, designed to remain interpretable
-                    and reviewable by portfolio managers.
-                </li>
-                <li>
-                    <strong>LLM-assisted portfolio explainability:</strong>
-                    research layers that augment investment analysis with structured,
-                    natural-language explanations intended for PM review rather than automation.
-                </li>
-                <li>
-                    <strong>Distributed spreadsheet computation:</strong>
-                    architectures for orchestrating and observing large numbers of
-                    spreadsheet-based models as part of governed research processes.
-                </li>
-                <li>
-                    <strong>Model routing and orchestration:</strong>
-                    systems that coordinate multiple analytical and language models
-                    under explicit execution and evaluation constraints.
-                </li>
-                <li>
-                    <strong>Deterministic research execution graphs:</strong>
-                    directed, dependency-aware research workflows designed for replay,
-                    auditability, and controlled experimentation.
-                </li>
-                <li>
-                    <strong>PM-oriented research interfaces:</strong>
-                    interfaces and review tools designed to fit how portfolio managers
-                    actually work, rather than forcing new abstractions onto them.
-                </li>
+                <li><strong>Machine-learning–driven portfolio research:</strong> systematic research workflows combining
+                    traditional financial signals with modern modeling techniques, designed to remain interpretable and
+                    reviewable.</li>
+                <li><strong>LLM-assisted portfolio explainability:</strong> research layers that augment investment
+                    analysis with structured, natural-language explanations intended for PM review.</li>
+                <li><strong>Distributed spreadsheet computation:</strong> architectures for orchestrating and observing
+                    large numbers of spreadsheet-based models as part of governed research processes.</li>
+                <li><strong>Model routing and orchestration:</strong> systems that coordinate multiple analytical and
+                    language models under explicit execution and evaluation constraints.</li>
+                <li><strong>Deterministic research execution graphs:</strong> directed, dependency-aware research
+                    workflows designed for replay, auditability, and controlled experimentation.</li>
+                <li><strong>PM-oriented research interfaces:</strong> interfaces and review tools designed to fit how
+                    portfolio managers actually work.</li>
             </ul>
         </section>
 
         <section id="approach" class="wrap section">
             <h2>How we work</h2>
             <p class="sub">
-                Engagements are exploratory and architecture-focused. The emphasis is on
-                understanding how research is actually conducted, where hidden state accumulates,
-                and how execution discipline can be improved without disrupting existing workflows.
-                <br /><br />
-                This work reflects experience designing and operating internal research systems
-                inside investment organizations. It is not a packaged platform or hosted service,
-                and implementations are organization-specific.
+                Engagements are exploratory and architecture-focused. The emphasis is on understanding how research is
+                actually conducted, where hidden state accumulates, and how execution discipline can be improved without
+                disrupting existing workflows.
+                <br><br>
+                This work reflects experience designing and operating internal research systems inside investment
+                organizations. It is not a packaged platform or hosted service, and implementations are
+                organization-specific.
             </p>
         </section>
 
         <section id="contact" class="wrap section">
             <h2>Contact</h2>
             <p class="sub">
-                If you are responsible for research infrastructure, portfolio systems,
-                or decision governance,
+                If you are responsible for research infrastructure, portfolio systems, or decision governance,
                 email <a href="mailto:reckoningmachines@gmail.com">reckoningmachines@gmail.com</a>.
             </p>
         </section>
-
     </main>
 
     <footer>
