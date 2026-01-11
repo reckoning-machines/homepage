@@ -92,7 +92,7 @@
         .nav {
             display: flex;
             justify-content: space-between;
-            align-items: center
+            align-items: center;
         }
 
         .brand {
@@ -116,7 +116,7 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, var(--brand) 30%);
-            padding: clamp(0.8rem, 1.5vw, 1.2rem) 0;
+            padding: clamp(0.6rem, 1.2vw, 0.9rem) 0;
             position: relative;
             z-index: 10;
         }
@@ -141,8 +141,8 @@
         .hero {
             display: grid;
             grid-template-columns: 1fr minmax(300px, 0.9fr);
-            gap: clamp(2rem, 5vw, 6rem);
-            padding: clamp(6rem, 12vh, 10rem) 0 8rem;
+            gap: clamp(3rem, 6vw, 8rem);
+            padding: clamp(4rem, 8vh, 6rem) 0 6rem;
             align-items: start;
         }
 
@@ -176,8 +176,7 @@
             margin-bottom: 2rem;
         }
 
-        .impact-card {
-            position: relative;
+        .proof-card {
             background: rgba(15, 23, 42, 0.55);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -191,33 +190,31 @@
                 inset 0 0 40px rgba(163, 230, 53, 0.09),
                 inset 0 0 20px rgba(56, 189, 248, 0.07),
                 0 12px 48px rgba(2, 6, 23, 0.5);
-            padding: 36px 32px;
+            padding: 32px 28px;
             border-radius: var(--radius);
-            overflow: hidden;
-            margin: 2.5rem 0 2rem;
+            margin: 2.2rem 0;
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
         }
 
-        .impact-card::before {
+        .proof-card::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 20% 30%,
-                    rgba(163, 230, 53, 0.14),
-                    transparent 60%);
+            background: radial-gradient(ellipse at 20% 30%, rgba(163, 230, 53, 0.14), transparent 60%);
             opacity: 0.7;
             pointer-events: none;
             mix-blend-mode: screen;
         }
 
-        .impact-card:hover {
-            transform: translateY(-8px) scale(1.015);
+        .proof-card:hover {
+            transform: translateY(-6px) scale(1.015);
             box-shadow:
                 inset 0 0 56px rgba(163, 230, 53, 0.14),
-                0 20px 60px rgba(163, 230, 53, 0.18);
+                0 16px 52px rgba(163, 230, 53, 0.16);
         }
 
-        .impact-card h3 {
+        .proof-card h3 {
             font-size: 1.25rem;
             font-weight: 700;
             margin: 0 0 1.4rem;
@@ -225,13 +222,13 @@
             opacity: 0.95;
         }
 
-        .impact-card ul {
+        .proof-card ul {
             list-style: none;
             padding-left: 0;
             margin: 0;
         }
 
-        .impact-card li {
+        .proof-card li {
             position: relative;
             padding-left: 2.2rem;
             margin-bottom: 1.1rem;
@@ -239,7 +236,7 @@
             color: var(--ink);
         }
 
-        .impact-card li::before {
+        .proof-card li::before {
             content: "→";
             position: absolute;
             left: 0;
@@ -248,17 +245,9 @@
             font-weight: bold;
         }
 
-        .card {
-            background: linear-gradient(180deg, rgba(148, 163, 184, .08), rgba(15, 23, 42, .66));
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 22px;
-            box-shadow: 0 4px 18px rgba(2, 6, 23, .28);
-        }
-
         .repo-grid {
             display: grid;
-            gap: 12px;
+            gap: 1.4rem;
         }
 
         .repo-card {
@@ -302,6 +291,20 @@
             white-space: nowrap;
         }
 
+        .stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(148, 163, 184, .08), rgba(15, 23, 42, .66));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            box-shadow: 0 4px 18px rgba(2, 6, 23, .28);
+        }
+
         .section {
             padding: clamp(28px, 5vw, 60px) 0
         }
@@ -318,8 +321,8 @@
                 grid-template-columns: 1fr
             }
 
-            .impact-card {
-                margin: 2rem 0;
+            .proof-card {
+                margin: 1.8rem 0;
             }
         }
     </style>
@@ -356,13 +359,12 @@
                     and decision systems, designed for environments where errors are expensive.
                 </p>
                 <p class="sub">
-                    Our work is informed by experience on both sides of the problem: portfolio
-                    management and systems engineering. That combination shapes how we explore new
-                    technologies, experiment responsibly, and design research workflows that scale
-                    without losing clarity, auditability, or judgment.
+                    Our work is informed by experience on both sides: portfolio management and systems engineering.
+                    That shapes responsible exploration, experimentation, and scalable workflows that preserve clarity,
+                    auditability, and judgment.
                 </p>
 
-                <div class="impact-card">
+                <div class="proof-card">
                     <h3>Business impact</h3>
                     <ul>
                         <li>Scaled research processes without loss of rigor</li>
@@ -372,8 +374,8 @@
                     </ul>
                 </div>
 
-                <div id="repos" class="card">
-                    <div style="font-weight: 700; margin-bottom: 8px;">Public repos</div>
+                <div id="repos" class="proof-card">
+                    <h3>Public repos</h3>
                     <div class="repo-grid">
                         <a class="repo-card" href="https://github.com/reckoning-machines/reckoning-machine"
                             target="_blank" rel="noopener">
@@ -405,24 +407,24 @@
                 <div class="card">
                     <h3>People, leveraged by technology</h3>
                     <p>
-                        Architecture designed to scale experienced judgment: machines handle
-                        enumeration, analysis, and reporting, while investors retain responsibility for decisioning
-                        rules, evaluation, and feedback.
+                        Architecture designed to scale experienced judgment: machines handle enumeration, analysis, and
+                        reporting, while investors retain responsibility for decisioning rules, evaluation, and
+                        feedback.
                     </p>
                 </div>
                 <div class="card">
                     <h3>Explainable agentic and machine-learning systems</h3>
                     <p>
-                        Machine learning and agentic components used to explore, evaluate,
-                        and synthesize analysis within defined guardrails.
+                        Machine learning and agentic components used to explore, evaluate, and synthesize analysis
+                        within defined guardrails.
                     </p>
                 </div>
                 <div class="card">
                     <h3>Enhanced decision processes</h3>
                     <p>
-                        Investment reasoning made explicit as structured workflows—assumptions,
-                        dependencies, and decision points are encoded so they can be executed,
-                        audited, backtested, and improved over time.
+                        Investment reasoning made explicit as structured workflows—assumptions, dependencies, and
+                        decision points are encoded so they can be executed, audited, backtested, and improved over
+                        time.
                     </p>
                 </div>
             </aside>
