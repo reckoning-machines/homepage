@@ -40,7 +40,6 @@
             --max: 1200px;
             --radius: 18px;
             --border: #1f2937;
-            --shadow: 0 10px 30px rgba(2, 6, 23, .35);
         }
 
         * {
@@ -117,18 +116,14 @@
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, var(--brand) 30%);
             padding: clamp(0.6rem, 1.2vw, 0.9rem) 0;
-            position: relative;
-            z-index: 10;
         }
 
         .tagline-banner .pill {
             margin: 0 auto;
             width: fit-content;
-            max-width: var(--max);
             padding: clamp(0.6rem, 1vw, 0.9rem) clamp(1.2rem, 2vw, 1.8rem);
             font-size: clamp(1rem, 2vw, 1.15rem);
             font-weight: 650;
-            letter-spacing: 0.02em;
             background: color-mix(in srgb, var(--brand) 15%, transparent);
             border: 1px solid color-mix(in srgb, var(--brand) 40%, var(--border));
             box-shadow: 0 4px 20px rgba(163, 230, 53, .08);
@@ -140,9 +135,9 @@
 
         .hero {
             display: grid;
-            grid-template-columns: 1fr minmax(300px, 0.9fr);
+            grid-template-columns: 1fr minmax(340px, 0.85fr);
             gap: clamp(3rem, 6vw, 8rem);
-            padding: clamp(4rem, 8vh, 6rem) 0 6rem;
+            padding: clamp(3.5rem, 7vh, 5rem) 0 5rem;
             align-items: start;
         }
 
@@ -176,6 +171,15 @@
             margin-bottom: 2rem;
         }
 
+        .philosophy-stack,
+        .proof-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-top: 2.5rem;
+        }
+
+        .value-card,
         .proof-card {
             background: rgba(15, 23, 42, 0.55);
             backdrop-filter: blur(16px);
@@ -190,13 +194,12 @@
                 inset 0 0 40px rgba(163, 230, 53, 0.09),
                 inset 0 0 20px rgba(56, 189, 248, 0.07),
                 0 12px 48px rgba(2, 6, 23, 0.5);
-            padding: 32px 28px;
+            padding: 28px;
             border-radius: var(--radius);
-            margin: 2.2rem 0;
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            overflow: hidden;
         }
 
+        .value-card::before,
         .proof-card::before {
             content: "";
             position: absolute;
@@ -207,6 +210,7 @@
             mix-blend-mode: screen;
         }
 
+        .value-card:hover,
         .proof-card:hover {
             transform: translateY(-6px) scale(1.015);
             box-shadow:
@@ -214,10 +218,11 @@
                 0 16px 52px rgba(163, 230, 53, 0.16);
         }
 
+        .value-card h3,
         .proof-card h3 {
             font-size: 1.25rem;
             font-weight: 700;
-            margin: 0 0 1.4rem;
+            margin: 0 0 1.2rem;
             color: var(--brand);
             opacity: 0.95;
         }
@@ -251,7 +256,6 @@
         }
 
         .repo-card {
-            display: block;
             padding: 14px;
             border-radius: 14px;
             border: 1px solid var(--border);
@@ -260,7 +264,6 @@
         }
 
         .repo-card:hover {
-            text-decoration: none;
             border-color: color-mix(in oklab, var(--border) 55%, var(--accent));
         }
 
@@ -291,20 +294,6 @@
             white-space: nowrap;
         }
 
-        .stack {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: linear-gradient(180deg, rgba(148, 163, 184, .08), rgba(15, 23, 42, .66));
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 22px;
-            box-shadow: 0 4px 18px rgba(2, 6, 23, .28);
-        }
-
         .section {
             padding: clamp(28px, 5vw, 60px) 0
         }
@@ -318,11 +307,12 @@
 
         @media (max-width: 900px) {
             .hero {
-                grid-template-columns: 1fr
+                grid-template-columns: 1fr;
             }
 
-            .proof-card {
-                margin: 1.8rem 0;
+            .philosophy-stack,
+            .proof-stack {
+                margin-top: 2rem;
             }
         }
     </style>
@@ -364,6 +354,34 @@
                     auditability, and judgment.
                 </p>
 
+                <div class="philosophy-stack">
+                    <div class="value-card">
+                        <h3>People, leveraged by technology</h3>
+                        <p>
+                            Architecture designed to scale experienced judgment: machines handle enumeration, analysis,
+                            and reporting, while investors retain responsibility for decisioning rules, evaluation, and
+                            feedback.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Explainable agentic and machine-learning systems</h3>
+                        <p>
+                            Machine learning and agentic components used to explore, evaluate, and synthesize analysis
+                            within defined guardrails.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Enhanced decision processes</h3>
+                        <p>
+                            Investment reasoning made explicit as structured workflows—assumptions, dependencies, and
+                            decision points are encoded so they can be executed, audited, backtested, and improved over
+                            time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proof-stack">
                 <div class="proof-card">
                     <h3>Business impact</h3>
                     <ul>
@@ -374,7 +392,7 @@
                     </ul>
                 </div>
 
-                <div id="repos" class="proof-card">
+                <div class="proof-card">
                     <h3>Public repos</h3>
                     <div class="repo-grid">
                         <a class="repo-card" href="https://github.com/reckoning-machines/reckoning-machine"
@@ -402,32 +420,6 @@
                     </div>
                 </div>
             </div>
-
-            <aside class="stack">
-                <div class="card">
-                    <h3>People, leveraged by technology</h3>
-                    <p>
-                        Architecture designed to scale experienced judgment: machines handle enumeration, analysis, and
-                        reporting, while investors retain responsibility for decisioning rules, evaluation, and
-                        feedback.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Explainable agentic and machine-learning systems</h3>
-                    <p>
-                        Machine learning and agentic components used to explore, evaluate, and synthesize analysis
-                        within defined guardrails.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Enhanced decision processes</h3>
-                    <p>
-                        Investment reasoning made explicit as structured workflows—assumptions, dependencies, and
-                        decision points are encoded so they can be executed, audited, backtested, and improved over
-                        time.
-                    </p>
-                </div>
-            </aside>
         </section>
 
         <section id="principles" class="wrap section">
