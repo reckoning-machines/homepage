@@ -393,11 +393,29 @@
         /* ===== Footer ===== */
         footer {
             border-top: 1px solid var(--border-muted);
-            padding: 24px 0;
+            padding: clamp(40px, 6vw, 72px) 0;
             color: var(--text-muted);
             font-size: 0.88rem;
             font-family: var(--font-mono);
             letter-spacing: 0.02em;
+        }
+
+        .footer-doctrine {
+            display: grid;
+            gap: 1rem;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .footer-chain {
+            color: var(--text-heading);
+            font-size: clamp(0.95rem, 2vw, 1.25rem);
+            letter-spacing: 0.04em;
+            line-height: 1.8;
+        }
+
+        .footer-line {
+            color: var(--phosphor);
         }
 
         /* ===== Step 5 — Focus States ===== */
@@ -467,7 +485,7 @@
                     <div class="value-card">
                         <h3>The software is not the system</h3>
                         <p>
-                            A correct-looking screen can still be wrong.
+                            Screens can look settled before the book is.
                         </p>
                     </div>
                     <div class="value-card">
@@ -544,7 +562,7 @@
                 <li><strong>Evidence:</strong> A dashboard does not make something true. Evidence makes reality
                     observable.</li>
                 <li><strong>Authority:</strong> If nobody can say which source won, the book is already broken.</li>
-                <li><strong>Truth:</strong> Truth is earned. Reality is not.</li>
+                <li><strong>Truth:</strong> Evidence and authority decide what can be trusted.</li>
                 <li><strong>Decision:</strong> A decision is not commentary. It changes what happens next.</li>
                 <li><strong>Projection:</strong> When the chain breaks, nobody can explain the decision.</li>
             </ul>
@@ -614,10 +632,10 @@
     </main>
 
     <footer>
-        <div class="wrap">
-            <div>Reality↓Evidence↓Authority↓Truth↓Decision↓Projection</div>
-            <div>This is the method.</div>
-            <div>Our worldview is our product.</div>
+        <div class="wrap footer-doctrine">
+            <div class="footer-chain">Reality → Evidence → Authority → Truth → Decision → Projection</div>
+            <div class="footer-line">This is the method.</div>
+            <div class="footer-line">Our worldview is our product.</div>
         </div>
     </footer>
 
