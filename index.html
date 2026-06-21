@@ -349,6 +349,19 @@
             max-width: 78ch;
         }
 
+        .section .experience-line {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        .experience-section {
+            padding-bottom: clamp(8px, 1.4vw, 14px);
+        }
+
+        .experience-section + .section {
+            padding-top: clamp(8px, 1.4vw, 14px);
+        }
+
         .persistence-ladder {
             display: grid;
             gap: 0.55rem;
@@ -775,8 +788,8 @@
             </div>
         </section>
 
-        <section class="wrap section" aria-label="Experience">
-            <p class="section-intro">
+        <section class="wrap section experience-section" aria-label="Experience">
+            <p class="section-intro experience-line">
                 Reckoning Machines is informed by two decades of portfolio management, quantitative research
                 infrastructure, trading systems engineering, and operational software development.
             </p>
