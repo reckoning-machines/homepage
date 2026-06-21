@@ -180,7 +180,7 @@
         /* ===== Hero ===== */
         .hero {
             display: block;
-            padding: clamp(3rem, 6vh, 4.5rem) 0 4rem;
+            padding: clamp(3rem, 6vh, 4.5rem) 0 2.25rem;
         }
 
         /* Step 3: Headings use --text-heading for authority */
@@ -213,13 +213,6 @@
             max-width: 65ch;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
-        }
-
-        .bridge {
-            color: var(--text-heading);
-            font-family: var(--font-mono);
-            font-size: 0.95rem;
-            margin-top: 2rem;
         }
 
         /* ===== Philosophy Stack ===== */
@@ -477,6 +470,10 @@
             padding: clamp(32px, 5vw, 48px) 0;
         }
 
+        .hero + .section {
+            padding-top: clamp(12px, 2vw, 20px);
+        }
+
         .section ul {
             padding-left: 1.2rem;
         }
@@ -594,9 +591,6 @@
                 </p>
                 <p class="sub">
                     <strong>Research velocity. Trusted outcomes.</strong>
-                </p>
-                <p class="bridge">
-                    Problems solved. Reckoning Machines built. Method explained below.
                 </p>
             </div>
         </section>
