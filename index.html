@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Reckoning Machines - Most Software Begins With Workflows. We Begin With Reality.</title>
+    <title>Reckoning Machines - We Solve Problems Other Teams Can't</title>
     <meta name="description"
-        content="Reckoning Machines begins with reality. Software, repositories, and systems are artifacts of that worldview." />
+        content="Reckoning Machines repairs and builds high-consequence systems by modeling reality, authority, ownership, lineage, boundaries, and state before workflows." />
     <meta name="theme-color" content="#0e1420" />
-    <meta property="og:title" content="Reckoning Machines - Most Software Begins With Workflows. We Begin With Reality." />
+    <meta property="og:title" content="Reckoning Machines - We Solve Problems Other Teams Can't" />
     <meta property="og:description"
-        content="Most software begins with workflows. Reckoning Machines begins with reality." />
+        content="We repair and build high-consequence systems by modeling reality before software." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.png" />
     <meta property="og:url" content="https://reckoning-machines.github.io/" />
@@ -22,7 +22,7 @@
       "@type": "Organization",
       "name": "Reckoning Machines",
       "url": "https://reckoning-machines.github.io/",
-      "description": "A reality-first worldview implemented through deterministic systems",
+      "description": "High-consequence systems repair and build work grounded in reality modeling",
       "email": "reckoningmachines@gmail.com"
     }
     </script>
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
         rel="stylesheet" />
     <style>
         /* ===== Step 0 - Design Tokens ===== */
@@ -179,11 +179,8 @@
 
         /* ===== Hero ===== */
         .hero {
-            display: grid;
-            grid-template-columns: 1fr minmax(340px, 0.85fr);
-            gap: clamp(3rem, 6vw, 8rem);
+            display: block;
             padding: clamp(3rem, 6vh, 4.5rem) 0 4rem;
-            align-items: start;
         }
 
         /* Step 3: Headings use --text-heading for authority */
@@ -218,9 +215,15 @@
             margin-bottom: 1.5rem;
         }
 
-        /* ===== Philosophy + Proof Stacks ===== */
-        .philosophy-stack,
-        .proof-stack {
+        .bridge {
+            color: var(--text-heading);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            margin-top: 2rem;
+        }
+
+        /* ===== Philosophy Stack ===== */
+        .philosophy-stack {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
@@ -268,6 +271,107 @@
             margin: 0;
             font-size: 1rem;
             line-height: 1.6;
+        }
+
+        .eyebrow {
+            color: var(--phosphor);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            margin: 0 0 1rem;
+            text-transform: uppercase;
+        }
+
+        .problem-grid,
+        .system-grid,
+        .method-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .problem-grid,
+        .system-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .method-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .problem-card,
+        .system-card,
+        .method-card {
+            background: var(--panel-gradient);
+            border: 1px solid var(--border-hard);
+            border-radius: var(--radius);
+            box-shadow:
+                inset 0 0 0 1px var(--border-soft),
+                var(--glow-sm);
+            padding: 20px;
+        }
+
+        .problem-card h3,
+        .system-card h3,
+        .method-card h3 {
+            color: var(--text-heading);
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
+            letter-spacing: 0.04em;
+            line-height: 1.45;
+            margin: 0 0 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .problem-card p,
+        .system-card p,
+        .method-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .problem-card p + p,
+        .system-card p + p,
+        .method-card p + p {
+            color: var(--text-primary);
+            margin-top: 0.85rem;
+        }
+
+        .method-card ul {
+            color: var(--text-primary);
+            margin: 0.85rem 0 0;
+            padding-left: 1.2rem;
+        }
+
+        .method-card li {
+            margin-bottom: 0.35rem;
+        }
+
+        .section-intro {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin: -0.25rem 0 1.5rem;
+            max-width: 78ch;
+        }
+
+        .persistence-ladder {
+            display: grid;
+            gap: 0.55rem;
+            max-width: 78ch;
+        }
+
+        .persistence-ladder p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        .persistence-ladder p:nth-child(even) {
+            color: var(--text-heading);
+            font-family: var(--font-mono);
         }
 
         /* ===== Proof Card List ===== */
@@ -432,12 +536,13 @@
 
         /* ===== Responsive ===== */
         @media (max-width: 900px) {
-            .hero {
+            .problem-grid,
+            .system-grid,
+            .method-grid {
                 grid-template-columns: 1fr;
             }
 
-            .philosophy-stack,
-            .proof-stack {
+            .philosophy-stack {
                 margin-top: 1.5rem;
             }
         }
@@ -449,10 +554,11 @@
         <div class="wrap nav">
             <div class="brand">Reckoning Machines</div>
             <nav>
-                <a href="#principles">Method</a> /
-                <a href="#engineering">Engineering</a> /
-                <a href="#problems-title">Proof</a> /
-                <a href="#approach">People</a> /
+                <a href="#problems">Problems</a> /
+                <a href="#systems">Reckoning Machines</a> /
+                <a href="#persistence">Why</a> /
+                <a href="#method">Method</a> /
+                <a href="#outcomes">Outcomes</a> /
                 <a href="#repos">Artifacts</a> /
                 <a href="#contact">Contact</a> /
                 <a href="https://github.com/reckoning-machines" target="_blank" rel="noopener">GitHub</a>
@@ -462,187 +568,391 @@
 
     <div class="tagline-banner">
         <div class="pill">
-            Most Software Begins With Workflows. We Begin With Reality.
+            We repair and build high-consequence systems.
         </div>
     </div>
 
     <main id="home">
         <section class="wrap hero">
             <div>
+                <p class="eyebrow">Reckoning Machines</p>
                 <h1 class="h1">
-                    Most software begins with workflows. We begin with reality.
+                    We Solve Problems Other Teams Can't
                 </h1>
                 <p class="sub">
-                    Software exists to model reality. Reality exists before any interface names it,
-                    any workflow moves it, or any model explains it.
+                    We repair and build high-consequence systems.
                 </p>
                 <p class="sub">
-                    A workflow may be wrong. A dashboard may be wrong. A report may be wrong.
-                    The book still has to be right.
+                    Our goal is simple:
                 </p>
-
-                <div class="philosophy-stack">
-                    <div class="value-card">
-                        <h3>Software exists to model reality</h3>
-                        <p>
-                            Systems move through time, data always changes, and edge conditions are not edge conditions: they are part of a system. Software and workflow modeling often fails to assume chaos.
-                        </p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Evidence beats stories</h3>
-                        <p>
-                            Reality does not need evidence. Truth does. A claim becomes usable
-                            only when the evidence survives.
-                        </p>
-                    </div>
-                    <div class="value-card">
-                        <h3>Projections are not truth</h3>
-                        <p>
-                            Dashboards, reports, timelines, status lights, and AI explanations
-                            are views. When views become authority, drift becomes hard to find.
-                        </p>
-                    </div>
-                </div>
+                <p class="sub">
+                    <strong>Research velocity. Trusted outcomes.</strong>
+                </p>
+                <p class="sub">
+                    Not because we write better code. Because we model reality before we model software.
+                </p>
+                <p class="sub">
+                    Most failures are not implementation failures. They are failures of authority,
+                    ownership, lineage, boundaries, and state.
+                </p>
+                <p class="bridge">
+                    Problems solved. Reckoning Machines built. Method explained below.
+                </p>
             </div>
+        </section>
 
-            <div class="proof-stack">
-                <div class="proof-card">
-                    <h3>Operating rules</h3>
+        <section id="problems" class="wrap section">
+            <h2>Problems We Have Solved</h2>
+            <div class="problem-grid">
+                <article class="problem-card">
+                    <h3>Retail trading calendars</h3>
+                    <p>
+                        Retail trading calendars failed on weekends, holidays, half-days, and market schedules.
+                        The software knew dates. It did not understand markets.
+                    </p>
+                    <p>
+                        We built deterministic temporal infrastructure capable of replay, holiday governance,
+                        schedule transitions, and operational correctness through time.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Portfolio manager operating systems</h3>
+                    <p>
+                        A portfolio manager operating system had collapsed authority. Multiple workflows
+                        claimed control. State drifted. Users could not tell what action was legal.
+                    </p>
+                    <p>
+                        We rebuilt the system around explicit authority, evidence, and state transitions.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Spreadsheet systems</h3>
+                    <p>
+                        Spreadsheet systems produced answers no one could explain. The outputs existed.
+                        The lineage did not.
+                    </p>
+                    <p>
+                        We rebuilt the substrate so results became reconstructable, replayable, and explainable.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Multi-agent boundaries</h3>
+                    <p>
+                        Multi-agent systems lost authority at the boundary. Agents could act.
+                        Nobody could explain who was allowed to act.
+                    </p>
+                    <p>
+                        We made authority explicit and preserved it across system boundaries.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Temporal decision systems</h3>
+                    <p>
+                        Temporal decision systems needed "as of" correctness more than algorithm correctness.
+                        The answer could be mathematically correct and still operationally wrong.
+                    </p>
+                    <p>
+                        We built temporal infrastructure that made decisions reconstructable in time.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Execution systems</h3>
+                    <p>
+                        Execution systems became unreconstructable. Actions occurred. Artifacts existed.
+                        Nobody could explain why.
+                    </p>
+                    <p>
+                        We rebuilt lineage so decisions, executions, and outcomes could be traced back to
+                        governing evidence.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="systems" class="wrap section">
+            <h2>Reckoning Machines</h2>
+            <div class="system-grid">
+                <article class="system-card">
+                    <h3>Excel Router</h3>
+                    <p>
+                        The organization ran on spreadsheets that moved work, answers, approvals,
+                        and risk through hidden paths.
+                    </p>
+                    <p>
+                        We built an execution and routing layer around Excel as a distributed
+                        operational substrate. The point was not to replace Excel. The point was to
+                        make it governable.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>LLM DAG Runner</h3>
+                    <p>
+                        Most AI workflows are impossible to replay.
+                    </p>
+                    <p>
+                        We built a deterministic execution engine where prompts, tools, agents, and
+                        outputs become part of a reconstructable execution graph.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Authority Ledger</h3>
+                    <p>
+                        Organizations often know who made a decision. They rarely know who had
+                        authority to make it.
+                    </p>
+                    <p>
+                        We built a system-of-record for authority assignment and authority transfer.
+                        Not permissions. Not roles. Operational authority.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Retail Trading Calendar Engine</h3>
+                    <p>
+                        The calendar looked simple until money moved across a weekend, holiday,
+                        half-day, or schedule transition.
+                    </p>
+                    <p>
+                        We built calendar infrastructure for markets that do not behave like weekdays.
+                        Historical replay became an operating condition, not an afterthought.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>As-Of Decision Infrastructure</h3>
+                    <p>
+                        The answer was correct. For the wrong point in time.
+                    </p>
+                    <p>
+                        We built temporal infrastructure for systems where as-of correctness matters
+                        more than algorithm correctness.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Vendor Ingestion Machines</h3>
+                    <p>
+                        Vendors arrive late, arrive out of order, change formats, and disagree with
+                        each other.
+                    </p>
+                    <p>
+                        We built ingestion machines that preserve lineage and trust through irregular
+                        operational reality. Normalization was the easy part.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Financial Research Operating System</h3>
+                    <p>
+                        Research became action, but the chain from model to evidence to decision
+                        disappeared.
+                    </p>
+                    <p>
+                        We built infrastructure connecting models, reports, decisions, and execution
+                        into a single reconstructable chain.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Portfolio Manager Operating System</h3>
+                    <p>
+                        The PM should not need to remember the workflow.
+                    </p>
+                    <p>
+                        We built state-driven portfolio infrastructure where legal actions are derived
+                        from operational reality. The system should know what action is legal.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Spreadsheet-Native Decision Systems</h3>
+                    <p>
+                        The spreadsheet had to stay. The hidden decision process did not.
+                    </p>
+                    <p>
+                        We built spreadsheet-native systems that preserve lineage, authority,
+                        replayability, and explainability while keeping the work usable.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Agent Governance Machines</h3>
+                    <p>
+                        Agents can act faster than the organization can explain who authorized the action.
+                    </p>
+                    <p>
+                        We built governance machines that preserve authority, lineage, evidence, and
+                        accountability across AI and human boundaries.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="persistence" class="wrap section">
+            <h2>Why These Problems Persist</h2>
+            <div class="persistence-ladder">
+                <p>Most teams repair workflows.</p>
+                <p>We repair the model underneath the workflow.</p>
+                <p>Most teams change screens.</p>
+                <p>We identify authority.</p>
+                <p>Most teams add state.</p>
+                <p>We identify reality.</p>
+                <p>Most teams document ownership.</p>
+                <p>We make ownership operational.</p>
+                <p>Most teams debug behavior.</p>
+                <p>We reconstruct lineage.</p>
+                <p>Most teams automate decisions.</p>
+                <p>We establish authority first.</p>
+                <p>The workflow is rarely the problem.</p>
+                <p>The workflow is where the problem becomes visible.</p>
+            </div>
+        </section>
+
+        <section id="method" class="wrap section">
+            <h2>The Method</h2>
+            <p class="section-intro">
+                Reality modeling is an engineering process. It finds the objects, authority,
+                ownership, lineage, boundaries, and state before implementation turns them into software.
+            </p>
+            <div class="method-grid">
+                <article class="method-card">
+                    <h3>Step 1: Model Reality</h3>
+                    <p>Identify the nouns. Then challenge the ontology to its final, uncollapsible point.</p>
+                    <p>Not screens. Not APIs. Not workflows. The objects.</p>
                     <ul>
-                        <li>When authority is ambiguous, systems fail.</li>
-                        <li>Hidden state is where operational truth goes to die.</li>
-                        <li>Two truths are not redundancy. They are a warning.</li>
-                        <li>A workflow is a projection, not a source of truth.</li>
-                        <li>If you cannot reconstruct the change, you do not have a book.</li>
+                        <li>Position Snapshot</li>
+                        <li>Fill Import</li>
+                        <li>Execution</li>
+                        <li>Current Book</li>
+                        <li>Artifact</li>
+                        <li>Report</li>
+                        <li>Model</li>
                     </ul>
-                </div>
-
-                <div id="repos" class="proof-card">
-                    <h3>Public artifacts</h3>
-                    <div class="repo-grid">
-                        <a class="repo-card" href="https://github.com/reckoning-machines/asof123"
-                            target="_blank" rel="noopener">
-                            <div class="repo-title">
-                                <span>asof123</span>
-                                <span class="badge">As-of decision infrastructure</span>
-                            </div>
-                            <div class="repo-meta">
-                                Most Wall Street bugs are secretly as-of bugs.
-                            </div>
-                        </a>
-                        <a class="repo-card" href="https://github.com/reckoning-machines/authority-ledger"
-                            target="_blank" rel="noopener">
-                            <div class="repo-title">
-                                <span>authority-ledger</span>
-                                <span class="badge">Authority history</span>
-                            </div>
-                            <div class="repo-meta">
-                                authority-ledger is a system-of-record for authority assignment and authority transfer
-                                history.
-                            </div>
-                        </a>
-                        <a class="repo-card" href="https://github.com/reckoning-machines/pm-decision-os" target="_blank"
-                            rel="noopener">
-                            <div class="repo-title">
-                                <span>pm-decision-os</span>
-                                <span class="badge">Portfolio decision stack</span>
-                            </div>
-                            <div class="repo-meta">
-                                Portfolio decisions are changes in reality, not buttons in a workflow.
-                            </div>
-                        </a>
-                        <a class="repo-card" href="https://github.com/reckoning-machines/trading-cli"
-                            target="_blank" rel="noopener">
-                            <div class="repo-title">
-                                <span>trading-cli</span>
-                                <span class="badge">Pairs trading risk overlay</span>
-                            </div>
-                            <div class="repo-meta">
-                                Risk must be explicit before action.
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                </article>
+                <article class="method-card">
+                    <h3>Step 2: Establish Authority</h3>
+                    <p>For every object, ask: "Why should this be trusted?"</p>
+                    <p>Find the single governing source. Everything else becomes projection.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 3: Define Ownership</h3>
+                    <p>For every object, ask:</p>
+                    <ul>
+                        <li>Who creates it?</li>
+                        <li>Who modifies it?</li>
+                        <li>Who consumes it?</li>
+                    </ul>
+                    <p>Most production failures turn out to be ownership failures.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 4: Preserve Lineage</h3>
+                    <p>Ask: "How did this come to exist?"</p>
+                    <p>Then ask: "Can the chain be reconstructed?"</p>
+                    <p>If not, debugging becomes archaeology.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 5: Analyze Boundaries</h3>
+                    <p>Authority changes shape when it crosses boundaries.</p>
+                    <ul>
+                        <li>Human</li>
+                        <li>Spreadsheet</li>
+                        <li>Broker</li>
+                        <li>LLM</li>
+                        <li>File</li>
+                        <li>Vendor</li>
+                    </ul>
+                    <p>Most failures occur when authority crosses a boundary.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 6: Derive State</h3>
+                    <p>State summarizes reality.</p>
+                    <p>State does not create reality.</p>
+                    <p>State should be derived from authoritative objects and events.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 7: Derive Workflow</h3>
+                    <p>Only now do you build:</p>
+                    <ul>
+                        <li>screens</li>
+                        <li>APIs</li>
+                        <li>jobs</li>
+                        <li>automation</li>
+                        <li>AI agents</li>
+                    </ul>
+                    <p>Because the reality model already exists.</p>
+                </article>
             </div>
         </section>
 
-        <section id="principles" class="wrap section">
-            <h2>Method</h2>
-            <ul>
-                <li><strong>Reality:</strong> Reality exists before the system is built and after the system fails.</li>
-                <li><strong>Evidence:</strong> A dashboard does not make something true. Evidence makes reality
-                    observable.</li>
-                <li><strong>Authority:</strong> If nobody can say which source won, the book is already broken.</li>
-                <li><strong>Truth:</strong> Evidence and authority decide what can be trusted.</li>
-                <li><strong>Decision:</strong> A decision is not commentary. It changes what happens next.</li>
-                <li><strong>Projection:</strong> When the chain breaks, nobody can explain the decision.</li>
-            </ul>
-        </section>
-
-        <section id="engineering" class="wrap section">
-            <h2>Engineering doctrine</h2>
-            <ul>
-                <li><strong>Ontology first:</strong> Name the objects before building the workflow.</li>
-                <li><strong>Substrate first:</strong> Decide where reality lives before deciding how people move
-                    through it.</li>
-                <li><strong>Authority before action:</strong> Define which source wins before anything acts.</li>
-                <li><strong>Lineage before confidence:</strong> Preserve the path or lose the right to trust the result.</li>
-                <li><strong>Screens last:</strong> Workflow is derived. Screens are projections.</li>
-            </ul>
-        </section>
-
-        <section class="wrap section" aria-labelledby="work-title">
-            <h2 id="work-title">Where reality breaks</h2>
-            <p class="muted" style="max-width: 80ch;">
-                Wrong views become expensive actions.
+        <section id="outcomes" class="wrap section">
+            <h2>What This Buys You</h2>
+            <p class="section-intro">
+                Research velocity. Trusted outcomes.
             </p>
-            <ul class="list">
-                <li><strong>Research:</strong> Assumptions become conclusions after everyone forgets they were
-                    assumptions.</li>
-                <li><strong>Portfolio decisions:</strong> Recommendations become executions. Executions become reality.</li>
-                <li><strong>Spreadsheets:</strong> Workbooks cross boundaries with more authority than anyone admits.</li>
-                <li><strong>Execution graphs:</strong> Replay matters when memory, meetings, and dashboards disagree.</li>
-                <li><strong>AI systems:</strong> An explanation is only a projection. Evidence and lineage decide
-                    whether it deserves attention.</li>
-            </ul>
+            <div class="persistence-ladder">
+                <p>When authority, ownership, lineage, boundaries, and state are explicit:</p>
+                <p>Faster research.</p>
+                <p>Fewer wrong decisions.</p>
+                <p>Safer system evolution.</p>
+                <p>Governable automation.</p>
+                <p>Trusted execution.</p>
+                <p>The result is not more process.</p>
+                <p>The result is less uncertainty.</p>
+            </div>
         </section>
 
-        <section class="wrap section" aria-labelledby="problems-title">
-            <h2 id="problems-title">Proof</h2>
-            <ul class="list">
-                <li><strong>Retail trading calendars are fragile.</strong> We made them deterministic.</li>
-                <li><strong>Deterministic LLM execution is not the default.</strong> We made it governed.</li>
-                <li><strong>Networked agent systems lose authority quickly.</strong> We made authority explicit.</li>
-                <li><strong>Spreadsheet systems are opaque.</strong> We made them replayable.</li>
-                <li><strong>Day-state operating systems drift.</strong> We made state explicit.</li>
-                <li><strong>PM operating systems turn judgment into hidden state.</strong> We made decisions
-                    reconstructable.</li>
-                <li><strong>Knowledge substrates decay without authority.</strong> We made lineage survive.</li>
-                <li><strong>Timeline navigation is usually presentation.</strong> We made it operational.</li>
-                <li><strong>As-of decisions are easy to corrupt.</strong> We made them reconstructable.</li>
-            </ul>
-        </section>
-
-        <section id="approach" class="wrap section">
-            <h2>Who we are</h2>
-            <p class="sub">
-                We are obsessed with reality, not consensus.
-                <br><br>
-                We become uncomfortable when two truths exist, ownership is unclear, authority is ambiguous, lineage
-                disappears, or projections become reality.
+        <section id="repos" class="wrap section">
+            <h2>Public Artifacts</h2>
+            <p class="section-intro">
+                Public repositories are proof of method: temporal correctness, authority history,
+                portfolio decision state, and explicit trading risk.
             </p>
+            <div class="repo-grid">
+                <a class="repo-card" href="https://github.com/reckoning-machines/asof123"
+                    target="_blank" rel="noopener">
+                    <div class="repo-title">
+                        <span>asof123</span>
+                        <span class="badge">As-of infrastructure</span>
+                    </div>
+                    <div class="repo-meta">
+                        Temporal infrastructure for reconstructable decisions through time.
+                    </div>
+                </a>
+                <a class="repo-card" href="https://github.com/reckoning-machines/authority-ledger"
+                    target="_blank" rel="noopener">
+                    <div class="repo-title">
+                        <span>authority-ledger</span>
+                        <span class="badge">Authority history</span>
+                    </div>
+                    <div class="repo-meta">
+                        A system-of-record for authority assignment and authority transfer history.
+                    </div>
+                </a>
+                <a class="repo-card" href="https://github.com/reckoning-machines/pm-decision-os" target="_blank"
+                    rel="noopener">
+                    <div class="repo-title">
+                        <span>pm-decision-os</span>
+                        <span class="badge">Portfolio decisions</span>
+                    </div>
+                    <div class="repo-meta">
+                        A portfolio decision stack where state, evidence, and authority are explicit.
+                    </div>
+                </a>
+                <a class="repo-card" href="https://github.com/reckoning-machines/trading-cli"
+                    target="_blank" rel="noopener">
+                    <div class="repo-title">
+                        <span>trading-cli</span>
+                        <span class="badge">Trading risk</span>
+                    </div>
+                    <div class="repo-meta">
+                        Trading interfaces where risk is explicit before action.
+                    </div>
+                </a>
+            </div>
         </section>
 
         <section class="wrap section footer-doctrine" aria-label="Method closing">
-            <div class="footer-chain">Reality -> Evidence -> Authority -> Truth -> Decision -> Projection</div>
-            <div class="footer-line">This is the method.</div>
-            <div class="footer-line">Our worldview is our product.</div>
+            <div class="footer-chain">Reality -> Authority -> Ownership -> Lineage -> Boundaries -> State -> Events -> Workflow</div>
+            <div class="footer-line">Our method is reality modeling.</div>
         </section>
 
         <section id="contact" class="wrap section">
             <h2>Contact</h2>
             <p class="sub">
-                If this is how you already see systems,
+                If the system is important and the current model cannot explain it,
                 email <a href="mailto:reckoningmachines@gmail.com">reckoningmachines@gmail.com</a>.
             </p>
         </section>
