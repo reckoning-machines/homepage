@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reckoning Machines - We Solve Problems Other Teams Can't</title>
+    <meta name="description"
+        content="Reckoning Machines repairs and builds high-consequence systems by modeling reality, authority, ownership, lineage, boundaries, and state before workflows." />
+    <meta name="theme-color" content="#0e1420" />
+    <meta property="og:title" content="Reckoning Machines - We Solve Problems Other Teams Can't" />
+    <meta property="og:description"
+        content="We repair and build high-consequence systems by modeling reality before software." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://reckoning-machines.github.io/" />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Cpath d='M20,70 L40,30 L55,55 L80,20' stroke='%23a3e635' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='80' cy='20' r='6' fill='%23a3e635'/%3E%3C/svg%3E" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Reckoning Machines",
+      "url": "https://reckoning-machines.github.io/",
+      "description": "High-consequence systems repair and build work grounded in reality modeling",
+      "email": "reckoningmachines@gmail.com"
+    }
+    </script>
+    <link rel="preconnect" href="https://rsms.me" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        /* ===== Step 0 - Design Tokens ===== */
+        :root {
+            /* Step 1: Lifted base background (~8% brighter, still deep navy) */
+            --bg-base: #0e1420;
+            --bg-surface: #121a26;
+            --bg-elevated: #182230;
+
+            /* Step 5: Three-tier text hierarchy */
+            --text-heading: #e8ecf2;
+            --text-primary: #b8c2cc;
+            --text-muted: #6b7d92;
+
+            --phosphor: #4cc764;
+            --phosphor-dim: rgba(76, 199, 100, 0.12);
+            --phosphor-glow: rgba(76, 199, 100, 0.06);
+            --phosphor-border: rgba(76, 199, 100, 0.18);
+
+            --amber: #c9a84c;
+            --amber-dim: rgba(201, 168, 76, 0.10);
+
+            --border-hard: rgba(76, 199, 100, 0.24);
+            --border-soft: rgba(76, 199, 100, 0.10);
+            --border-muted: #1e2836;
+
+            --glow-sm: 0 0 6px rgba(76, 199, 100, 0.05);
+            --glow-md: 0 0 14px rgba(76, 199, 100, 0.08);
+
+            /* Step 2: Panel gradient for emissive floor effect */
+            --panel-gradient: linear-gradient(to bottom, var(--bg-surface) 0%, #18222e 100%);
+
+            --radius: 8px;
+            --radius-sm: 4px;
+
+            --font-body: "Inter var", Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+            --font-mono: "IBM Plex Mono", "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", Menlo, Consolas, monospace;
+
+            --max: 1200px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        /* ===== Step 1 - Background Grid Instrumentation ===== */
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            background-color: var(--bg-base);
+            background-image:
+                linear-gradient(rgba(76, 199, 100, 0.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 199, 100, 0.018) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--text-primary);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--phosphor);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        /* ===== Layout ===== */
+        .wrap {
+            max-width: var(--max);
+            margin-inline: auto;
+            padding: clamp(16px, 2vw, 24px)
+        }
+
+        /* ===== Header ===== */
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(8px);
+            background: color-mix(in oklab, var(--bg-base) 88%, transparent);
+            border-bottom: 1px solid var(--border-muted);
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+            font-weight: 750;
+            font-family: var(--font-mono);
+            letter-spacing: 0.02em;
+            color: var(--text-heading);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            letter-spacing: 0.03em;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        /* ===== Step 6 - Mission Placard (Hero Banner) ===== */
+        .tagline-banner {
+            width: 100%;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid rgba(76, 199, 100, 0.28);
+            padding: clamp(0.8rem, 1.5vw, 1.1rem) 0;
+        }
+
+        .tagline-banner .pill {
+            margin: 0 auto;
+            width: fit-content;
+            padding: clamp(0.7rem, 1.1vw, 1rem) clamp(1.4rem, 2.2vw, 2rem);
+            font-size: clamp(0.82rem, 1.5vw, 0.92rem);
+            font-family: var(--font-mono);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #1e2a38 0%, var(--bg-elevated) 100%);
+            border: 1px solid rgba(76, 199, 100, 0.32);
+            box-shadow:
+                inset 0 0 0 1px var(--border-soft),
+                var(--glow-sm);
+            color: var(--phosphor);
+            border-radius: var(--radius);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            display: block;
+            padding: clamp(3rem, 6vh, 4.5rem) 0 2.25rem;
+        }
+
+        /* Step 3: Headings use --text-heading for authority */
+        .h1 {
+            font-size: clamp(2.25rem, 4.8vw, 3.25rem);
+            line-height: 1.1;
+            font-weight: 780;
+            margin: 0.8rem 0 1.2rem;
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-left: 1.4rem;
+            color: var(--text-heading);
+        }
+
+        .h1::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.15em;
+            bottom: 0.15em;
+            width: 3px;
+            background: var(--phosphor);
+            opacity: 0.5;
+            border-radius: 2px;
+        }
+
+        .sub {
+            font-size: 1.1rem;
+            font-weight: 420;
+            max-width: 65ch;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== Philosophy Stack ===== */
+        .philosophy-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* ===== Step 2 - Instrument Panels (Cards) with Emissive Floor ===== */
+        .value-card,
+        .proof-card {
+            background: var(--panel-gradient);
+            border: 1px solid var(--border-hard);
+            box-shadow:
+                inset 0 0 0 1px var(--border-soft),
+                var(--glow-sm);
+            padding: 24px;
+            border-radius: var(--radius);
+            position: relative;
+            transition: border-color 150ms ease, box-shadow 150ms ease;
+        }
+
+        .value-card:hover,
+        .proof-card:hover {
+            border-color: rgba(76, 199, 100, 0.35);
+            box-shadow:
+                inset 0 0 0 1px rgba(76, 199, 100, 0.14),
+                var(--glow-md);
+        }
+
+        /* ===== Step 3 - System Readout Labels (Card Headings) ===== */
+        .value-card h3,
+        .proof-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.10em;
+            color: var(--phosphor);
+            margin: 0 0 0.6rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .value-card p {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .eyebrow {
+            color: var(--phosphor);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            margin: 0 0 1rem;
+            text-transform: uppercase;
+        }
+
+        .problem-grid,
+        .system-grid,
+        .method-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .problem-grid,
+        .system-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .method-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .problem-card,
+        .system-card,
+        .method-card {
+            background: var(--panel-gradient);
+            border: 1px solid var(--border-hard);
+            border-radius: var(--radius);
+            box-shadow:
+                inset 0 0 0 1px var(--border-soft),
+                var(--glow-sm);
+            padding: 20px;
+        }
+
+        .problem-card h3,
+        .system-card h3,
+        .method-card h3 {
+            color: var(--text-heading);
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
+            letter-spacing: 0.04em;
+            line-height: 1.45;
+            margin: 0 0 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .problem-card p,
+        .system-card p,
+        .method-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .problem-card p + p,
+        .system-card p + p,
+        .method-card p + p {
+            color: var(--text-primary);
+            margin-top: 0.85rem;
+        }
+
+        .method-card ul {
+            color: var(--text-primary);
+            margin: 0.85rem 0 0;
+            padding-left: 1.2rem;
+        }
+
+        .method-card li {
+            margin-bottom: 0.35rem;
+        }
+
+        .section-intro {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin: -0.25rem 0 1.5rem;
+            max-width: 78ch;
+        }
+
+        .section .experience-line {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        .hero-outcome {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        .experience-section {
+            padding-bottom: clamp(8px, 1.4vw, 14px);
+        }
+
+        .experience-section + .section {
+            padding-top: clamp(8px, 1.4vw, 14px);
+        }
+
+        .persistence-ladder {
+            display: grid;
+            gap: 0.55rem;
+            max-width: 78ch;
+        }
+
+        .persistence-ladder p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        .persistence-ladder p:nth-child(even) {
+            color: var(--text-heading);
+            font-family: var(--font-mono);
+        }
+
+        /* ===== Proof Card List ===== */
+        .proof-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .proof-card li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.55;
+        }
+
+        .proof-card li::before {
+            content: ">";
+            position: absolute;
+            left: 0.4rem;
+            color: var(--phosphor);
+            opacity: 0.6;
+            font-weight: bold;
+            font-family: var(--font-mono);
+        }
+
+        /* ===== Repo Grid ===== */
+        .repo-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .repo-card {
+            padding: 14px 16px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-hard);
+            background: linear-gradient(to bottom, var(--bg-elevated) 0%, #1e2a38 100%);
+            box-shadow: inset 0 0 0 1px var(--border-soft);
+            color: var(--text-primary);
+            transition: border-color 150ms ease, box-shadow 150ms ease;
+        }
+
+        .repo-card:hover {
+            border-color: rgba(76, 199, 100, 0.35);
+            box-shadow:
+                inset 0 0 0 1px rgba(76, 199, 100, 0.14),
+                var(--glow-sm);
+            text-decoration: none;
+        }
+
+        .repo-title {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: var(--text-heading);
+        }
+
+        .repo-meta {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+
+        /* ===== Step 4 - Hardware Tag Chips ===== */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-hard);
+            box-shadow: inset 0 0 0 1px var(--border-soft);
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* ===== Step 3 - Section Headings (System Readouts) ===== */
+        .section h2 {
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.10em;
+            color: var(--phosphor);
+            margin: 0 0 1.5rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        /* ===== Step 7 - Sections & Spacing ===== */
+        .section {
+            padding: clamp(32px, 5vw, 48px) 0;
+        }
+
+        .hero + .section {
+            padding-top: clamp(12px, 2vw, 20px);
+        }
+
+        .section ul {
+            padding-left: 1.2rem;
+        }
+
+        .section li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .section li strong {
+            color: var(--text-heading);
+        }
+
+        .section p {
+            color: var(--text-muted);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            border-top: 1px solid var(--border-muted);
+            padding: clamp(40px, 6vw, 72px) 0;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            font-family: var(--font-mono);
+            letter-spacing: 0.02em;
+        }
+
+        .footer-doctrine {
+            display: grid;
+            gap: 1rem;
+            justify-items: center;
+            text-align: center;
+        }
+
+        .footer-chain {
+            color: var(--text-heading);
+            font-size: clamp(0.95rem, 2vw, 1.25rem);
+            letter-spacing: 0.04em;
+            line-height: 1.8;
+        }
+
+        .footer-line {
+            color: var(--phosphor);
+        }
+
+        /* ===== Step 5 - Focus States ===== */
+        a:focus-visible {
+            outline: 2px solid var(--phosphor);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .repo-card:focus-visible {
+            outline: 2px solid var(--phosphor);
+            outline-offset: 2px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 900px) {
+            .problem-grid,
+            .system-grid,
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-stack {
+                margin-top: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav">
+            <div class="brand">Reckoning Machines</div>
+            <nav>
+                <a href="#problems">Problems</a> /
+                <a href="#systems">Reckoning Machines</a> /
+                <a href="#persistence">Why</a> /
+                <a href="#method">Method</a> /
+                <a href="#outcomes">Outcomes</a> /
+                <a href="#repos">Artifacts</a> /
+                <a href="#contact">Contact</a> /
+                <a href="https://github.com/reckoning-machines" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="tagline-banner">
+        <div class="pill">
+            Reckoning Machines: A research operating system company.
+        </div>
+    </div>
+
+    <main id="home">
+        <section class="wrap hero">
+            <div>
+                <p class="eyebrow">Reckoning Machines</p>
+                <h1 class="h1">
+                    We Solve Problems Other Teams Can't
+                </h1>
+                <p class="sub">
+                    Not because we write better code. Because we model reality before we model software.
+                </p>
+                <p class="sub">
+                    Most failures are not implementation failures. They are failures of authority,
+                    ownership, lineage, boundaries, and state.
+                </p>
+                <p class="sub">
+                    Our goal is simple:
+                </p>
+                <p class="sub">
+                    <strong class="hero-outcome">Research velocity. Trusted outcomes.</strong>
+                </p>
+            </div>
+        </section>
+
+        <section id="problems" class="wrap section">
+            <h2>Problems We Have Solved</h2>
+            <div class="problem-grid">
+                <article class="problem-card">
+                    <h3>Retail trading calendars</h3>
+                    <p>
+                        Retail trading calendars failed on weekends, holidays, half-days, and market schedules.
+                        The software knew dates. It did not understand markets.
+                    </p>
+                    <p>
+                        We built deterministic temporal infrastructure capable of replay, holiday governance,
+                        schedule transitions, and operational correctness through time.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Portfolio manager operating systems</h3>
+                    <p>
+                        A portfolio manager operating system had collapsed authority. Multiple workflows
+                        claimed control. State drifted. Users could not tell what action was legal.
+                    </p>
+                    <p>
+                        We rebuilt the system around explicit authority, evidence, and state transitions.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Spreadsheet systems</h3>
+                    <p>
+                        Spreadsheet systems produced answers no one could explain. The outputs existed.
+                        The lineage did not.
+                    </p>
+                    <p>
+                        We rebuilt the substrate so results became reconstructable, replayable, and explainable.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Multi-agent boundaries</h3>
+                    <p>
+                        Multi-agent systems lost authority at the boundary. Agents could act.
+                        Nobody could explain who was allowed to act.
+                    </p>
+                    <p>
+                        We made authority explicit and preserved it across system boundaries.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Temporal decision systems</h3>
+                    <p>
+                        Temporal decision systems needed "as of" correctness more than algorithm correctness.
+                        The answer could be mathematically correct and still operationally wrong.
+                    </p>
+                    <p>
+                        We built temporal infrastructure that made decisions reconstructable in time.
+                    </p>
+                </article>
+                <article class="problem-card">
+                    <h3>Execution systems</h3>
+                    <p>
+                        Execution systems became unreconstructable. Actions occurred. Artifacts existed.
+                        Nobody could explain why.
+                    </p>
+                    <p>
+                        We rebuilt lineage so decisions, executions, and outcomes could be traced back to
+                        governing evidence.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="systems" class="wrap section">
+            <h2>Reckoning Machines</h2>
+            <div class="system-grid">
+                <article class="system-card">
+                    <h3>Excel Router</h3>
+                    <p>
+                        The organization ran on spreadsheets that moved work, answers, approvals,
+                        and risk through hidden paths.
+                    </p>
+                    <p>
+                        We built an execution and routing layer around Excel as a distributed
+                        operational substrate. The point was not to replace Excel. The point was to
+                        make it governable.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>LLM DAG Runner</h3>
+                    <p>
+                        Most AI workflows are impossible to replay.
+                    </p>
+                    <p>
+                        We built a deterministic execution engine where prompts, tools, agents, and
+                        outputs become part of a reconstructable execution graph.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Authority Ledger</h3>
+                    <p>
+                        Organizations often know who made a decision. They rarely know who had
+                        authority to make it.
+                    </p>
+                    <p>
+                        We built a system-of-record for authority assignment and authority transfer.
+                        Not permissions. Not roles. Operational authority.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Retail Trading Calendar Engine</h3>
+                    <p>
+                        The calendar looked simple until money moved across a weekend, holiday,
+                        half-day, or schedule transition.
+                    </p>
+                    <p>
+                        We built calendar infrastructure for markets that do not behave like weekdays.
+                        Historical replay became an operating condition, not an afterthought.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>As-Of Decision Infrastructure</h3>
+                    <p>
+                        The answer was correct. For the wrong point in time.
+                    </p>
+                    <p>
+                        We built temporal infrastructure for systems where as-of correctness matters
+                        more than algorithm correctness.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Vendor Ingestion Machines</h3>
+                    <p>
+                        Vendors arrive late, arrive out of order, change formats, and disagree with
+                        each other.
+                    </p>
+                    <p>
+                        We built ingestion machines that preserve lineage and trust through irregular
+                        operational reality. Normalization was the easy part.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Financial Research Operating System</h3>
+                    <p>
+                        Research became action, but the chain from model to evidence to decision
+                        disappeared.
+                    </p>
+                    <p>
+                        We built infrastructure connecting models, reports, decisions, and execution
+                        into a single reconstructable chain.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Portfolio Manager Operating System</h3>
+                    <p>
+                        The PM should not need to remember the workflow.
+                    </p>
+                    <p>
+                        We built state-driven portfolio infrastructure where legal actions are derived
+                        from operational reality. The system should know what action is legal.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Spreadsheet-Native Decision Systems</h3>
+                    <p>
+                        The spreadsheet had to stay. The hidden decision process did not.
+                    </p>
+                    <p>
+                        We built spreadsheet-native systems that preserve lineage, authority,
+                        replayability, and explainability while keeping the work usable.
+                    </p>
+                </article>
+                <article class="system-card">
+                    <h3>Agent Governance Machines</h3>
+                    <p>
+                        Agents can act faster than the organization can explain who authorized the action.
+                    </p>
+                    <p>
+                        We built governance machines that preserve authority, lineage, evidence, and
+                        accountability across AI and human boundaries.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="wrap section experience-section" aria-label="Experience">
+            <p class="section-intro experience-line">
+                Reckoning Machines is informed by two decades of portfolio management, quantitative research
+                infrastructure, trading systems engineering, and operational software development.
+            </p>
+        </section>
+
+        <section id="persistence" class="wrap section">
+            <h2>Why These Problems Persist</h2>
+            <div class="persistence-ladder">
+                <p>Most teams repair workflows.</p>
+                <p>We repair the model underneath the workflow.</p>
+                <p>Most teams change screens.</p>
+                <p>We identify authority.</p>
+                <p>Most teams add state.</p>
+                <p>We identify reality.</p>
+                <p>Most teams document ownership.</p>
+                <p>We make ownership operational.</p>
+                <p>Most teams debug behavior.</p>
+                <p>We reconstruct lineage.</p>
+                <p>Most teams automate decisions.</p>
+                <p>We establish authority first.</p>
+                <p>The workflow is rarely the problem.</p>
+                <p>The workflow is where the problem becomes visible.</p>
+            </div>
+        </section>
+
+        <section id="method" class="wrap section">
+            <h2>The Method</h2>
+            <p class="section-intro">
+                Reality modeling is an engineering process. It finds the objects, authority,
+                ownership, lineage, boundaries, and state before implementation turns them into software.
+            </p>
+            <div class="method-grid">
+                <article class="method-card">
+                    <h3>Step 1: Model Reality</h3>
+                    <p>Build the ontology before the application.</p>
+                    <p>Not screens. Not APIs. Not workflows. The objects.</p>
+                    <ul>
+                        <li>Position Snapshot</li>
+                        <li>Fill Import</li>
+                        <li>Execution</li>
+                        <li>Current Book</li>
+                        <li>Artifact</li>
+                        <li>Report</li>
+                        <li>Model</li>
+                    </ul>
+                </article>
+                <article class="method-card">
+                    <h3>Step 2: Establish Authority</h3>
+                    <p>For every object, ask: "Why should this be trusted?"</p>
+                    <p>Find the single governing source. Everything else becomes projection.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 3: Define Ownership</h3>
+                    <p>For every object, ask:</p>
+                    <ul>
+                        <li>Who creates it?</li>
+                        <li>Who modifies it?</li>
+                        <li>Who consumes it?</li>
+                    </ul>
+                    <p>Most production failures turn out to be ownership failures.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 4: Preserve Lineage</h3>
+                    <p>Ask: "How did this come to exist?"</p>
+                    <p>Then ask: "Can the chain be reconstructed?"</p>
+                    <p>If not, debugging becomes archaeology.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 5: Analyze Boundaries</h3>
+                    <p>Authority changes shape when it crosses boundaries.</p>
+                    <ul>
+                        <li>Human</li>
+                        <li>Spreadsheet</li>
+                        <li>Broker</li>
+                        <li>LLM</li>
+                        <li>File</li>
+                        <li>Vendor</li>
+                    </ul>
+                    <p>Most failures occur when authority crosses a boundary.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 6: Derive State</h3>
+                    <p>State summarizes reality.</p>
+                    <p>State does not create reality.</p>
+                    <p>State should be derived from authoritative objects and events.</p>
+                </article>
+                <article class="method-card">
+                    <h3>Step 7: Derive Workflow</h3>
+                    <p>Only now do you build:</p>
+                    <ul>
+                        <li>screens</li>
+                        <li>APIs</li>
+                        <li>jobs</li>
+                        <li>automation</li>
+                        <li>AI agents</li>
+                    </ul>
+                    <p>Because the reality model already exists.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="outcomes" class="wrap section">
+            <h2>What This Buys You</h2>
+            <p class="section-intro">
+                Research velocity. Trusted outcomes.
+            </p>
+            <div class="persistence-ladder">
+                <p>When authority, ownership, lineage, boundaries, and state are explicit:</p>
+                <p>Faster research.</p>
+                <p>Fewer wrong decisions.</p>
+                <p>Safer system evolution.</p>
+                <p>Governable automation.</p>
+                <p>Trusted execution.</p>
+                <p>The result is not more process.</p>
+                <p>The result: less chaos.</p>
+            </div>
+        </section>
+
+        <section id="repos" class="wrap section">
+            <h2>Public Artifacts</h2>
+            <p class="section-intro">
+                Public repositories are proof of method: temporal correctness, authority history,
+                portfolio decision state, and explicit trading risk.
+            </p>
+            <div class="repo-grid">
+                <a class="repo-card" href="https://github.com/reckoning-machines/asof123"
+                    target="_blank" rel="noopener">
+                    <div class="repo-title">
+                        <span>asof123</span>
+                        <span class="badge">As-of infrastructure</span>
+                    </div>
+                    <div class="repo-meta">
+                        Temporal infrastructure for reconstructable decisions through time.
+                    </div>
+                </a>
+                <a class="repo-card" href="https://github.com/reckoning-machines/authority-ledger"
+                    target="_blank" rel="noopener">
+                    <div class="repo-title">
+                        <span>authority-ledger</span>
+                        <span class="badge">Authority history</span>
+                    </div>
+                    <div class="repo-meta">
+                        A system-of-record for authority assignment and authority transfer history.
+                    </div>
+                </a>
+                <a class="repo-card" href="https://github.com/reckoning-machines/pm-decision-os" target="_blank"
+                    rel="noopener">
+                    <div class="repo-title">
+                        <span>pm-decision-os</span>
+                        <span class="badge">Portfolio decisions</span>
+                    </div>
+                    <div class="repo-meta">
+                        A portfolio decision stack where state, evidence, and authority are explicit.
+                    </div>
+                </a>
+                <a class="repo-card" href="https://github.com/reckoning-machines/trading-cli"
+                    target="_blank" rel="noopener">
+                    <div class="repo-title">
+                        <span>trading-cli</span>
+                        <span class="badge">Trading risk</span>
+                    </div>
+                    <div class="repo-meta">
+                        Trading interfaces where risk is explicit before action.
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="wrap section footer-doctrine" aria-label="Method closing">
+            <div class="footer-chain">Reality -> Authority -> Ownership -> Lineage -> Boundaries -> State -> Events -> Workflow</div>
+            <div class="footer-line">Our method is reality modeling.</div>
+        </section>
+
+        <section id="contact" class="wrap section">
+            <h2>Contact</h2>
+            <p class="sub">
+                If the system is important and the current model cannot explain it,
+                email <a href="mailto:reckoningmachines@gmail.com">reckoningmachines@gmail.com</a>.
+            </p>
+        </section>
+    </main>
+
+</body>
+
+</html>
