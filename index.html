@@ -233,6 +233,8 @@
         }
 
         .hero-actions {
+            align-items: center;
+            gap: 28px;
             justify-content: flex-start;
             margin-top: 14px;
         }
@@ -248,6 +250,20 @@
 
         .hero-launch:hover {
             color: var(--accent-dim);
+            text-decoration: none;
+        }
+
+        .hero-contact {
+            color: var(--fg-dim);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+        }
+
+        .hero-contact:hover {
+            color: var(--accent-active);
             text-decoration: none;
         }
 
@@ -1878,6 +1894,7 @@
                 <a href="#research-rail">Research Rail</a>
                 <a href="#report">Report</a>
                 <a href="#timeline">Timeline</a>
+                <a href="mailto:jedgore@reckoningmachines.com?subject=IRIS%20inquiry">Contact</a>
                 <a href="https://app.reckoningmachines.com/">Launch IRIS</a>
             </nav>
         </div>
@@ -1898,6 +1915,8 @@
                             </p>
                             <div class="hero-actions">
                                 <a class="hero-launch" href="https://app.reckoningmachines.com/">Launch &rarr;</a>
+                                <a class="hero-contact"
+                                    href="mailto:jedgore@reckoningmachines.com?subject=IRIS%20inquiry">Contact us &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -2106,7 +2125,7 @@
                 <div class="final-cta">
                     <a class="btn" href="https://app.reckoningmachines.com/">Launch IRIS &rarr;</a>
                     <a class="hero-demo-link"
-                        href="https://app.reckoningmachines.com/">Request Demo</a>
+                        href="mailto:jedgore@reckoningmachines.com?subject=IRIS%20demo%20request">Request Demo</a>
                 </div>
                 <div class="connected-lines" aria-label="Everything stays connected">
                     <p>One repository.</p>
@@ -2123,6 +2142,7 @@
         <div class="container footer-inner">
             <div>IRIS by Reckoning Machines</div>
             <div class="footer-right">Search -> Analyze -> Methods -> Research Rail -> Report -> Timeline</div>
+            <div><a href="mailto:jedgore@reckoningmachines.com?subject=IRIS%20inquiry">jedgore@reckoningmachines.com</a></div>
             <div class="footer-note">Hosted runtime demos show selected flows, not the full product environment.</div>
         </div>
     </footer>
