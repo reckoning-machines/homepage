@@ -8,13 +8,13 @@
         content="IRIS by Reckoning Machines. Work the way you think. The investment research operating system." />
     <meta property="og:title" content="Reckoning Machines | IRIS" />
     <meta property="og:description"
-        content="Search the model. Analyze the numbers. Ask the Research Shell what changed. Turn the work into a report. Keep the timeline." />
+        content="Search the model. Analyze the numbers. Ask the Research Rail what changed. Turn the work into a report. Keep the timeline." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://reckoningmachines.com" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Reckoning Machines | IRIS" />
     <meta name="twitter:description"
-        content="Search the model. Analyze the numbers. Ask the Research Shell what changed. Turn the work into a report. Keep the timeline." />
+        content="Search the model. Analyze the numbers. Ask the Research Rail what changed. Turn the work into a report. Keep the timeline." />
     <title>Reckoning Machines | IRIS</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,6 +106,32 @@
             display: block;
             height: auto;
             width: 100%;
+        }
+
+        .product-declaration {
+            border-bottom: 1px solid var(--border);
+            padding: 88px 0 94px;
+        }
+
+        .product-declaration-inner {
+            max-width: 900px;
+        }
+
+        .product-declaration h2 {
+            color: var(--fg-bright);
+            font-size: clamp(34px, 4vw, 52px);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+            margin: 0;
+        }
+
+        .product-declaration p {
+            color: var(--fg-dim);
+            font-size: 19px;
+            line-height: 1.55;
+            margin: 24px 0 0;
+            max-width: 760px;
         }
 
         .hero-copy.hero-byline {
@@ -1849,7 +1875,7 @@
                 <a href="#start">Start</a>
                 <a href="#analyze">Analyze</a>
                 <a href="#methods">Methods</a>
-                <a href="#research-shell">Research Shell</a>
+                <a href="#research-rail">Research Rail</a>
                 <a href="#report">Report</a>
                 <a href="#timeline">Timeline</a>
                 <a href="https://app.reckoningmachines.com/">Launch IRIS</a>
@@ -1882,6 +1908,19 @@
         <section class="hero-screenshot" aria-label="IRIS investment research view">
             <img src="./iros-investment-research.png"
                 alt="IRIS repository index with repository search and investment research workspaces" />
+        </section>
+
+        <section class="product-declaration" aria-labelledby="product-declaration-title">
+            <div class="container">
+                <div class="product-declaration-inner">
+                    <h2 id="product-declaration-title">
+                        IRIS is where institutional investment research lives.
+                    </h2>
+                    <p>
+                        Models, Methods, evidence, reports, decisions, and memory remain connected in one repository.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section class="flywheel-section" aria-label="Research Velocity Flywheel">
@@ -1939,7 +1978,7 @@
                     </div>
                     <div class="day-visual">
                         <div class="day-shot">
-                            <img src="./screen.png" alt="IRIS model screen with spreadsheet and Research Shell panel" />
+                            <img src="./screen.png" alt="IRIS model screen with spreadsheet and Research Rail panel" />
                             <div class="day-caption">
                                 Analyze is where model work, assumptions, outputs, and evidence stay in one surface.
                             </div>
@@ -1969,13 +2008,13 @@
             </div>
         </section>
 
-        <section id="research-shell" class="day-section">
+        <section id="research-rail" class="day-section">
             <div class="container">
                 <div class="day-layout reverse">
                     <div class="day-copy-block">
-                        <div class="day-kicker">Research Shell</div>
+                        <div class="day-kicker">Research Rail</div>
                         <h2 class="day-title">Ask the model.</h2>
-                        <p class="day-lede">Research Shell is the analyst interface to the repository.</p>
+                        <p class="day-lede">Research Rail is the analyst interface to the repository.</p>
                         <ul class="day-command-list">
                             <li>Why?</li>
                             <li>What changed?</li>
@@ -1990,7 +2029,7 @@
                     </div>
                     <div class="day-visual">
                         <div class="day-shot">
-                            <img src="./shell.png" alt="IRIS Research Shell model value lookup with governed action evidence" />
+                            <img src="./shell.png" alt="IRIS Research Rail model value lookup with governed action evidence" />
                             <div class="day-caption">
                                 Analyst language covers asking, remembering, comparing, testing, and writing from the model.
                             </div>
@@ -2072,7 +2111,7 @@
                 <div class="connected-lines" aria-label="Everything stays connected">
                     <p>One repository.</p>
                     <p>One timeline.</p>
-                    <p>One Research Shell.</p>
+                    <p>One Research Rail.</p>
                     <p>One model.</p>
                     <p>Everything stays connected.</p>
                 </div>
@@ -2083,7 +2122,7 @@
     <footer class="site-footer">
         <div class="container footer-inner">
             <div>IRIS by Reckoning Machines</div>
-            <div class="footer-right">Search -> Analyze -> Methods -> Research Shell -> Report -> Timeline</div>
+            <div class="footer-right">Search -> Analyze -> Methods -> Research Rail -> Report -> Timeline</div>
             <div class="footer-note">Hosted runtime demos show selected flows, not the full product environment.</div>
         </div>
     </footer>
