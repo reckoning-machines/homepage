@@ -134,6 +134,71 @@
             max-width: 760px;
         }
 
+        .problems-section {
+            border-bottom: 1px solid var(--border);
+            padding: clamp(84px, 10vw, 128px) 0;
+        }
+
+        .problems-heading {
+            margin-bottom: 54px;
+        }
+
+        .problems-kicker,
+        .problem-group-label {
+            color: var(--accent-active);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .problems-title {
+            color: var(--fg-bright);
+            font-size: clamp(38px, 5vw, 62px);
+            font-weight: 650;
+            letter-spacing: -0.03em;
+            line-height: 1.02;
+            margin: 12px 0 0;
+        }
+
+        .problems-grid {
+            display: grid;
+            gap: 34px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .problem-group {
+            border-top: 1px solid var(--rule-strong);
+            min-width: 0;
+            padding-top: 16px;
+        }
+
+        .problem-list {
+            display: grid;
+            gap: 0;
+            margin-top: 16px;
+        }
+
+        .problem-quote {
+            border-top: 1px solid var(--border);
+            margin: 0;
+            padding: 17px 0 18px;
+        }
+
+        .problem-quote:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .problem-quote p {
+            color: var(--fg-bright);
+            font-size: 15px;
+            font-weight: 550;
+            line-height: 1.5;
+            margin: 0;
+        }
+
         .hero-copy.hero-byline {
             color: var(--accent-active);
             font-weight: 600;
@@ -1624,6 +1689,18 @@
                 width: 100%;
             }
 
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problems-heading {
+                margin-bottom: 42px;
+            }
+
+            .problems-grid {
+                gap: 38px;
+            }
+
             .hero-text {
                 margin-left: 0;
                 margin-right: 0;
@@ -1938,6 +2015,54 @@
                     <p>
                         Models, Methods, evidence, reports, decisions, and memory remain connected in one repository.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="problems" class="problems-section" aria-labelledby="problems-title">
+            <div class="container">
+                <div class="problems-heading">
+                    <div>
+                        <p class="problems-kicker">Analyst pain points</p>
+                        <h2 id="problems-title" class="problems-title">Problems IRIS Solves</h2>
+                    </div>
+                </div>
+
+                <div class="problems-grid">
+                    <div class="problem-group">
+                        <h3 class="problem-group-label">Context &amp; memory</h3>
+                        <div class="problem-list">
+                            <blockquote class="problem-quote"><p>&ldquo;What was I thinking going into earnings?&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;I have to paste the numbers into Chat and/or explain my model every time I use AI.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;Where did this number come from?&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;Why and when did we change this assumption?&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;What changed since last quarter?&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;I need the model we used for the Board meeting.&rdquo;</p></blockquote>
+                        </div>
+                    </div>
+
+                    <div class="problem-group">
+                        <h3 class="problem-group-label">Model control</h3>
+                        <div class="problem-list">
+                            <blockquote class="problem-quote"><p>&ldquo;I need to change this assumption but I&rsquo;m in the meeting.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;I have to save my models as Month_Day_Year.xlsx to keep track of them.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;I just saved over the wrong model.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;Who owns this model?&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;I have no idea who changed this formula.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;I want to schedule my model to update every morning before I get in.&rdquo;</p></blockquote>
+                        </div>
+                    </div>
+
+                    <div class="problem-group">
+                        <h3 class="problem-group-label">Research at scale</h3>
+                        <div class="problem-list">
+                            <blockquote class="problem-quote"><p>&ldquo;I now have three write-ups for the same company.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;I want to run every bank model every night and update my dashboard.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;Our research feels like it doesn&rsquo;t compound.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;My forecasting method is not really statistics, it&rsquo;s more like heuristics, and it&rsquo;s not written down anywhere.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;I&rsquo;d love an RMS but don&rsquo;t need the extra workflow steps.&rdquo;</p></blockquote>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
