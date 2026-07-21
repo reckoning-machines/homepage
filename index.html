@@ -163,6 +163,48 @@
             margin: 0;
         }
 
+        .preserves-block {
+            border-top: 1px solid var(--rule-strong);
+            margin-top: 58px;
+            padding-top: 26px;
+        }
+
+        .preserves-title {
+            color: var(--fg-bright);
+            font-size: 24px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            margin: 0 0 22px;
+        }
+
+        .preserves-list {
+            display: grid;
+            gap: 0 34px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .preserves-list p {
+            border-top: 1px solid var(--border);
+            color: var(--fg-dim);
+            font-size: 17px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 16px 0;
+        }
+
+        .preserves-list strong {
+            color: var(--fg-bright);
+            font-weight: 650;
+        }
+
+        .preserves-payoff {
+            color: var(--accent-active);
+            font-size: 18px;
+            font-weight: 650;
+            line-height: 1.5;
+            margin: 22px 0 0;
+        }
+
         .hero-copy.hero-byline {
             color: var(--accent-active);
             font-weight: 600;
@@ -1720,6 +1762,10 @@
                 gap: 38px;
             }
 
+            .preserves-list {
+                grid-template-columns: 1fr;
+            }
+
             .hero-text {
                 margin-left: 0;
                 margin-right: 0;
@@ -2084,11 +2130,22 @@
                         <h3 class="problem-group-label">Research at scale</h3>
                         <div class="problem-list">
                             <blockquote class="problem-quote"><p>&ldquo;I changed the model. Now I have to rewrite the note.&rdquo;</p></blockquote>
-                            <blockquote class="problem-quote"><p>&ldquo;I want to run every bank model every night and update my dashboard.&rdquo;</p></blockquote>
+                            <blockquote class="problem-quote"><p>&ldquo;Our investment process shouldn&rsquo;t live in people&rsquo;s heads.&rdquo;</p></blockquote>
                             <blockquote class="problem-quote"><p>&ldquo;Our research feels like it doesn&rsquo;t compound.&rdquo;</p></blockquote>
                             <blockquote class="problem-quote"><p>&ldquo;I wish I could save this prompt with the model.&rdquo;</p></blockquote>
                         </div>
                     </div>
+                </div>
+
+                <div class="preserves-block" aria-labelledby="preserves-title">
+                    <h3 id="preserves-title" class="preserves-title">IRIS preserves:</h3>
+                    <div class="preserves-list">
+                        <p><strong>Methods</strong> &mdash; how your firm reasons.</p>
+                        <p><strong>Playbooks</strong> &mdash; how your firm works.</p>
+                        <p><strong>Patterns</strong> &mdash; what your firm learns.</p>
+                        <p><strong>Observations</strong> &mdash; what actually happened.</p>
+                    </div>
+                    <p class="preserves-payoff">IRIS rewards usage with retained knowledge and better decisions. Every Run leaves your organization a little smarter.</p>
                 </div>
             </div>
         </section>
