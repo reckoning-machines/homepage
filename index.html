@@ -1473,6 +1473,20 @@
             width: 100%;
         }
 
+        .excel-addin-shot {
+            max-width: 520px;
+            width: 100%;
+        }
+
+        .excel-addin-crop {
+            aspect-ratio: 840 / 650;
+            overflow: hidden;
+        }
+
+        .excel-addin-crop img {
+            width: 100%;
+        }
+
         .day-visual-portrait {
             display: flex;
             justify-content: center;
@@ -2171,6 +2185,29 @@
                                 The spreadsheet is where model work, assumptions, outputs, and evidence stay together.
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="excel-add-in" class="day-section" aria-labelledby="excel-add-in-title">
+            <div class="container">
+                <div class="day-layout reverse">
+                    <div class="day-copy-block">
+                        <div class="day-kicker">Excel Add-in</div>
+                        <h2 id="excel-add-in-title" class="day-title">IRIS has an Excel Add-in.</h2>
+                        <p class="day-lede">Sync your existing model with IRIS. Edit Methods in place, without leaving the workbook your team already uses.</p>
+                        <p class="day-proof">Keep the model. Add the connected reasoning.</p>
+                    </div>
+                    <div class="day-visual day-visual-portrait">
+                        <figure class="day-shot excel-addin-shot">
+                            <div class="excel-addin-crop">
+                                <img src="./iris-excel-add-in.png" alt="IRIS Excel Add-in showing controls for importing an existing model" />
+                            </div>
+                            <figcaption class="day-caption">
+                                Import an existing workbook into IRIS and keep its Methods connected from Excel.
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
