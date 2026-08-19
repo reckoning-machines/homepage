@@ -36,6 +36,26 @@
             opacity: 1;
         }
 
+        .nav a.github-link {
+            align-items: center;
+            background: var(--accent-active);
+            border: 1px solid var(--accent-active);
+            border-radius: 2px;
+            color: var(--paper);
+            display: inline-flex;
+            font-weight: 700;
+            gap: 6px;
+            margin: -7px 0;
+            opacity: 1;
+            padding: 6px 10px;
+        }
+
+        .nav a.github-link:hover {
+            background: var(--accent-dim);
+            border-color: var(--accent-dim);
+            color: #fff;
+        }
+
         .nav {
             gap: 24px;
             font-size: 10px;
@@ -1787,6 +1807,10 @@
                 width: 100%;
             }
 
+            .nav a.github-link {
+                margin: 0;
+            }
+
             .problems-grid {
                 grid-template-columns: 1fr;
             }
@@ -2105,6 +2129,7 @@
                 <span class="runtime-identity">IRIS - a governed research operating system.</span>
             </div>
             <nav class="nav" aria-label="Primary">
+                <a class="github-link" href="https://github.com/reckoning-machines">GitHub <span aria-hidden="true">↗</span></a>
                 <a href="#search">Search</a>
                 <a href="#spreadsheet">Spreadsheet</a>
                 <a href="#excel-add-in">Excel Add-in</a>
