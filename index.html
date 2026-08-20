@@ -36,7 +36,8 @@
             opacity: 1;
         }
 
-        .nav a.github-link {
+        .nav a.github-link,
+        .nav a.substack-link {
             align-items: center;
             background: var(--accent-active);
             border: 1px solid var(--accent-active);
@@ -50,7 +51,8 @@
             padding: 6px 10px;
         }
 
-        .nav a.github-link:hover {
+        .nav a.github-link:hover,
+        .nav a.substack-link:hover {
             background: var(--accent-dim);
             border-color: var(--accent-dim);
             color: #fff;
@@ -1807,7 +1809,8 @@
                 width: 100%;
             }
 
-            .nav a.github-link {
+            .nav a.github-link,
+            .nav a.substack-link {
                 margin: 0;
             }
 
@@ -2135,7 +2138,7 @@
                 <a href="#excel-add-in">Excel Add-in</a>
                 <a href="#claude-mcp">Claude + MCP</a>
                 <a href="#record">Record</a>
-                <a href="https://reckoningmachines.substack.com/p/three-things-a-spreadsheet-model">Article</a>
+                <a class="substack-link" href="https://reckoningmachines.substack.com/">Substack <span aria-hidden="true">↗</span></a>
                 <a href="https://app.reckoningmachines.com/">Launch IRIS</a>
             </nav>
         </div>
