@@ -5,16 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="IRIS is a governed research operating system for investment firms." />
+        content="IRIS turns financial models into bounded, relevant analytical context for better investment judgment." />
     <meta property="og:title" content="Reckoning Machines | IRIS" />
     <meta property="og:description"
-        content="Models, evidence, reasoning, and decisions kept connected." />
+        content="Higher analytical resolution per inference dollar." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://reckoningmachines.com" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Reckoning Machines | IRIS" />
     <meta name="twitter:description"
-        content="Models, evidence, reasoning, and decisions kept connected." />
+        content="Higher analytical resolution per inference dollar." />
     <title>Reckoning Machines | IRIS</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -259,11 +259,19 @@
 
         .hero-principle {
             color: var(--accent-active);
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 1.45;
-            margin: 24px 0 0;
-            max-width: 760px;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+            margin: 28px 0 0;
+            max-width: 820px;
+            text-transform: uppercase;
+        }
+
+        .hero-positioning-copy strong {
+            color: var(--fg-bright);
+            font-weight: 650;
         }
 
         .hero-positioning-copy span {
@@ -524,6 +532,296 @@
 
         .hero + .section {
             padding-top: 96px;
+        }
+
+        .argument-section {
+            border-bottom: 1px solid var(--border);
+            padding: clamp(92px, 11vw, 136px) 0;
+        }
+
+        .argument-layout {
+            align-items: start;
+            display: grid;
+            gap: clamp(46px, 7vw, 84px);
+            grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+        }
+
+        .argument-title {
+            color: var(--fg-bright);
+            font-size: clamp(40px, 4.8vw, 62px);
+            font-weight: 670;
+            letter-spacing: -0.035em;
+            line-height: 0.98;
+            margin: 0;
+        }
+
+        .argument-lede {
+            color: var(--fg-dim);
+            font-size: 19px;
+            line-height: 1.52;
+            margin: 24px 0 0;
+        }
+
+        .argument-chain {
+            border-top: 1px solid var(--rule-strong);
+        }
+
+        .argument-step {
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            gap: 16px;
+            grid-template-columns: 42px minmax(0, 1fr);
+            padding: 20px 0;
+        }
+
+        .argument-num {
+            color: var(--accent-active);
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding-top: 4px;
+        }
+
+        .argument-copy h3 {
+            color: var(--fg-bright);
+            font-size: 19px;
+            font-weight: 660;
+            letter-spacing: -0.015em;
+            line-height: 1.25;
+            margin: 0 0 7px;
+        }
+
+        .argument-copy p {
+            color: var(--fg-dim);
+            font-size: 15px;
+            line-height: 1.58;
+            margin: 0;
+        }
+
+        .argument-step.is-conclusion {
+            background: rgba(246, 244, 238, 0.72);
+            border: 1px solid var(--rule-strong);
+            margin-top: 14px;
+            padding: 22px;
+        }
+
+        .argument-step.is-conclusion .argument-copy p {
+            color: var(--fg);
+        }
+
+        .compression-section {
+            border-bottom: 1px solid var(--border);
+            padding: clamp(92px, 11vw, 140px) 0;
+        }
+
+        .compression-intro {
+            max-width: 920px;
+        }
+
+        .compression-title {
+            color: var(--fg-bright);
+            font-size: clamp(40px, 5.4vw, 70px);
+            font-weight: 670;
+            letter-spacing: -0.035em;
+            line-height: 0.98;
+            margin: 0;
+            max-width: 900px;
+        }
+
+        .compression-lede {
+            color: var(--fg-dim);
+            font-size: clamp(19px, 2vw, 23px);
+            line-height: 1.5;
+            margin: 26px 0 0;
+            max-width: 810px;
+        }
+
+        .compression-lede strong {
+            color: var(--fg-bright);
+            font-weight: 650;
+        }
+
+        .compression-diagram {
+            align-items: stretch;
+            background:
+                linear-gradient(rgba(246, 244, 238, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(246, 244, 238, 0.035) 1px, transparent 1px),
+                var(--blueprint);
+            background-size: 32px 32px, 32px 32px, 100% 100%;
+            border: 1px solid var(--rule-strong);
+            border-radius: 2px;
+            display: grid;
+            gap: 0;
+            grid-template-columns: minmax(0, 0.85fr) 96px minmax(0, 1.2fr);
+            margin-top: 54px;
+            padding: 18px;
+        }
+
+        .compression-card {
+            background: rgba(246, 244, 238, 0.025);
+            border: 1px solid rgba(246, 244, 238, 0.2);
+            border-radius: 0;
+            padding: 26px;
+        }
+
+        .compression-card.output {
+            border-color: rgba(246, 244, 238, 0.42);
+        }
+
+        .compression-card-label {
+            color: rgba(246, 244, 238, 0.5);
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .compression-inputs,
+        .compression-context {
+            display: grid;
+            gap: 0;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .compression-inputs li,
+        .compression-context li {
+            border-top: 1px solid rgba(246, 244, 238, 0.14);
+            color: rgba(246, 244, 238, 0.62);
+            font-family: var(--font-mono);
+            font-size: 13px;
+            line-height: 1.45;
+            padding: 11px 0;
+        }
+
+        .compression-inputs li:first-child,
+        .compression-context li:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .compression-focus {
+            color: var(--paper);
+            font-size: 24px;
+            font-weight: 670;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .compression-context li {
+            color: rgba(246, 244, 238, 0.84);
+        }
+
+        .compression-context li::before {
+            color: var(--accent-active);
+            content: "+";
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .compression-transform {
+            align-items: center;
+            color: rgba(246, 244, 238, 0.82);
+            display: flex;
+            flex-direction: column;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 700;
+            justify-content: center;
+            letter-spacing: 0.08em;
+            line-height: 1.45;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .compression-transform::after {
+            content: "->";
+            color: var(--paper);
+            font-size: 24px;
+            letter-spacing: 0;
+            margin-top: 10px;
+        }
+
+        .compression-axes {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 26px;
+        }
+
+        .compression-axis {
+            border-top: 1px solid var(--rule-strong);
+            padding-top: 18px;
+        }
+
+        .compression-axis h3 {
+            color: var(--fg-bright);
+            font-size: 22px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            margin: 0 0 10px;
+        }
+
+        .compression-axis p {
+            color: var(--fg-dim);
+            font-size: 16px;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .compression-axis strong {
+            color: var(--accent-active);
+            font-weight: 650;
+        }
+
+        .compression-economics {
+            background: var(--blueprint);
+            border-radius: 2px;
+            display: grid;
+            gap: 0;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin-top: 56px;
+        }
+
+        .economics-step {
+            border-left: 1px solid rgba(246, 244, 238, 0.18);
+            color: rgba(246, 244, 238, 0.74);
+            font-size: 16px;
+            line-height: 1.5;
+            min-height: 148px;
+            padding: 24px;
+        }
+
+        .economics-step:first-child {
+            border-left: 0;
+        }
+
+        .economics-num {
+            color: rgba(246, 244, 238, 0.46);
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .economics-result {
+            color: var(--paper);
+            font-weight: 650;
+        }
+
+        .compression-payoff {
+            color: var(--accent-active);
+            font-size: clamp(27px, 3vw, 40px);
+            font-weight: 670;
+            letter-spacing: -0.025em;
+            line-height: 1.12;
+            margin: 38px 0 0;
         }
 
         .workbook-grid {
@@ -1789,6 +2087,224 @@
             margin-top: 8px;
         }
 
+        .understands-section {
+            border-bottom: 1px solid var(--border);
+            padding: clamp(92px, 11vw, 132px) 0;
+        }
+
+        .understands-intro {
+            max-width: 860px;
+        }
+
+        .understands-title,
+        .experience-title,
+        .trust-title {
+            color: var(--fg-bright);
+            font-size: clamp(40px, 5vw, 64px);
+            font-weight: 670;
+            letter-spacing: -0.035em;
+            line-height: 1;
+            margin: 0;
+        }
+
+        .understands-lede,
+        .experience-lede {
+            color: var(--fg-dim);
+            font-size: clamp(19px, 2vw, 22px);
+            line-height: 1.5;
+            margin: 24px 0 0;
+            max-width: 790px;
+        }
+
+        .understands-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 48px;
+        }
+
+        .understands-panel {
+            border-top: 1px solid var(--rule-strong);
+            padding-top: 20px;
+        }
+
+        .understands-panel h3 {
+            color: var(--fg-bright);
+            font-size: clamp(25px, 2.5vw, 32px);
+            font-weight: 660;
+            letter-spacing: -0.025em;
+            line-height: 1.12;
+            margin: 0 0 16px;
+        }
+
+        .understands-panel p {
+            color: var(--fg-dim);
+            font-size: 17px;
+            line-height: 1.58;
+            margin: 0;
+        }
+
+        .understands-panel strong {
+            color: var(--accent-active);
+            font-weight: 650;
+        }
+
+        .experience-section {
+            background: rgba(231, 236, 238, 0.42);
+            border-bottom: 1px solid var(--border);
+            padding: clamp(92px, 11vw, 132px) 0;
+        }
+
+        .experience-surfaces {
+            display: grid;
+            gap: 0;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin-top: 44px;
+        }
+
+        .experience-surface {
+            border-left: 1px solid var(--border);
+            min-height: 180px;
+            padding: 22px 26px;
+        }
+
+        .experience-surface:first-child {
+            border-left: 0;
+            padding-left: 0;
+        }
+
+        .experience-surface:last-child {
+            padding-right: 0;
+        }
+
+        .experience-surface-label {
+            color: var(--accent-active);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .experience-surface h3 {
+            color: var(--fg-bright);
+            font-size: 24px;
+            font-weight: 660;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin: 0 0 10px;
+        }
+
+        .experience-surface p {
+            color: var(--fg-dim);
+            font-size: 16px;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .experience-visual {
+            background: var(--blueprint);
+            border: 1px solid var(--rule-strong);
+            margin-top: 38px;
+            padding: 12px;
+        }
+
+        .experience-visual img {
+            border: 1px solid rgba(246, 244, 238, 0.2);
+            width: 100%;
+        }
+
+        .experience-caption {
+            color: rgba(246, 244, 238, 0.65);
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.07em;
+            line-height: 1.55;
+            padding: 11px 4px 0;
+            text-transform: uppercase;
+        }
+
+        .experience-timeline {
+            background: rgba(246, 244, 238, 0.66);
+            border: 1px solid var(--border);
+            margin-top: 16px;
+            padding: 10px;
+        }
+
+        .experience-timeline img {
+            width: 100%;
+        }
+
+        .proof-grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 42px;
+        }
+
+        .proof-item {
+            border-top: 1px solid var(--rule-strong);
+            padding-top: 18px;
+        }
+
+        .proof-item h3 {
+            color: var(--fg-bright);
+            font-size: 21px;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            margin: 0 0 10px;
+        }
+
+        .proof-item p {
+            color: var(--fg-dim);
+            font-size: 16px;
+            line-height: 1.58;
+            margin: 0;
+        }
+
+        .trust-section {
+            background:
+                linear-gradient(rgba(246, 244, 238, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(246, 244, 238, 0.035) 1px, transparent 1px),
+                var(--blueprint);
+            background-size: 48px 48px, 48px 48px, 100% 100%;
+            border-bottom: 1px solid var(--rule-strong);
+            padding: clamp(88px, 10vw, 118px) 0;
+        }
+
+        .trust-inner {
+            max-width: 850px;
+        }
+
+        .trust-section .day-kicker {
+            color: rgba(246, 244, 238, 0.58);
+        }
+
+        .trust-title {
+            color: var(--paper);
+            max-width: 820px;
+        }
+
+        .trust-copy {
+            color: rgba(246, 244, 238, 0.72);
+            font-size: clamp(18px, 2vw, 22px);
+            line-height: 1.55;
+            margin: 26px 0 0;
+            max-width: 800px;
+        }
+
+        .trust-record {
+            border-top: 1px solid rgba(246, 244, 238, 0.22);
+            color: var(--paper);
+            font-family: var(--font-mono);
+            font-size: 13px;
+            letter-spacing: 0.03em;
+            line-height: 1.65;
+            margin-top: 34px;
+            padding-top: 22px;
+        }
+
         @media (max-width: 820px) {
             html,
             body {
@@ -1937,6 +2453,102 @@
             .runtime-plate-caption {
                 gap: 6px;
                 flex-direction: column;
+            }
+
+            .argument-section {
+                padding: 76px 0;
+            }
+
+            .argument-layout {
+                gap: 42px;
+                grid-template-columns: 1fr;
+            }
+
+            .argument-title {
+                font-size: 42px;
+            }
+
+            .argument-step {
+                gap: 10px;
+                grid-template-columns: 34px minmax(0, 1fr);
+            }
+
+            .argument-step.is-conclusion {
+                padding: 18px;
+            }
+
+            .compression-section {
+                padding: 76px 0;
+            }
+
+            .compression-title {
+                font-size: 42px;
+            }
+
+            .compression-diagram,
+            .compression-axes,
+            .compression-economics {
+                grid-template-columns: 1fr;
+            }
+
+            .compression-transform {
+                min-height: 72px;
+            }
+
+            .compression-transform::after {
+                content: "\2193";
+                margin-top: 4px;
+            }
+
+            .economics-step {
+                border-left: 0;
+                border-top: 1px solid rgba(246, 244, 238, 0.18);
+                min-height: 0;
+            }
+
+            .economics-step:first-child {
+                border-top: 0;
+            }
+
+            .understands-section,
+            .experience-section,
+            .trust-section {
+                padding: 76px 0;
+            }
+
+            .understands-title,
+            .experience-title,
+            .trust-title {
+                font-size: 40px;
+            }
+
+            .understands-grid,
+            .experience-surfaces,
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .understands-grid {
+                gap: 38px;
+            }
+
+            .experience-surface,
+            .experience-surface:first-child,
+            .experience-surface:last-child {
+                border-left: 0;
+                border-top: 1px solid var(--border);
+                min-height: 0;
+                padding: 20px 0;
+            }
+
+            .experience-surface:first-child {
+                border-top: 0;
+                padding-top: 0;
+            }
+
+            .experience-visual {
+                margin-top: 26px;
+                padding: 7px;
             }
 
             .essay-section {
@@ -2129,16 +2741,15 @@
                 <span class="brand-main">
                     <a class="brand-link" href="./index.html" aria-label="Reckoning Machines home">Reckoning Machines</a>
                 </span>
-                <span class="runtime-identity">IRIS - a governed research operating system.</span>
+                <span class="runtime-identity">IRIS - research starts with the model.</span>
             </div>
             <nav class="nav" aria-label="Primary">
-                <a class="github-link" href="https://github.com/reckoning-machines">GitHub <span aria-hidden="true">↗</span></a>
-                <a href="#search">Search</a>
-                <a href="#spreadsheet">Spreadsheet</a>
-                <a href="#excel-add-in">Excel Add-in</a>
-                <a href="#claude-mcp">Claude + MCP</a>
-                <a href="#record">Record</a>
-                <a class="substack-link" href="https://reckoningmachines.substack.com/">Substack <span aria-hidden="true">↗</span></a>
+                <a class="github-link" href="https://github.com/reckoning-machines">GitHub <span aria-hidden="true">-&gt;</span></a>
+                <a href="#context">Why now</a>
+                <a href="#semantic-compression">Compression</a>
+                <a href="#model-understanding">Mechanism</a>
+                <a href="#product">Product</a>
+                <a class="substack-link" href="https://reckoningmachines.substack.com/">Substack <span aria-hidden="true">-&gt;</span></a>
                 <a href="https://app.reckoningmachines.com/">Launch IRIS</a>
             </nav>
         </div>
@@ -2153,11 +2764,9 @@
                             <h1 class="product-name">IRIS</h1>
                             <p class="company-name">by Reckoning Machines</p>
                             <hr class="hero-divider" />
-                            <h2 class="hero-positioning-title">Research starts with the model.</h2>
-                            <p class="hero-positioning-copy">Investment firms should be able to say why they believe what they believe - and whether it proved out.</p>
-                            <p class="hero-principle">Almost none can.</p>
-                            <p class="hero-positioning-copy">IRIS is a governed research operating system that keeps the model, evidence, reasoning, and decisions connected. AI does the work. You decide.</p>
-                            <p class="hero-principle">Frontier models do the analytical work. IRIS makes that work institutional.</p>
+                            <h2 class="hero-positioning-title">Higher-resolution context for harder investment questions.</h2>
+                            <p class="hero-positioning-copy">IRIS uses <strong>Model Logic</strong> and <strong>Model Memory</strong> to compress a financial model into bounded, relevant analytical context. When judgment is required, the language model sees the structure, Method, evidence, and history behind the call, not the whole workbook and conversation.</p>
+                            <p class="hero-principle">Higher analytical resolution per inference dollar.</p>
                             <div class="hero-actions">
                                 <a class="hero-launch" href="https://app.reckoningmachines.com/">Launch</a>
                                 <a class="hero-launch" href="https://reckoningmachines.substack.com/">Substack</a>
@@ -2170,107 +2779,198 @@
             </div>
         </section>
 
+        <section id="context" class="argument-section" aria-labelledby="argument-title">
+            <div class="container argument-layout">
+                <div class="argument-intro">
+                    <div class="day-kicker">The premise</div>
+                    <h2 id="argument-title" class="argument-title">Intelligence is abundant. Context is scarce.</h2>
+                    <p class="argument-lede">Frontier models are becoming ordinary tools for analysts. The hard part is no longer getting access to intelligence. It is giving that intelligence enough context to do serious work.</p>
+                </div>
+
+                <div class="argument-chain">
+                    <article class="argument-step">
+                        <div class="argument-num">01</div>
+                        <div class="argument-copy">
+                            <h3>The change</h3>
+                            <p>Claude, GPT, and their peers can answer sophisticated analytical questions. Access is getting cheaper, broader, and less differentiated.</p>
+                        </div>
+                    </article>
+                    <article class="argument-step">
+                        <div class="argument-num">02</div>
+                        <div class="argument-copy">
+                            <h3>The constraint</h3>
+                            <p>Every serious question starts by rebuilding context: What are we analyzing? What does the number mean? Which assumptions, Method, evidence, and prior call matter?</p>
+                        </div>
+                    </article>
+                    <article class="argument-step">
+                        <div class="argument-num">03</div>
+                        <div class="argument-copy">
+                            <h3>The durable unit of work</h3>
+                            <p>In fundamental research, much of that context already has a persistent home: the financial model. History becomes estimates; estimates become valuation and outputs.</p>
+                        </div>
+                    </article>
+                    <article class="argument-step">
+                        <div class="argument-num">04</div>
+                        <div class="argument-copy">
+                            <h3>The gap</h3>
+                            <p>An analyst sees same-store sales margin expansion under current guidance. The spreadsheet sees <code>=H32/H18</code>. It stores the calculation better than the meaning.</p>
+                        </div>
+                    </article>
+                    <article class="argument-step is-conclusion">
+                        <div class="argument-num">05</div>
+                        <div class="argument-copy">
+                            <h3>IRIS</h3>
+                            <p>IRIS adds responsibility, Method, evidence, history, and identity so a language model can understand the work around the cell, not just its formula.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section id="flywheel" class="flywheel-section" aria-label="IRIS spreadsheet">
             <div class="flywheel-drawing">
                 <div class="flywheel-loop">
                     <img src="./screen.png" alt="IRIS model screen with spreadsheet and contextual panel" />
                 </div>
-            </div>
-        </section>
-
-        <section id="search" class="day-section">
-            <div class="container">
-                <div class="day-layout reverse">
-                    <div class="day-copy-block">
-                        <div class="day-kicker">Search</div>
-                        <h2 class="day-title">Find the work.</h2>
-                        <p class="day-lede">Search the repository and open the current company, model, or question without managing files.</p>
-                    </div>
-                    <div class="day-visual">
-                        <div class="day-shot">
-                            <img src="./search%20screen.png" alt="IRIS repository search surface for opening models and research surfaces" />
-                            <div class="day-caption">
-                                Search opens the current model and the work around it.
-                            </div>
-                        </div>
-                    </div>
+                <div class="flywheel-meta">
+                    <span>Grid + Rail</span>
+                    <span>The model and the reasoning stay together</span>
                 </div>
             </div>
         </section>
 
-        <section id="spreadsheet" class="day-section">
+        <section id="semantic-compression" class="compression-section" aria-labelledby="compression-title">
             <div class="container">
-                <div class="day-layout">
-                    <div class="day-copy-block">
-                        <div class="day-kicker">Spreadsheet</div>
-                        <h2 class="day-title">Work in the spreadsheet.</h2>
-                        <p class="day-lede">Keep the familiar grid and formulas. IRIS adds Methods, AI-assisted formulas, evidence, Versions, and Runs around them.</p>
-                        <p class="day-proof">The spreadsheet stays familiar. The context stays with it.</p>
+                <div class="compression-intro">
+                    <div class="day-kicker">Semantic Compression</div>
+                    <h2 id="compression-title" class="compression-title">Compression produces higher resolution.</h2>
+                    <p class="compression-lede">This is not a smaller workbook. It is a tighter research packet. IRIS removes the noise and keeps the model structure, Method, evidence, and history relevant to the call.</p>
+                </div>
+
+                <div class="compression-diagram" aria-label="IRIS semantic compression diagram">
+                    <div class="compression-card">
+                        <div class="compression-card-label">Unfiltered input</div>
+                        <ul class="compression-inputs">
+                            <li>11,112 cells</li>
+                            <li>abbreviated workbook</li>
+                            <li>giant prompt</li>
+                            <li>conversation history</li>
+                        </ul>
                     </div>
-                    <div class="day-visual">
-                        <div class="day-shot">
-                            <img src="./screen.png" alt="IRIS model screen with spreadsheet and contextual panel" />
-                            <div class="day-caption">
-                                The spreadsheet is where model work, assumptions, outputs, and evidence stay together.
-                            </div>
-                        </div>
+
+                    <div class="compression-transform">IRIS</div>
+
+                    <div class="compression-card output">
+                        <div class="compression-card-label">Bounded analytical context</div>
+                        <div class="compression-focus">Services Revenue Growth</div>
+                        <ul class="compression-context">
+                            <li>exact structural context</li>
+                            <li>current Method</li>
+                            <li>relevant evidence</li>
+                            <li>prior judgment and history</li>
+                            <li>known unknowns</li>
+                        </ul>
                     </div>
+                </div>
+
+                <div class="compression-axes">
+                    <article class="compression-axis">
+                        <h3>Model Logic compresses space.</h3>
+                        <p>From the entire workbook to a <strong>bounded analytical responsibility.</strong></p>
+                    </article>
+                    <article class="compression-axis">
+                        <h3>Model Memory compresses time.</h3>
+                        <p>From the entire historical record to the <strong>relevant analytical history.</strong></p>
+                    </article>
+                </div>
+
+                <div class="compression-economics" aria-label="Economic consequence of semantic compression">
+                    <div class="economics-step">
+                        <span class="economics-num">01 / TRANSMIT</span>
+                        Less material to transmit and rebuild
+                    </div>
+                    <div class="economics-step">
+                        <span class="economics-num">02 / CALL</span>
+                        Smaller, less frequent model calls
+                    </div>
+                    <div class="economics-step economics-result">
+                        <span class="economics-num">03 / ALLOCATE</span>
+                        More budget for the judgments that matter
+                    </div>
+                </div>
+                <p class="compression-payoff">The result: bounded, relevant analytical context for the judgment at hand.</p>
+            </div>
+        </section>
+
+        <section id="model-understanding" class="understands-section" aria-labelledby="understands-title">
+            <div class="container">
+                <div class="understands-intro">
+                    <div class="day-kicker">What IRIS understands</div>
+                    <h2 id="understands-title" class="understands-title">The model is more than a grid.</h2>
+                    <p class="understands-lede">A financial model carries two things the grid alone cannot show: how the model thinks, and how that thinking changes.</p>
+                </div>
+
+                <div class="understands-grid">
+                    <article class="understands-panel">
+                        <h3>Model Logic is how the model thinks.</h3>
+                        <p>Each analytical responsibility has an identity, formula, Method, evidence, dependencies, and known unknowns. That is how IRIS narrows 11,112 cells to one question <strong>without losing the model around it.</strong></p>
+                    </article>
+                    <article class="understands-panel">
+                        <h3>Model Memory is how that thinking evolves.</h3>
+                        <p>Versions, Runs, Results, and Timeline preserve the prior call, the facts behind it, what changed, and whether the judgment proved right. The full record remains intact; <strong>the relevant history comes forward.</strong></p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="excel-add-in" class="day-section" aria-labelledby="excel-add-in-title">
+        <section id="product" class="experience-section" aria-labelledby="experience-title">
             <div class="container">
-                <div class="day-layout reverse">
-                    <div class="day-copy-block">
-                        <div class="day-kicker">Excel Add-in</div>
-                        <h2 id="excel-add-in-title" class="day-title">Integrate IRIS behind Excel.</h2>
-                        <p class="day-lede">Connect your existing model to IRIS. Select a cell to see its analytical responsibility, Method, history, and evidence; ask a question without leaving Excel.</p>
-                        <p class="day-proof">Keep the workbook. Add the context behind it.</p>
-                    </div>
-                    <div class="day-visual day-visual-portrait">
-                        <figure class="day-shot excel-addin-shot">
-                            <div class="excel-addin-crop">
-                                <img src="./iris-excel-add-in.png" alt="IRIS Excel Add-in showing controls for importing an existing model" />
-                            </div>
-                            <figcaption class="day-caption">
-                                Bring an existing workbook into IRIS and keep working in Excel.
-                            </figcaption>
-                        </figure>
-                    </div>
+                <div class="day-kicker">What the analyst sees</div>
+                <h2 id="experience-title" class="experience-title">Grid + Rail + Timeline.</h2>
+                <p class="experience-lede">For the analyst, all of that work reduces to three familiar surfaces.</p>
+
+                <div class="experience-surfaces">
+                    <article class="experience-surface">
+                        <div class="experience-surface-label">01 / Grid</div>
+                        <h3>The model stays the working document.</h3>
+                        <p>Figures, formulas, and dependencies remain where the analyst expects them.</p>
+                    </article>
+                    <article class="experience-surface">
+                        <div class="experience-surface-label">02 / Rail</div>
+                        <h3>The reasoning sits beside the line.</h3>
+                        <p>The selected responsibility carries its Method, evidence, history, and open questions.</p>
+                    </article>
+                    <article class="experience-surface">
+                        <div class="experience-surface-label">03 / Timeline</div>
+                        <h3>The call stays on the record.</h3>
+                        <p>The firm can see what changed, why it changed, and how the judgment resolved.</p>
+                    </article>
+                </div>
+
+                <figure class="experience-timeline">
+                    <img src="./timeline.png" alt="IRIS Timeline showing the sequence of model work and prior judgments" />
+                </figure>
+
+                <div class="proof-grid">
+                    <article class="proof-item">
+                        <h3>Resolve first. Reason second.</h3>
+                        <p>IRIS identifies the company, model, subject, cell, Version, and Method before asking a language model to weigh the question.</p>
+                    </article>
+                    <article class="proof-item">
+                        <h3>Move the context, not the workbook.</h3>
+                        <p>Whether the analyst works in IRIS, Excel, or Claude, the workbook stays put. IRIS carries forward the bounded context, not the whole workbook and chat history.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="claude-mcp" class="day-section" aria-labelledby="claude-mcp-title">
-            <div class="container">
-                <div class="day-layout">
-                    <div class="day-copy-block">
-                        <div class="day-kicker">Claude + MCP</div>
-                        <h2 id="claude-mcp-title" class="day-title">Bring IRIS Context to Claude.</h2>
-                        <p class="day-lede">IRIS's read-only MCP connection gives Claude the selected analytical responsibility, its Model Logic and Method, and the relevant history and evidence.</p>
-                        <p class="day-proof">Claude brings the intelligence. IRIS brings the context.</p>
-                    </div>
-                    <div class="day-visual">
-                        <figure class="day-shot">
-                            <img src="./same-store-sales-guidance-method.png" alt="IRIS Method defining the judgment behind an AI-assisted spreadsheet formula" />
-                            <figcaption class="day-caption">
-                                The Method captures how the analyst wants this part of the model handled.
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="record" class="day-section record-section" aria-labelledby="record-title">
-            <div class="container">
-                <div class="record-inner">
-                    <div class="day-kicker">Model Memory</div>
-                    <h2 id="record-title" class="day-title record-title">What you believed, and what changed.</h2>
-                    <p class="day-lede record-copy">Versions, Runs, Results, Audit, and Timeline preserve the model, Method, and evidence behind the work.</p>
-                    <p class="record-close">Not disconnected prompts. An accumulating research record.</p>
-                </div>
+        <section id="trust" class="trust-section" aria-labelledby="trust-title">
+            <div class="container trust-inner">
+                <div class="day-kicker">Why governance matters</div>
+                <h2 id="trust-title" class="trust-title">Governance makes the compression trustworthy.</h2>
+                <p class="trust-copy">A smaller research packet is useful only if the firm can show exactly which company, model, subject, Method, Version, evidence, and lineage produced it.</p>
+                <p class="trust-copy">Governance is not the product thesis. It is what makes the tiny interaction safe to rely on.</p>
+                <p class="trust-record">Exact identities. Traceable evidence. Versioned judgment. A record of what changed.</p>
             </div>
         </section>
 
@@ -2280,7 +2980,7 @@
                     <h2 id="firm-title" class="day-title">Reckoning Machines</h2>
                     <p class="day-lede firm-copy">Reckoning Machines is an advisory firm for investment companies.</p>
                     <p class="day-lede firm-copy">We work on one problem. A firm should be able to say why it believes what it believes, and whether it proved out.</p>
-                    <p class="day-lede firm-copy">We install the process and infrastructure that change that. IRIS is the governed research operating system we built to do it.</p>
+                    <p class="day-lede firm-copy">We install the process and infrastructure to make that possible. IRIS is the system we built to keep the model, the reasoning, and the record together.</p>
                 </div>
             </div>
         </section>
@@ -2288,9 +2988,9 @@
         <section id="contact" class="day-section closing-section">
             <div class="container">
                 <div class="day-copy-block closing-copy">
-                    <div class="day-kicker">Accountability</div>
-                    <h2 class="day-title">Put the reasoning on the record.</h2>
-                    <p class="day-lede">Trace what informed the belief. Check the judgment when the answer arrives.</p>
+                    <div class="day-kicker">The payoff</div>
+                    <h2 class="day-title">Spend inference where judgment matters.</h2>
+                    <p class="day-lede">Move less context. Rebuild less of the model. Put the best available reasoning against the decisions that deserve it.</p>
                 </div>
                 <div class="final-cta">
                     <a class="btn" href="https://app.reckoningmachines.com/">Launch IRIS -&gt;</a>
@@ -2305,7 +3005,7 @@
     <footer class="site-footer">
         <div class="container footer-inner">
             <div>IRIS by Reckoning Machines</div>
-            <div class="footer-right">Search -> Spreadsheet -> Excel -> Claude -> Record</div>
+            <div class="footer-right">Model Logic + Model Memory / Grid + Rail + Timeline</div>
             <div><a href="mailto:jedgore@reckoningmachines.com?subject=IRIS%20inquiry">jedgore@reckoningmachines.com</a></div>
             <div class="footer-note">Hosted runtime demos show selected flows, not the full product environment.</div>
         </div>
