@@ -1027,6 +1027,39 @@
             font-weight: 700;
         }
 
+        .learning-method-proof {
+            background: rgba(246, 244, 238, 0.66);
+            border: 1px solid var(--rule-strong);
+            margin: 24px 0 0;
+            overflow: hidden;
+        }
+
+        .learning-method-proof img {
+            width: 100%;
+        }
+
+        .learning-method-proof figcaption {
+            align-items: center;
+            border-top: 1px solid var(--border);
+            color: var(--fg-dim);
+            display: flex;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            gap: 16px;
+            justify-content: space-between;
+            letter-spacing: 0.04em;
+            line-height: 1.55;
+            padding: 12px 16px;
+            text-transform: uppercase;
+        }
+
+        .learning-method-formula {
+            color: var(--accent-active);
+            flex: 0 0 auto;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
         .workbook-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3015,7 +3048,7 @@
                                 <span class="wordmark-line" data-text="IRIS" aria-hidden="true">IRIS</span>
                             </div>
                             <h2 class="hero-product-title">Frontier models can build the baseline. IRIS turns it into your model.</h2>
-                            <p class="hero-positioning-copy">Import a financial model IRIS has never seen. It could come from Claude, an associate, a vendor, or anywhere else. IRIS figures out how it works. Then the analyst teaches it in plain English where the investment view differs.</p>
+                            <p class="hero-positioning-copy">Import a financial model IRIS has never seen. IRIS figures out how it works and builds a Method for each important line. The Method runs inside the spreadsheet through an <code>=AI()</code> formula. The analyst teaches IRIS where the investment view differs by editing the Method in plain English.</p>
                             <p class="hero-principle">The payoff is the IRIS model: the analyst's differentiated view, with every change on the record.</p>
                             <div class="hero-actions">
                                 <a class="hero-launch" href="https://app.reckoningmachines.com/">Launch</a>
@@ -3082,8 +3115,8 @@
                         <div class="argument-num">05</div>
                         <div class="argument-copy">
                             <h3>IRIS</h3>
-                            <p>IRIS reads the unfamiliar workbook and expresses the reasoning behind its important lines as editable Methods.</p>
-                            <p class="argument-claim">The analyst teaches IRIS where the investment view differs, runs the model, and sees the consequence in the numbers.</p>
+                            <p>IRIS supplies the missing meaning. It reads the unfamiliar workbook and builds a Method for each important line: a plain-English statement of how that line works, run inside the spreadsheet through <code>=AI()</code>.</p>
+                            <p class="argument-claim">The analyst edits the pre-built Method to teach IRIS where the investment view differs, runs the model, and sees the consequence in the numbers.</p>
                             <p class="argument-payoff">The baseline becomes the IRIS model: the investor's differentiated view.</p>
                         </div>
                     </article>
@@ -3095,8 +3128,8 @@
             <div class="container">
                 <div class="compression-intro">
                     <div class="day-kicker">The learning flywheel</div>
-                    <h2 id="learning-title" class="compression-title">Start with a baseline. Build your view.</h2>
-                    <p class="compression-lede">The analyst does not rebuild the workbook. IRIS learns how the imported model works, the analyst teaches it where the investment view differs, and the Run shows the consequence.</p>
+                    <h2 id="learning-title" class="compression-title">Start with a baseline. Teach it your view.</h2>
+                    <p class="compression-lede">The analyst does not rebuild the workbook. IRIS turns the reasoning it infers into pre-built Methods inside the model. The analyst edits a Method in plain English, and the Run shows the consequence.</p>
                 </div>
 
                 <div class="learning-flow" aria-label="IRIS learning flywheel">
@@ -3107,13 +3140,13 @@
                     </article>
                     <article class="learning-step">
                         <div class="learning-num">02 / INFER</div>
-                        <h3>Methods</h3>
-                        <p>IRIS infers the economic reasoning behind important lines and expresses it as editable Methods behind <code>=AI()</code> formulas.</p>
+                        <h3>Methods in the model</h3>
+                        <p>IRIS infers how each important line works and builds a pre-built Method. An <code>=AI()</code> formula runs that Method inside the spreadsheet.</p>
                     </article>
                     <article class="learning-step is-analyst">
                         <div class="learning-num">03 / TEACH</div>
                         <h3>Your view</h3>
-                        <p>The analyst rewrites one Method in plain English where the investment view differs.</p>
+                        <p>The analyst teaches IRIS by editing a Method in plain English where the investment view differs.</p>
                     </article>
                     <article class="learning-step">
                         <div class="learning-num">04 / RUN</div>
@@ -3126,6 +3159,13 @@
                         <p>Compare versions. See what changed, why it changed, and what the judgment affected.</p>
                     </article>
                 </div>
+                <figure class="learning-method-proof">
+                    <img src="./same-store-sales-guidance-method.png" alt="IRIS Method defining how an =AI() formula should model a financial line item" />
+                    <figcaption>
+                        <span class="learning-method-formula">=AI()</span>
+                        <span>The formula runs an editable Method inside the spreadsheet. That is how the analyst teaches the model.</span>
+                    </figcaption>
+                </figure>
                 <p class="learning-result"><strong>The IRIS model</strong> is the investor's differentiated view, captured as a governed and reusable research record.</p>
             </div>
         </section>
@@ -3141,7 +3181,7 @@
                 <div class="understands-grid">
                     <article class="understands-panel">
                         <h3>Model Logic is how the model thinks.</h3>
-                        <p>Each analytical responsibility has an identity, formula, Method, evidence, dependencies, and known unknowns. That is how IRIS narrows 11,112 cells to one question <strong>without losing the model around it.</strong></p>
+                        <p>Each analytical responsibility has an identity, formula, Method, evidence, dependencies, and known unknowns. The Method says how the line should work in plain English. <code>=AI()</code> runs it inside the financial model. The analyst teaches IRIS by editing the Method, without rebuilding the workbook. That is how IRIS narrows 11,112 cells to one question <strong>without losing the model around it.</strong></p>
                     </article>
                     <article class="understands-panel">
                         <h3>Model Memory is how that thinking evolves.</h3>
