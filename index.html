@@ -434,45 +434,22 @@
             padding: clamp(92px, 11vw, 132px) 0;
         }
 
-        .morning-layout {
-            align-items: center;
-            display: grid;
-            gap: clamp(42px, 7vw, 84px);
-            grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+        .morning-intro {
+            max-width: 880px;
         }
 
-        .morning-copy > p:not(.truth-note),
-        .morning-context > p:not(.truth-note) {
+        .morning-intro > p {
             color: var(--fg-dim);
             font-size: 17px;
             line-height: 1.6;
             margin: 18px 0 0;
         }
 
-        .morning-copy .morning-lede {
+        .morning-intro .morning-lede {
             color: var(--fg-bright);
             font-size: 21px;
             font-weight: 620;
             line-height: 1.4;
-        }
-
-        .morning-questions {
-            border-bottom: 1px solid var(--border);
-            border-top: 1px solid var(--rule-strong);
-            display: grid;
-            margin-top: 28px;
-        }
-
-        .morning-questions span {
-            border-top: 1px solid var(--border);
-            color: var(--fg-bright);
-            font-size: 15px;
-            font-weight: 620;
-            padding: 11px 0;
-        }
-
-        .morning-questions span:first-child {
-            border-top: 0;
         }
 
         .truth-note {
@@ -484,12 +461,6 @@
             padding-left: 16px;
         }
 
-        .pm-section {
-            background: rgba(231, 236, 238, 0.42);
-            border-bottom: 1px solid var(--border);
-            padding: clamp(92px, 11vw, 132px) 0;
-        }
-
         .pm-layout {
             align-items: center;
             display: grid;
@@ -497,17 +468,26 @@
             grid-template-columns: minmax(330px, 0.82fr) minmax(0, 1.18fr);
         }
 
+        .morning-pm-layout {
+            border-top: 1px solid var(--rule-strong);
+            margin-top: 46px;
+            padding-top: 46px;
+        }
+
+        .pm-title {
+            color: var(--fg-bright);
+            font-size: clamp(30px, 3.3vw, 44px);
+            font-weight: 660;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin: 0 0 22px;
+        }
+
         .pm-copy > p:not(.canonical-line) {
             color: var(--fg-dim);
             font-size: 17px;
             line-height: 1.6;
             margin: 20px 0 0;
-        }
-
-        .pm-copy .experience-lede {
-            color: var(--fg-bright);
-            font-size: 20px;
-            font-weight: 560;
         }
 
         .pm-questions {
@@ -817,7 +797,6 @@
             .experience-section,
             .research-section,
             .morning-section,
-            .pm-section,
             .harness-section {
                 padding: 76px 0;
             }
@@ -827,7 +806,6 @@
                 font-size: 40px;
             }
 
-            .morning-layout,
             .pm-layout,
             .harness-layout,
             .research-layout,
@@ -931,34 +909,21 @@
             </div>
         </section>
 
-        <section id="morning" class="morning-section" aria-labelledby="morning-title">
-            <div class="container morning-layout">
-                <div class="morning-copy">
-                    <div class="day-kicker">The morning question</div>
+        <section id="pm-view" class="morning-section" aria-labelledby="morning-title">
+            <div class="container">
+                <div class="morning-intro">
+                    <div class="day-kicker">PM View / The morning question</div>
                     <h2 id="morning-title" class="experience-title">What changed last night?</h2>
                     <p class="morning-lede">That is not a request for a market recap. It is a portfolio question.</p>
                     <p>Companies report every 90 days. Rates, spreads, unemployment, commodities, and consumer data move in between. The analyst has to decide what is noise, what touches an estimate or thesis, and which workbook deserves attention before the day gets away.</p>
-                </div>
-                <div class="morning-context">
                     <p>The market move itself is not the answer. The question is where it intersects with the economic logic already expressed in the book.</p>
-                    <div class="morning-questions">
-                        <span>Which positions care?</span>
-                        <span>Which forecasts are exposed?</span>
-                        <span>Does the existing view still hold?</span>
-                    </div>
-                    <p class="truth-note">IRIS connects market changes to the models and Methods that depend on them, then shows the analyst where attention may be warranted. The analyst decides what to investigate and what to change.</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="pm-view" class="pm-section" aria-labelledby="pm-view-title">
-            <div class="container pm-layout">
+                <div class="pm-layout morning-pm-layout">
                 <div class="pm-copy">
-                    <div class="day-kicker">PM View / Across the book</div>
-                    <h2 id="pm-view-title" class="experience-title">See the book before you open the models.</h2>
-                    <p class="experience-lede">A PM should not have to start the morning by opening twenty spreadsheets. IRIS brings the analytical work together: what moved, which names may be exposed, which Methods deserve another look, and where the existing view still holds.</p>
+                    <h3 class="pm-title">See the book before you open the models.</h3>
+                    <p>A PM should not have to start the morning by opening twenty spreadsheets. IRIS brings the analytical work together: what moved, which names may be exposed, which Methods deserve another look, and where the existing view still holds.</p>
                     <p>A move in rates may matter to one company's financing cost and be irrelevant to another. The economic relationship - not the ticker on the screen - determines the work.</p>
-                    <p>IRIS keeps those relationships specific to each model, then lets the PM ask across the book.</p>
+                    <p>IRIS keeps those relationships specific to each model, connects market changes to the forecasts and Methods that depend on them, and shows where attention may be warranted. The analyst decides what to investigate and what to change.</p>
                     <div class="pm-questions" aria-label="Questions for the PM View">
                         <strong>Where did the world move relative to my book?</strong>
                         <strong>Which models care?</strong>
@@ -977,6 +942,7 @@
                         <span class="story-plate-copy">Start with where attention belongs, then move into the forecast, Method, evidence, and prior work behind it.</span>
                     </figcaption>
                 </figure>
+                </div>
             </div>
         </section>
 
