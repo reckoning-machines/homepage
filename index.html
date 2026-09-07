@@ -416,12 +416,17 @@
             line-height: 1.58;
             margin: 32px 0 0;
             max-width: 860px;
-            padding-left: 20px;
+            padding: 4px 0 4px 20px;
         }
 
         .semantic-note strong {
             color: var(--fg-bright);
+            display: block;
+            font-size: clamp(24px, 2.6vw, 34px);
             font-weight: 650;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            margin-bottom: 10px;
         }
 
         .memory-instruction {
@@ -980,7 +985,7 @@
                         <p>The differentiated forecast comes from how the analyst weighs evidence, frames the drivers, and decides when the view should change. IRIS makes that approach explicit as a Method: readable, editable, and runnable through the workbook.</p>
                     </article>
                 </div>
-                <p class="semantic-note"><strong>Semantic Compression</strong> gives the LLM the forecast question in economic terms instead of asking it to reconstruct the workbook. That means more attention on the call and less on the file.</p>
+                <p class="semantic-note"><strong>Semantic Compression</strong>Frontier AI gets the forecast question in economic terms, not the workbook machinery. It can spend its intelligence on the call instead of reconstructing the file.</p>
                 <figure class="story-plate method-feature-plate">
                     <div class="story-plate-image">
                         <img src="./same-store-sales-guidance-method.png"
