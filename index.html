@@ -205,6 +205,62 @@
             text-decoration-thickness: 2px;
         }
 
+        .term-tip {
+            background: transparent;
+            border: 0;
+            color: var(--accent-active);
+            cursor: pointer;
+            font: inherit;
+            font-weight: 650;
+            outline: none;
+            padding: 0;
+            position: relative;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .term-tip:hover {
+            color: var(--fg-bright);
+            text-decoration-thickness: 2px;
+        }
+
+        .term-tip:focus-visible {
+            outline: 1px solid var(--accent-active);
+            outline-offset: 3px;
+        }
+
+        .term-tip-text {
+            background: var(--blueprint);
+            border: 1px solid rgba(246, 244, 238, 0.22);
+            bottom: calc(100% + 10px);
+            color: var(--paper);
+            font-family: var(--font-sans);
+            font-size: 13px;
+            font-weight: 500;
+            left: 0;
+            letter-spacing: 0;
+            line-height: 1.45;
+            max-width: calc(100vw - 48px);
+            opacity: 0;
+            padding: 11px 13px;
+            pointer-events: none;
+            position: absolute;
+            transform: translateY(4px);
+            transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+            visibility: hidden;
+            width: 310px;
+            z-index: 20;
+        }
+
+        .term-tip:hover .term-tip-text,
+        .term-tip:focus .term-tip-text,
+        .term-tip:focus-visible .term-tip-text {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
         .hero-actions {
             align-items: center;
             display: flex;
@@ -969,7 +1025,7 @@
                             </div>
                             <h1 class="hero-positioning-title">IRIS is an AI harness for fundamental analysts.</h1>
                             <p class="hero-pain-line">Your models are static. The world isn't.</p>
-                            <p class="hero-positioning-copy">Markets move every day. Models don't. Analysts still spend the morning figuring out which changes actually touch the book, opening models one by one, and reconstructing why the last forecast was there. IRIS connects the changing world to the forecasts, Methods, and history inside each model, so frontier AI can show what matters, where it matters, and why.</p>
+                            <p class="hero-positioning-copy">Markets move every day. Models don't. Analysts still spend the morning figuring out which changes actually touch the book, opening models one by one, and reconstructing why the last forecast was there. IRIS connects the changing world to the forecasts, <button class="term-tip" type="button" aria-describedby="method-definition">Methods<span id="method-definition" class="term-tip-text" role="tooltip">Method - an LLM call embedded in the spreadsheet, authored initially by IRIS, editable by the analyst.</span></button>, and history inside each model, so frontier AI can show what matters, where it matters, and why.</p>
                             <div class="hero-actions">
                                 <a class="hero-launch" href="https://app.reckoningmachines.com/">Launch IRIS</a>
                                 <a class="hero-contact"
