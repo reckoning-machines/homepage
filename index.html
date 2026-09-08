@@ -67,6 +67,10 @@
             overflow: visible;
         }
 
+        .hero {
+            padding-bottom: 28px;
+        }
+
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -229,7 +233,7 @@
 
         .thesis-section {
             border-bottom: 1px solid var(--border);
-            padding: clamp(58px, 7vw, 84px) 0;
+            padding: clamp(32px, 4vw, 48px) 0;
         }
 
         .thesis-question {
@@ -433,7 +437,7 @@
 
         .morning-section {
             border-bottom: 1px solid var(--border);
-            padding: clamp(92px, 11vw, 132px) 0;
+            padding: clamp(58px, 7vw, 82px) 0 clamp(92px, 11vw, 132px);
         }
 
         .morning-intro {
@@ -756,6 +760,14 @@
                 overflow: visible;
             }
 
+            .hero {
+                padding-bottom: 22px;
+            }
+
+            .thesis-section {
+                padding: 28px 0;
+            }
+
             .company-wordmark {
                 font-size: 24px;
                 margin: 0 0 28px;
@@ -804,9 +816,12 @@
 
             .experience-section,
             .research-section,
-            .morning-section,
             .harness-section {
                 padding: 76px 0;
+            }
+
+            .morning-section {
+                padding: 48px 0 76px;
             }
 
             .experience-title,
@@ -970,7 +985,7 @@
                 <div class="harness-copy">
                     <p>A generic frontier model can reason. But hand it a workbook cold and it first has to figure out the periods, formulas, forecast structure, and which parts of the file actually matter.</p>
                     <p>Some of its intelligence is spent rediscovering facts that software can establish exactly before it reaches the investment question.</p>
-                    <p class="harness-answer">IRIS does the model archaeology once. It prepares the problem before the model call, so the reasoning can be about funding cost, unit growth, margins, credit losses, pricing, volume, or operating leverage - whatever actually drives the forecast. We call this Semantic Compression.</p>
+                    <p class="harness-answer">IRIS does the model archaeology once. It prepares the problem before the model call, so the reasoning can be about funding cost, unit growth, margins, credit losses, pricing, volume, or operating leverage - whatever actually drives the forecast. We call this Semantic Compression. In tests it has led to a 20x reduction in token use.</p>
                     <p>The point is not a shorter prompt. It is a better-defined question and more of the model's intelligence spent on the economics.</p>
                     <p class="harness-principle">Let computers establish the facts. Let frontier models reason about the economics.</p>
                 </div>
