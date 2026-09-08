@@ -569,6 +569,18 @@
             padding-top: 24px;
         }
 
+        .harness-copy a {
+            color: var(--paper);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+
+        .harness-copy a:hover {
+            color: #ffffff;
+            text-decoration-thickness: 2px;
+        }
+
         .harness-principle {
             color: rgba(246, 244, 238, 0.68);
             font-family: var(--font-mono);
@@ -985,7 +997,7 @@
                 <div class="harness-copy">
                     <p>A generic frontier model can reason. But hand it a workbook cold and it first has to figure out the periods, formulas, forecast structure, and which parts of the file actually matter.</p>
                     <p>Some of its intelligence is spent rediscovering facts that software can establish exactly before it reaches the investment question.</p>
-                    <p class="harness-answer">IRIS does the model archaeology once. It prepares the problem before the model call, so the reasoning can be about funding cost, unit growth, margins, credit losses, pricing, volume, or operating leverage - whatever actually drives the forecast. We call this Semantic Compression. In tests it has led to a 20x reduction in token use.</p>
+                    <p class="harness-answer">IRIS does the model archaeology once. It prepares the problem before the model call, so the reasoning can be about funding cost, unit growth, margins, credit losses, pricing, volume, or operating leverage - whatever actually drives the forecast. We call this Semantic Compression. In <a href="https://reckoningmachines.substack.com/p/we-are-paying-the-model-to-read-our">tests</a> it has led to a 20x reduction in token use.</p>
                     <p>The point is not a shorter prompt. It is a better-defined question and more of the model's intelligence spent on the economics.</p>
                     <p class="harness-principle">Let computers establish the facts. Let frontier models reason about the economics.</p>
                 </div>
