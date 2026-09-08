@@ -73,8 +73,8 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
+            grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+            gap: clamp(30px, 4vw, 42px);
             align-items: center;
         }
 
@@ -131,7 +131,7 @@
 
         .company-wordmark {
             display: grid;
-            font-size: clamp(34px, 3.8vw, 48px);
+            font-size: clamp(30px, 3.2vw, 40px);
             margin: 0 0 9px;
         }
 
@@ -147,20 +147,20 @@
 
         .iris-wordmark {
             display: grid;
-            font-size: clamp(66px, 7.4vw, 98px);
+            font-size: clamp(58px, 6.4vw, 82px);
             letter-spacing: 0.065em;
             margin: 0 0 7px;
         }
 
         .hero-text {
             margin: 0;
-            max-width: 900px;
+            max-width: 680px;
             text-align: left;
         }
 
         .hero-positioning-title {
             color: var(--fg-bright);
-            font-size: clamp(32px, 3.4vw, 42px);
+            font-size: clamp(29px, 3vw, 36px);
             font-weight: 600;
             letter-spacing: -0.025em;
             line-height: 1.08;
@@ -180,7 +180,7 @@
         .hero-pain-line {
             border-left: 1px solid var(--rule-strong);
             color: var(--fg-bright);
-            font-size: clamp(24px, 2.7vw, 34px);
+            font-size: clamp(22px, 2.4vw, 29px);
             font-weight: 650;
             letter-spacing: -0.025em;
             line-height: 1.15;
@@ -241,6 +241,31 @@
             text-decoration: none;
         }
 
+        .hero-product-shot {
+            align-self: center;
+            background: #f8f7f2;
+            border: 1px solid var(--rule-strong);
+            margin: 0;
+            min-width: 0;
+        }
+
+        .hero-product-shot img {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+
+        .hero-product-shot figcaption {
+            border-top: 1px solid var(--border);
+            color: var(--accent-active);
+            font-family: var(--font-mono);
+            font-size: 9px;
+            font-weight: 650;
+            letter-spacing: 0.08em;
+            padding: 10px 12px;
+            text-transform: uppercase;
+        }
+
         .thesis-section {
             border-bottom: 1px solid var(--border);
             padding: clamp(32px, 4vw, 48px) 0;
@@ -249,7 +274,7 @@
         .thesis-question {
             border-left: 1px solid var(--rule-strong);
             color: var(--fg-bright);
-            font-size: clamp(32px, 4.2vw, 56px);
+            font-size: clamp(30px, 3.7vw, 48px);
             font-weight: 660;
             letter-spacing: -0.035em;
             line-height: 1.08;
@@ -281,7 +306,7 @@
 
         .compression-title {
             color: var(--fg-bright);
-            font-size: clamp(40px, 5.4vw, 70px);
+            font-size: clamp(36px, 4.7vw, 60px);
             font-weight: 670;
             letter-spacing: -0.035em;
             line-height: 0.98;
@@ -322,7 +347,7 @@
 
         .day-title {
             color: var(--fg-bright);
-            font-size: clamp(34px, 4vw, 52px);
+            font-size: clamp(32px, 3.6vw, 46px);
             font-weight: 660;
             letter-spacing: 0;
             line-height: 1.04;
@@ -331,7 +356,7 @@
 
         .experience-title {
             color: var(--fg-bright);
-            font-size: clamp(40px, 5vw, 64px);
+            font-size: clamp(36px, 4.4vw, 56px);
             font-weight: 670;
             letter-spacing: -0.035em;
             line-height: 1;
@@ -393,7 +418,7 @@
         }
 
         .research-copy .experience-title {
-            font-size: clamp(38px, 4.6vw, 58px);
+            font-size: clamp(35px, 4vw, 50px);
         }
 
         .research-copy .experience-lede {
@@ -423,7 +448,7 @@
         .canonical-line {
             border-left: 1px solid var(--rule-strong);
             color: var(--fg-bright);
-            font-size: clamp(25px, 2.8vw, 36px);
+            font-size: clamp(23px, 2.5vw, 32px);
             font-weight: 660;
             letter-spacing: -0.025em;
             line-height: 1.18;
@@ -485,18 +510,7 @@
         }
 
         .morning-pm-layout {
-            border-top: 1px solid var(--rule-strong);
-            margin-top: 46px;
-            padding-top: 46px;
-        }
-
-        .pm-title {
-            color: var(--fg-bright);
-            font-size: clamp(30px, 3.3vw, 44px);
-            font-weight: 660;
-            letter-spacing: -0.03em;
-            line-height: 1.05;
-            margin: 0 0 22px;
+            margin-top: 30px;
         }
 
         .pm-copy > p:not(.canonical-line) {
@@ -557,7 +571,7 @@
 
         .harness-title {
             color: var(--paper);
-            font-size: clamp(38px, 4.6vw, 58px);
+            font-size: clamp(35px, 4vw, 50px);
             font-weight: 670;
             letter-spacing: -0.035em;
             line-height: 1;
@@ -634,7 +648,7 @@
 
         .capability-pair h3 {
             color: var(--fg-bright);
-            font-size: clamp(25px, 2.7vw, 36px);
+            font-size: clamp(23px, 2.4vw, 32px);
             font-weight: 660;
             letter-spacing: -0.025em;
             line-height: 1.12;
@@ -667,7 +681,7 @@
         }
 
         .ecosystem-copy .canonical-line {
-            font-size: clamp(22px, 2.4vw, 30px);
+            font-size: clamp(21px, 2.2vw, 27px);
         }
 
         .ecosystem-plate figcaption {
@@ -791,7 +805,7 @@
             }
 
             .company-wordmark {
-                font-size: 24px;
+                font-size: 22px;
                 margin: 0 0 8px;
             }
 
@@ -802,7 +816,7 @@
             }
 
             .iris-wordmark {
-                font-size: 68px;
+                font-size: 60px;
                 margin: 0 0 6px;
             }
 
@@ -813,7 +827,7 @@
             }
 
             .hero-positioning-title {
-                font-size: 34px;
+                font-size: 30px;
                 line-height: 1.04;
                 max-width: 320px;
             }
@@ -824,6 +838,12 @@
             }
 
             .hero-actions {
+                max-width: 320px;
+                width: 100%;
+            }
+
+            .hero-product-shot {
+                margin-top: 30px;
                 max-width: 320px;
                 width: 100%;
             }
@@ -839,7 +859,7 @@
             }
 
             .compression-title {
-                font-size: 42px;
+                font-size: 36px;
             }
 
             .experience-section,
@@ -854,7 +874,7 @@
 
             .experience-title,
             .harness-title {
-                font-size: 40px;
+                font-size: 35px;
             }
 
             .pm-layout,
@@ -866,7 +886,7 @@
             }
 
             .research-copy .experience-title {
-                font-size: 40px;
+                font-size: 35px;
             }
 
             .method-feature-plate figcaption {
@@ -904,7 +924,7 @@
             }
 
             .day-title {
-                font-size: 40px;
+                font-size: 36px;
             }
 
         }
@@ -956,6 +976,11 @@
                                     href="mailto:jedgore@reckoningmachines.com?subject=IRIS%20demo%20request">Request Demo</a>
                             </div>
                         </div>
+                        <figure class="hero-product-shot">
+                            <img src="./screen.png"
+                                alt="IRIS workbook with the Research Rail beside the JPM model" />
+                            <figcaption>Research Rail / Inside the model</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -978,8 +1003,7 @@
                 </div>
                 <div class="pm-layout morning-pm-layout">
                 <div class="pm-copy">
-                    <h3 class="pm-title">See the book before you open the models.</h3>
-                    <p>A PM should not have to start the morning by opening twenty spreadsheets. IRIS brings the analytical work together: what moved, which names may be exposed, which Methods deserve another look, and where the existing view still holds.</p>
+                    <p><strong>See the book before you open the models.</strong> A PM should not have to start the morning by opening twenty spreadsheets. IRIS brings the analytical work together: what moved, which names may be exposed, which Methods deserve another look, and where the existing view still holds.</p>
                     <p>A move in rates may matter to one company's financing cost and be irrelevant to another. The economic relationship - not the ticker on the screen - determines the work.</p>
                     <p>Each night, IRIS refreshes the external state, identifies which models are affected, and reruns the analysis that depends on what changed.</p>
                     <p>By morning, PM Search can ask across that refreshed analytical state: what changed, which models moved, which views held, and where attention belongs.</p>
