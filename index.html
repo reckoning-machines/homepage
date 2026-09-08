@@ -227,6 +227,23 @@
             text-decoration: none;
         }
 
+        .thesis-section {
+            border-bottom: 1px solid var(--border);
+            padding: clamp(58px, 7vw, 84px) 0;
+        }
+
+        .thesis-question {
+            border-left: 1px solid var(--rule-strong);
+            color: var(--fg-bright);
+            font-size: clamp(32px, 4.2vw, 56px);
+            font-weight: 660;
+            letter-spacing: -0.035em;
+            line-height: 1.08;
+            margin: 0;
+            max-width: 1080px;
+            padding-left: 24px;
+        }
+
         .hero-demo-link {
             color: var(--fg-muted);
             font-size: 15px;
@@ -407,26 +424,6 @@
 
         .method-feature-plate figcaption {
             grid-template-columns: minmax(190px, 0.45fr) minmax(0, 1fr);
-        }
-
-        .semantic-note {
-            border-left: 1px solid var(--rule-strong);
-            color: var(--fg-dim);
-            font-size: 17px;
-            line-height: 1.58;
-            margin: 32px 0 0;
-            max-width: 860px;
-            padding: 4px 0 4px 20px;
-        }
-
-        .semantic-note strong {
-            color: var(--fg-bright);
-            display: block;
-            font-size: clamp(24px, 2.6vw, 34px);
-            font-weight: 650;
-            letter-spacing: -0.025em;
-            line-height: 1.15;
-            margin-bottom: 10px;
         }
 
         .memory-instruction {
@@ -908,7 +905,7 @@
                             </div>
                             <h1 class="hero-positioning-title">IRIS is an AI harness for fundamental analysts.</h1>
                             <p class="hero-pain-line">Your models are static. The world isn't.</p>
-                            <p class="hero-positioning-copy">Fundamental analysts still spend too much time deciding which market moves matter, opening the affected models, updating forecasts, and retracing why an estimate moved. IRIS gives frontier AI the model-specific context it needs to connect market changes to forecasts, assumptions, and prior analytical work - while the analyst keeps working in Excel.</p>
+                            <p class="hero-positioning-copy">Fundamental analysts still spend too much time deciding which changes matter, opening the affected models, and retracing why estimates moved. IRIS connects frontier AI to the forecasts, assumptions, and prior work inside the book.</p>
                             <div class="hero-actions">
                                 <a class="hero-launch" href="https://app.reckoningmachines.com/">Launch IRIS</a>
                                 <a class="hero-contact"
@@ -917,6 +914,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="thesis-section" aria-label="The question IRIS answers">
+            <div class="container">
+                <p class="thesis-question">When the world changes, which of my models should change with it - and why?</p>
             </div>
         </section>
 
@@ -934,7 +937,8 @@
                     <h3 class="pm-title">See the book before you open the models.</h3>
                     <p>A PM should not have to start the morning by opening twenty spreadsheets. IRIS brings the analytical work together: what moved, which names may be exposed, which Methods deserve another look, and where the existing view still holds.</p>
                     <p>A move in rates may matter to one company's financing cost and be irrelevant to another. The economic relationship - not the ticker on the screen - determines the work.</p>
-                    <p>IRIS keeps those relationships specific to each model, connects market changes to the forecasts and Methods that depend on them, and shows where attention may be warranted. The analyst decides what to investigate and what to change.</p>
+                    <p>Each night, IRIS refreshes the external state, identifies which models are affected, and reruns the analysis that depends on what changed.</p>
+                    <p>By morning, PM Search can ask across that refreshed analytical state: what changed, which models moved, which views held, and where attention belongs.</p>
                     <div class="pm-questions" aria-label="Questions for the PM View">
                         <strong>Where did the world move relative to my book?</strong>
                         <strong>Which models care?</strong>
@@ -949,7 +953,7 @@
                             alt="IRIS answering what changed last night across the current model corpus" />
                     </div>
                     <figcaption>
-                        <span class="story-plate-label">PM View / Portfolio inquiry</span>
+                        <span class="story-plate-label">PM Search / Portfolio inquiry</span>
                         <span class="story-plate-copy">Start with where attention belongs, then move into the forecast, Method, evidence, and prior work behind it.</span>
                     </figcaption>
                 </figure>
@@ -991,7 +995,6 @@
                         <p>The differentiated forecast comes from how the analyst weighs evidence, frames the drivers, and decides when the view should change. IRIS makes that approach explicit as a Method: readable, editable, and runnable through the workbook.</p>
                     </article>
                 </div>
-                <p class="semantic-note"><strong>Semantic Compression</strong>Frontier AI gets the forecast question in economic terms, not the workbook machinery. It can spend its intelligence on the call instead of reconstructing the file.</p>
                 <figure class="story-plate method-feature-plate">
                     <div class="story-plate-image">
                         <img src="./same-store-sales-guidance-method.png"
@@ -1078,7 +1081,7 @@
                                 alt="IRIS comparing controlled credit-condition scenarios across models in the current corpus" />
                         </div>
                         <figcaption>
-                            <span class="story-plate-label">Institutional inquiry / Across the book</span>
+                            <span class="story-plate-label">PM Search / Across the book</span>
                             <span class="story-plate-copy">Ask one economic question across the models while preserving how each one responds differently.</span>
                         </figcaption>
                     </figure>
@@ -1092,8 +1095,8 @@
                     <div class="day-kicker">Back to the analyst</div>
                     <h2 class="day-title">Spend the morning on what changed, not on figuring out where to look.</h2>
                     <div class="closing-lines">
-                        <p>Excel remains the analytical artifact.</p>
-                        <p>Frontier models provide the intelligence.</p>
+                        <p>Excel stays the model.</p>
+                        <p>Frontier AI provides the intelligence.</p>
                         <p><strong>IRIS is the harness between them.</strong></p>
                     </div>
                 </div>
