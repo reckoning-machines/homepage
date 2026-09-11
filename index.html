@@ -569,6 +569,21 @@
             margin-top: 30px;
         }
 
+        .overnight-layout {
+            border-top: 1px solid var(--rule-strong);
+            margin-top: clamp(48px, 6vw, 72px);
+            padding-top: clamp(36px, 5vw, 56px);
+        }
+
+        .overnight-title {
+            color: var(--fg-bright);
+            font-size: clamp(27px, 3vw, 36px);
+            font-weight: 660;
+            letter-spacing: -0.025em;
+            line-height: 1.12;
+            margin: 0;
+        }
+
         .pm-copy > p:not(.canonical-line) {
             color: var(--fg-dim);
             font-size: 17px;
@@ -1025,7 +1040,7 @@
                             </div>
                             <h1 class="hero-positioning-title">IRIS is an AI harness for fundamental analysts.</h1>
                             <p class="hero-pain-line">Your models are static. The world isn't.</p>
-                            <p class="hero-positioning-copy">Markets move every day. Models don't. Analysts still spend the morning figuring out which changes actually touch the book, opening models one by one, and reconstructing why the last forecast was there. IRIS connects the changing world to the forecasts, <button class="term-tip" type="button" aria-describedby="method-definition">Methods<span id="method-definition" class="term-tip-text" role="tooltip">Method - an LLM call embedded in the spreadsheet, authored initially by IRIS, editable by the analyst.</span></button>, and history inside each model, so frontier AI can show what matters, where it matters, and why.</p>
+                            <p class="hero-positioning-copy">Markets move every day. Models don't. Analysts still spend the morning figuring out which changes actually touch the book, opening models one by one, and reconstructing why the last forecast was there. IRIS understands the model before the AI call, makes the analyst's <button class="term-tip" type="button" aria-describedby="method-definition">Method<span id="method-definition" class="term-tip-text" role="tooltip">Method — the governed representation of how an analyst wants a forecast to be formed: the evidence, analytical rules, assumptions, limits, and output. IRIS can draft it; the analyst owns it.</span></button> explicit, and preserves how that thinking changes over time. Frontier AI can then focus on what matters, where it matters, and why.</p>
                             <div class="hero-actions">
                                 <a class="hero-launch" href="https://app.reckoningmachines.com/">Launch IRIS</a>
                                 <a class="hero-contact"
@@ -1048,40 +1063,129 @@
             </div>
         </section>
 
-        <section id="pm-view" class="morning-section" aria-labelledby="morning-title">
+        <section id="pm-view" class="morning-section" aria-labelledby="ecosystem-title">
             <div class="container">
-                <div class="morning-intro">
-                    <div class="day-kicker">PM View / The morning question</div>
-                    <h2 id="morning-title" class="experience-title">What changed overnight?</h2>
-                    <p class="morning-lede">That is not a request for a market recap. It is a portfolio question.</p>
-                    <p>Companies report quarterly. Markets move every day. Rates, spreads, unemployment, commodities, and consumer data move in between. The analyst has to decide what is noise, what touches an estimate or thesis, and which workbook deserves attention before the day gets away.</p>
-                    <p>The market move itself is not the answer. The question is where it intersects with the economic logic already expressed in the book.</p>
+                <div id="ecosystem" class="morning-intro">
+                    <div class="day-kicker">PM View / Across the book</div>
+                    <h2 id="ecosystem-title" class="experience-title">Turn your models into an ecosystem.</h2>
+                    <p class="morning-lede">Every model holds investment knowledge. IRIS makes that knowledge usable across the book.</p>
+                    <p>Connect the forecasts, Methods, evidence, and history inside your models. Ask one economic question across the portfolio, then follow the answer into the reasoning behind each company's view.</p>
                 </div>
-                <div class="pm-layout morning-pm-layout">
-                <div class="pm-copy">
-                    <p><strong>See the book before you open the models.</strong> A PM should not have to start the morning by opening twenty spreadsheets. IRIS brings the analytical work together: what moved, which names may be exposed, which Methods deserve another look, and where the existing view still holds.</p>
-                    <p>A move in rates may matter to one company's financing cost and be irrelevant to another. The economic relationship - not the ticker on the screen - determines the work.</p>
-                    <p>Each night, IRIS refreshes market and economic data, identifies which models are affected, and reruns the analysis that depends on what changed.</p>
-                    <p>By morning, PM Search can ask across the refreshed book: what changed, which models moved, which views held, and where attention belongs.</p>
-                    <div class="pm-questions" aria-label="Questions for the PM View">
-                        <strong>Where did the world move relative to my book?</strong>
-                        <strong>Which models care?</strong>
-                        <strong>Which views still hold?</strong>
-                        <strong>Where should an analyst spend time?</strong>
+                <div class="ecosystem-layout morning-pm-layout">
+                    <div class="ecosystem-copy">
+                        <p>A move in credit spreads may matter to funding cost in one company, reinvestment yield in another, and expected losses somewhere else.</p>
+                        <p>IRIS keeps those economic relationships with each model, making them durable and queryable across the book while preserving how each company responds differently.</p>
+                        <p>Work done in one name becomes usable knowledge when the same driver matters elsewhere. The PM can compare assumptions, explore a shared economic scenario, and find the evidence behind a view before opening individual workbooks.</p>
+                        <div class="pm-questions" aria-label="Questions for the PM View">
+                            <strong>Where does the same economic driver matter across the book?</strong>
+                            <strong>How do our models respond differently to tighter credit?</strong>
+                            <strong>Which assumptions and evidence explain those differences?</strong>
+                            <strong>Where does the existing view deserve another look?</strong>
+                        </div>
+                        <p class="canonical-line">Understanding compounds across the investment process.</p>
                     </div>
-                    <p class="canonical-line pm-canonical">The PM sees where to look. The analyst sees why.</p>
+                    <div class="ecosystem-visuals">
+                        <figure class="story-plate ecosystem-plate">
+                            <div class="story-plate-image">
+                                <img src="./iris-model-search.png"
+                                    alt="IRIS Models page with portfolio scope, model search, active models, and recent model activity" />
+                            </div>
+                            <figcaption>
+                                <span class="story-plate-label">Models / Current corpus</span>
+                                <span class="story-plate-copy">The book becomes searchable analytical work, not a directory of files.</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="story-plate ecosystem-plate">
+                            <div class="story-plate-image">
+                                <img src="./iris-credit-conditions-inquiry.png"
+                                    alt="IRIS comparing controlled credit-condition scenarios across models in the current corpus" />
+                            </div>
+                            <figcaption>
+                                <span class="story-plate-label">PM Search / Across the book</span>
+                                <span class="story-plate-copy">Ask one economic question across the models while preserving how each one responds differently.</span>
+                            </figcaption>
+                        </figure>
+                    </div>
                 </div>
-                <figure class="story-plate pm-plate">
+                <div class="pm-layout overnight-layout">
+                    <div class="pm-copy">
+                        <div class="day-kicker">The ecosystem at work / Overnight monitoring</div>
+                        <h3 class="overnight-title">What changed overnight?</h3>
+                        <p>That same connected view makes the morning review possible. Each night, IRIS refreshes market and economic data, identifies which models are affected, and reruns the analysis that depends on what changed.</p>
+                        <p>By morning, PM Search can ask across the refreshed book: what changed, which models moved, which views held, and where attention belongs. Each answer leads back to the forecast, Method, evidence, and prior work behind it.</p>
+                        <p class="canonical-line pm-canonical">The PM sees where to look. The analyst sees why.</p>
+                    </div>
+                    <figure class="story-plate pm-plate">
+                        <div class="story-plate-image">
+                            <img src="./iris-pm-search.png"
+                                alt="IRIS answering what changed last night across the current model corpus" />
+                        </div>
+                        <figcaption>
+                            <span class="story-plate-label">PM Search / Morning review</span>
+                            <span class="story-plate-copy">See what changed across the connected book and where attention belongs.</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="research-section" aria-labelledby="research-title">
+            <div class="container research-layout">
+                <div class="research-copy">
+                    <div class="day-kicker">The Research Rail</div>
+                    <h2 id="research-title" class="experience-title">Something moved. Now what?</h2>
+                    <p class="experience-lede">The PM View points to a name. The analyst opens the model with its structure already understood. The Research Rail sits beside the spreadsheet with the model’s analytical context already established. Inspect the Method, evidence, prior work, and what a changed view would affect — then ask IRIS a question, save a thought, or tell IRIS what changed without leaving the model.</p>
+                    <div class="research-prompts" aria-label="Questions and actions for IRIS">
+                        <strong>Why is this estimate here?</strong>
+                        <strong>What evidence supports this Method?</strong>
+                        <strong>Save this thought for later.</strong>
+                        <strong>I think deployment matters more than spreads here.</strong>
+                        <strong>What would this change affect in the model?</strong>
+                    </div>
+                    <p class="truth-note research-truth">IRIS can preview a proposed change before the analyst applies it to the model.</p>
+                </div>
+                <figure class="story-plate research-plate">
                     <div class="story-plate-image">
-                        <img src="./iris-pm-search.png"
-                            alt="IRIS answering what changed last night across the current model corpus" />
+                        <img src="./screen.png"
+                            alt="IRIS workbook with the JPM model and Research Rail showing forecast responsibilities and items worth a closer look" />
                     </div>
                     <figcaption>
-                        <span class="story-plate-label">PM Search / Portfolio inquiry</span>
-                        <span class="story-plate-copy">Start with where attention belongs, then move into the forecast, Method, evidence, and prior work behind it.</span>
+                        <span class="story-plate-label">Research Rail / Beside the workbook</span>
+                        <span class="story-plate-copy">The spreadsheet stays visible while the Rail explains how it works and surfaces forecasts worth a closer look.</span>
                     </figcaption>
                 </figure>
+            </div>
+        </section>
+
+        <section id="architecture" class="compression-section capability-section" aria-labelledby="capability-title">
+            <div class="container">
+                <div class="compression-intro">
+                    <div class="day-kicker">Analyst View / Inside the model</div>
+                    <h2 id="capability-title" class="compression-title">Work the name with the model already understood.</h2>
                 </div>
+                <div class="capability-pair">
+                    <article>
+                        <div class="capability-label">Model Logic</div>
+                        <h3>Model Logic is how your model thinks.</h3>
+                        <p>Before frontier AI reasons about the workbook, IRIS establishes what can be known exactly: periods, formulas, dependencies, forecast structure, responsibilities, historical relationships, and the relevant inputs and outputs.</p>
+                        <p>At import, IRIS preserves what it understood about the model as a durable baseline. The model can change later without rewriting what IRIS knew then.</p>
+                    </article>
+                    <article id="methods">
+                        <div class="capability-label">Methods</div>
+                        <h3>Frontier models give you the consensus model. IRIS turns it into yours.</h3>
+                        <p>The differentiated forecast comes from how the analyst weighs evidence, frames the drivers, and decides when the view should change. IRIS makes that judgment explicit as a Method — readable, editable, reviewable, and executable through the workbook. IRIS writes Methods. Analysts own them.</p>
+                    </article>
+                </div>
+                <figure class="story-plate method-feature-plate">
+                    <div class="story-plate-image">
+                        <img src="./same-store-sales-guidance-method.png"
+                            alt="IRIS Method for retail same-store-sales guidance, expressed as readable analytical instructions" />
+                    </div>
+                    <figcaption>
+                        <span class="story-plate-label">Method / Same-store-sales guidance</span>
+                        <span class="story-plate-copy">The evidence hierarchy and analytical rules behind a forecast remain visible to the analyst.</span>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
@@ -1101,71 +1205,13 @@
             </div>
         </section>
 
-        <section id="architecture" class="compression-section capability-section" aria-labelledby="capability-title">
-            <div class="container">
-                <div class="compression-intro">
-                    <div class="day-kicker">Analyst View / Inside the model</div>
-                    <h2 id="capability-title" class="compression-title">Work the name with the model already understood.</h2>
-                </div>
-                <div class="capability-pair">
-                    <article>
-                        <div class="capability-label">Model Logic</div>
-                        <h3>Model Logic is how your model thinks.</h3>
-                        <p>Before an LLM reasons about the workbook, IRIS establishes what can be known exactly: periods, formulas, dependencies, forecast structure, historical relationships, and the relevant inputs and outputs.</p>
-                    </article>
-                    <article id="methods">
-                        <div class="capability-label">Methods</div>
-                        <h3>Frontier models give you the consensus model. IRIS turns it into yours.</h3>
-                        <p>The differentiated forecast comes from how the analyst weighs evidence, frames the drivers, and decides when the view should change. IRIS makes that approach explicit as a Method: readable, editable, and runnable through the workbook.</p>
-                    </article>
-                </div>
-                <figure class="story-plate method-feature-plate">
-                    <div class="story-plate-image">
-                        <img src="./same-store-sales-guidance-method.png"
-                            alt="IRIS Method for retail same-store-sales guidance, expressed as readable analytical instructions" />
-                    </div>
-                    <figcaption>
-                        <span class="story-plate-label">Method / Same-store-sales guidance</span>
-                        <span class="story-plate-copy">The evidence hierarchy and analytical rules behind a forecast remain visible to the analyst.</span>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <section id="research" class="research-section" aria-labelledby="research-title">
-            <div class="container research-layout">
-                <div class="research-copy">
-                    <div class="day-kicker">The Research Rail</div>
-                    <h2 id="research-title" class="experience-title">Something moved. Now what?</h2>
-                    <p class="experience-lede">The PM View points to a name. The analyst opens the model with its structure already understood. The Research Rail sits beside the spreadsheet, showing how the forecast works, which Methods drive it, and what deserves a closer look.</p>
-                    <div class="research-prompts" aria-label="Questions to ask IRIS">
-                        <strong>What drives this forecast?</strong>
-                        <strong>Why is this estimate here?</strong>
-                        <strong>What evidence supports it?</strong>
-                        <strong>Does the existing Method still hold?</strong>
-                        <strong>What would a changed view do downstream?</strong>
-                    </div>
-                    <p class="truth-note research-truth">IRIS can preview a proposed change before the analyst applies it to the model.</p>
-                </div>
-                <figure class="story-plate research-plate">
-                    <div class="story-plate-image">
-                        <img src="./screen.png"
-                            alt="IRIS workbook with the JPM model and Research Rail showing forecast responsibilities and items worth a closer look" />
-                    </div>
-                    <figcaption>
-                        <span class="story-plate-label">Research Rail / Beside the workbook</span>
-                        <span class="story-plate-copy">The spreadsheet stays visible while the Rail explains how it works and surfaces forecasts worth a closer look.</span>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
         <section id="memory" class="experience-section memory-section" aria-labelledby="memory-title">
             <div class="container">
                 <div class="day-kicker">Model Memory</div>
                 <h2 id="memory-title" class="experience-title">Models should remember.</h2>
-                <p class="experience-lede memory-lede">Why is the model different now? A changed estimate should not erase the reason the prior estimate existed.</p>
+                <p class="experience-lede memory-lede">Why is the model different now? A changed estimate should not erase the reason the prior estimate existed — or what IRIS understood about the model before it changed.</p>
                 <p class="canonical-line">Model Memory is how that thinking evolves.</p>
+                <p class="experience-lede memory-lede">IRIS preserves that import-time understanding, then keeps subsequent Methods, Versions, Runs, Results, and rationale attached to the analytical changes that produced them.</p>
                 <p class="experience-lede memory-instruction">Follow Versions from left to right. Open the Run beneath a change. Compare its Result with what came before and recover the reasoning that produced it. The lineage replaces overwritten cells and scattered notes with a record an analyst can actually revisit.</p>
                 <figure class="experience-timeline">
                     <div class="lineage-crop">
@@ -1174,42 +1220,6 @@
                     </div>
                     <figcaption>Version by Version, Run by Run: the analysis stays attached to the model change it produced.</figcaption>
                 </figure>
-            </div>
-        </section>
-
-        <section id="ecosystem" class="compression-section ecosystem-section" aria-labelledby="ecosystem-title">
-            <div class="container ecosystem-layout">
-                <div class="ecosystem-copy">
-                    <div class="day-kicker">Across the book</div>
-                    <h2 id="ecosystem-title" class="compression-title">Turn your models into an ecosystem.</h2>
-                    <p>A move in credit spreads may matter to funding cost in one company, reinvestment yield in another, and expected losses somewhere else.</p>
-                    <p>IRIS keeps those economic relationships with each model, making them durable and queryable across the book without assuming every company responds the same way.</p>
-                    <p>That is what lets a PM ask one question across the book without flattening every company into the same macro sensitivity.</p>
-                    <p>The portfolio becomes more than a collection of spreadsheets. Work done in one name becomes usable knowledge when the same driver matters elsewhere.</p>
-                    <p class="canonical-line">Understanding compounds across the investment process.</p>
-                </div>
-                <div class="ecosystem-visuals">
-                    <figure class="story-plate ecosystem-plate">
-                        <div class="story-plate-image">
-                            <img src="./iris-model-search.png"
-                                alt="IRIS Models page with portfolio scope, model search, active models, and recent model activity" />
-                        </div>
-                        <figcaption>
-                            <span class="story-plate-label">Models / Current corpus</span>
-                            <span class="story-plate-copy">The book becomes searchable analytical work, not a directory of files.</span>
-                        </figcaption>
-                    </figure>
-                    <figure class="story-plate ecosystem-plate">
-                        <div class="story-plate-image">
-                            <img src="./iris-credit-conditions-inquiry.png"
-                                alt="IRIS comparing controlled credit-condition scenarios across models in the current corpus" />
-                        </div>
-                        <figcaption>
-                            <span class="story-plate-label">PM Search / Across the book</span>
-                            <span class="story-plate-copy">Ask one economic question across the models while preserving how each one responds differently.</span>
-                        </figcaption>
-                    </figure>
-                </div>
             </div>
         </section>
 
@@ -1222,7 +1232,8 @@
                         <div class="closing-lines">
                             <p>Excel stays the model.</p>
                             <p>Frontier AI provides the intelligence.</p>
-                            <p><strong>IRIS is the harness between them.</strong></p>
+                            <p>The analyst owns the judgment.</p>
+                            <p><strong>IRIS is the harness that keeps them connected.</strong></p>
                         </div>
                     </div>
                     <div class="closing-payoff">
