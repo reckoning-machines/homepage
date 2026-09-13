@@ -536,7 +536,8 @@
             padding-left: 24px;
         }
 
-        .method-feature-plate {
+        .method-feature-plate,
+        .import-feature-plate {
             margin-top: 38px;
         }
 
@@ -1305,8 +1306,9 @@
                     <article>
                         <div class="capability-label">Model Logic</div>
                         <h3>Model Logic is how your model thinks.</h3>
+                        <p>Import a workbook and IRIS reads the model to understand how it works: what drives the forecasts, how the calculations connect, and how operating assumptions flow through to cash and funding needs.</p>
                         <p>Before frontier AI reasons about the workbook, IRIS establishes what can be known exactly: periods, formulas, dependencies, forecast structure, responsibilities, historical relationships, and the relevant inputs and outputs.</p>
-                        <p>At import, IRIS preserves what it understood about the model as a durable baseline. The model can change later without rewriting what IRIS knew then.</p>
+                        <p>IRIS explains that understanding in plain language and preserves it in Model Memory as a durable baseline. The model can change later without rewriting what IRIS knew at import.</p>
                     </article>
                     <article id="methods">
                         <div class="capability-label">Methods</div>
@@ -1315,6 +1317,18 @@
                         <p><code>=AI()</code> brings that Method into the spreadsheet as a formula. The Method governs how AI forms the forecast; the formula makes that forecast part of the model's calculations.</p>
                     </article>
                 </div>
+                <figure class="story-plate import-feature-plate">
+                    <div class="story-plate-image">
+                        <a href="./iris-crwv-import-understanding.png" target="_blank" rel="noopener" aria-label="Open CoreWeave import understanding screenshot at full size in a new tab">
+                            <img src="./iris-crwv-import-understanding.png" loading="lazy"
+                                alt="CoreWeave Model Imported record in Model Memory, with IRIS explaining how revenue growth, profitability, cash flow, and financing connect in the model" />
+                        </a>
+                    </div>
+                    <figcaption>
+                        <span class="story-plate-label">Model Logic / Understanding at import</span>
+                        <span class="story-plate-copy">IRIS reads CoreWeave's model and explains how it works. That understanding remains the first record in Model Memory, even as the model evolves. Open the screenshot to read the explanation.</span>
+                    </figcaption>
+                </figure>
                 <figure class="story-plate method-feature-plate">
                     <div class="story-plate-image">
                         <img src="./same-store-sales-guidance-method.png"
