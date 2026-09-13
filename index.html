@@ -37,6 +37,7 @@
         }
 
         .nav a.github-link,
+        .nav a.case-study-link,
         .nav a.substack-link {
             align-items: center;
             background: var(--accent-active);
@@ -52,6 +53,7 @@
         }
 
         .nav a.github-link:hover,
+        .nav a.case-study-link:hover,
         .nav a.substack-link:hover {
             background: var(--accent-dim);
             border-color: var(--accent-dim);
@@ -834,6 +836,106 @@
             line-height: 1.55;
         }
 
+        .hero-case-study {
+            color: var(--accent-active);
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+
+        .case-study-section {
+            background: rgba(231, 236, 238, 0.42);
+            border-bottom: 1px solid var(--border);
+            padding: clamp(64px, 8vw, 96px) 0;
+            scroll-margin-top: 96px;
+        }
+
+        .case-study-intro {
+            max-width: 880px;
+        }
+
+        .case-study-evidence {
+            color: var(--fg-dim);
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 22px 0 0;
+        }
+
+        .case-study-screens,
+        .case-study-questions {
+            display: grid;
+            gap: 28px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .case-study-screens {
+            margin-top: 32px;
+        }
+
+        .case-study-screens figcaption {
+            gap: 8px;
+            grid-template-columns: 1fr;
+        }
+
+        .case-study-screens .story-plate-image a {
+            cursor: zoom-in;
+            display: block;
+        }
+
+        .case-study-sequence {
+            border-bottom: 1px solid var(--border);
+            border-top: 1px solid var(--rule-strong);
+            margin-top: 32px;
+        }
+
+        .case-study-sequence summary {
+            color: var(--fg-bright);
+            cursor: pointer;
+            font-size: 19px;
+            font-weight: 620;
+            line-height: 1.4;
+            padding: 22px 0;
+        }
+
+        .case-study-sequence summary:focus-visible,
+        .case-study-screens a:focus-visible,
+        .hero-case-study:focus-visible {
+            outline: 2px solid var(--accent-active);
+            outline-offset: 4px;
+        }
+
+        .case-study-questions {
+            padding: 8px 0 28px;
+        }
+
+        .case-study-questions h3 {
+            color: var(--fg-bright);
+            font-size: 22px;
+            letter-spacing: -0.02em;
+            margin: 0 0 16px;
+        }
+
+        .case-study-questions ol {
+            color: var(--fg-dim);
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            padding-left: 26px;
+        }
+
+        .case-study-questions li {
+            margin-bottom: 14px;
+            padding-left: 4px;
+        }
+
+        .case-study-questions li::marker {
+            color: var(--accent-active);
+            font-family: var(--font-mono);
+            font-size: 13px;
+        }
+
         @media (max-width: 820px) {
             html,
             body {
@@ -855,8 +957,13 @@
             }
 
             .nav a.github-link,
+            .nav a.case-study-link,
             .nav a.substack-link {
                 margin: 0;
+            }
+
+            .case-study-section {
+                scroll-margin-top: 240px;
             }
 
             .hero-text {
@@ -952,6 +1059,8 @@
             .harness-layout,
             .research-layout,
             .ecosystem-layout,
+            .case-study-screens,
+            .case-study-questions,
             .closing-layout {
                 grid-template-columns: 1fr;
             }
@@ -1015,6 +1124,7 @@
             </div>
             <nav class="nav" aria-label="Primary">
                 <a class="github-link" href="https://github.com/reckoning-machines">GitHub <span aria-hidden="true">-&gt;</span></a>
+                <a class="case-study-link" href="#case-study">Case Study <span aria-hidden="true">-&gt;</span></a>
                 <a href="#pm-view">PM View</a>
                 <a href="#architecture">How it works</a>
                 <a href="#research">Research</a>
@@ -1046,6 +1156,7 @@
                                 <a class="hero-contact"
                                     href="mailto:jedgore@reckoningmachines.com?subject=IRIS%20demo%20request">Request Demo</a>
                             </div>
+                            <a class="hero-case-study" href="#case-study">Case Study: Where does AI-related debt exposure sit? <span aria-hidden="true">-&gt;</span></a>
                         </div>
                         <figure class="hero-product-shot">
                             <img src="./screen.png"
@@ -1187,6 +1298,81 @@
                         <span class="story-plate-copy">The evidence hierarchy and analytical rules behind a forecast remain visible to the analyst.</span>
                     </figcaption>
                 </figure>
+            </div>
+        </section>
+
+        <section id="case-study" class="case-study-section" aria-labelledby="case-study-title">
+            <div class="container">
+                <div class="case-study-intro">
+                    <div class="day-kicker">Across the book / Inside the model</div>
+                    <h2 id="case-study-title" class="experience-title">Case Study: Where does AI-related debt exposure sit?</h2>
+                    <p class="experience-lede">Start with CoreWeave (CRWV). Trace the financing obligations, ask who bears the exposure, and examine what would change its value. Each answer sets up the next question, from the scheduled debt to the evidence needed for an investment view.</p>
+                    <p class="case-study-evidence">The inquiry starts with evidence already in the model: lease rows J116 and J117, the Cash Interest Rate Method at J108:O108, delayed-draw term loan (DDTL) and OEM financing disclosures, undrawn capacity at J119, and equity at J121. From there, it asks whether the exposure can be connected to other companies in the book.</p>
+                    <p class="case-study-evidence"><strong>A useful finding from the inquiry:</strong> in the exchange below, IRIS identifies the gap between forecasting contractual debt payments and estimating a DDTL's market value. It calls for a defined valuation subject and date, a complete cash-flow schedule, market pricing, and terms and risk evidence. The next question asks how to resolve each gap.</p>
+                </div>
+                <div class="case-study-screens">
+                    <figure class="story-plate">
+                        <div class="story-plate-image">
+                            <a href="./iris-crwv-debt-evidence.png" target="_blank" rel="noopener" aria-label="Open CoreWeave debt evidence screenshot at full size in a new tab">
+                                <img src="./iris-crwv-debt-evidence.png" loading="lazy"
+                                    alt="CoreWeave workbook beside IRIS explaining the missing Method and evidence needed to estimate a DDTL market value" />
+                            </a>
+                        </div>
+                        <figcaption>
+                            <span class="story-plate-label">01 / Establish what the evidence supports</span>
+                            <span class="story-plate-copy">IRIS distinguishes the model's principal and borrowing-cost forecasts from the evidence needed for a market valuation. Open the screenshot to read the response.</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="story-plate">
+                        <div class="story-plate-image">
+                            <a href="./iris-crwv-debt-next-step.png" target="_blank" rel="noopener" aria-label="Open CoreWeave follow-up question screenshot at full size in a new tab">
+                                <img src="./iris-crwv-debt-next-step.png" loading="lazy"
+                                    alt="CoreWeave Research Rail with a follow-up drafted in the composer asking which gaps need a Method change, an analyst Note, or new external evidence" />
+                            </a>
+                        </div>
+                        <figcaption>
+                            <span class="story-plate-label">02 / Frame the next analytical step</span>
+                            <span class="story-plate-copy">The analyst drafts the follow-up: does each unresolved item call for a Method change, a saved Note, or new evidence? Open the screenshot to read the question.</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <details class="case-study-sequence">
+                    <summary>Follow the inquiry: 11 questions from obligations to an investment thesis</summary>
+                    <div class="case-study-questions">
+                        <div>
+                            <h3>Where the debt sits</h3>
+                            <ol>
+                                <li>Which financing obligations does this model schedule explicitly, and which does it only name from the filings without a row?</li>
+                                <li>For the delayed-draw term loans, what committed, drawn and undrawn amounts does the admitted evidence establish, and as of what date?</li>
+                                <li>How does the model treat the OEM and software financing, and is any of it double-counted with the disclosed debt total?</li>
+                                <li>What does the model assume about lease liabilities versus lease payments, and where would a committed GPU lease show up?</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h3>Who bears it</h3>
+                            <ol start="5">
+                                <li>For DDTL 3.0, who is borrower, guarantor, arranger, disclosed lender and known current holder, and which of those roles has a date attached?</li>
+                                <li>Which of those lenders is a public company in this corpus, and what would be needed to connect this facility to that lender's model?</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h3>How its value changes</h3>
+                            <ol start="7">
+                                <li>What drives the cash interest rate in the Method, and what happens to interest expense if SOFR moves 100 bp?</li>
+                                <li>Which obligations reprice with market rates and which are fixed, and does the model separate them?</li>
+                                <li>What would have to be true about revenue or utilization for the scheduled repayments to be covered from operations rather than refinancing?</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h3>Where the model is thin</h3>
+                            <ol start="10">
+                                <li>What evidence is missing before this model could support a mark on the DDTL, and which of those items are in the filings the corpus already admits?</li>
+                                <li>Which of the unknowns you named would a Note or an Update Method resolve, and which need new admitted evidence?</li>
+                            </ol>
+                        </div>
+                    </div>
+                </details>
+                <p class="case-study-evidence"><strong>Carry the conclusion forward.</strong> A Saved Note creates a durable analyst observation attached to the current governed subject. It preserves the analyst's interpretation or conclusion for later Model Memory and reasoning.</p>
             </div>
         </section>
 
