@@ -503,6 +503,27 @@
             grid-template-columns: 1fr;
         }
 
+        .research-distinction {
+            border-top: 1px solid var(--rule-strong);
+            grid-column: 1 / -1;
+            padding-top: 24px;
+        }
+
+        .research-distinction p {
+            color: var(--fg-dim);
+            font-size: 19px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .research-distinction p + p {
+            color: var(--fg-bright);
+            font-size: clamp(23px, 2.5vw, 30px);
+            font-weight: 660;
+            letter-spacing: -0.025em;
+            margin-top: 12px;
+        }
+
         .canonical-line {
             border-left: 1px solid var(--rule-strong);
             color: var(--fg-bright);
@@ -1245,7 +1266,8 @@
                 <div class="research-copy">
                     <div class="day-kicker">The Research Rail</div>
                     <h2 id="research-title" class="experience-title">Something moved. Now what?</h2>
-                    <p class="experience-lede">The PM View points to a name. The analyst opens the model with its structure already understood. The Research Rail sits beside the spreadsheet with the model’s analytical context already established. Inspect the Method, evidence, prior work, and what a changed view would affect — then ask IRIS a question, save a thought, or tell IRIS what changed without leaving the model.</p>
+                    <p class="experience-lede">The PM View points to a name. The Research Rail answers against the governed model state: the Model, Methods, evidence, external dependencies, Runs and Results, and saved analyst memory.</p>
+                    <p class="experience-lede">Inspect the Method, evidence, prior work, and what a changed view would affect — then ask IRIS a question, save a thought, or tell IRIS what changed without leaving the model. What matters can become a durable Saved Note or a proposed Method change for the analyst to review.</p>
                     <div class="research-prompts" aria-label="Questions and actions for IRIS">
                         <strong>Why is this estimate here?</strong>
                         <strong>What evidence supports this Method?</strong>
@@ -1262,9 +1284,13 @@
                     </div>
                     <figcaption>
                         <span class="story-plate-label">Research Rail / Beside the workbook</span>
-                        <span class="story-plate-copy">The spreadsheet stays visible while the Rail explains how it works and surfaces forecasts worth a closer look.</span>
+                        <span class="story-plate-copy">The spreadsheet stays visible while the Rail reasons against the model's governed state and saved analyst memory.</span>
                     </figcaption>
                 </figure>
+                <div class="research-distinction">
+                    <p>Copilot helps you work in the spreadsheet.</p>
+                    <p>IRIS helps you reason with, govern, and remember the model over time.</p>
+                </div>
             </div>
         </section>
 
