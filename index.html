@@ -531,6 +531,34 @@
             padding: 14px 8px 4px;
         }
 
+        .mcp-section {
+            border-bottom: 1px solid var(--border);
+            padding: clamp(56px, 7vw, 88px) 0;
+        }
+
+        .mcp-title {
+            color: var(--fg-bright);
+            font-size: clamp(28px, 3vw, 38px);
+            font-weight: 660;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin: 0 0 8px;
+            text-wrap: balance;
+        }
+
+        .mcp-copy p {
+            color: var(--fg-dim);
+            font-size: 17px;
+            line-height: 1.6;
+            margin: 14px 0 0;
+            max-width: 560px;
+        }
+
+        .mcp-copy .mcp-split {
+            color: var(--fg-bright);
+            font-weight: 600;
+        }
+
         .research-section {
             border-bottom: 1px solid var(--border);
             padding: clamp(92px, 11vw, 132px) 0;
@@ -1273,6 +1301,28 @@
                     <h2>Preserve deliberately</h2>
                     <p>A Run changes nothing in the governed baseline. Save the assumptions, results or conclusion only when they are worth remembering.</p>
                 </article>
+            </div>
+        </section>
+
+        <section id="mcp" class="mcp-section" aria-labelledby="mcp-title">
+            <div class="container research-layout">
+                <div class="mcp-copy">
+                    <div class="day-kicker">Coming soon: the IRIS MCP launch</div>
+                    <h2 id="mcp-title" class="mcp-title">Your models. Now in Claude and Codex.</h2>
+                    <p>Ask questions across your book. Follow an idea into a company model. Test assumptions and inspect what changes, all in one conversation.</p>
+                    <p class="mcp-split">Claude and Codex provide the reasoning. IRIS provides the cross-model context, sandbox, and controlled execution and memory.</p>
+                    <p>Run experiments through your actual models without changing the baseline. Save the findings you choose, with the evidence behind them. Continue later in Claude, Codex or IRIS.</p>
+                </div>
+                <figure class="story-plate">
+                    <div class="story-plate-image">
+                        <img src="./iris-mcp-claude-code.png" loading="lazy"
+                            alt="Claude Code's Manage MCP servers screen listing the claude.ai IRIS connector alongside Claude Docs and Google Drive" />
+                    </div>
+                    <figcaption>
+                        <span class="story-plate-label">Claude Code / IRIS as an MCP server</span>
+                        <span class="story-plate-copy">IRIS appears beside your other connectors in Claude Code.</span>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
