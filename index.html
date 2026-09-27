@@ -764,71 +764,6 @@
             grid-template-columns: 1fr;
         }
 
-        .harness-section {
-            background:
-                linear-gradient(rgba(246, 244, 238, 0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(246, 244, 238, 0.035) 1px, transparent 1px),
-                var(--blueprint);
-            background-size: 48px 48px, 48px 48px, 100% 100%;
-            border-bottom: 1px solid var(--rule-strong);
-            padding: clamp(88px, 10vw, 118px) 0;
-        }
-
-        .harness-layout {
-            display: grid;
-            gap: clamp(42px, 7vw, 90px);
-            grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
-        }
-
-        .harness-section .day-kicker {
-            color: rgba(246, 244, 238, 0.58);
-        }
-
-        .harness-title {
-            color: var(--paper);
-            font-size: clamp(35px, 4vw, 50px);
-            font-weight: 670;
-            letter-spacing: -0.035em;
-            line-height: 1;
-            margin: 0;
-        }
-
-        .harness-copy p {
-            color: rgba(246, 244, 238, 0.72);
-            font-size: 18px;
-            line-height: 1.55;
-            margin: 0 0 18px;
-        }
-
-        .harness-copy .harness-answer {
-            border-top: 1px solid rgba(246, 244, 238, 0.22);
-            color: var(--paper);
-            font-weight: 620;
-            margin-top: 28px;
-            padding-top: 24px;
-        }
-
-        .harness-copy a {
-            color: var(--paper);
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 4px;
-        }
-
-        .harness-copy a:hover {
-            color: #ffffff;
-            text-decoration-thickness: 2px;
-        }
-
-        .harness-principle {
-            color: rgba(246, 244, 238, 0.68);
-            font-family: var(--font-mono);
-            font-size: 12px;
-            letter-spacing: 0.035em;
-            line-height: 1.6;
-            margin-top: 28px;
-        }
-
         .capability-pair {
             border-bottom: 1px solid var(--border);
             border-top: 1px solid var(--rule-strong);
@@ -1184,8 +1119,7 @@
             }
 
             .experience-section,
-            .research-section,
-            .harness-section {
+            .research-section {
                 padding: 76px 0;
             }
 
@@ -1193,13 +1127,11 @@
                 padding: 48px 0 76px;
             }
 
-            .experience-title,
-            .harness-title {
+            .experience-title {
                 font-size: 35px;
             }
 
             .pm-layout,
-            .harness-layout,
             .research-layout,
             .ecosystem-layout,
             .case-study-screens,
@@ -1432,6 +1364,7 @@
                         <summary>Under the hood</summary>
                         <p>IRIS has a headless spreadsheet engine: it represents financial models as structured data, calculates supported formulas without opening Excel, and preserves governed model versions and their history.</p>
                     </details>
+                    <p><a href="https://reckoningmachines.substack.com/p/we-are-paying-the-model-to-read-our">Read how IRIS prepares the model for AI</a></p>
                 </div>
                 <div class="capability-pair">
                     <article>
@@ -1659,21 +1592,6 @@
                     </div>
                 </details>
                 <p class="case-study-evidence"><strong>Carry the conclusion forward.</strong> Eleven questions, none of which changed the model. The analyst decides which of them produced something worth keeping, and saves that as a note with the model. Weeks later, when a colleague picks up the financing question, they start from the evidence, the interpretation, and the questions that were still open.</p>
-            </div>
-        </section>
-
-        <section class="harness-section" aria-labelledby="harness-title">
-            <div class="container harness-layout">
-                <div>
-                    <div class="day-kicker">Research that builds</div>
-                    <h2 id="harness-title" class="harness-title">Your research, ready for the next question.</h2>
-                </div>
-                <div class="harness-copy">
-                    <p class="harness-answer">IRIS brings together your current models, approved estimates, supporting evidence, and saved conclusions so each new question builds on the work you've already done.</p>
-                    <p>Use frontier AI to explore a company, test an assumption, or reason through a forecast with that context in place. Follow what drives the estimate: funding costs, unit growth, margins, credit losses, pricing, or operating leverage.</p>
-                    <p>Inspect the assumptions behind a proposed change, decide what belongs in the forecast, and keep the reasoning with the result. When you or a colleague return to the company, that work is ready to carry the research forward.</p>
-                    <p><a href="https://reckoningmachines.substack.com/p/we-are-paying-the-model-to-read-our">Read how IRIS prepares the model for AI</a></p>
-                </div>
             </div>
         </section>
 
