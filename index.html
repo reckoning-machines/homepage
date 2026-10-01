@@ -583,6 +583,20 @@
             font-weight: 600;
         }
 
+        .mcp-onboarding {
+            grid-column: 1 / -1;
+            min-width: 0;
+        }
+
+        .mcp-onboarding h3 {
+            color: var(--fg-bright);
+            font-size: 24px;
+            font-weight: 660;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin: 0;
+        }
+
         .research-section {
             border-bottom: 1px solid var(--border);
             padding: clamp(92px, 11vw, 132px) 0;
@@ -940,6 +954,7 @@
             margin: 22px 0 0;
         }
 
+        .mcp-screens,
         .case-study-screens,
         .case-study-questions {
             display: grid;
@@ -947,15 +962,22 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
+        .mcp-screens,
         .case-study-screens {
             margin-top: 32px;
         }
 
+        .mcp-screens {
+            align-items: start;
+        }
+
+        .mcp-screens figcaption,
         .case-study-screens figcaption {
             gap: 8px;
             grid-template-columns: 1fr;
         }
 
+        .mcp-screens .story-plate-image a,
         .case-study-screens .story-plate-image a {
             cursor: zoom-in;
             display: block;
@@ -977,6 +999,7 @@
         }
 
         .case-study-sequence summary:focus-visible,
+        .mcp-screens a:focus-visible,
         .case-study-screens a:focus-visible,
         .hero-case-study:focus-visible {
             outline: 2px solid var(--accent-active);
@@ -1134,6 +1157,7 @@
             .pm-layout,
             .research-layout,
             .ecosystem-layout,
+            .mcp-screens,
             .case-study-screens,
             .case-study-questions,
             .closing-layout {
@@ -1300,6 +1324,36 @@
                         <span class="story-plate-label">Claude / AAPL model</span>
                     </figcaption>
                 </figure>
+                <div class="mcp-onboarding">
+                    <div class="day-kicker">Claude in Excel / From catalog to workspace</div>
+                    <h3>Find a model and make it part of your research book.</h3>
+                    <div class="mcp-screens">
+                        <figure class="story-plate">
+                            <div class="story-plate-image">
+                                <a href="./iris-claude-excel-model-catalog.png" target="_blank" rel="noopener" aria-label="Open the Claude in Excel model catalog screenshot at full size in a new tab">
+                                    <img src="./iris-claude-excel-model-catalog.png" loading="lazy" width="690" height="734"
+                                        alt="Claude in Excel finding Oracle's quarterly operating, capacity and financing model in the IRIS Model Catalog, before it has been added to the workspace" />
+                                </a>
+                            </div>
+                            <figcaption>
+                                <span class="story-plate-label">01 / Find a prepared model</span>
+                                <span class="story-plate-copy">Ask Claude about a company you cover. IRIS identifies the prepared Oracle model in its catalog.</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="story-plate">
+                            <div class="story-plate-image">
+                                <a href="./iris-claude-excel-workspace.png" target="_blank" rel="noopener" aria-label="Open the Claude in Excel workspace screenshot at full size in a new tab">
+                                    <img src="./iris-claude-excel-workspace.png" loading="lazy" width="698" height="692"
+                                        alt="Claude in Excel confirming that the Oracle model has been added to the IRIS workspace at the analyst's request and providing a link to open it" />
+                                </a>
+                            </div>
+                            <figcaption>
+                                <span class="story-plate-label">02 / Add it to your workspace</span>
+                                <span class="story-plate-copy">Ask Claude to add the model. IRIS puts it in your workspace and returns a link to open it.</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </section>
 
