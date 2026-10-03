@@ -5,17 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="Work the way you think. The AI harness for fundamental research analysts. Explore ideas with frontier AI, test them through the actual models in a safe Sandbox, and preserve the work worth remembering." />
-    <meta property="og:title" content="Reckoning Machines | IRIS" />
+        content="IRIS is the AI harness for fundamental research teams: a research intelligence system for equity and credit analysts that reads the Excel models a team already maintains, carries each analyst's forecast of the key drivers as an approved Method, and lets the desk question, test and revise the book without putting the working models at risk." />
+    <meta property="og:title" content="IRIS | The AI harness for fundamental research teams" />
     <meta property="og:description"
-        content="Work the way you think. The AI harness for fundamental research analysts. Explore ideas with frontier AI, test them through the actual models in a safe Sandbox, and preserve the work worth remembering." />
+        content="IRIS is the AI harness for fundamental research teams: a research intelligence system for equity and credit analysts that reads the Excel models a team already maintains, carries each analyst's forecast of the key drivers as an approved Method, and lets the desk question, test and revise the book without putting the working models at risk." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://reckoningmachines.com" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Reckoning Machines | IRIS" />
+    <meta name="twitter:title" content="IRIS | The AI harness for fundamental research teams" />
     <meta name="twitter:description"
-        content="Work the way you think. The AI harness for fundamental research analysts. Explore ideas with frontier AI, test them through the actual models in a safe Sandbox, and preserve the work worth remembering." />
-    <title>Reckoning Machines | IRIS</title>
+        content="IRIS is the AI harness for fundamental research teams: a research intelligence system for equity and credit analysts that reads the Excel models a team already maintains, carries each analyst's forecast of the key drivers as an approved Method, and lets the desk question, test and revise the book without putting the working models at risk." />
+    <title>IRIS | The AI harness for fundamental research teams</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -595,6 +595,15 @@
             letter-spacing: -0.02em;
             line-height: 1.2;
             margin: 0;
+        }
+
+        .mcp-onboarding > .experience-lede {
+            margin: 16px 0 0;
+            max-width: 62ch;
+        }
+
+        .mcp-onboarding > .catalog-feature-plate {
+            margin: 28px 0 24px;
         }
 
         .research-section {
@@ -1226,7 +1235,7 @@
                 <a class="case-study-link" href="#case-study">Case Study <span aria-hidden="true">-&gt;</span></a>
                 <a class="substack-link" href="https://reckoningmachines.substack.com/">Substack <span aria-hidden="true">-&gt;</span></a>
                 <a href="#pm-view">PM View</a>
-                <a href="#architecture">How it works</a>
+                <a href="#architecture">Inside IRIS</a>
                 <a href="https://app.reckoningmachines.com/">Launch IRIS</a>
             </nav>
         </div>
@@ -1242,10 +1251,10 @@
                                 <div class="blueprint-wordmark iris-wordmark" role="img" aria-label="IRIS">
                                     <span class="wordmark-line" data-text="IRIS" aria-hidden="true">IRIS</span>
                                 </div>
-                                <h1 id="hero-title" class="hero-positioning-title">Work the way you think.</h1>
+                                <h1 id="hero-title" class="hero-positioning-title">The AI harness for fundamental research teams.</h1>
                             </div>
-                            <p class="hero-positioning-lede">The AI harness for fundamental research analysts.</p>
-                            <p class="hero-positioning-copy">Explore ideas with frontier AI. Test them through the actual models in a safe Sandbox. Preserve the work for audit.</p>
+                            <p class="hero-positioning-lede">A research intelligence system for equity and credit analysts / portfolio managers.</p>
+                            <p class="hero-positioning-copy">IRIS reads the Excel models a research team already maintains, carries each analyst's forecast of the key drivers as an explicit and approved Method, and lets the desk question, test and revise the book without putting the working models at risk.</p>
                             <div class="hero-actions">
                                 <a class="hero-launch" href="https://app.reckoningmachines.com/">Launch IRIS <span aria-hidden="true">-&gt;</span></a>
                                 <a class="hero-contact"
@@ -1257,21 +1266,37 @@
                             <a href="./iris-ai-financing-inquiry.png" target="_blank" rel="noopener" aria-label="Open the institutional inquiry screenshot at full size in a new tab">
                                 <img src="./iris-ai-financing-inquiry.png" alt="IRIS answering where AI-buildout financing sits across a 13-model book, who bears it, and how tighter financing conditions transmit through each company" />
                             </a>
-                            <figcaption>Institutional inquiry / One question across 13 models</figcaption>
+                            <figcaption>PM View / One question across a 13-model book</figcaption>
                         </figure>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="book" class="book-section" aria-labelledby="book-title">
+        <section class="proof-section" aria-label="How IRIS treats the research book">
+            <div class="container proof-grid">
+                <article>
+                    <h3>Explore freely</h3>
+                    <p>Any question can be put to one model in the book or to all of them at once, and because asking is a read-only operation, no question, however it is phrased, can alter a model, an estimate or a record.</p>
+                </article>
+                <article>
+                    <h3>Inspect exactly</h3>
+                    <p>Before a test runs, IRIS lists every assumption it proposes to change beside the value the model holds today, and after the run it reports the result against a control run on the same version, so the analyst reads the effect of the assumptions and nothing else.</p>
+                </article>
+                <article>
+                    <h3>Preserve deliberately</h3>
+                    <p>A test runs the <button class="term-tip" type="button" aria-describedby="method-definition">Method<span id="method-definition" class="term-tip-text" role="tooltip">A Method is an analyst's forecast of a key driver, written as an approved instruction to the language model and calculated in the workbook.</span></button> the analyst approved rather than whatever an assistant would say today, and the assumptions, results and conclusions enter the record only when the analyst decides they are worth keeping.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="architecture" class="book-section" aria-labelledby="book-title">
             <div class="container research-layout">
                 <div class="book-copy">
                     <h2 id="book-title">A research book that knows itself.</h2>
-                    <p>Every model is imported and understood: its drivers, its assumptions, and how each forecast flows through earnings, cash flow and financing.</p>
-                    <p>On top sits what your team knows: the approach behind each estimate, the evidence it rests on, and the conclusions analysts chose to keep.</p>
-                    <p>And IRIS remembers how it got here: every version, every approved change, and why the numbers moved.</p>
-                    <p class="book-payoff">So when you ask where AI financing sits across the book, the answer starts from all of that.</p>
+                    <p>IRIS imports each model in the book and works out how it is built: which periods are history and which are forecast, which cells are operating drivers and which are assumptions, and how each forecast flows through revenue, margins, cash flow and financing. That work is done once, on import, so every question that follows starts with the business rather than with the grid.</p>
+                    <p>On top of the workbook sits what the team knows about it: the Method behind each key driver, the evidence it rests on, the conclusions analysts chose to keep, and every approved version together with the reason the numbers moved.</p>
+                    <p class="book-payoff">When a PM asks where AI financing sits across the book, the answer starts from all of that.</p>
                 </div>
                 <figure class="story-plate">
                     <div class="story-plate-image">
@@ -1282,208 +1307,44 @@
                     </div>
                     <figcaption>
                         <span class="story-plate-label">Research Rail / Oracle model</span>
-                        <span class="story-plate-copy">IRIS explains how the forecasts, operating drivers and financing connect.</span>
+                        <span class="story-plate-copy">IRIS explains how the Oracle forecasts, operating drivers and financing connect, and the explanation stays with the model as the estimates evolve.</span>
                     </figcaption>
                 </figure>
             </div>
-        </section>
-
-        <section class="proof-section" aria-label="How the research book works">
-            <div class="container proof-grid">
-                <article>
-                    <h3>Explore freely</h3>
-                    <p>Ask anything across every model in the book. Asking is read-only: no question can change a model, an estimate or a record.</p>
-                </article>
-                <article>
-                    <h3>Inspect exactly</h3>
-                    <p>Before a test runs, see every assumption it would change beside the model's current value. Afterward, compare the result with a control run on the same version. Your working model is never touched.</p>
-                </article>
-                <article>
-                    <h3>Preserve deliberately</h3>
-                    <p>A test runs the <button class="term-tip" type="button" aria-describedby="method-definition">Method<span id="method-definition" class="term-tip-text" role="tooltip">Method - the governed representation of how an analyst wants a forecast to be formed: the evidence, analytical rules, assumptions, limits, and output. IRIS can draft it; the analyst owns it.</span></button> you approved, not whatever an assistant would say today. Save the assumptions, results or conclusion only when they're worth keeping.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="model-catalog" class="research-section" aria-labelledby="model-catalog-title">
             <div class="container">
-                <div class="compression-intro">
-                    <div class="day-kicker">Model Catalog / A starting point for your research</div>
-                    <h2 id="model-catalog-title" class="experience-title">Start with a prepared model. Make it your own.</h2>
-                    <p class="experience-lede">The IRIS Model Catalog gives analysts a starting point for company research. Review a model's coverage, checks and limitations, then add an independent copy to your workspace, with supporting evidence and proposed forecast Methods ready for review.</p>
-                    <p class="experience-lede">Available through IRIS or Claude in Excel. Download the original Excel workbook, with its formulas and formatting intact.</p>
-                </div>
-                <figure class="story-plate catalog-feature-plate">
-                    <div class="story-plate-image">
-                        <a href="./iris-model-catalog.png" target="_blank" rel="noopener" aria-label="Open the IRIS Model Catalog screenshot at full size in a new tab">
-                            <img src="./iris-model-catalog.png" loading="lazy" width="1978" height="582"
-                                alt="IRIS Model Catalog listing the Oracle quarterly operating, capacity and financing model, with Preview and Add to Workspace buttons and a note that forecast Methods arrive as proposals for review" />
-                        </a>
-                    </div>
-                    <figcaption>
-                        <span class="story-plate-label">Model Catalog / Oracle</span>
-                        <span class="story-plate-copy">Preview the prepared model, then add your own copy to the workspace. Its forecast Methods arrive as proposals for your review.</span>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <section id="pm-view" class="morning-section" aria-labelledby="ecosystem-title">
-            <div class="container">
-                <div id="ecosystem" class="morning-intro">
-                    <div class="day-kicker">Explore freely / Across the book</div>
-                    <h2 id="ecosystem-title" class="experience-title">See the whole book.</h2>
-                    <p class="morning-lede">Turn your models into an ecosystem.</p>
-                    <p>The same move in rates, spreads, demand, or pricing can affect every company differently. IRIS lets the PM ask one question across the book and follow every answer back to the relevant forecast, assumptions, evidence, and prior work.</p>
-                    <p>PM View reads. It never writes. It can tell you what every model in the book says and show you exactly where each answer came from, but it never becomes the answer itself. The model, and the analyst who owns it, stay the authority.</p>
-                </div>
-                <p class="canonical-line">When the world changes, which of my models should change with it, and why?</p>
-                <div class="ecosystem-layout morning-pm-layout">
-                    <div class="ecosystem-copy">
-                        <p>A move in credit spreads may matter to funding cost in one company, reinvestment yield in another, and expected losses somewhere else.</p>
-                        <p>Compare how the same economic change affects different companies, using the assumptions and forecasts in each model.</p>
-                        <p>Research in one name can inform the next. Compare exposures, test a shared scenario, and find the evidence behind a view across the companies you cover.</p>
-                        <div class="pm-questions" aria-label="Questions for the PM View">
-                            <strong>Where does AI-buildout financing sit across the book, and who bears it?</strong>
-                            <strong>Where are higher rates hurting earnings?</strong>
-                            <strong>Which companies need refinancing?</strong>
-                            <strong>Where would wider spreads improve returns?</strong>
-                            <strong>Which estimates depend on assumptions that have just moved?</strong>
-                        </div>
-                        <p class="canonical-line">The team's research becomes knowledge the whole book can use.</p>
-                    </div>
-                    <div class="ecosystem-visuals">
-                        <figure class="story-plate ecosystem-plate">
-                            <div class="story-plate-image">
-                                <img src="./iris-model-search.png"
-                                    alt="IRIS Models page with portfolio scope, model search, active models, and recent model activity" />
-                            </div>
-                            <figcaption>
-                                <span class="story-plate-label">Models / Companies you cover</span>
-                                <span class="story-plate-copy">Find the companies, forecasts, and prior research behind your question.</span>
-                            </figcaption>
-                        </figure>
-                        <figure class="story-plate ecosystem-plate">
-                            <div class="story-plate-image">
-                                <img src="./iris-credit-conditions-inquiry.png"
-                                    alt="IRIS comparing how different credit conditions affect companies across the book" />
-                            </div>
-                            <figcaption>
-                                <span class="story-plate-label">PM Search / Across the book</span>
-                                <span class="story-plate-copy">Ask one economic question across the book while preserving how each model responds differently.</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="mcp" class="mcp-section" aria-labelledby="mcp-title">
-            <div class="container research-layout">
-                <div class="mcp-copy">
-                    <div class="day-kicker">Available now / IRIS in Claude and Codex</div>
-                    <h2 id="mcp-title" class="mcp-title">Work in Claude or Codex for Excel</h2>
-                    <p>Ask questions across the book. Follow an idea into a company model. Test assumptions and inspect what changes, all in one conversation.</p>
-                    <p class="mcp-split">Claude and Codex provide the reasoning. IRIS provides the models, the sandbox and the memory.</p>
-                    <p>Run experiments through your actual models without changing the baseline. Save the findings you choose, with the evidence behind them. Next quarter, or after the analyst who found them has moved on, the reasoning is still there, in Claude, Codex or the IRIS web app.</p>
-                </div>
-                <figure class="story-plate">
-                    <div class="story-plate-image">
-                        <a href="./iris-claude-experiment-approval.png" target="_blank" rel="noopener" aria-label="Open the Claude experiment approval screenshot at full size in a new tab">
-                            <img src="./iris-claude-experiment-approval.png" loading="lazy"
-                                alt="The AAPL quarterly operating model open in Excel beside Claude, where IRIS has accepted a proposed experiment and returned an approval link, with nothing run yet" />
-                        </a>
-                    </div>
-                    <figcaption>
-                        <span class="story-plate-label">Claude / AAPL model</span>
-                    </figcaption>
-                </figure>
-                <div class="mcp-onboarding">
-                    <div class="day-kicker">Claude in Excel / From catalog to workspace</div>
-                    <h3>Find a model and make it part of your research book.</h3>
-                    <div class="mcp-screens">
-                        <figure class="story-plate">
-                            <div class="story-plate-image">
-                                <a href="./iris-claude-excel-model-catalog.png" target="_blank" rel="noopener" aria-label="Open the Claude in Excel model catalog screenshot at full size in a new tab">
-                                    <img src="./iris-claude-excel-model-catalog.png" loading="lazy" width="690" height="734"
-                                        alt="Claude in Excel finding Oracle's quarterly operating, capacity and financing model in the IRIS Model Catalog, before it has been added to the workspace" />
-                                </a>
-                            </div>
-                            <figcaption>
-                                <span class="story-plate-label">01 / Find a prepared model</span>
-                                <span class="story-plate-copy">Ask Claude about a company you cover. IRIS identifies the prepared Oracle model in its catalog.</span>
-                            </figcaption>
-                        </figure>
-                        <figure class="story-plate">
-                            <div class="story-plate-image">
-                                <a href="./iris-claude-excel-workspace.png" target="_blank" rel="noopener" aria-label="Open the Claude in Excel workspace screenshot at full size in a new tab">
-                                    <img src="./iris-claude-excel-workspace.png" loading="lazy" width="698" height="692"
-                                        alt="Claude in Excel confirming that the Oracle model has been added to the IRIS workspace at the analyst's request and providing a link to open it" />
-                                </a>
-                            </div>
-                            <figcaption>
-                                <span class="story-plate-label">02 / Add it to your workspace</span>
-                                <span class="story-plate-copy">Ask Claude to add the model. IRIS puts it in your workspace and returns a link to open it.</span>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="architecture" class="compression-section capability-section" aria-labelledby="capability-title">
-            <div class="container">
-                <div class="compression-intro">
-                    <div class="day-kicker">Inspect exactly / IRIS reads the workbook</div>
-                    <h2 id="capability-title" class="compression-title">The IRIS Model</h2>
-                    <p class="experience-lede">IRIS identifies the historical periods, forecast periods, operating drivers, assumptions, and financial statements, then explains how they fit together.</p>
-                    <p class="experience-lede">IRIS works out the spreadsheet once, so every question after that starts with the business, not with the grid.</p>
-                    <details>
-                        <summary>Under the hood</summary>
-                        <p>IRIS has a headless spreadsheet engine: it represents financial models as structured data, calculates supported formulas without opening Excel, and preserves governed model versions and their history.</p>
-                    </details>
-                    <p><a href="https://reckoningmachines.substack.com/p/we-are-paying-the-model-to-read-our">Read how IRIS prepares the model for AI</a></p>
-                </div>
                 <div class="capability-pair">
                     <article>
                         <div class="capability-label">How the model works</div>
                         <h3>Follow the drivers through the financial statements.</h3>
-                        <p>See how volume and pricing build revenue, how margins turn sales into earnings, and how investment and working capital affect cash flow and financing needs.</p>
-                        <p>IRIS reads the formulas and assumptions already in the workbook. Its explanation gives you a starting point for asking what matters and where to look more closely.</p>
+                        <p>IRIS reads the formulas and assumptions already in the workbook and explains how volume and pricing build revenue, how margins turn sales into earnings, and how investment and working capital determine cash flow and financing needs, which gives the analyst a starting point for asking what matters and where to look more closely.</p>
                     </article>
                     <article>
                         <div class="capability-label">Understand the forecast</div>
                         <h3>Know what sits behind each estimate.</h3>
-                        <p>What drives the number? Which assumptions matter most? What evidence supports the view, and where is the model thin?</p>
-                        <p>Follow an estimate back to its drivers and supporting research. That understanding stays with the model as the forecasts change, instead of being re-derived every time someone asks.</p>
+                        <p>The analyst can ask what supports a margin assumption, what the latest filing says about funding needs, which part of the forecast looks least supported or what would change the investment view, and IRIS answers with the model already understood. That understanding stays with the model as the forecasts change, instead of being re-derived every time someone asks.</p>
                     </article>
                 </div>
-                <figure class="story-plate import-feature-plate">
-                    <div class="story-plate-image">
-                        <a href="./iris-crwv-import-understanding.png" target="_blank" rel="noopener" aria-label="Open CoreWeave import understanding screenshot at full size in a new tab">
-                            <img src="./iris-crwv-import-understanding.png" loading="lazy"
-                                alt="IRIS explaining how revenue growth, profitability, cash flow, and financing connect in the imported CoreWeave model" />
-                        </a>
-                    </div>
-                    <figcaption>
-                        <span class="story-plate-label">CoreWeave / IRIS reads the model</span>
-                        <span class="story-plate-copy">IRIS explains how CoreWeave's operating forecasts connect to cash flow and financing. The explanation stays with the model as the estimates evolve.</span>
-                    </figcaption>
-                </figure>
+                <div class="compression-intro">
+                    <details>
+                        <summary>Under the hood</summary>
+                        <p>IRIS has a headless spreadsheet engine that represents a financial model as structured data, calculates supported formulas without opening Excel, and preserves every approved version of the model together with its history.</p>
+                    </details>
+                    <p><a href="https://reckoningmachines.substack.com/p/we-are-paying-the-model-to-read-our">Read how IRIS prepares the model for AI</a></p>
+                </div>
             </div>
         </section>
 
         <section id="methods" class="compression-section capability-section" aria-labelledby="methods-title">
             <div class="container">
                 <div class="compression-intro">
-                    <div class="day-kicker">Preserve deliberately / Your Method, inside Excel</div>
-                    <h2 id="methods-title" class="compression-title">Build your approach into every estimate.</h2>
-                    <p class="experience-lede">Every important estimate reflects an approach: which evidence matters, which assumptions hold, and what should cause the forecast to move.</p>
-                    <p class="experience-lede">IRIS makes that approach explicit, saves it as a <strong>Method</strong>, and puts it into Excel with <code>=AI()</code>. The estimate remains part of the workbook and flows through every calculation that depends on it.</p>
+                    <div class="day-kicker">Methods / The forecast, inside Excel</div>
+                    <h2 id="methods-title" class="compression-title">Forecast the key drivers in your own words.</h2>
+                    <p class="experience-lede">Every forecast in a model rests on a handful of key drivers, and behind each driver sits an analyst's judgment about which evidence matters and how it should move the number.</p>
+                    <p class="experience-lede">A <strong>Method</strong> is that judgment written down as a forecast of the driver, in the form of an instruction to the language model: the evidence it should weigh, the analytical rules it should apply, the limits it should respect and the output it should return. IRIS places the Method in the workbook through <code>=AI()</code>, so the driver is forecast in the cell and flows through every line that depends on it.</p>
                 </div>
                 <div class="forecast-formula">
                     <code>=AI()</code>
-                    <p>A Method is your approach to the estimate, running inside the model.<br />Draft it with AI or write it yourself. It shapes the estimate only after you approve it.</p>
+                    <p>IRIS can draft a Method from the model and the filings, but nothing shapes an estimate until the analyst has reviewed and approved it.</p>
                 </div>
                 <figure class="story-plate method-feature-plate">
                     <div class="story-plate-image">
@@ -1491,102 +1352,40 @@
                             alt="IRIS showing the evidence and assumptions behind a retail same-store-sales forecast" />
                     </div>
                     <figcaption>
-                        <span class="story-plate-label">Forecast / Same-store-sales guidance</span>
-                        <span class="story-plate-copy">See which evidence matters for the same-store-sales estimate and how it should shape the forecast.</span>
+                        <span class="story-plate-label">Method / Same-store-sales guidance</span>
+                        <span class="story-plate-copy">The Method for a retailer's same-store-sales estimate names the evidence it weighs and the rules it applies to the forecast.</span>
                     </figcaption>
                 </figure>
-                <p class="truth-note">Revise a Method and you create a new version of it. Replaying an earlier run replays the Method that run actually used.</p>
-            </div>
-        </section>
-
-        <section id="research" class="research-section" aria-labelledby="research-title">
-            <div class="container research-layout">
-                <div class="research-copy">
-                    <div class="day-kicker">Explore freely / Beside the workbook</div>
-                    <h2 id="research-title" class="experience-title">Research the company beside the forecast.</h2>
-                    <p class="experience-lede">Ask what supports an assumption, what changed in the latest filing, where the model is thin, or what would change the investment view.</p>
-                    <div class="research-prompts" aria-label="Research questions">
-                        <strong>What supports this margin assumption?</strong>
-                        <strong>What does the latest filing say about funding needs?</strong>
-                        <strong>Which part of the forecast looks least supported?</strong>
-                        <strong>What would make me change this estimate?</strong>
-                    </div>
-                    <p class="experience-lede">IRIS answers with the model already understood. Ask as much as you like. Asking changes nothing. A conclusion worth keeping goes back to the company and the estimate when you say so, instead of disappearing into another chat.</p>
-                </div>
-                <figure class="story-plate research-plate">
-                    <div class="story-plate-image">
-                        <img src="./screen.png" loading="lazy"
-                            alt="JPM model beside the IRIS Research Rail, highlighting forecasts and questions worth a closer look" />
-                    </div>
-                    <figcaption>
-                        <span class="story-plate-label">Research Rail / Questions beside the forecast</span>
-                        <span class="story-plate-copy">The workbook stays visible while you examine the assumptions, evidence, and financial implications of a view.</span>
-                    </figcaption>
-                </figure>
+                <p class="truth-note">Each revision of a Method is kept as a new version, and a run that used an earlier version is replayed with that version rather than with the current one.</p>
             </div>
         </section>
 
         <section id="scenarios" class="experience-section" aria-labelledby="scenario-title">
             <div class="container">
-                <div class="day-kicker">Inspect exactly / The sandbox</div>
-                <h2 id="scenario-title" class="experience-title">Test a different view.</h2>
-                <p class="experience-lede">Change a market assumption or challenge the company outlook. IRIS proposes the specific cells it would change, and nothing runs until you approve that list.</p>
-                <p class="experience-lede">Ask, "What happens if SOFR rises 100 basis points?"</p>
+                <div class="day-kicker">The sandbox / Test a different view</div>
+                <h2 id="scenario-title" class="experience-title">Test a different view without touching the model.</h2>
+                <p class="experience-lede">An analyst can change a market assumption or challenge the company outlook, and IRIS responds by proposing the specific cells it would change, none of which runs until the analyst approves the list. Ask what happens to interest expense if SOFR rises 100 basis points, and the response is a list of cells rather than a description of a scenario.</p>
                 <div class="capability-pair">
                     <article>
                         <div class="capability-label">Before the run</div>
                         <h3>Every proposed assumption, against its current model value.</h3>
-                        <p>IRIS finds where SOFR enters the forecast and shows each cell it proposes to change beside what the model says today. You approve a specific list of assumptions, not a description of a scenario.</p>
-                        <p>Market values are frozen at the moment of the proposal. If the world moves before you approve, IRIS refuses the stale value rather than quietly running on it.</p>
+                        <p>IRIS finds where SOFR enters the forecast and shows each cell it proposes to change beside what the model holds today. Market values are frozen at the moment of the proposal, and if the market moves before approval, IRIS refuses the stale value rather than running on it quietly.</p>
                     </article>
                     <article>
                         <div class="capability-label">After the run</div>
                         <h3>Compared with a paired control on the same version.</h3>
-                        <p>Pressing Run executes two runs: a control carrying no assumptions, and your sandbox bound to it. Both use the same version, the same Methods, and the same frozen market snapshot, differing only by the assumptions you approved.</p>
-                        <p>The comparison is same-quarter, sandbox against control. What you read is the difference your assumptions made, not movement that was already in the forecast.</p>
+                        <p>Pressing Run executes two runs, a control carrying no assumptions and the sandbox bound to it, which share the same version, the same Methods and the same frozen market snapshot and differ only by the assumptions the analyst approved. The comparison is same-quarter, sandbox against control, so what the analyst reads is the difference the assumptions made rather than movement that was already in the forecast.</p>
                     </article>
                 </div>
-                <p class="truth-note">A run changes nothing in the baseline. Your working model, the current version, and every Method are exactly as they were. The sandbox and its control are each preserved as immutable runs, available for comparison. A note is written only when you save one.</p>
-            </div>
-        </section>
-
-        <section id="overnight" class="research-section" aria-labelledby="overnight-title">
-            <div class="container">
-                <div class="day-kicker">Preserve deliberately / Overnight analysis</div>
-                <h2 id="overnight-title" class="experience-title">Let the models keep working.</h2>
-                <p class="experience-lede">IRIS can refresh approved market and economic inputs overnight, identify which estimates depend on what changed, and rerun the affected analysis using the Methods you approved, not a fresh opinion.</p>
-                <div class="pm-layout morning-review-layout">
-                    <div class="pm-copy">
-                        <h3 class="overnight-title">Start with what changed.</h3>
-                        <div class="pm-questions" aria-label="Questions for the morning review">
-                            <strong>What moved?</strong>
-                            <strong>Which forecasts held?</strong>
-                            <strong>Which companies deserve attention?</strong>
-                            <strong>What changed in earnings, cash flow, or financing?</strong>
-                            <strong>Why?</strong>
-                        </div>
-                        <p>The results stay available for review, with the assumptions, evidence, and prior work behind them. Begin the day knowing where to focus.</p>
-                    </div>
-                    <figure class="story-plate pm-plate">
-                        <div class="story-plate-image">
-                            <img src="./iris-pm-search.png"
-                                alt="IRIS answering what changed overnight across the companies in the book" />
-                        </div>
-                        <figcaption>
-                            <span class="story-plate-label">PM Search / Morning review</span>
-                            <span class="story-plate-copy">See which estimates moved overnight and where to focus the morning review.</span>
-                        </figcaption>
-                    </figure>
-                </div>
+                <p class="truth-note">A run leaves the baseline untouched: the working model, its current version and every approved Method remain as they were, the sandbox and its control are preserved as immutable runs that can be compared at any time, and a note is written to the model only when the analyst chooses to save one.</p>
             </div>
         </section>
 
         <section id="memory" class="experience-section memory-section" aria-labelledby="memory-title">
             <div class="container">
-                <div class="day-kicker">Preserve deliberately / Keep the history</div>
-                <h2 id="memory-title" class="experience-title">Know why the numbers changed.</h2>
-                <p class="experience-lede memory-lede">A revised estimate should not erase the view that came before it. IRIS keeps the approach behind the estimate, evidence, model change, and resulting financial impact together.</p>
-                <p class="experience-lede memory-instruction">Go back to any version and see what changed, why it changed, who approved it, and how the change flowed through the model.</p>
+                <div class="day-kicker">The record / Keep the history</div>
+                <h2 id="memory-title" class="experience-title">Know why the numbers changed and when.</h2>
+                <p class="experience-lede memory-lede">A revised estimate should not erase the view that came before it, so IRIS keeps the Method behind the estimate, the evidence, the model change and the resulting financial impact together, and an analyst can return to any version to see what changed, why it changed, who approved it and how the change flowed through the model.</p>
                 <figure class="experience-timeline">
                     <div class="lineage-crop">
                         <img src="./timeline-latest.png"
@@ -1594,18 +1393,64 @@
                     </div>
                     <figcaption>Compare earlier forecasts and recover the reasoning behind each revision.</figcaption>
                 </figure>
-                <p class="truth-note">This is not chatbot memory. Nothing is absorbed in the background, and nothing is learned from you without being written down. Entries are explicit, reviewable, and versioned. Replaying an earlier run replays what that run actually used, not what the system knows today.</p>
+                <p class="truth-note">Every entry in the record is written explicitly, by an analyst or by an approved run, and is versioned. Nothing is absorbed in the background, and an earlier run is replayed as it stood at the time rather than as the system understands the model today.</p>
+            </div>
+        </section>
+
+        <section id="pm-view" class="morning-section" aria-labelledby="ecosystem-title">
+            <div class="container">
+                <div id="ecosystem" class="morning-intro">
+                    <div class="day-kicker">PM View / Across the book</div>
+                    <h2 id="ecosystem-title" class="experience-title">Put one question to the whole book.</h2>
+                    <p class="morning-lede">The same move in rates, spreads, demand or pricing rarely affects two companies in the book the same way.</p>
+                    <p>A PM who wants to know which models should change in response to a move in the market has traditionally had to ask each analyst in turn. PM View puts the question to every model at once and follows each answer back to the forecast, the assumptions and the evidence it rests on, while the models themselves, and the analysts who own them, remain the authority on what the numbers should be.</p>
+                </div>
+                <p class="canonical-line">When the world changes, which of my models should change with it, and why?</p>
+                <div class="ecosystem-layout morning-pm-layout">
+                    <div class="ecosystem-copy">
+                        <div class="pm-questions" aria-label="Questions for the PM View">
+                            <strong>Where does AI-buildout financing sit across the book, and who bears it?</strong>
+                            <strong>Where are higher rates hurting earnings?</strong>
+                            <strong>Which companies need refinancing?</strong>
+                            <strong>Where would wider spreads improve returns?</strong>
+                            <strong>Which estimates depend on assumptions that have just moved?</strong>
+                        </div>
+                        <p>IRIS can also refresh approved market and economic inputs overnight, identify which estimates depend on what changed, and rerun the affected analysis with the Methods the analysts approved, so the morning review begins with a list of which forecasts moved, which held and why, each with the assumptions and evidence behind it.</p>
+                    </div>
+                    <div class="ecosystem-visuals">
+                        <figure class="story-plate ecosystem-plate">
+                            <div class="story-plate-image">
+                                <img src="./iris-credit-conditions-inquiry.png"
+                                    alt="IRIS comparing how different credit conditions affect companies across the book" />
+                            </div>
+                            <figcaption>
+                                <span class="story-plate-label">PM Search / Across the book</span>
+                                <span class="story-plate-copy">One question about credit conditions, answered company by company from the assumptions and forecasts in each model.</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="story-plate ecosystem-plate">
+                            <div class="story-plate-image">
+                                <img src="./iris-pm-search.png"
+                                    alt="IRIS answering what changed overnight across the companies in the book" />
+                            </div>
+                            <figcaption>
+                                <span class="story-plate-label">PM Search / Morning review</span>
+                                <span class="story-plate-copy">The estimates that moved overnight, and where the morning review should begin.</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="case-study" class="case-study-section" aria-labelledby="case-study-title">
             <div class="container">
                 <div class="case-study-intro">
-                    <div class="day-kicker">A worked inquiry / Explore, inspect, preserve</div>
+                    <div class="day-kicker">A worked inquiry / CoreWeave</div>
                     <h2 id="case-study-title" class="experience-title">Case Study: Where does AI-related debt exposure sit?</h2>
-                    <p class="experience-lede">Start with CoreWeave (CRWV). Trace the financing obligations, ask who bears the exposure, and examine what would change its value. Each answer sets up the next question, from the scheduled debt to the evidence needed for an investment view.</p>
-                    <p class="case-study-evidence">The inquiry starts with evidence already in the model: lease obligations, the cash interest rate forecast, delayed-draw term loan (DDTL) and OEM financing disclosures, undrawn borrowing capacity, and equity. From there, it asks whether the exposure can be connected to other companies in the book.</p>
-                    <p class="case-study-evidence"><strong>A useful finding from the inquiry:</strong> in the exchange below, IRIS identifies the gap between forecasting contractual debt payments and estimating a DDTL's market value. It identifies what is still needed: which loan is being valued and as of when, its expected cash flows, market pricing, contractual terms, and credit risks. The next question asks how to resolve each gap.</p>
+                    <p class="experience-lede">The inquiry starts with CoreWeave (CRWV), traces its financing obligations, asks who bears the exposure and examines what would change its value, with each answer setting up the next question, from the scheduled debt to the evidence an investment view would need.</p>
+                    <p class="case-study-evidence">It begins with evidence already in the model: lease obligations, the cash interest rate forecast, delayed-draw term loan (DDTL) and OEM financing disclosures, undrawn borrowing capacity, and equity. From there, it asks whether the exposure can be connected to other companies in the book.</p>
+                    <p class="case-study-evidence"><strong>A useful finding from the inquiry:</strong> in the exchange below, IRIS identifies the gap between forecasting contractual debt payments and estimating a DDTL's market value, and sets out what is still needed to close it: which loan is being valued and as of when, its expected cash flows, market pricing, contractual terms, and credit risks. The next question asks how to resolve each gap.</p>
                 </div>
                 <div class="case-study-screens">
                     <figure class="story-plate">
@@ -1617,7 +1462,7 @@
                         </div>
                         <figcaption>
                             <span class="story-plate-label">01 / Establish what the evidence supports</span>
-                            <span class="story-plate-copy">IRIS distinguishes the model's principal and borrowing-cost forecasts from the evidence needed for a market valuation. Open the screenshot to read the response.</span>
+                            <span class="story-plate-copy">IRIS distinguishes the model's principal and borrowing-cost forecasts from the evidence a market valuation would need. Open the screenshot to read the response.</span>
                         </figcaption>
                     </figure>
                     <figure class="story-plate">
@@ -1629,7 +1474,7 @@
                         </div>
                         <figcaption>
                             <span class="story-plate-label">02 / Frame the next analytical step</span>
-                            <span class="story-plate-copy">The analyst drafts the follow-up: does each unresolved item call for a revised approach to the estimate, a saved note, or new evidence? Open the screenshot to read the question.</span>
+                            <span class="story-plate-copy">The analyst drafts the follow-up, asking whether each unresolved item calls for a revised Method, a saved note, or new evidence. Open the screenshot to read the question.</span>
                         </figcaption>
                     </figure>
                 </div>
@@ -1669,7 +1514,72 @@
                         </div>
                     </div>
                 </details>
-                <p class="case-study-evidence"><strong>Carry the conclusion forward.</strong> Eleven questions, none of which changed the model. The analyst decides which of them produced something worth keeping, and saves that as a note with the model. Weeks later, when a colleague picks up the financing question, they start from the evidence, the interpretation, and the questions that were still open.</p>
+                <p class="case-study-evidence"><strong>Carry the conclusion forward.</strong> None of the eleven questions changed the model. The analyst decides which of them produced something worth keeping and saves that as a note with the model, so that weeks later, when a colleague picks up the financing question, they start from the evidence, the interpretation and the questions that were still open.</p>
+            </div>
+        </section>
+
+        <section id="mcp" class="mcp-section" aria-labelledby="mcp-title">
+            <div class="container research-layout">
+                <div class="mcp-copy">
+                    <div class="day-kicker">Available now / IRIS in Claude and Codex</div>
+                    <h2 id="mcp-title" class="mcp-title">Work in Claude or Codex for Excel.</h2>
+                    <p>Claude and Codex supply the reasoning, and IRIS supplies the models, the sandbox and the record, so an analyst can put a question to the book, follow it into a company model and test an assumption in one conversation, with the findings worth keeping saved to IRIS where the next analyst will find them.</p>
+                </div>
+                <figure class="story-plate">
+                    <div class="story-plate-image">
+                        <a href="./iris-claude-experiment-approval.png" target="_blank" rel="noopener" aria-label="Open the Claude experiment approval screenshot at full size in a new tab">
+                            <img src="./iris-claude-experiment-approval.png" loading="lazy"
+                                alt="The AAPL quarterly operating model open in Excel beside Claude, where IRIS has accepted a proposed experiment and returned an approval link, with nothing run yet" />
+                        </a>
+                    </div>
+                    <figcaption>
+                        <span class="story-plate-label">Claude / AAPL model</span>
+                        <span class="story-plate-copy">IRIS has accepted a proposed experiment on the Apple model and returned an approval link, with nothing run yet.</span>
+                    </figcaption>
+                </figure>
+                <div class="mcp-onboarding">
+                    <div class="day-kicker">Model Catalog / The round trip between IRIS and Excel</div>
+                    <h3>Pull a model from the catalog, work it in Excel, and keep the record in IRIS.</h3>
+                    <p class="experience-lede">The Model Catalog holds prepared company models, each with its coverage, checks and limitations described and with draft Methods for its key drivers waiting as proposals for review. An analyst adds an independent copy to the IRIS workspace, downloads the original workbook with its formulas and formatting intact, and works it in Excel through Claude or Codex, while every approved change, test and note travels back to IRIS, where the record of the model lives.</p>
+                    <figure class="story-plate catalog-feature-plate">
+                        <div class="story-plate-image">
+                            <a href="./iris-model-catalog.png" target="_blank" rel="noopener" aria-label="Open the IRIS Model Catalog screenshot at full size in a new tab">
+                                <img src="./iris-model-catalog.png" loading="lazy" width="1978" height="582"
+                                    alt="IRIS Model Catalog listing the Oracle quarterly operating, capacity and financing model, with Preview and Add to Workspace buttons and a note that forecast Methods arrive as proposals for review" />
+                            </a>
+                        </div>
+                        <figcaption>
+                            <span class="story-plate-label">Model Catalog / Oracle</span>
+                            <span class="story-plate-copy">Preview the prepared Oracle model, then add an independent copy to the workspace or download the original workbook.</span>
+                        </figcaption>
+                    </figure>
+                    <div class="mcp-screens">
+                        <figure class="story-plate">
+                            <div class="story-plate-image">
+                                <a href="./iris-claude-excel-model-catalog.png" target="_blank" rel="noopener" aria-label="Open the Claude in Excel model catalog screenshot at full size in a new tab">
+                                    <img src="./iris-claude-excel-model-catalog.png" loading="lazy" width="690" height="734"
+                                        alt="Claude in Excel finding Oracle's quarterly operating, capacity and financing model in the IRIS Model Catalog, before it has been added to the workspace" />
+                                </a>
+                            </div>
+                            <figcaption>
+                                <span class="story-plate-label">01 / Find the model from Excel</span>
+                                <span class="story-plate-copy">Asked about Oracle from inside Excel, Claude finds the prepared model in the IRIS catalog.</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="story-plate">
+                            <div class="story-plate-image">
+                                <a href="./iris-claude-excel-workspace.png" target="_blank" rel="noopener" aria-label="Open the Claude in Excel workspace screenshot at full size in a new tab">
+                                    <img src="./iris-claude-excel-workspace.png" loading="lazy" width="698" height="692"
+                                        alt="Claude in Excel confirming that the Oracle model has been added to the IRIS workspace at the analyst's request and providing a link to open it" />
+                                </a>
+                            </div>
+                            <figcaption>
+                                <span class="story-plate-label">02 / Add it to the workspace</span>
+                                <span class="story-plate-copy">IRIS places a copy in the analyst's workspace and returns a link, and the record of the model begins there.</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1678,16 +1588,12 @@
                 <div class="closing-layout">
                     <div class="day-copy-block closing-copy">
                         <div class="day-kicker">From one model to the whole book</div>
-                        <h2 class="day-title"><span>Explore freely.</span> <span>Inspect exactly.</span> <span>Preserve deliberately.</span></h2>
+                        <h2 class="day-title">Built for teams that keep their models in Excel.</h2>
                         <div class="closing-lines">
-                            <p>Ask anything of the book. Nothing you ask can change it.</p>
-                            <p>See every proposed assumption before it runs, and what it changed against a control run.</p>
-                            <p>Keep what you concluded, on purpose, where the next question will find it.</p>
-                            <p><strong>The analyst decides what becomes the record. IRIS makes sure the record survives the next question.</strong></p>
+                            <p>IRIS is built for research teams that keep their models in Excel and expect their conclusions to outlast the analyst who reached them. The models stay in the workbook, the analyst decides the Method, and each new question builds on the work that came before it.</p>
                         </div>
                     </div>
                     <div class="closing-payoff">
-                        <p>IRIS gives your AI the research book: current, governed, and remembering what the analyst concluded. The models stay in Excel, the analyst decides the approach, and each new question builds on the work that came before it.</p>
                         <div class="final-cta">
                             <a class="btn" href="https://app.reckoningmachines.com/">Launch IRIS -&gt;</a>
                             <a class="hero-demo-link" href="https://reckoningmachines.substack.com/p/three-things-a-spreadsheet-model">Read the article</a>
@@ -1703,7 +1609,7 @@
     <footer class="site-footer">
         <div class="container footer-inner">
             <div>IRIS by Reckoning Machines</div>
-            <div class="footer-right">What changed -> What matters -> What to do</div>
+            <div class="footer-right">The AI harness for fundamental research teams</div>
             <div><a href="mailto:jedgore@reckoningmachines.com?subject=IRIS%20inquiry">jedgore@reckoningmachines.com</a></div>
             <div class="footer-note">Demos show selected research and modeling workflows.</div>
         </div>
