@@ -398,6 +398,18 @@
             text-transform: uppercase;
         }
 
+        .hero-quote {
+            border-left: 2px solid var(--accent-active);
+            color: var(--fg-bright);
+            font-size: clamp(18px, 2vw, 25px);
+            font-style: italic;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.45;
+            margin: 0 0 40px;
+            padding-left: 24px;
+        }
+
         .thesis-section {
             border-bottom: 1px solid var(--border);
             padding: clamp(32px, 4vw, 48px) 0;
@@ -1245,6 +1257,12 @@
         <section class="hero" aria-labelledby="hero-title">
             <div class="container">
                 <div class="hero-card">
+                    <blockquote class="hero-quote">
+                        <p>&ldquo;IRIS is like Cursor for financial models. Claude is your agent, Excel is your workspace, and IRIS keeps the research context and model history, learns how you build your estimates, refreshes models overnight, and lets you query across the book.&rdquo; - Hedge Fund Analyst</p>
+                    </blockquote>
+                    <blockquote class="hero-quote">
+                        <p>&ldquo;What I wish I always had.&rdquo; - Hedge fund PM</p>
+                    </blockquote>
                     <div class="hero-grid">
                         <div class="hero-text">
                             <div class="hero-heading">
