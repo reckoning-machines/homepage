@@ -109,7 +109,9 @@ img { display: block; max-width: 100%; height: auto; }
     font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); }
 
 /* about and contact */
-.about-body { margin-top: 26px; max-width: 62ch; }
+.about-grid { display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 28px 44px; align-items: center; margin-top: 36px; }
+.portrait { width: 168px; height: 168px; border-radius: 50%; border: 1px solid var(--line); box-shadow: 0 0 0 6px rgba(233, 237, 243, 0.03), 0 24px 60px rgba(0, 0, 0, 0.5); }
+.about-body { max-width: 62ch; }
 .contact-body { margin-top: 22px; max-width: 54ch; }
 .brass-button { display: inline-block; margin-top: 32px; font-size: 14px; font-weight: 600; color: var(--midnight); background: var(--brass); border: 1px solid var(--brass); border-radius: 999px; padding: 13px 22px; white-space: nowrap; }
 .brass-button:hover { background: #e8dcbf; }
@@ -135,6 +137,8 @@ footer { border-top: 1px solid var(--line-soft); padding: 28px 0 44px; font-size
     .hero h1 { font-size: clamp(40px, 12vw, 56px); }
     .movement { padding: 64px 0; }
     .pull { padding-left: 20px; }
+    .about-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .portrait { width: 128px; height: 128px; }
     .posts a { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 0; }
     .post-sub { grid-column: 1; }
     .post-title { font-size: 20px; }
