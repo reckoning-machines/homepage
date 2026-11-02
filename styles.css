@@ -79,6 +79,17 @@ img { display: block; max-width: 100%; height: auto; }
 .pull { margin-top: 44px; padding: 28px 0 0 28px; border-left: 1px solid var(--brass-2); max-width: 30ch;
     font-family: var(--font-serif); font-weight: 300; font-style: italic; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.25; color: var(--ink); }
 
+/* writing: recent posts as a ruled list */
+.posts { list-style: none; margin-top: 48px; border-top: 1px solid var(--line); }
+.posts li { border-bottom: 1px solid var(--line-soft); }
+.posts a { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 8px 32px; padding: 22px 0; align-items: baseline; }
+.posts a:hover .post-title { color: var(--brass); }
+.post-date { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); }
+.post-title { font-family: var(--font-serif); font-weight: 400; font-size: 23px; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink); transition: color 0.15s; }
+.post-sub { grid-column: 2; font-size: 15px; color: var(--ink-dim); margin-top: 2px; }
+.posts-link { display: inline-block; margin-top: 28px; font-size: 14px; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 3px; }
+.posts-link:hover { border-color: var(--brass); color: var(--brass); }
+
 /* built here: two cards, each with one plate */
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; margin-top: 56px; }
 .card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 26px; letter-spacing: -0.01em; color: var(--ink); margin-top: 26px; }
@@ -124,6 +135,9 @@ footer { border-top: 1px solid var(--line-soft); padding: 28px 0 44px; font-size
     .hero h1 { font-size: clamp(40px, 12vw, 56px); }
     .movement { padding: 64px 0; }
     .pull { padding-left: 20px; }
+    .posts a { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 0; }
+    .post-sub { grid-column: 1; }
+    .post-title { font-size: 20px; }
     .plate-iris .plate-window, .plate-arh .plate-window { aspect-ratio: 4 / 3; }
     .plate-label { flex-direction: column; gap: 2px; }
     .brass-button { display: block; text-align: center; }
