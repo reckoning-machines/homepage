@@ -101,6 +101,8 @@ img { display: block; max-width: 100%; height: auto; }
 .card-steps li::before { display: none; }
 .card-steps .step { display: block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 2px; }
 .status { margin-top: 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); }
+.card p a { border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+.card p a:hover { border-color: var(--brass); color: var(--brass); }
 .card-link { display: inline-block; margin-top: 16px; margin-right: 24px; font-size: 14px; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 3px; }
 .card-link:hover { border-color: var(--brass); color: var(--brass); }
 
