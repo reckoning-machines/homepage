@@ -60,7 +60,9 @@ img { display: block; max-width: 100%; height: auto; }
 .hero .eyebrow { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 18px; letter-spacing: 0.01em; text-transform: none; color: var(--brass-2); }
 .hero h1 { font-family: var(--font-serif); font-weight: 300; font-size: clamp(50px, 6.6vw, 96px); line-height: 0.98; letter-spacing: -0.025em; color: var(--ink); }
 .lede { margin-top: 28px; max-width: 42ch; font-family: var(--font-serif); font-weight: 300; font-size: clamp(20px, 2vw, 25px); line-height: 1.38; color: var(--ink-dim); }
-.hero-link { display: inline-block; margin-top: 34px; font-size: 14px; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 3px; }
+.hero-support { margin-top: 20px; max-width: 54ch; font-size: 16.5px; color: var(--ink-dim); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 16px 28px; margin-top: 34px; }
+.hero-link { display: inline-block; font-size: 14px; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 3px; }
 .hero-link:hover { border-color: var(--brass); color: var(--brass); }
 
 /* the movements after the hero: quiet, one idea each */
@@ -111,7 +113,7 @@ img { display: block; max-width: 100%; height: auto; }
     box-shadow: 0 0 0 1px rgba(7, 14, 28, 0.6), 0 40px 100px rgba(0, 0, 0, 0.55), 0 0 80px rgba(120, 150, 210, 0.10); }
 .plate-window { overflow: hidden; }
 .plate-window img { width: 100%; height: 100%; object-fit: cover; object-position: left top; }
-.plate-iris .plate-window { aspect-ratio: 3454 / 1540; }
+.plate-iris .plate-window { aspect-ratio: 2468 / 1796; }
 .plate-arh .plate-window { aspect-ratio: 3366 / 1500; }
 .plate-label { display: flex; justify-content: space-between; gap: 16px; padding: 10px 16px; background: var(--midnight-2); border-top: 1px solid var(--line-soft);
     font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); }
