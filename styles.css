@@ -90,6 +90,33 @@ img { display: block; max-width: 100%; height: auto; }
 .posts-link { display: inline-block; margin-top: 28px; font-size: 14px; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 3px; }
 .posts-link:hover { border-color: var(--brass); color: var(--brass); }
 
+/* the worked inquiry lives on its own page, linked from Writing */
+.case-hero { padding: 152px 0 80px; }
+.case-hero .container { max-width: 1050px; }
+.case-back { display: inline-block; margin-bottom: 52px; font-size: 13px; color: var(--ink-dim); border-bottom: 1px solid var(--line); padding-bottom: 3px; }
+.case-back:hover { color: var(--brass); border-color: var(--brass); }
+.case-hero h1 { max-width: 20ch; font-family: var(--font-serif); font-weight: 300; font-size: clamp(46px, 6vw, 82px); line-height: 1.02; letter-spacing: -0.025em; }
+.case-nowrap { white-space: nowrap; }
+.case-lede { max-width: 62ch; margin-top: 28px; font-family: var(--font-serif); font-size: clamp(21px, 2vw, 26px); line-height: 1.38; color: var(--ink-dim); }
+.case-note { max-width: 62ch; margin-top: 24px; font-size: 13px; color: var(--ink-mute); }
+.case-section { padding: 80px 0; border-top: 1px solid var(--line-soft); }
+.case-prose { max-width: 760px; }
+.case-prose h2 { max-width: 20ch; font-family: var(--font-serif); font-weight: 300; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.02em; }
+.case-prose p:not(.eyebrow) { margin-top: 22px; font-size: 16.5px; color: var(--ink-dim); }
+.case-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 48px; }
+.case-figure { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: #f3f1ea; }
+.case-figure img { width: 100%; }
+.case-figure figcaption { min-height: 130px; padding: 18px 20px 20px; background: var(--midnight-2); font-size: 14px; color: var(--ink-dim); }
+.case-figure figcaption span { display: block; margin-bottom: 8px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); }
+.case-questions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 64px; margin-top: 52px; }
+.case-questions > div { border-top: 1px solid var(--line); padding-top: 20px; }
+.case-questions h3 { font-family: var(--font-serif); font-size: 25px; font-weight: 400; }
+.case-questions ol { margin-top: 16px; padding-left: 26px; color: var(--ink-dim); }
+.case-questions li { padding-left: 4px; margin-bottom: 14px; font-size: 15.5px; }
+.case-questions li::marker { font-family: var(--font-mono); font-size: 12px; color: var(--brass-2); }
+.case-close { max-width: 760px; margin-top: 52px; padding-left: 24px; border-left: 1px solid var(--brass-2); font-size: 17px; color: var(--ink-dim); }
+.case-close strong { color: var(--ink); font-weight: 600; }
+
 /* built here: two cards, each with one plate */
 .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 40px; margin-top: 56px; }
 .card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 26px; letter-spacing: -0.01em; color: var(--ink); margin-top: 26px; }
@@ -132,6 +159,7 @@ footer { border-top: 1px solid var(--line-soft); padding: 28px 0 44px; font-size
 
 @media (max-width: 900px) {
     .columns, .cards { grid-template-columns: minmax(0, 1fr); }
+    .case-images { grid-template-columns: minmax(0, 1fr); }
     .hero { padding: 150px 0 80px; }
     .movement { padding: 84px 0; }
 }
@@ -153,6 +181,11 @@ footer { border-top: 1px solid var(--line-soft); padding: 28px 0 44px; font-size
     .plate-iris .plate-window, .plate-arh .plate-window { aspect-ratio: 4 / 3; }
     .plate-label { flex-direction: column; gap: 2px; }
     .brass-button { display: block; text-align: center; }
+    .case-hero { padding: 118px 0 64px; }
+    .case-back { margin-bottom: 42px; }
+    .case-section { padding: 64px 0; }
+    .case-questions { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .case-figure figcaption { min-height: 0; }
 }
 @media (prefers-reduced-motion: no-preference) {
     .hero-copy { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
