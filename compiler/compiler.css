@@ -51,3 +51,65 @@
     .demo-output summary strong { grid-column: 2; }
     .compiler-page .top-inner { gap: 8px; }
 }
+
+/* The exhibit uses the same paper, ink and brass as the company pages. */
+.compiler-page { --ink-mute: #a3afc0; }
+.compiler-page :focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+.compiler-page h1, .compiler-page h2, .compiler-page h3 { text-wrap: balance; }
+.compiler-hero h1 { margin: .3em 0; }
+.compiler-section h3 { margin: 1.3em 0 .5em; font-size: 1.5rem; }
+.compiler-section p + p, .compiler-section h2 + p { margin-top: 1em; }
+.status, .change { margin: 1rem 0; color: var(--ink-dim); }
+.cta-band { padding-bottom: 3rem; }
+.checks, .demo-output ul, .exhibit ul { padding-left: 1.3em; }
+.checks { max-width: 66ch; margin-block: 1rem; }
+.checks li, .demo-output li, .exhibit li { padding-block: .35em; }
+.checks a, .relationships a, .static-states a { text-decoration: underline; text-underline-offset: .2em; }
+.exhibit { display: grid; grid-template-columns: minmax(12rem, 1fr) minmax(7rem, .45fr) minmax(0,2fr); gap: 1.6rem; margin-top: 1.5rem; border-block: 1px solid var(--line); padding-block: 1rem; }
+.exhibit h3 { margin-top: 0; }
+.process { align-self: center; color: var(--brass); font-family: var(--font-mono); font-size: .875rem; }
+.compiler-page table { width: 100%; border-collapse: collapse; text-align: left; font-size: 1rem; }
+.compiler-page th, .compiler-page td { border-bottom: 1px solid var(--line); padding: .65em .4em; vertical-align: top; overflow-wrap: anywhere; }
+.compiler-page th { font-weight: 500; }
+.compiler-page thead th, .compiler-page small { font: .875rem/1.4 var(--font-sans); color: var(--ink-dim); }
+.compiler-page small { display: block; margin-top: .25em; }
+.compiler-page code, .compiler-page blockquote { overflow-wrap: anywhere; white-space: pre-wrap; }
+.compiler-page details > summary { cursor: pointer; padding-block: .55rem; }
+.demo-controls { display: grid; gap: 1.25rem; }
+.demo-controls label { font-weight: 600; }
+.demo-controls [hidden], [hidden] { display: none !important; }
+.record-state { scroll-margin-top: 1rem; }
+html:not(.interactive) .record-state:not(#S4) { display: none; }
+html:not(.interactive) #states:has(:target) .record-state { display: none; }
+html:not(.interactive) #states .record-state:target, html:not(.interactive) #states .record-state:has(:target) { display: block; }
+.interactive .static-states { display: none; }
+.decision { margin-block: 1rem; padding-left: 1rem; border-left: 2px solid var(--brass); }
+.points { display: flex; flex-wrap: wrap; gap: .55rem; }
+.point { flex: 1 1 7rem; min-width: 0; }
+.demo-output details summary { display: list-item; }
+.demo-output details summary::before { content: none; }
+.point summary strong { font: 500 1rem/1.4 var(--font-mono); }
+.point summary span { font-size: .875rem; color: var(--ink-dim); }
+.citation { margin-top: .5rem; }
+.citation h5 { font: 500 1rem/1.4 var(--font-sans); }
+.relationships, .inventory { margin-top: 1.5rem; }
+.frame { height: 9rem; max-width: 34rem; position: relative; margin: 1rem 0; border-left: 1px solid var(--ink-dim); border-bottom: 1px solid var(--ink-dim); }
+.frame span { position: absolute; left: .75rem; top: .25rem; color: var(--ink-dim); }
+.frame span + span { left: auto; top: auto; bottom: .25rem; right: .25rem; }
+.benchmark { margin-block: 1.5rem; }
+.benchmark figcaption { color: var(--brass); }
+@media (max-width: 760px) {
+    .exhibit { grid-template-columns: minmax(0,1fr); }
+    .compiler-page .container { padding-inline: 1rem; }
+    .compiler-page .top-nav { text-align: right; }
+    .compiler-page .wordmark { font-size: 1rem; }
+    .compiler-page .evidence-table th { width: 41%; }
+}
+
+.demo-controls legend { margin-bottom: .35rem; font-size: 1.25rem; }
+.demo-controls .choices label { font-weight: 400; padding: .2rem 0; }
+.demo-controls fieldset:disabled .choices { color: var(--ink-dim); }
+.demo-controls .choices input:focus-visible + span { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+.figure-link { text-decoration: underline; text-underline-offset: .2em; }
+html:has(.compiler-page) { scroll-behavior: auto; }
