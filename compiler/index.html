@@ -24,7 +24,7 @@
             <div>
                 <h1><span class="cc-mark">cc</span> Context Compiler</h1>
                 <p class="compiler-deck">More reasoning per token.</p>
-                <p class="result-note">Our research objective. Competitive measurement is pending.</p>
+                <p class="result-note">Our research objective. The full competitive benchmark is pending.</p>
                 <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Request a technical evaluation</a>
             </div>
             <div class="cc-example" id="demos">
@@ -58,7 +58,6 @@
                 <figcaption>
                     <p>Five answerable questions from one synthetic banking corpus. Both approaches were evaluated under the same context limits. No downstream model answered the questions.</p>
                     <p>This preliminary test measured only whether each context held the evidence for a supported answer. Hybrid RAG’s filter dropped some filing rows the compiler could still use.</p>
-                    <p>Complete evidence could improve Reasoning Yield, which counts correct, evidence-supported task outcomes per million actual total tokens consumed. Downstream reasoning quality and a frontier shift remain unmeasured.</p>
                     <p class="credit">Claude 2 · Provider-free evaluation · Counts independently reproduced · Chart review pending</p>
                 </figcaption>
             </figure>
@@ -78,17 +77,22 @@
                 </tbody>
             </table>
             <p>Independent review reproduced the scores and token totals. Accepting one auxiliary calculation as approximate would raise Hybrid RAG to 3/6 correct and fully supported, or 180.40 per million tokens.</p>
-            <p>This exploratory result covers one model at one context limit. The competitive frontier remains unmeasured.</p>
-        </section>
-<section class="compiler-section" id="method"><h2 id="frontier">Reasoning Yield Frontier</h2>
-<p>Reasoning Yield counts correct, evidence-supported task outcomes per million total tokens consumed. The frontier is the best supported answer quality attained at each total token budget.</p>
 <figure class="benchmark">
     <img src="/compiler/reasoning-yield-pilot.png" width="1578" height="1008" alt="Bar chart of correct, fully supported answers per million measured tokens. Hybrid RAG: 120.26. RAG with typed relationships: 302.59. Context Compiler: 359.45.">
     <figcaption>At the same 1,200-token context limit, Hybrid RAG delivered 120.26 correct, fully supported answers per million measured tokens, RAG with typed relationships 302.59, and cc 359.45.</figcaption>
 </figure>
 <p>On the six synthetic banking questions, RAG with typed relationships produced five correct, fully supported answers using 16,524 tokens. cc produced four using 11,128 tokens.</p>
-<p><strong>Frontier measurement pending.</strong> The planned comparison covers the full compiler, long context, strong hybrid RAG, Graph RAG and enhanced task-aware graph retrieval.</p>
-<p>Can cc match a maintained, task-aware Graph RAG system on answer quality with fewer engineering hours? The pilot leaves that question open.</p>
+        </section>
+<section class="compiler-section" id="method"><h2 id="frontier">Exploratory Reasoning Yield Frontier</h2>
+<p class="compiler-intro">Standalone cc and task-aware Graph RAG each produced four correct, fully supported answers at the 600- and 900-token context limits. At 1,200, Graph RAG produced five, cc four, and the two together all six.</p>
+<figure class="benchmark">
+    <a href="/compiler/reasoning-yield-frontier.svg"><img src="/compiler/reasoning-yield-frontier.svg" width="720" height="440" alt="At context limits of 600, 900 and 1,200 tokens, Graph RAG scored 4, 4 and 5 out of 6. Graph RAG plus cc scored 3, 4 and 6. Standalone cc scored 4 at each limit. Open full-size graph."></a>
+    <figcaption>Claude Sonnet 5.5 answered six synthetic investment questions once per configuration, for 54 answers. Each point is labeled with its context limit. Its horizontal position shows the actual input and output tokens consumed per task, averaged over the six questions.</figcaption>
+</figure>
+<p>At 600, cc used fewer tokens for the same four supported answers, giving it 26% higher Reasoning Yield than Graph RAG (715 versus 570 supported answers per million tokens). At 900 its lead was 6%. At 1,200 the combined system achieved the highest answer quality at 1,551 tokens per task, compared with 1,331 for Graph RAG and 1,561 for standalone cc.</p>
+<p>More context did not raise standalone cc above four. It lacked the management passage needed to explain a change in deposit costs, and it refused tasks when required inputs would not fit. Across all 54 replies, the scorer recorded no adoption of a known-wrong value from another period.</p>
+<p>The frozen scorer withheld credit from three Graph RAG replies that put the unit in parentheses. Crediting those replies would move Graph RAG to five, five and six. Independent results review and the full competitive benchmark are pending.</p>
+<p>The small engineering trials so far have shown no clear saving. Enterprise maintenance costs remain unmeasured.</p>
 <ol class="checks">
     <li><strong>Answer quality.</strong> Give each method the same evidence, domain rules, held-out questions and downstream model. Score correct, source-supported answers and appropriate refusals. Count provider-reported tokens separately. Use typed tasks for the primary comparison and report natural-language results separately.</li>
     <li><strong>Engineering effort.</strong> Record the hours needed to reach the same answer quality, including work on source mappings, domain packs and graph maintenance. Then give both systems the same amendments, schema changes and new source types. Measure the hours needed to sustain that quality.</li>
