@@ -83,8 +83,11 @@
         </section>
 <section class="compiler-section" id="method"><h2 id="frontier">Reasoning Yield Frontier</h2>
 <p>Reasoning Yield counts correct, evidence-supported task outcomes per million total tokens consumed. The frontier is the best supported answer quality attained at each total token budget.</p>
-<figure class="benchmark"><figcaption>Measurement pending</figcaption><div class="frame"><span>Supported answer quality</span><span>Measured total tokens per task</span></div>
-<p>Full compiler &middot; Long context &middot; Strong hybrid RAG &middot; Graph RAG &middot; Enhanced task-aware graph retrieval</p></figure>
+<figure class="benchmark">
+    <img src="/compiler/reasoning-yield-pilot.png" width="1578" height="1008" alt="Bar chart of correct, fully supported answers per million measured tokens. Hybrid RAG: 120.26. RAG with typed relationships: 302.59. Context Compiler: 359.45.">
+    <figcaption>Six synthetic banking questions at a 1,200-token context limit. Per million measured input and output tokens, Hybrid RAG delivered 120.26 correct, fully supported answers, RAG with typed relationships 302.59, and Context Compiler 359.45.</figcaption>
+</figure>
+<p><strong>Frontier measurement pending.</strong> The planned comparison covers the full compiler, long context, strong hybrid RAG, Graph RAG and enhanced task-aware graph retrieval.</p>
 <ol class="checks"><li>Give every method the same evidence, domain rules, tasks and downstream model.</li><li>Count total tokens reported by the providers.</li><li>Score evidence-supported answers on held-out tasks.</li><li>Use controlled typed tasks for the primary comparison.</li><li>Report the natural-language comparison separately.</li></ol>
 <p>If an existing approach matches or exceeds the compiler's measured tradeoff, the benchmark will show it and we will publish it.</p></section>
 <section class="compiler-section"><h2>One example</h2><p>Harbor Regional Bank &middot; March and June 2027 &middot; Recorded state S4</p>

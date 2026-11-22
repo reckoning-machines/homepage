@@ -120,10 +120,8 @@ html:not(.interactive) #states .record-state:target, html:not(.interactive) #sta
 .citation { margin-top: .5rem; }
 .citation h5 { font: 500 1rem/1.4 var(--font-sans); }
 .relationships, .inventory { margin-top: 1.5rem; }
-.frame { height: 9rem; max-width: 34rem; position: relative; margin: 1rem 0; border-left: 1px solid var(--ink-dim); border-bottom: 1px solid var(--ink-dim); }
-.frame span { position: absolute; left: .75rem; top: .25rem; color: var(--ink-dim); }
-.frame span + span { left: auto; top: auto; bottom: .25rem; right: .25rem; }
 .benchmark { margin-block: 1.5rem; }
+.benchmark img { display: block; width: 100%; max-width: 48rem; height: auto; margin-bottom: .75rem; }
 .benchmark figcaption { color: var(--brass); }
 @media (max-width: 760px) {
     .exhibit { grid-template-columns: minmax(0,1fr); }
