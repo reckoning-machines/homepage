@@ -1,3 +1,5 @@
+@import url("/fonts/fonts.css");
+
 .compiler-page main { max-width: 1100px; }
 .compiler-page .top-nav { font-size: 14px; }
 .compiler-page .top-nav a, .demo-nav a { border-bottom: 1px solid var(--line); }
@@ -33,9 +35,6 @@
 .demo-output h3 { font-size: 23px; margin: 24px 0 8px; }
 .demo-output details { border-top: 1px solid var(--line); }
 .demo-output summary { display: grid; grid-template-columns: 12px 1fr auto; gap: 10px; align-items: baseline; padding: 12px 0; cursor: pointer; }
-.demo-output summary::-webkit-details-marker { display: none; }
-.demo-output summary::before { content: '+'; color: var(--brass); }
-.demo-output details[open] summary::before { content: '−'; }
 .demo-output summary small { display: block; color: var(--ink-dim); font: 13px/1.5 var(--font-mono); }
 .demo-output summary strong { color: var(--brass); font-weight: 500; }
 .citation { padding: 16px; background: var(--line-soft); margin-bottom: 16px; overflow-wrap: anywhere; }
@@ -87,7 +86,6 @@ html:not(.interactive) #states .record-state:target, html:not(.interactive) #sta
 .points { display: flex; flex-wrap: wrap; gap: .55rem; }
 .point { flex: 1 1 7rem; min-width: 0; }
 .demo-output details summary { display: list-item; }
-.demo-output details summary::before { content: none; }
 .point summary strong { font: 500 1rem/1.4 var(--font-mono); }
 .point summary span { font-size: .875rem; color: var(--ink-dim); }
 .citation { margin-top: .5rem; }
