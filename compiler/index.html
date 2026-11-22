@@ -37,7 +37,7 @@
         <section class="compiler-section cc-explanation" aria-labelledby="why-compiler">
             <h2 id="why-compiler">Why a compiler?</h2>
             <p>A traditional compiler, such as the Unix C compiler <code>cc</code>, transforms source code into a representation a computer can execute. Context Compiler applies a similar idea to information.</p>
-            <p>It uses declared rules to identify what each claim means and how claims relate across sources. It records those claims and relationships in a structured intermediate representation. From there, it assembles context for a particular question.</p>
+            <p>cc starts with a snapshot of the available evidence. It uses reusable domain rules to identify claims and their relationships, then selects the evidence a question requires. A team can do this without first building and maintaining a knowledge graph of the whole organization.</p>
             <ol class="cc-stages" aria-label="From source evidence to model context">
                 <li><strong>Source evidence</strong><span>Filings, estimates, research, tables</span></li>
                 <li><strong>Semantic derivation</strong><span>Typed claims, source authority, relationships</span></li>
@@ -46,8 +46,7 @@
                 <li><strong>Model context</strong><span>Evidence, coverage and source handles</span></li>
             </ol>
             <p><strong>Compression makes information smaller. Compilation makes it usable.</strong></p>
-            <p>When an investment question requires a financial calculation, cc follows the dependencies to include the necessary inputs. The result is task-specific context with explicit source authority, traceable evidence and reproducible output.</p>
-            <p>Semantic compression is one benefit. The larger objective is better reasoning with less wasted context.</p>
+            <p>Suppose a bank amends its filing on August 8. An analyst asks what was known on August 1. cc excludes the later amendment, applies the source rules to the earlier evidence, and follows the calculation back to its required inputs. Each selected figure links to its source. If a required input is missing, cc identifies it and refuses the task.</p>
         </section>
 <section class="compiler-section"><h2>What it accepts</h2><p>Typed records, declared tables, and passages that state a measure with its unit. You prepare them, and you declare who issued each source, when it was known, and who may see it.</p>
 <p>Context Compiler is a private Python library between your evidence and the model you choose. It applies the authority and dependency rules you declare.</p></section>
@@ -85,11 +84,15 @@
 <p>Reasoning Yield counts correct, evidence-supported task outcomes per million total tokens consumed. The frontier is the best supported answer quality attained at each total token budget.</p>
 <figure class="benchmark">
     <img src="/compiler/reasoning-yield-pilot.png" width="1578" height="1008" alt="Bar chart of correct, fully supported answers per million measured tokens. Hybrid RAG: 120.26. RAG with typed relationships: 302.59. Context Compiler: 359.45.">
-    <figcaption>Six synthetic banking questions at a 1,200-token context limit. Per million measured input and output tokens, Hybrid RAG delivered 120.26 correct, fully supported answers, RAG with typed relationships 302.59, and Context Compiler 359.45.</figcaption>
+    <figcaption>At the same 1,200-token context limit, Hybrid RAG delivered 120.26 correct, fully supported answers per million measured tokens, RAG with typed relationships 302.59, and cc 359.45.</figcaption>
 </figure>
+<p>On the six synthetic banking questions, RAG with typed relationships produced five correct, fully supported answers using 16,524 tokens. cc produced four using 11,128 tokens.</p>
 <p><strong>Frontier measurement pending.</strong> The planned comparison covers the full compiler, long context, strong hybrid RAG, Graph RAG and enhanced task-aware graph retrieval.</p>
-<ol class="checks"><li>Give every method the same evidence, domain rules, tasks and downstream model.</li><li>Count total tokens reported by the providers.</li><li>Score evidence-supported answers on held-out tasks.</li><li>Use controlled typed tasks for the primary comparison.</li><li>Report the natural-language comparison separately.</li></ol>
-<p>If an existing approach matches or exceeds the compiler's measured tradeoff, the benchmark will show it and we will publish it.</p></section>
+<p>Can cc match a maintained, task-aware Graph RAG system on answer quality with fewer engineering hours? The pilot leaves that question open.</p>
+<ol class="checks">
+    <li><strong>Answer quality.</strong> Give each method the same evidence, domain rules, held-out questions and downstream model. Score correct, source-supported answers and appropriate refusals. Count provider-reported tokens separately. Use typed tasks for the primary comparison and report natural-language results separately.</li>
+    <li><strong>Engineering effort.</strong> Record the hours needed to reach the same answer quality, including work on source mappings, domain packs and graph maintenance. Then give both systems the same amendments, schema changes and new source types. Measure the hours needed to sustain that quality.</li>
+</ol></section>
 <section class="compiler-section"><h2>One example</h2><p>Harbor Regional Bank &middot; March and June 2027 &middot; Recorded state S4</p>
 <!-- recorded excerpt -->
 <div class="exhibit"><div><h3>Selected sources</h3><ul>
