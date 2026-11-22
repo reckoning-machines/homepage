@@ -98,8 +98,11 @@
                 document.getElementById(key + "-reason").textContent = group.disabled ? hints[key] : "";
             }
             if (prev && prev !== next) {
-                const action = control ? captions[control] + " changed. " : "";
-                announcement.textContent = action + next.state_id + " " + next.outcome + ". " + difference(prev, next);
+                const step = control ? captions[control] + " from " + display(control, prev) +
+                    " to " + display(control, next) : prev.state_id + " to " + next.state_id;
+                const detail = difference(prev, next);
+                announcement.textContent = step + " (" + next.state_id + ", " + next.outcome +
+                    "): " + detail.charAt(0).toLowerCase() + detail.slice(1);
             } else {
                 announcement.textContent = next.state_id + " " + next.outcome + ".";
             }
