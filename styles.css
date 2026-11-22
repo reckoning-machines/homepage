@@ -61,6 +61,7 @@ img { display: block; max-width: 100%; height: auto; }
 .hero .eyebrow { font-family: var(--font-serif); font-style: italic; font-weight: 300; font-size: 18px; letter-spacing: 0.01em; text-transform: none; color: var(--brass-2); }
 .hero h1 { font-family: var(--font-serif); font-weight: 300; font-size: clamp(50px, 6.6vw, 96px); line-height: 0.98; letter-spacing: -0.025em; color: var(--ink); }
 .lede { margin-top: 28px; max-width: 42ch; font-family: var(--font-serif); font-weight: 300; font-size: clamp(20px, 2vw, 25px); line-height: 1.38; color: var(--ink-dim); }
+.hero-detail { margin-top: 16px; max-width: 57ch; color: var(--ink-dim); }
 .hero-link { display: inline-block; margin-top: 34px; font-size: 14px; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 3px; }
 .hero-link:hover { border-color: var(--brass); color: var(--brass); }
 
@@ -192,4 +193,35 @@ footer { border-top: 1px solid var(--line-soft); padding: 28px 0 44px; font-size
 @media (prefers-reduced-motion: no-preference) {
     .hero-copy { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
     @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+}
+
+/* Feature the compiler above the two product workspaces. */
+.compiler-feature {
+    display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.65fr); align-items: center;
+    gap: clamp(24px, 3.5vw, 48px); border-block: 1px solid var(--line); padding: 40px 0; margin-top: 40px;
+}
+.compiler-feature h3 { font: 400 clamp(32px, 3.2vw, 44px)/1.1 var(--font-serif); }
+.compiler-feature h3 a:hover { color: var(--brass); }
+.compiler-copy p { margin-top: 14px; }
+.compiler-copy .compiler-tagline { margin-top: 5px; font: italic 400 24px/1.2 var(--font-serif); color: var(--brass); }
+.compiler-drawing { border: 1px solid var(--line); border-radius: 3px; background: #091828; }
+.compiler-drawing > a, .compiler-drawing img { display: block; width: 100%; }
+.compiler-drawing > a { cursor: zoom-in; }
+.compiler-stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+.compiler-stages > div { padding: 16px clamp(12px, 1.4vw, 20px); }
+.compiler-stages > div + div { border-left: 1px solid var(--line); }
+.compiler-stages dt { font: 500 14px/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--brass); }
+.compiler-stages dd { margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--ink); }
+.compiler-drawing .compiler-caption { padding: 16px clamp(12px, 1.4vw, 20px); font-size: 15px; }
+.compiler-caption strong, .compiler-caption code { color: var(--ink); }
+.compiler-caption code { font: 14px var(--font-mono); }
+@media (max-width: 900px) {
+    .compiler-feature { grid-template-columns: 1fr; gap: 24px; }
+    .compiler-copy { max-width: 66ch; }
+}
+@media (max-width: 540px) {
+    .compiler-stages { grid-template-columns: 1fr; }
+    .compiler-stages > div { display: grid; grid-template-columns: 8ch minmax(0, 1fr); align-items: baseline; gap: 18px; padding: 12px 14px; }
+    .compiler-stages > div + div { border-left: 0; border-top: 1px solid var(--line-soft); }
+    .compiler-stages dd { margin: 0; }
 }

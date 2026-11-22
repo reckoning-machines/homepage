@@ -1,0 +1,95 @@
+{
+  "id": "cmp:a47e8f73e73b07abd1e493116bbc79eaea787a8063dd93617fd54f9a19bb7fa4",
+  "outcome": "compiled",
+  "refusal": null,
+  "evidence": [
+    {
+      "predicate": "cost_of_total_deposits",
+      "unit": "percent",
+      "role": "subject",
+      "period": "2026-06-30/Q",
+      "amount": "1.87",
+      "handle": "A1",
+      "source": "Harbor Regional Bank Form 10-Q, quarter ended June 30, 2026",
+      "locator": "table:ratios/row:cost of total deposits/col:2026-06-30/Q",
+      "witness": "1.87"
+    },
+    {
+      "predicate": "cost_of_total_deposits",
+      "unit": "percent",
+      "role": "subject",
+      "period": "2026-09-30/Q",
+      "amount": "2.08",
+      "handle": "A2",
+      "source": "Harbor Regional Bank Form 10-Q, quarter ended September 30, 2026",
+      "locator": "table:ratios/row:cost of total deposits/col:2026-09-30/Q",
+      "witness": "2.08"
+    },
+    {
+      "predicate": "avg_interest_bearing_deposits",
+      "unit": "usd_mn",
+      "role": "required",
+      "period": "2026-06-30/Q",
+      "amount": "7800.0",
+      "handle": "A3",
+      "source": "Harbor Regional Bank Form 10-Q, quarter ended June 30, 2026",
+      "locator": "table:balances/row:average interest-bearing deposits/col:2026-06-30/Q",
+      "witness": "7800.0"
+    },
+    {
+      "predicate": "avg_interest_bearing_deposits",
+      "unit": "usd_mn",
+      "role": "required",
+      "period": "2026-09-30/Q",
+      "amount": "8000.000",
+      "handle": "A4",
+      "source": "Harbor Regional Bank Form 10-Q, quarter ended September 30, 2026",
+      "locator": "table:balances/row:average interest-bearing deposits/col:2026-09-30/Q",
+      "witness": "8000000"
+    },
+    {
+      "predicate": "avg_noninterest_bearing_deposits",
+      "unit": "usd_mn",
+      "role": "required",
+      "period": "2026-06-30/Q",
+      "amount": "2200.0",
+      "handle": "A5",
+      "source": "Harbor Regional Bank Form 10-Q, quarter ended June 30, 2026",
+      "locator": "table:balances/row:average noninterest-bearing deposits/col:2026-06-30/Q",
+      "witness": "2200.0"
+    },
+    {
+      "predicate": "avg_noninterest_bearing_deposits",
+      "unit": "usd_mn",
+      "role": "required",
+      "period": "2026-09-30/Q",
+      "amount": "2000.000",
+      "handle": "A6",
+      "source": "Harbor Regional Bank Form 10-Q, quarter ended September 30, 2026",
+      "locator": "table:balances/row:average noninterest-bearing deposits/col:2026-09-30/Q",
+      "witness": "2000000"
+    },
+    {
+      "predicate": "interest_expense_deposits",
+      "unit": "usd_mn",
+      "role": "required",
+      "period": "2026-06-30/Q",
+      "amount": "46.8",
+      "handle": "A7",
+      "source": "Harbor Regional Bank Form 10-Q, quarter ended June 30, 2026",
+      "locator": "table:income/row:interest expense on deposits/col:2026-06-30/Q",
+      "witness": "46.8"
+    },
+    {
+      "predicate": "interest_expense_deposits",
+      "unit": "usd_mn",
+      "role": "required",
+      "period": "2026-09-30/Q",
+      "amount": "52.000",
+      "handle": "A8",
+      "source": "Harbor Regional Bank Form 10-Q, quarter ended September 30, 2026",
+      "locator": "table:income/row:interest expense on deposits/col:2026-09-30/Q",
+      "witness": "52000"
+    }
+  ]
+}

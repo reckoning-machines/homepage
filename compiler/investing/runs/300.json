@@ -1,0 +1,12 @@
+{
+  "id": "cmp:ca04eab22f11b0f0fe39660f96e3c69236be084fabf6e61879aeae012e3203f7",
+  "outcome": "refused",
+  "refusal": {
+    "reason": "required_exceeds_budget",
+    "detail": {
+      "limit": 300,
+      "required_cost": 315
+    }
+  },
+  "evidence": []
+}

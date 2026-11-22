@@ -1,0 +1,156 @@
+{
+  "authority": {
+    "admission_order": [],
+    "classes": [
+      "record"
+    ],
+    "cross_issuer_supersession": [],
+    "policy_id": "authority.contract_notice_demo.v1",
+    "same_class": {}
+  },
+  "id": "contract_notice_demo",
+  "identities": [],
+  "labels": [
+    {
+      "label": "cure_period",
+      "predicate": "cure_period"
+    },
+    {
+      "label": "deemed_receipt_delay",
+      "predicate": "deemed_receipt_delay"
+    }
+  ],
+  "policies": {
+    "attention": [
+      {
+        "class_caps": {},
+        "class_order": [],
+        "max_listed_exclusions": 10,
+        "max_supporting_bundles": 0,
+        "policy_id": "attention.contract_notice_demo.v1",
+        "scope": {
+          "max_distance": 1,
+          "types": []
+        },
+        "tie_breaks": []
+      }
+    ],
+    "closure": [
+      {
+        "max_expanded_keys": 16,
+        "max_near_keys": 2,
+        "policy_id": "closure.contract_notice_demo.v1"
+      }
+    ],
+    "defaults": {
+      "attention": "attention.contract_notice_demo.v1",
+      "closure": "closure.contract_notice_demo.v1"
+    }
+  },
+  "predicates": [
+    {
+      "accepted_units": [
+        {
+          "factor": "1",
+          "unit": "calendar_days"
+        }
+      ],
+      "name": "cure_period",
+      "required_qualifiers": [],
+      "series_qualifier": null,
+      "standing": [
+        {
+          "standing": "fact",
+          "when": {}
+        }
+      ],
+      "unit": "calendar_days",
+      "value_type": "decimal"
+    },
+    {
+      "accepted_units": [
+        {
+          "factor": "1",
+          "unit": "calendar_days"
+        }
+      ],
+      "name": "deemed_receipt_delay",
+      "required_qualifiers": [],
+      "series_qualifier": null,
+      "standing": [
+        {
+          "standing": "fact",
+          "when": {}
+        }
+      ],
+      "unit": "calendar_days",
+      "value_type": "decimal"
+    }
+  ],
+  "qualifiers": [],
+  "relationship_types": [
+    {
+      "necessity": "required",
+      "type": "needs"
+    }
+  ],
+  "rules": [
+    {
+      "from_predicate": "cure_period",
+      "qualifier_map": {},
+      "role": "start_condition",
+      "rule_id": "cure.requires_receipt",
+      "to_predicate": "deemed_receipt_delay",
+      "to_subject": "same",
+      "type": "needs",
+      "when": {}
+    }
+  ],
+  "schema_version": 1,
+  "subjects": [
+    {
+      "id": "contract:alder",
+      "aliases": ["Alder supply agreement"],
+      "ambiguous_aliases": [],
+      "attributes": {}
+    }
+  ],
+  "task_types": [
+    {
+      "name": "report",
+      "params_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "predicate": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject",
+          "predicate"
+        ],
+        "type": "object"
+      },
+      "seeds": [
+        {
+          "kind": "key",
+          "predicate": "$predicate",
+          "qualifiers": {},
+          "subject": "$subject"
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "name": "calendar_days",
+      "tokens": [
+        "calendar_days"
+      ]
+    }
+  ],
+  "version": 1
+}

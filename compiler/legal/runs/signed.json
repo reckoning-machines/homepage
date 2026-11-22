@@ -1,0 +1,29 @@
+{
+  "id": "cmp:6741970d817b478aa7196b10f40de006c9832f0099e79f0ba6c071d2bddfb1d4",
+  "outcome": "compiled",
+  "refusal": null,
+  "evidence": [
+    {
+      "predicate": "cure_period",
+      "unit": "calendar_days",
+      "role": "subject",
+      "period": null,
+      "amount": "30",
+      "handle": "A1",
+      "source": "Alder supply agreement, §8.2",
+      "locator": "record:0",
+      "witness": "{\"subject\": \"contract:alder\", \"predicate\": \"cure_period\", \"qualifiers\": {}, \"amount\": \"30\", \"unit\": \"calendar_days\", \"clause\": \"The supplier has 30 calendar days after deemed receipt of written notice to cure a material breach.\"}"
+    },
+    {
+      "predicate": "deemed_receipt_delay",
+      "unit": "calendar_days",
+      "role": "required",
+      "period": null,
+      "amount": "2",
+      "handle": "A2",
+      "source": "Notice schedule, §2",
+      "locator": "record:0",
+      "witness": "{\"subject\": \"contract:alder\", \"predicate\": \"deemed_receipt_delay\", \"qualifiers\": {}, \"amount\": \"2\", \"unit\": \"calendar_days\", \"clause\": \"Notice sent by courier is deemed received two calendar days after dispatch.\"}"
+    }
+  ]
+}

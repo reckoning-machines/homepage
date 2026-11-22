@@ -1,0 +1,34 @@
+{
+  "id": "cmp:398d2f8cac6eb87014715e21d214d2167e72407865c7fdb88643d909868553d2",
+  "outcome": "refused",
+  "refusal": {
+    "reason": "coverage_not_complete",
+    "detail": {
+      "gaps": [
+        {
+          "kind": "missing_required",
+          "keys": [
+            {
+              "subject": "contract:alder",
+              "predicate": "deemed_receipt_delay",
+              "qualifiers": {}
+            }
+          ],
+          "required_by": [
+            {
+              "subject": "contract:alder",
+              "predicate": "cure_period",
+              "qualifiers": {}
+            }
+          ],
+          "detail": {
+            "absence": "absent",
+            "near_keys": [],
+            "rejection_ids": []
+          }
+        }
+      ]
+    }
+  },
+  "evidence": []
+}
