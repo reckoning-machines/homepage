@@ -46,6 +46,17 @@
                 </a>
             </div>
         </section>
+        <section class="compiler-section" aria-labelledby="evidence-sufficiency">
+            <h2 id="evidence-sufficiency">Evidence sufficiency — preliminary</h2>
+            <figure class="sufficiency">
+                <img src="/compiler/evidence-sufficiency.svg" width="470" height="315" alt="At budgets of 600, 900, 1,200 and 1,800 tokens, Hybrid RAG supplied all required evidence for 1, 2, 2 and 3 of five questions. Context Compiler did so for 2, 3, 3 and 4.">
+                <figcaption>
+                    <p>Five answerable questions from one synthetic banking corpus. A question counted when the context held all the evidence needed to answer it at the given token budget.</p>
+                    <p>No downstream model answered these questions. Answer accuracy, Reasoning Yield and performance in other domains remain untested here.</p>
+                    <p class="credit">Claude 2 · Provider-free evaluation · Independent review pending</p>
+                </figcaption>
+            </figure>
+        </section>
         <section class="compiler-section frontier" aria-labelledby="frontier">
             <div><h2 id="frontier">Reasoning Yield Frontier</h2><p class="label">Measurement pending</p></div>
             <p>The benchmark will plot evidence-supported answer quality against total tokens consumed per task. Compiled context, retrieval-based approaches and long-context prompting will use the same evidence, questions and downstream model. The measured frontier and its uncertainty intervals will appear here when the independent results are available.</p>

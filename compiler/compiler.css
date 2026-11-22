@@ -19,6 +19,10 @@
 .text-link { display: inline-block; margin-top: 20px; border-bottom: 1px solid var(--brass-2); font-size: 14px; }
 .text-link:hover, .demo-nav a:hover { color: var(--brass); }
 .frontier .label { margin-top: 12px; }
+.sufficiency { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: center; gap: 2.5rem; margin-top: 1.75rem; }
+.sufficiency img { width: 100%; }
+.sufficiency p + p { margin-top: .8rem; }
+.sufficiency .credit { font-size: .875rem; }
 .demo-hero { padding-bottom: 36px; }
 .demo-hero h1 { font-size: clamp(42px, 5.7vw, 68px); margin: 16px 0; }
 .demo-workbench { display: grid; grid-template-columns: minmax(195px, 1fr) minmax(0, 2.2fr); gap: 36px; border-block: 1px solid var(--line); padding: 32px 0; }
@@ -44,6 +48,7 @@
 .demo-output button { font: inherit; padding: 5px 12px; cursor: pointer; }
 .demo-nav { display: flex; flex-wrap: wrap; gap: 24px; padding: 28px 0 52px; font-size: 14px; }
 @media (max-width: 700px) {
+    .sufficiency { grid-template-columns: 1fr; gap: 1rem; }
     .compiler-hero, .demo-hero { padding-top: 112px; }
     .demo-links, .frontier, .demo-workbench { grid-template-columns: 1fr; gap: 20px; }
     .demo-output { border-left: 0; border-top: 1px solid var(--line); padding: 22px 0 0; }
