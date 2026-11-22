@@ -3,48 +3,553 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Investment research demo · Context Compiler | Reckoning Machines</title>
-    <meta name="description" content="Harbor Regional Bank reported a cost of deposits of 1.87% in the second quarter and 2.08% in the third. Explore which filing cells a model needs to explain that change in this fictional bank.">
+    <title>Investment research workbench | Reckoning Machines</title>
+    <meta name="description" content="Compare two quarters of synthetic bank deposit costs. Inspect the filing cells, change the evidence budget, or move the as-of date before the filing.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/investing/">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/compiler/compiler.css">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <script src="/compiler/demo.js" defer></script>
+    <script defer src="/compiler/demo.js"></script>
 </head>
 <body class="compiler-page">
     <a class="skip" href="#main">Skip to content</a>
     <header class="top">
         <div class="container top-inner">
-            <div><a class="wordmark" href="/">Reckoning Machines</a><p class="brand-motto">Simple yet Powerful</p></div>
+            <div><a class="wordmark" href="/">Reckoning Machines</a><p class="brand-motto">Simple yet Powerful.</p></div>
             <nav class="top-nav" aria-label="Primary"><a href="/compiler/">Context Compiler</a></nav>
         </div>
     </header>
     <main id="main" class="container">
-        <section class="demo-hero">
-            <p class="label">Context Compiler / Investment research demo</p>
-            <h1>What changed in the cost of deposits?</h1>
-            <p class="compiler-intro">Harbor Regional Bank reported a cost of deposits of 1.87% in the second quarter and 2.08% in the third. Explore which filing cells a model needs to explain that change in this fictional bank.</p>
-        </section>
-        <section class="demo-workbench" aria-label="Interactive compilation" data-demo="investing">
-            <div class="demo-controls">
-                <fieldset><legend>Evidence budget</legend><label><input type="radio" name="case" value="315" checked><span>315 units</span></label>
-<label><input type="radio" name="case" value="475" ><span>475 units</span></label>
-<label><input type="radio" name="case" value="300" ><span>300 units</span></label>
-</fieldset>
-                <p>These units measure fixture cost. Increase the budget to admit supporting evidence, or reduce it to test the minimum required.</p>
-            </div>
-            <div class="demo-output">
-                <p class="label">Compiler output</p>
-                <h2 id="run-status" role="status">Loading evidence…</h2>
-                <div id="run-result"></div>
-                <noscript><p>Enable JavaScript to switch cases and inspect evidence, or <a href="runs/315.json">read the public run as JSON</a>.</p></noscript>
-            </div>
-        </section>
-        <nav class="demo-nav" aria-label="More about Context Compiler"><a href="/compiler/">Product overview</a><a href="/compiler/legal/">Explore the legal demo</a></nav>
+
+<section class="demo-hero"><p class="label">Context Compiler / Investment research</p><h1>What changed in the cost of deposits?</h1>
+<p class="compiler-intro">Compare Harbor Regional Bank's March and June 2027 quarters. Open a figure to read its source. Lower the budget or move the date before the June filing.</p></section>
+<div class="demo-workbench"><aside><div class="demo-controls" id="controls" hidden><fieldset id="budget" aria-describedby="budget-reason"><legend>Budget in cost units</legend><div class="choices"></div><small id="budget-reason"></small></fieldset>
+<fieldset id="policy" aria-describedby="policy-reason"><legend>Attention policy</legend><div class="choices"></div><small id="policy-reason"></small></fieldset>
+<fieldset id="as_of" aria-describedby="as_of-reason"><legend>As-of date</legend><div class="choices"></div><small id="as_of-reason"></small></fieldset>
+<fieldset id="note" aria-describedby="note-reason"><legend>Broker note</legend><div class="choices"></div><small id="note-reason"></small></fieldset>
+</div>
+<nav class="static-states" aria-label="Recorded states">Recorded states<br><a href="#S1">S1</a> <a href="#S2">S2</a> <a href="#S3">S3</a> <a href="#S4">S4</a> <a href="#S5">S5</a> <a href="#S6">S6</a> <a href="#S7">S7</a></nav>
+<p class="change" id="change" aria-live="polite" aria-atomic="true"></p></aside>
+<div class="demo-output" id="states"><!-- recorded states -->
+<article id="S4" class="record-state" aria-labelledby="S4-title">
+<p class="label">Recorded state S4</p><h2 id="S4-title">Compiled</h2>
+<p class="coverage">Coverage complete. Required 8 of 8 listed. Supporting 5 of 6 listed.</p>
+<h3>Requested figures</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S4-K1"><th scope="row">Cost of total deposits<small>2027-03-31/Q &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A1"><strong>2.86 percent</strong> <span>A1</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:funding ratios/row:cost of total deposits/col:2027-03-31/Q</code><blockquote>2.86</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K2"><th scope="row">Cost of total deposits<small>2027-06-30/Q &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A2"><strong>3.03 percent</strong> <span>A2</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:funding ratios/row:cost of total deposits/col:2027-06-30/Q</code><blockquote>3.03</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<h3>Required components</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S4-K3"><th scope="row">Average interest-bearing deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A3"><strong>6385 USD million</strong> <span>A3</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly averages/row:average interest-bearing deposits/col:2027-03-31/Q</code><blockquote>6385</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K4"><th scope="row">Average interest-bearing deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A4"><strong>6715.000 USD million</strong> <span>A4</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly averages/row:average interest-bearing deposits/col:2027-06-30/Q</code><blockquote>6715000</blockquote></div></details>
+<p>Reported as 6715000 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K5"><th scope="row">Average noninterest-bearing deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A5"><strong>1835 USD million</strong> <span>A5</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly averages/row:average noninterest-bearing deposits/col:2027-03-31/Q</code><blockquote>1835</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K6"><th scope="row">Average noninterest-bearing deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A6"><strong>1765.000 USD million</strong> <span>A6</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly averages/row:average noninterest-bearing deposits/col:2027-06-30/Q</code><blockquote>1765000</blockquote></div></details>
+<p>Reported as 1765000 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K7"><th scope="row">Interest expense on deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A7"><strong>58.773 USD million</strong> <span>A7</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly expense/row:interest expense on deposits/col:2027-03-31/Q</code><blockquote>58.773</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K8"><th scope="row">Interest expense on deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A8"><strong>64.236 USD million</strong> <span>A8</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly expense/row:interest expense on deposits/col:2027-06-30/Q</code><blockquote>64236</blockquote></div></details>
+<p>Reported as 64236 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<h3>Supporting evidence</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S4-K9"><th scope="row">Cost of interest-bearing deposits<small>2027-03-31/Q &middot; driver &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A9"><strong>3.682 percent</strong> <span>A9</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:funding ratios/row:cost of interest-bearing deposits/col:2027-03-31/Q</code><blockquote>3.682</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K10"><th scope="row">Cost of interest-bearing deposits<small>2027-06-30/Q &middot; driver &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A10"><strong>3.826 percent</strong> <span>A10</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:funding ratios/row:cost of interest-bearing deposits/col:2027-06-30/Q</code><blockquote>3.826</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K11"><th scope="row">Federal funds target range, upper bound<small>2027-03-31/I &middot; driver &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A11"><strong>3.75 percent</strong> <span>A11</span></summary>
+<div class="citation"><h5>Quarter-end target rate observations</h5><p>Official statistic &middot; Federal Reserve</p>
+<p>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</p>
+<code>table:quarter-end observations/row:federal funds target range, upper bound/col:2027-03-31/I</code><blockquote>3.75</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K12"><th scope="row">Federal funds target range, upper bound<small>2027-06-30/I &middot; driver &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A12"><strong>3.50 percent</strong> <span>A12</span></summary>
+<div class="citation"><h5>Quarter-end target rate observations</h5><p>Official statistic &middot; Federal Reserve</p>
+<p>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</p>
+<code>table:quarter-end observations/row:federal funds target range, upper bound/col:2027-06-30/I</code><blockquote>3.50</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S4-K13"><th scope="row">Change in cost of total deposits<small>2027-09-30/Q &middot; guidance &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S4-A13"><strong>0.063 to 0.124 percentage points</strong> <span>A13</span></summary>
+<div class="citation"><h5>July funding call, management outlook</h5><p>Issuer transcript &middot; Harbor Regional Bank</p>
+<p>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</p>
+<code>record:0</code><blockquote>{&quot;predicate&quot;:&quot;cost of total deposits change&quot;,&quot;low&quot;:&quot;0.063&quot;,&quot;high&quot;:&quot;0.124&quot;,&quot;unit&quot;:&quot;percentage_points&quot;}</blockquote></div></details>
+<small>judgment &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<details class="relationships"><summary>Inspect relationships</summary><ul>
+<li><a href="#S4-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S4-K3">Average interest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S4-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S4-K5">Average noninterest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S4-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required numerator &mdash; <a href="#S4-K7">Interest expense on deposits (2027-03-31/Q)</a></li>
+<li><a href="#S4-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; supporting driver &mdash; <a href="#S4-K9">Cost of interest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S4-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; supporting driver &mdash; <a href="#S4-K11">Federal funds target range, upper bound (2027-03-31/I)</a></li>
+<li><a href="#S4-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S4-K4">Average interest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S4-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S4-K6">Average noninterest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S4-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required numerator &mdash; <a href="#S4-K8">Interest expense on deposits (2027-06-30/Q)</a></li>
+<li><a href="#S4-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting driver &mdash; <a href="#S4-K10">Cost of interest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S4-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting driver &mdash; <a href="#S4-K12">Federal funds target range, upper bound (2027-06-30/I)</a></li>
+<li><a href="#S4-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting guidance &mdash; <a href="#S4-K13">Change in cost of total deposits (2027-09-30/Q)</a></li>
+<li><a href="#S4-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting prior period &mdash; <a href="#S4-K1">Cost of total deposits (2027-03-31/Q)</a></li>
+<li><a href="#S4-K9">Cost of interest-bearing deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S4-K3">Average interest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S4-K9">Cost of interest-bearing deposits (2027-03-31/Q)</a> &mdash; required numerator &mdash; <a href="#S4-K7">Interest expense on deposits (2027-03-31/Q)</a></li>
+<li><a href="#S4-K10">Cost of interest-bearing deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S4-K4">Average interest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S4-K10">Cost of interest-bearing deposits (2027-06-30/Q)</a> &mdash; required numerator &mdash; <a href="#S4-K8">Interest expense on deposits (2027-06-30/Q)</a></li>
+</ul></details>
+<h3>Left out</h3><ul>
+<li>Cost of total deposits (2027-09-30/Q) &middot; estimate &middot; budget</li>
+</ul>
+<details class="inventory" open><summary>Evidence supplied</summary><ul>
+<li><strong>March quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</small></li>
+<li><strong>June quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</small></li>
+<li><strong>June preliminary funding bulletin</strong> &middot; Issuer release &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>Quarter-end target rate observations</strong> &middot; Official statistic &middot; Federal Reserve<small>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</small></li>
+<li><strong>July funding call, management outlook</strong> &middot; Issuer transcript &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>September funding estimate</strong> &middot; Broker research &middot; Cedar Analytics<small>Published 2027-07-20T09:00:00Z &middot; Known 2027-07-20T09:00:00Z</small></li>
+<li><strong>Deposit forecast revision</strong> &middot; Broker research &middot; Tide Street<small>Published 2027-07-21T09:00:00Z &middot; Known 2027-07-21T09:00:00Z</small></li>
+<li><strong>July funding desk letter</strong> &middot; Broker research &middot; Loam Research<small>Published 2027-07-22T09:00:00Z &middot; Known 2027-07-22T09:00:00Z</small></li>
+</ul></details><a class="text-link" href="runs/S4.json">Download S4 as JSON</a></article>
+<article id="S1" class="record-state" aria-labelledby="S1-title">
+<p class="label">Recorded state S1</p><h2 id="S1-title">Refused</h2>
+<p class="coverage">Coverage complete. Required 8 of 8 listed. Supporting not evaluated.</p>
+<p class="decision">Required evidence costs 315 units. The limit is 300.</p>
+<details class="inventory" open><summary>Evidence supplied</summary><ul>
+<li><strong>March quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</small></li>
+<li><strong>June quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</small></li>
+<li><strong>June preliminary funding bulletin</strong> &middot; Issuer release &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>Quarter-end target rate observations</strong> &middot; Official statistic &middot; Federal Reserve<small>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</small></li>
+<li><strong>July funding call, management outlook</strong> &middot; Issuer transcript &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>September funding estimate</strong> &middot; Broker research &middot; Cedar Analytics<small>Published 2027-07-20T09:00:00Z &middot; Known 2027-07-20T09:00:00Z</small></li>
+<li><strong>Deposit forecast revision</strong> &middot; Broker research &middot; Tide Street<small>Published 2027-07-21T09:00:00Z &middot; Known 2027-07-21T09:00:00Z</small></li>
+<li><strong>July funding desk letter</strong> &middot; Broker research &middot; Loam Research<small>Published 2027-07-22T09:00:00Z &middot; Known 2027-07-22T09:00:00Z</small></li>
+</ul></details><a class="text-link" href="runs/S1.json">Download S1 as JSON</a></article>
+<article id="S2" class="record-state" aria-labelledby="S2-title">
+<p class="label">Recorded state S2</p><h2 id="S2-title">Compiled</h2>
+<p class="coverage">Coverage complete. Required 8 of 8 listed. Supporting 0 of 6 listed.</p>
+<h3>Requested figures</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S2-K1"><th scope="row">Cost of total deposits<small>2027-03-31/Q &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S2-A1"><strong>2.86 percent</strong> <span>A1</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:funding ratios/row:cost of total deposits/col:2027-03-31/Q</code><blockquote>2.86</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S2-K2"><th scope="row">Cost of total deposits<small>2027-06-30/Q &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S2-A2"><strong>3.03 percent</strong> <span>A2</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:funding ratios/row:cost of total deposits/col:2027-06-30/Q</code><blockquote>3.03</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<h3>Required components</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S2-K3"><th scope="row">Average interest-bearing deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S2-A3"><strong>6385 USD million</strong> <span>A3</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly averages/row:average interest-bearing deposits/col:2027-03-31/Q</code><blockquote>6385</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S2-K4"><th scope="row">Average interest-bearing deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S2-A4"><strong>6715.000 USD million</strong> <span>A4</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly averages/row:average interest-bearing deposits/col:2027-06-30/Q</code><blockquote>6715000</blockquote></div></details>
+<p>Reported as 6715000 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S2-K5"><th scope="row">Average noninterest-bearing deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S2-A5"><strong>1835 USD million</strong> <span>A5</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly averages/row:average noninterest-bearing deposits/col:2027-03-31/Q</code><blockquote>1835</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S2-K6"><th scope="row">Average noninterest-bearing deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S2-A6"><strong>1765.000 USD million</strong> <span>A6</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly averages/row:average noninterest-bearing deposits/col:2027-06-30/Q</code><blockquote>1765000</blockquote></div></details>
+<p>Reported as 1765000 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S2-K7"><th scope="row">Interest expense on deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S2-A7"><strong>58.773 USD million</strong> <span>A7</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly expense/row:interest expense on deposits/col:2027-03-31/Q</code><blockquote>58.773</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S2-K8"><th scope="row">Interest expense on deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S2-A8"><strong>64.236 USD million</strong> <span>A8</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly expense/row:interest expense on deposits/col:2027-06-30/Q</code><blockquote>64236</blockquote></div></details>
+<p>Reported as 64236 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<details class="relationships"><summary>Inspect relationships</summary><ul>
+<li><a href="#S2-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S2-K3">Average interest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S2-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S2-K5">Average noninterest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S2-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required numerator &mdash; <a href="#S2-K7">Interest expense on deposits (2027-03-31/Q)</a></li>
+<li><a href="#S2-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S2-K4">Average interest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S2-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S2-K6">Average noninterest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S2-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required numerator &mdash; <a href="#S2-K8">Interest expense on deposits (2027-06-30/Q)</a></li>
+<li><a href="#S2-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting prior period &mdash; <a href="#S2-K1">Cost of total deposits (2027-03-31/Q)</a></li>
+</ul></details>
+<h3>Left out</h3><ul>
+<li>Cost of interest-bearing deposits (2027-06-30/Q) &middot; driver &middot; budget</li>
+<li>Federal funds target range, upper bound (2027-06-30/I) &middot; driver &middot; budget</li>
+<li>Cost of interest-bearing deposits (2027-03-31/Q) &middot; driver &middot; budget</li>
+<li>Federal funds target range, upper bound (2027-03-31/I) &middot; driver &middot; budget</li>
+<li>Change in cost of total deposits (2027-09-30/Q) &middot; guidance &middot; budget</li>
+<li>Cost of total deposits (2027-09-30/Q) &middot; estimate &middot; budget</li>
+</ul>
+<details class="inventory" open><summary>Evidence supplied</summary><ul>
+<li><strong>March quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</small></li>
+<li><strong>June quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</small></li>
+<li><strong>June preliminary funding bulletin</strong> &middot; Issuer release &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>Quarter-end target rate observations</strong> &middot; Official statistic &middot; Federal Reserve<small>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</small></li>
+<li><strong>July funding call, management outlook</strong> &middot; Issuer transcript &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>September funding estimate</strong> &middot; Broker research &middot; Cedar Analytics<small>Published 2027-07-20T09:00:00Z &middot; Known 2027-07-20T09:00:00Z</small></li>
+<li><strong>Deposit forecast revision</strong> &middot; Broker research &middot; Tide Street<small>Published 2027-07-21T09:00:00Z &middot; Known 2027-07-21T09:00:00Z</small></li>
+<li><strong>July funding desk letter</strong> &middot; Broker research &middot; Loam Research<small>Published 2027-07-22T09:00:00Z &middot; Known 2027-07-22T09:00:00Z</small></li>
+</ul></details><a class="text-link" href="runs/S2.json">Download S2 as JSON</a></article>
+<article id="S3" class="record-state" aria-labelledby="S3-title">
+<p class="label">Recorded state S3</p><h2 id="S3-title">Compiled</h2>
+<p class="coverage">Coverage complete. Required 8 of 8 listed. Supporting 4 of 6 listed.</p>
+<h3>Requested figures</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S3-K1"><th scope="row">Cost of total deposits<small>2027-03-31/Q &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A1"><strong>2.86 percent</strong> <span>A1</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:funding ratios/row:cost of total deposits/col:2027-03-31/Q</code><blockquote>2.86</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K2"><th scope="row">Cost of total deposits<small>2027-06-30/Q &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A2"><strong>3.03 percent</strong> <span>A2</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:funding ratios/row:cost of total deposits/col:2027-06-30/Q</code><blockquote>3.03</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<h3>Required components</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S3-K3"><th scope="row">Average interest-bearing deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A3"><strong>6385 USD million</strong> <span>A3</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly averages/row:average interest-bearing deposits/col:2027-03-31/Q</code><blockquote>6385</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K4"><th scope="row">Average interest-bearing deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A4"><strong>6715.000 USD million</strong> <span>A4</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly averages/row:average interest-bearing deposits/col:2027-06-30/Q</code><blockquote>6715000</blockquote></div></details>
+<p>Reported as 6715000 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K5"><th scope="row">Average noninterest-bearing deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A5"><strong>1835 USD million</strong> <span>A5</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly averages/row:average noninterest-bearing deposits/col:2027-03-31/Q</code><blockquote>1835</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K6"><th scope="row">Average noninterest-bearing deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A6"><strong>1765.000 USD million</strong> <span>A6</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly averages/row:average noninterest-bearing deposits/col:2027-06-30/Q</code><blockquote>1765000</blockquote></div></details>
+<p>Reported as 1765000 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K7"><th scope="row">Interest expense on deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A7"><strong>58.773 USD million</strong> <span>A7</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly expense/row:interest expense on deposits/col:2027-03-31/Q</code><blockquote>58.773</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K8"><th scope="row">Interest expense on deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A8"><strong>64.236 USD million</strong> <span>A8</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly expense/row:interest expense on deposits/col:2027-06-30/Q</code><blockquote>64236</blockquote></div></details>
+<p>Reported as 64236 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<h3>Supporting evidence</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S3-K9"><th scope="row">Cost of interest-bearing deposits<small>2027-03-31/Q &middot; driver &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A9"><strong>3.682 percent</strong> <span>A9</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:funding ratios/row:cost of interest-bearing deposits/col:2027-03-31/Q</code><blockquote>3.682</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K10"><th scope="row">Cost of interest-bearing deposits<small>2027-06-30/Q &middot; driver &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A10"><strong>3.826 percent</strong> <span>A10</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:funding ratios/row:cost of interest-bearing deposits/col:2027-06-30/Q</code><blockquote>3.826</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K11"><th scope="row">Federal funds target range, upper bound<small>2027-03-31/I &middot; driver &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A11"><strong>3.75 percent</strong> <span>A11</span></summary>
+<div class="citation"><h5>Quarter-end target rate observations</h5><p>Official statistic &middot; Federal Reserve</p>
+<p>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</p>
+<code>table:quarter-end observations/row:federal funds target range, upper bound/col:2027-03-31/I</code><blockquote>3.75</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S3-K12"><th scope="row">Federal funds target range, upper bound<small>2027-06-30/I &middot; driver &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S3-A12"><strong>3.50 percent</strong> <span>A12</span></summary>
+<div class="citation"><h5>Quarter-end target rate observations</h5><p>Official statistic &middot; Federal Reserve</p>
+<p>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</p>
+<code>table:quarter-end observations/row:federal funds target range, upper bound/col:2027-06-30/I</code><blockquote>3.50</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<details class="relationships"><summary>Inspect relationships</summary><ul>
+<li><a href="#S3-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S3-K3">Average interest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S3-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S3-K5">Average noninterest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S3-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required numerator &mdash; <a href="#S3-K7">Interest expense on deposits (2027-03-31/Q)</a></li>
+<li><a href="#S3-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; supporting driver &mdash; <a href="#S3-K9">Cost of interest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S3-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; supporting driver &mdash; <a href="#S3-K11">Federal funds target range, upper bound (2027-03-31/I)</a></li>
+<li><a href="#S3-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S3-K4">Average interest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S3-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S3-K6">Average noninterest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S3-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required numerator &mdash; <a href="#S3-K8">Interest expense on deposits (2027-06-30/Q)</a></li>
+<li><a href="#S3-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting driver &mdash; <a href="#S3-K10">Cost of interest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S3-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting driver &mdash; <a href="#S3-K12">Federal funds target range, upper bound (2027-06-30/I)</a></li>
+<li><a href="#S3-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting prior period &mdash; <a href="#S3-K1">Cost of total deposits (2027-03-31/Q)</a></li>
+<li><a href="#S3-K9">Cost of interest-bearing deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S3-K3">Average interest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S3-K9">Cost of interest-bearing deposits (2027-03-31/Q)</a> &mdash; required numerator &mdash; <a href="#S3-K7">Interest expense on deposits (2027-03-31/Q)</a></li>
+<li><a href="#S3-K10">Cost of interest-bearing deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S3-K4">Average interest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S3-K10">Cost of interest-bearing deposits (2027-06-30/Q)</a> &mdash; required numerator &mdash; <a href="#S3-K8">Interest expense on deposits (2027-06-30/Q)</a></li>
+</ul></details>
+<h3>Left out</h3><ul>
+<li>Change in cost of total deposits (2027-09-30/Q) &middot; guidance &middot; budget</li>
+<li>Cost of total deposits (2027-09-30/Q) &middot; estimate &middot; budget</li>
+</ul>
+<details class="inventory" open><summary>Evidence supplied</summary><ul>
+<li><strong>March quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</small></li>
+<li><strong>June quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</small></li>
+<li><strong>June preliminary funding bulletin</strong> &middot; Issuer release &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>Quarter-end target rate observations</strong> &middot; Official statistic &middot; Federal Reserve<small>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</small></li>
+<li><strong>July funding call, management outlook</strong> &middot; Issuer transcript &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>September funding estimate</strong> &middot; Broker research &middot; Cedar Analytics<small>Published 2027-07-20T09:00:00Z &middot; Known 2027-07-20T09:00:00Z</small></li>
+<li><strong>Deposit forecast revision</strong> &middot; Broker research &middot; Tide Street<small>Published 2027-07-21T09:00:00Z &middot; Known 2027-07-21T09:00:00Z</small></li>
+<li><strong>July funding desk letter</strong> &middot; Broker research &middot; Loam Research<small>Published 2027-07-22T09:00:00Z &middot; Known 2027-07-22T09:00:00Z</small></li>
+</ul></details><a class="text-link" href="runs/S3.json">Download S3 as JSON</a></article>
+<article id="S5" class="record-state" aria-labelledby="S5-title">
+<p class="label">Recorded state S5</p><h2 id="S5-title">Compiled</h2>
+<p class="coverage">Coverage complete. Required 8 of 8 listed. Supporting 2 of 6 listed.</p>
+<h3>Requested figures</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S5-K1"><th scope="row">Cost of total deposits<small>2027-03-31/Q &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A1"><strong>2.86 percent</strong> <span>A1</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:funding ratios/row:cost of total deposits/col:2027-03-31/Q</code><blockquote>2.86</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S5-K2"><th scope="row">Cost of total deposits<small>2027-06-30/Q &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A2"><strong>3.03 percent</strong> <span>A2</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:funding ratios/row:cost of total deposits/col:2027-06-30/Q</code><blockquote>3.03</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<h3>Required components</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S5-K3"><th scope="row">Average interest-bearing deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A3"><strong>6385 USD million</strong> <span>A3</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly averages/row:average interest-bearing deposits/col:2027-03-31/Q</code><blockquote>6385</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S5-K4"><th scope="row">Average interest-bearing deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A4"><strong>6715.000 USD million</strong> <span>A4</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly averages/row:average interest-bearing deposits/col:2027-06-30/Q</code><blockquote>6715000</blockquote></div></details>
+<p>Reported as 6715000 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S5-K5"><th scope="row">Average noninterest-bearing deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A5"><strong>1835 USD million</strong> <span>A5</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly averages/row:average noninterest-bearing deposits/col:2027-03-31/Q</code><blockquote>1835</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S5-K6"><th scope="row">Average noninterest-bearing deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A6"><strong>1765.000 USD million</strong> <span>A6</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly averages/row:average noninterest-bearing deposits/col:2027-06-30/Q</code><blockquote>1765000</blockquote></div></details>
+<p>Reported as 1765000 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S5-K7"><th scope="row">Interest expense on deposits<small>2027-03-31/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A7"><strong>58.773 USD million</strong> <span>A7</span></summary>
+<div class="citation"><h5>March quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</p>
+<code>table:quarterly expense/row:interest expense on deposits/col:2027-03-31/Q</code><blockquote>58.773</blockquote></div></details>
+<small>fact &middot; governing</small></div>
+</div></td></tr>
+<tr id="S5-K8"><th scope="row">Interest expense on deposits<small>2027-06-30/Q &middot; computed from &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A8"><strong>64.236 USD million</strong> <span>A8</span></summary>
+<div class="citation"><h5>June quarterly filing, deposit schedule</h5><p>Quarterly filing &middot; Harbor Regional Bank</p>
+<p>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</p>
+<code>table:quarterly expense/row:interest expense on deposits/col:2027-06-30/Q</code><blockquote>64236</blockquote></div></details>
+<p>Reported as 64236 USD thousands.</p><small>fact &middot; governing</small></div>
+</div></td></tr>
+</tbody></table>
+<h3>Supporting evidence</h3><table class="evidence-table"><thead><tr><th>Measure and period</th><th>Value and source</th></tr></thead><tbody>
+<tr id="S5-K9"><th scope="row">Change in cost of total deposits<small>2027-09-30/Q &middot; guidance &middot; governing</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A9"><strong>0.063 to 0.124 percentage points</strong> <span>A9</span></summary>
+<div class="citation"><h5>July funding call, management outlook</h5><p>Issuer transcript &middot; Harbor Regional Bank</p>
+<p>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</p>
+<code>record:0</code><blockquote>{&quot;predicate&quot;:&quot;cost of total deposits change&quot;,&quot;low&quot;:&quot;0.063&quot;,&quot;high&quot;:&quot;0.124&quot;,&quot;unit&quot;:&quot;percentage_points&quot;}</blockquote></div></details>
+<small>judgment &middot; governing</small></div>
+</div></td></tr>
+<tr id="S5-K10"><th scope="row">Cost of total deposits<small>2027-09-30/Q &middot; estimate &middot; conflict</small></th><td><div class="points">
+<div class="point"><details><summary id="S5-A10"><strong>3.084 percent</strong> <span>A10</span></summary>
+<div class="citation"><h5>Deposit forecast revision</h5><p>Broker research &middot; Tide Street</p>
+<p>Published 2027-07-21T09:00:00Z &middot; Known 2027-07-21T09:00:00Z</p>
+<code>passage:0/chars:0-88</code><blockquote>Our estimate for Harbor Regional Bank cost of total deposits is 3.084% for 2027-09-30/Q.</blockquote></div></details>
+<small>judgment &middot; conflicting</small></div>
+<div class="point"><details><summary id="S5-A11"><strong>3.211 percent</strong> <span>A11</span></summary>
+<div class="citation"><h5>July funding desk letter</h5><p>Broker research &middot; Loam Research</p>
+<p>Published 2027-07-22T09:00:00Z &middot; Known 2027-07-22T09:00:00Z</p>
+<code>passage:0/chars:0-88</code><blockquote>Our estimate for Harbor Regional Bank cost of total deposits is 3.211% for 2027-09-30/Q.</blockquote></div></details>
+<small>judgment &middot; conflicting</small></div>
+<div class="point"><details><summary id="S5-A12"><strong>3.137 percent</strong> <span>A12</span></summary>
+<div class="citation"><h5>September funding estimate</h5><p>Broker research &middot; Cedar Analytics</p>
+<p>Published 2027-07-20T09:00:00Z &middot; Known 2027-07-20T09:00:00Z</p>
+<code>passage:0/chars:0-88</code><blockquote>Our estimate for Harbor Regional Bank cost of total deposits is 3.137% for 2027-09-30/Q.</blockquote></div></details>
+<small>judgment &middot; conflicting</small></div>
+</div></td></tr>
+</tbody></table>
+<details class="relationships"><summary>Inspect relationships</summary><ul>
+<li><a href="#S5-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S5-K3">Average interest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S5-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required denominator component &mdash; <a href="#S5-K5">Average noninterest-bearing deposits (2027-03-31/Q)</a></li>
+<li><a href="#S5-K1">Cost of total deposits (2027-03-31/Q)</a> &mdash; required numerator &mdash; <a href="#S5-K7">Interest expense on deposits (2027-03-31/Q)</a></li>
+<li><a href="#S5-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S5-K4">Average interest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S5-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required denominator component &mdash; <a href="#S5-K6">Average noninterest-bearing deposits (2027-06-30/Q)</a></li>
+<li><a href="#S5-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; required numerator &mdash; <a href="#S5-K8">Interest expense on deposits (2027-06-30/Q)</a></li>
+<li><a href="#S5-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting estimate &mdash; <a href="#S5-K10">Cost of total deposits (2027-09-30/Q)</a></li>
+<li><a href="#S5-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting guidance &mdash; <a href="#S5-K9">Change in cost of total deposits (2027-09-30/Q)</a></li>
+<li><a href="#S5-K2">Cost of total deposits (2027-06-30/Q)</a> &mdash; supporting prior period &mdash; <a href="#S5-K1">Cost of total deposits (2027-03-31/Q)</a></li>
+</ul></details>
+<h3>Left out</h3><ul>
+<li>Cost of interest-bearing deposits (2027-06-30/Q) &middot; driver &middot; budget</li>
+<li>Federal funds target range, upper bound (2027-06-30/I) &middot; driver &middot; budget</li>
+<li>Cost of interest-bearing deposits (2027-03-31/Q) &middot; driver &middot; budget</li>
+<li>Federal funds target range, upper bound (2027-03-31/I) &middot; driver &middot; budget</li>
+</ul>
+<details class="inventory" open><summary>Evidence supplied</summary><ul>
+<li><strong>March quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</small></li>
+<li><strong>June quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z</small></li>
+<li><strong>June preliminary funding bulletin</strong> &middot; Issuer release &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>Quarter-end target rate observations</strong> &middot; Official statistic &middot; Federal Reserve<small>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</small></li>
+<li><strong>July funding call, management outlook</strong> &middot; Issuer transcript &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>September funding estimate</strong> &middot; Broker research &middot; Cedar Analytics<small>Published 2027-07-20T09:00:00Z &middot; Known 2027-07-20T09:00:00Z</small></li>
+<li><strong>Deposit forecast revision</strong> &middot; Broker research &middot; Tide Street<small>Published 2027-07-21T09:00:00Z &middot; Known 2027-07-21T09:00:00Z</small></li>
+<li><strong>July funding desk letter</strong> &middot; Broker research &middot; Loam Research<small>Published 2027-07-22T09:00:00Z &middot; Known 2027-07-22T09:00:00Z</small></li>
+</ul></details><a class="text-link" href="runs/S5.json">Download S5 as JSON</a></article>
+<article id="S6" class="record-state" aria-labelledby="S6-title">
+<p class="label">Recorded state S6</p><h2 id="S6-title">Refused</h2>
+<p class="coverage">Coverage incomplete. Required 6 of 8 listed. Supporting not evaluated.</p>
+<p class="decision">Required coverage is incomplete.</p><ul>
+<li>Average interest-bearing deposits (2027-06-30/Q) &mdash; not found. Required by Cost of total deposits.</li>
+<li>Average noninterest-bearing deposits (2027-06-30/Q) &mdash; not found. Required by Cost of total deposits.</li>
+</ul>
+<details class="inventory" open><summary>Evidence supplied</summary><ul>
+<li><strong>March quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</small></li>
+<li><strong>June quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z &middot; Not yet known on this date</small></li>
+<li><strong>June preliminary funding bulletin</strong> &middot; Issuer release &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>Quarter-end target rate observations</strong> &middot; Official statistic &middot; Federal Reserve<small>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</small></li>
+<li><strong>July funding call, management outlook</strong> &middot; Issuer transcript &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>September funding estimate</strong> &middot; Broker research &middot; Cedar Analytics<small>Published 2027-07-20T09:00:00Z &middot; Known 2027-07-20T09:00:00Z</small></li>
+<li><strong>Deposit forecast revision</strong> &middot; Broker research &middot; Tide Street<small>Published 2027-07-21T09:00:00Z &middot; Known 2027-07-21T09:00:00Z</small></li>
+<li><strong>July funding desk letter</strong> &middot; Broker research &middot; Loam Research<small>Published 2027-07-22T09:00:00Z &middot; Known 2027-07-22T09:00:00Z</small></li>
+</ul></details><a class="text-link" href="runs/S6.json">Download S6 as JSON</a></article>
+<article id="S7" class="record-state" aria-labelledby="S7-title">
+<p class="label">Recorded state S7</p><h2 id="S7-title">Refused</h2>
+<p class="coverage">Coverage incomplete. Required 6 of 8 listed. Supporting not evaluated.</p>
+<p class="decision">Required coverage is incomplete.</p><ul>
+<li>Average interest-bearing deposits (2027-06-30/Q) &mdash; absent. Required by Cost of total deposits.</li>
+<li>Average noninterest-bearing deposits (2027-06-30/Q) &mdash; absent. Required by Cost of total deposits.</li>
+</ul>
+<details class="inventory" open><summary>Evidence supplied</summary><ul>
+<li><strong>March quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-05-07T09:00:00Z &middot; Known 2027-05-07T09:00:00Z</small></li>
+<li><strong>June quarterly filing, deposit schedule</strong> &middot; Quarterly filing &middot; Harbor Regional Bank<small>Published 2027-08-06T09:00:00Z &middot; Known 2027-08-06T09:00:00Z &middot; Not yet known on this date</small></li>
+<li><strong>June preliminary funding bulletin</strong> &middot; Issuer release &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>Quarter-end target rate observations</strong> &middot; Official statistic &middot; Federal Reserve<small>Published 2027-07-02T09:00:00Z &middot; Known 2027-07-02T09:00:00Z</small></li>
+<li><strong>July funding call, management outlook</strong> &middot; Issuer transcript &middot; Harbor Regional Bank<small>Published 2027-07-19T09:00:00Z &middot; Known 2027-07-19T09:00:00Z</small></li>
+<li><strong>September funding estimate</strong> &middot; Broker research &middot; Cedar Analytics<small>Published 2027-07-20T09:00:00Z &middot; Known 2027-07-20T09:00:00Z</small></li>
+<li><strong>Deposit forecast revision</strong> &middot; Broker research &middot; Tide Street<small>Published 2027-07-21T09:00:00Z &middot; Known 2027-07-21T09:00:00Z</small></li>
+</ul></details><a class="text-link" href="runs/S7.json">Download S7 as JSON</a></article>
+<!-- end recorded states --></div></div>
+<p class="status">Recorded output of the compiler on synthetic data. Cost units are a test measure, not model tokens. Nothing here is a benchmark result.</p>
+<p class="status">This page shows selected fields of the recording. The model-facing form carries further fields. Not investment advice.</p>
+<section class="compiler-section"><h2>What you can check</h2><ul class="checks">
+<li><a href="/compiler/investing/?state=S1#S1">S1</a> refuses when required evidence cannot fit. <a href="/compiler/investing/?state=S2#S2">S2</a> keeps every required component.</li>
+<li><a href="/compiler/investing/?state=S4#S4">S4</a> and <a href="/compiler/investing/?state=S5#S5">S5</a> use different policies to select optional evidence after the required figures.</li>
+<li>In <a href="/compiler/investing/?state=S5#S5">S5</a> three estimates conflict. Each keeps its standing and classification. None is chosen.</li>
+<li><a href="/compiler/investing/?state=S6#S6">S6</a> and <a href="/compiler/investing/?state=S7#S7">S7</a> name the missing components and refuse.</li>
+<li>The June filing is known in <a href="/compiler/investing/?state=S4#S4">S4</a>. It is too late for the as-of date in <a href="/compiler/investing/?state=S6#S6">S6</a>.</li>
+<li>Open a figure to see its source, original unit and exact witness text.</li></ul></section><div class="cta-band"><a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Request a technical evaluation</a></div>
     </main>
-    <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful</em></div></footer>
+    <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
 </body>
 </html>
