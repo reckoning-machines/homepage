@@ -93,6 +93,10 @@
 .exhibit h3 { margin-top: 0; }
 .process { align-self: center; color: var(--brass); font-family: var(--font-mono); font-size: .875rem; }
 .compiler-page table { width: 100%; border-collapse: collapse; text-align: left; font-size: 1rem; }
+.pilot-results { max-width: 46rem; margin-block: 1.25rem; font-variant-numeric: tabular-nums; }
+.pilot-results thead th:first-child { width: 52%; }
+.pilot-results :is(th, td):not(:first-child) { text-align: right; }
+.pilot-results td { white-space: nowrap; }
 .compiler-page th, .compiler-page td { border-bottom: 1px solid var(--line); padding: .65em .4em; vertical-align: top; overflow-wrap: anywhere; }
 .compiler-page th { font-weight: 500; }
 .compiler-page thead th, .compiler-page small { font: .875rem/1.4 var(--font-sans); color: var(--ink-dim); }

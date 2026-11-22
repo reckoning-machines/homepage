@@ -93,6 +93,23 @@
                 </figcaption>
             </figure>
         </section>
+        <section class="compiler-section" aria-labelledby="crossover-pilot">
+            <h2 id="crossover-pilot">Crossover pilot results</h2>
+            <p>Claude Sonnet 5.5 answered the same six synthetic banking questions, once with each approach. Both had a 1,200-token context limit.</p>
+            <table class="pilot-results" aria-labelledby="crossover-pilot">
+                <thead><tr><th scope="col">Measure</th><th scope="col">Context Compiler</th><th scope="col">Hybrid RAG</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">Correct and fully citation-supported</th><td>4/6</td><td>2/6</td></tr>
+                    <tr><th scope="row">Substantively correct</th><td>4/6</td><td>4/6</td></tr>
+                    <tr><th scope="row">Fully citation-supported</th><td>4/6</td><td>3/6</td></tr>
+                    <tr><th scope="row">Strict JSON compliance</th><td>4/6</td><td>5/6</td></tr>
+                    <tr><th scope="row">Measured input and output tokens</th><td>11,128</td><td>16,630</td></tr>
+                    <tr><th scope="row">Correct, fully supported answers per million tokens</th><td>359.45</td><td>120.26</td></tr>
+                </tbody>
+            </table>
+            <p>Independent review reproduced the scores and token totals. Accepting one auxiliary calculation as approximate would raise Hybrid RAG to 3/6 correct and fully supported, or 180.40 per million tokens.</p>
+            <p>This exploratory result covers one model at one context limit. The competitive frontier remains unmeasured.</p>
+        </section>
 <section class="compiler-section" id="method"><h2 id="frontier">Reasoning Yield Frontier</h2>
 <p>Reasoning Yield counts correct, evidence-supported task outcomes per million total tokens consumed. The frontier is the best supported answer quality attained at each total token budget.</p>
 <figure class="benchmark"><figcaption>Measurement pending</figcaption><div class="frame"><span>Supported answer quality</span><span>Measured total tokens per task</span></div>
