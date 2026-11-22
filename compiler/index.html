@@ -49,24 +49,6 @@
             <p>When an investment question requires a financial calculation, cc follows the dependencies to include the necessary inputs. The result is task-specific context with explicit source authority, traceable evidence and reproducible output.</p>
             <p>Semantic compression is one benefit. The larger objective is better reasoning with less wasted context.</p>
         </section>
-<section class="compiler-section"><h2>One example</h2><p>Harbor Regional Bank &middot; March and June 2027 &middot; Recorded state S4</p>
-<!-- recorded excerpt -->
-<div class="exhibit"><div><h3>Selected sources</h3><ul>
-<li>March quarterly filing, deposit schedule<small>Quarterly filing &middot; Harbor Regional Bank</small></li>
-<li>June quarterly filing, deposit schedule<small>Quarterly filing &middot; Harbor Regional Bank</small></li>
-<li>Quarter-end target rate observations<small>Official statistic &middot; Federal Reserve</small></li>
-</ul></div><p class="process">Authority, dependencies, Attention</p><div><h3>Filing evidence</h3>
-<table><thead><tr><th>Measure</th><th>Period</th><th>Value</th></tr></thead><tbody>
-<tr><th scope="row">Cost of total deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A1">2.86 percent</a></td></tr>
-<tr><th scope="row">Cost of total deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A2">3.03 percent</a></td></tr>
-<tr><th scope="row">Average interest-bearing deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A3">6385 USD million</a></td></tr>
-<tr><th scope="row">Average interest-bearing deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A4">6715.000 USD million</a></td></tr>
-<tr><th scope="row">Average noninterest-bearing deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A5">1835 USD million</a></td></tr>
-<tr><th scope="row">Average noninterest-bearing deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A6">1765.000 USD million</a></td></tr>
-<tr><th scope="row">Interest expense on deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A7">58.773 USD million</a></td></tr>
-<tr><th scope="row">Interest expense on deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A8">64.236 USD million</a></td></tr>
-</tbody></table><details><summary>Trace A1 to its filing cell</summary><p>March quarterly filing, deposit schedule</p><code>table:funding ratios/row:cost of total deposits/col:2027-03-31/Q</code><blockquote>2.86</blockquote></details></div></div>
-<!-- end recorded excerpt --></section>
 <section class="compiler-section"><h2>What it accepts</h2><p>Typed records, declared tables, and passages that state a measure with its unit. You prepare them, and you declare who issued each source, when it was known, and who may see it.</p>
 <p>Context Compiler is a private Python library between your evidence and the model you choose. It applies the authority and dependency rules you declare.</p></section>
         <section class="compiler-section" aria-labelledby="evidence-sufficiency">
@@ -105,6 +87,24 @@
 <p>Full compiler &middot; Long context &middot; Strong hybrid RAG &middot; Graph RAG &middot; Enhanced task-aware graph retrieval</p></figure>
 <ol class="checks"><li>Give every method the same evidence, domain rules, tasks and downstream model.</li><li>Count total tokens reported by the providers.</li><li>Score evidence-supported answers on held-out tasks.</li><li>Use controlled typed tasks for the primary comparison.</li><li>Report the natural-language comparison separately.</li></ol>
 <p>If an existing approach matches or exceeds the compiler's measured tradeoff, the benchmark will show it and we will publish it.</p></section>
+<section class="compiler-section"><h2>One example</h2><p>Harbor Regional Bank &middot; March and June 2027 &middot; Recorded state S4</p>
+<!-- recorded excerpt -->
+<div class="exhibit"><div><h3>Selected sources</h3><ul>
+<li>March quarterly filing, deposit schedule<small>Quarterly filing &middot; Harbor Regional Bank</small></li>
+<li>June quarterly filing, deposit schedule<small>Quarterly filing &middot; Harbor Regional Bank</small></li>
+<li>Quarter-end target rate observations<small>Official statistic &middot; Federal Reserve</small></li>
+</ul></div><p class="process">Authority, dependencies, Attention</p><div><h3>Filing evidence</h3>
+<table><thead><tr><th>Measure</th><th>Period</th><th>Value</th></tr></thead><tbody>
+<tr><th scope="row">Cost of total deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A1">2.86 percent</a></td></tr>
+<tr><th scope="row">Cost of total deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A2">3.03 percent</a></td></tr>
+<tr><th scope="row">Average interest-bearing deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A3">6385 USD million</a></td></tr>
+<tr><th scope="row">Average interest-bearing deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A4">6715.000 USD million</a></td></tr>
+<tr><th scope="row">Average noninterest-bearing deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A5">1835 USD million</a></td></tr>
+<tr><th scope="row">Average noninterest-bearing deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A6">1765.000 USD million</a></td></tr>
+<tr><th scope="row">Interest expense on deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A7">58.773 USD million</a></td></tr>
+<tr><th scope="row">Interest expense on deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A8">64.236 USD million</a></td></tr>
+</tbody></table><details><summary>Trace A1 to its filing cell</summary><p>March quarterly filing, deposit schedule</p><code>table:funding ratios/row:cost of total deposits/col:2027-03-31/Q</code><blockquote>2.86</blockquote></details></div></div>
+<!-- end recorded excerpt --></section>
 <section class="compiler-section" id="trust"><h2>What you can check</h2><ul class="checks">
 <li><a href="/compiler/investing/?state=S1#S1">S1</a> refuses when required evidence cannot fit. <a href="/compiler/investing/?state=S2#S2">S2</a> keeps every required component.</li>
 <li><a href="/compiler/investing/?state=S4#S4">S4</a> and <a href="/compiler/investing/?state=S5#S5">S5</a> use different policies to select optional evidence after the required figures.</li>
