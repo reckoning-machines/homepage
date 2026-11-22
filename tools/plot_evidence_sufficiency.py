@@ -20,17 +20,19 @@ def main():
         "font.size": 11, "text.color": ink, "axes.labelcolor": ink,
         "xtick.color": muted, "ytick.color": muted,
     }):
-        fig = Figure(figsize=(4.7, 3.15))
+        fig = Figure(figsize=(4.7, 3.5))
         ax = fig.subplots()
-        fig.subplots_adjust(left=.075, right=.94, bottom=.20, top=.84)
+        fig.subplots_adjust(left=.075, right=.94, bottom=.18, top=.76)
+        fig.text(.075, .97, "Evidence sufficiency at equal token limits",
+                 va="top", fontsize=14)
         ax.plot(budgets, compiler, "o-", color=brass, label="Context Compiler")
         ax.plot(budgets, retrieval, "s--", color=ink, label="Hybrid RAG")
         ax.set_xlim(570, 1830)
         ax.set_ylim(0, 5)
         ax.set_xticks(budgets, [f"{n:,}" for n in budgets])
         ax.set_yticks(range(6))
-        ax.set_xlabel("Context budget (tokens)", labelpad=7)
-        ax.set_ylabel("Questions with all required evidence (out of 5)",
+        ax.set_xlabel("Maximum context allowed (tokens)", labelpad=7)
+        ax.set_ylabel("Questions with complete required evidence (out of 5)",
                       rotation=0, ha="left", va="bottom")
         ax.yaxis.set_label_coords(0, 1.08)
         ax.tick_params(length=0, pad=5)

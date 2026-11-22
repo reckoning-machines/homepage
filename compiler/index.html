@@ -47,12 +47,14 @@
             </div>
         </section>
         <section class="compiler-section" aria-labelledby="evidence-sufficiency">
-            <h2 id="evidence-sufficiency">Evidence sufficiency — preliminary</h2>
+            <h2 id="evidence-sufficiency">Toward higher Reasoning Yield</h2>
+            <p class="compiler-intro">At every tested token limit, Context Compiler delivered all required evidence for one more question than Hybrid RAG.</p>
             <figure class="sufficiency">
-                <img src="/compiler/evidence-sufficiency.svg" width="470" height="315" alt="At budgets of 600, 900, 1,200 and 1,800 tokens, Hybrid RAG supplied all required evidence for 1, 2, 2 and 3 of five questions. Context Compiler did so for 2, 3, 3 and 4.">
+                <img src="/compiler/evidence-sufficiency.svg" width="470" height="350" alt="Evidence sufficiency at equal token limits. At maximum allowances of 600, 900, 1,200 and 1,800 tokens, Context Compiler supplied complete evidence for 2, 3, 3 and 4 of five questions. Hybrid RAG did so for 1, 2, 2 and 3.">
                 <figcaption>
-                    <p>Five answerable questions from one synthetic banking corpus. A question counted when the context held all the evidence needed to answer it at the given token budget.</p>
-                    <p>Hybrid RAG’s filter dropped some filing rows the compiler could still use. No downstream model answered the questions. Reasoning Yield and results in other domains remain unmeasured here.</p>
+                    <p>Five answerable questions from one synthetic banking corpus. Both approaches were evaluated under the same context limits. No downstream model answered the questions.</p>
+                    <p>This preliminary test measured only whether each context held the evidence for a supported answer. Hybrid RAG’s filter dropped some filing rows the compiler could still use.</p>
+                    <p>Complete evidence could improve Reasoning Yield, which counts correct, evidence-supported task outcomes per million actual total tokens consumed. Downstream reasoning quality and a frontier shift remain unmeasured.</p>
                     <p class="credit">Claude 2 · Provider-free evaluation · Counts independently reproduced · Chart review pending</p>
                 </figcaption>
             </figure>
