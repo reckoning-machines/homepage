@@ -24,13 +24,13 @@
             <div>
                 <h1><span class="cc-mark">cc</span> Context Compiler</h1>
                 <p class="compiler-deck">More reasoning per token.</p>
-                <p class="result-note">Our research objective. The full competitive benchmark is pending.</p>
+                <p class="result-note">Can cc match the answer quality of a system built on a knowledge graph while taking less work to set up and maintain?</p>
                 <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Request a technical evaluation</a>
             </div>
             <div class="cc-example" id="demos">
                 <p class="label">Investment research</p>
                 <h2>Which filing governs the bank's reported deposit cost?</h2>
-                <p class="compiler-intro">In the recorded example it is the quarterly filing. The compiled context carries the filing's figure with the interest expense and average deposit balances it is computed from. Each selected figure links to its source. Ask the same question as of a date before the filing was known, and the compiler refuses and names the two components it cannot find.</p>
+                <p class="compiler-intro">The quarterly filing governs. In the demo, follow the reported cost to its interest expense and average deposit balances. Move the date back before the filing was known and cc names the two missing inputs.</p>
                 <a class="text-link" href="/compiler/investing/">Open investing demo</a>
             </div>
         </section>
@@ -46,10 +46,21 @@
                 <li><strong>Model context</strong><span>Evidence, coverage and source handles</span></li>
             </ol>
             <p><strong>Compression makes information smaller. Compilation makes it usable.</strong></p>
-            <p>Suppose a bank amends its filing on August 8. An analyst asks what was known on August 1. cc excludes the later amendment, applies the source rules to the earlier evidence, and follows the calculation back to its required inputs. Each selected figure links to its source. If a required input is missing, cc identifies it and refuses the task.</p>
+            <p>Suppose a bank amends its filing on August 8. An analyst asks what was known on August 1. cc excludes the amendment and follows the calculation back to the inputs available on that date. Each selected figure links to its source.</p>
         </section>
 <section class="compiler-section"><h2>What it accepts</h2><p>Typed records, declared tables, and passages that state a measure with its unit. You prepare them, and you declare who issued each source, when it was known, and who may see it.</p>
 <p>Context Compiler is a private Python library between your evidence and the model you choose. It applies the authority and dependency rules you declare.</p></section>
+<section class="compiler-section" id="method"><h2 id="frontier">Exploratory Reasoning Yield Frontier</h2>
+<p class="compiler-intro">At the 1,200-token context limit, the frozen scoring rules credited Graph RAG plus cc with all six answers, Graph RAG with five, and standalone cc with four. When the independent reviewers credited four disputed replies, Graph RAG and the combined system tied at six. Graph RAG used 1,317 fewer tokens across the six questions.</p>
+<figure class="benchmark">
+    <a href="/compiler/reasoning-yield-frontier.svg"><img src="/compiler/reasoning-yield-frontier.svg" width="720" height="440" alt="At context limits of 600, 900 and 1,200 tokens, Graph RAG scored 4, 4 and 5 out of 6. Graph RAG plus cc scored 3, 4 and 6. Standalone cc scored 4 at each limit. Open full-size graph."></a>
+    <figcaption>Claude Sonnet 5.5 answered six synthetic investment questions once per configuration. Independent review reproduced all 54 recorded results and all nine plotted points under the frozen rules. Each point is labeled with its context limit. Its horizontal position shows the average input and output tokens consumed per question.</figcaption>
+</figure>
+<p>At 600 and 900, Graph RAG and standalone cc scored four each under the frozen rules. cc used fewer tokens for those four answers. Its yield was 26% higher at 600 (715 versus 570 supported answers per million tokens) and 6% higher at 900.</p>
+<p>The four disputed replies turn on two scoring rules. Three Graph RAG replies put the unit of a correctly cited expense in parentheses. One cc reply calculated the difference between two cited estimates and supplied both sources where the scorer expected one.</p>
+<p>Standalone cc lacked the management passage needed to explain a change in deposit costs, and it refused tasks when required inputs would not fit. Across all 54 replies, the scorer recorded no adoption of a known-wrong value from another period.</p>
+<p><strong>Engineering effort remains open.</strong> Small trials have shown no clear saving. The comparison that matters is how many hours each team needs to sustain the same answer quality as filings are amended and source formats change. That includes upkeep on cc’s source mappings and domain rules. Enterprise maintenance costs are unmeasured, and the full competitive benchmark is pending.</p>
+</section>
         <section class="compiler-section" aria-labelledby="evidence-sufficiency">
             <h2 id="evidence-sufficiency">Toward higher Reasoning Yield</h2>
             <p class="compiler-intro">At every tested token limit, Context Compiler delivered all required evidence for one more question than Hybrid RAG.</p>
@@ -79,24 +90,9 @@
             <p>Independent review reproduced the scores and token totals. Accepting one auxiliary calculation as approximate would raise Hybrid RAG to 3/6 correct and fully supported, or 180.40 per million tokens.</p>
 <figure class="benchmark">
     <img src="/compiler/reasoning-yield-pilot.png" width="1578" height="1008" alt="Bar chart of correct, fully supported answers per million measured tokens. Hybrid RAG: 120.26. RAG with typed relationships: 302.59. Context Compiler: 359.45.">
-    <figcaption>At the same 1,200-token context limit, Hybrid RAG delivered 120.26 correct, fully supported answers per million measured tokens, RAG with typed relationships 302.59, and cc 359.45.</figcaption>
+    <figcaption>Adding typed relationships to Hybrid RAG yielded five correct, fully supported answers using 16,524 tokens, or 302.59 per million. cc answered four using 11,128 tokens.</figcaption>
 </figure>
-<p>On the six synthetic banking questions, RAG with typed relationships produced five correct, fully supported answers using 16,524 tokens. cc produced four using 11,128 tokens.</p>
         </section>
-<section class="compiler-section" id="method"><h2 id="frontier">Exploratory Reasoning Yield Frontier</h2>
-<p class="compiler-intro">At the 1,200-token context limit, the frozen scoring rules credited Graph RAG plus cc with all six answers, Graph RAG with five, and standalone cc with four. When the independent reviewers credited four disputed replies, Graph RAG and the combined system tied at six. Graph RAG used 1,317 fewer tokens across the six questions.</p>
-<figure class="benchmark">
-    <a href="/compiler/reasoning-yield-frontier.svg"><img src="/compiler/reasoning-yield-frontier.svg" width="720" height="440" alt="At context limits of 600, 900 and 1,200 tokens, Graph RAG scored 4, 4 and 5 out of 6. Graph RAG plus cc scored 3, 4 and 6. Standalone cc scored 4 at each limit. Open full-size graph."></a>
-    <figcaption>Claude Sonnet 5.5 answered six synthetic investment questions once per configuration. Independent review reproduced all 54 recorded results and all nine plotted points under the frozen rules. Each point is labeled with its context limit. Its horizontal position shows the average input and output tokens consumed per question.</figcaption>
-</figure>
-<p>At 600 and 900, Graph RAG and standalone cc scored four each under the frozen rules. cc used fewer tokens for those four answers. Its yield was 26% higher at 600 (715 versus 570 supported answers per million tokens) and 6% higher at 900.</p>
-<p>Three Graph RAG replies cited the correct borrowing expense but put its unit in parentheses. A standalone cc reply correctly calculated the difference between two cited estimates but gave two source labels where the scorer expected one. Crediting those replies raises the total from 38 to 42 out of 54. Graph RAG then scores five, five and six across the three limits, and standalone cc scores four, four and five.</p>
-<p>Standalone cc lacked the management passage needed to explain a change in deposit costs, and it refused tasks when required inputs would not fit. Across all 54 replies, the scorer recorded no adoption of a known-wrong value from another period.</p>
-<p>The full competitive benchmark is pending. The small engineering trials so far have shown no clear saving. Enterprise maintenance costs remain unmeasured.</p>
-<ol class="checks">
-    <li><strong>Answer quality.</strong> Give each method the same evidence, domain rules, held-out questions and downstream model. Score correct, source-supported answers and appropriate refusals. Count provider-reported tokens separately. Use typed tasks for the primary comparison and report natural-language results separately.</li>
-    <li><strong>Engineering effort.</strong> Record the hours needed to reach the same answer quality, including work on source mappings, domain packs and graph maintenance. Then give both systems the same amendments, schema changes and new source types. Measure the hours needed to sustain that quality.</li>
-</ol></section>
 <section class="compiler-section"><h2>One example</h2><p>Harbor Regional Bank &middot; March and June 2027 &middot; Recorded state S4</p>
 <!-- recorded excerpt -->
 <div class="exhibit"><div><h3>Selected sources</h3><ul>
@@ -126,7 +122,7 @@
 <li>The library calls no model and opens no network connection.</li><li>Adding a source outside the reader's access scope leaves the downloadable exhibit unchanged.</li>
 <li>The compiler carries source text as data in its rendering.</li></ul>
 <p>The library runs in your environment. Source and packs are provided under agreement. This exhibit uses synthetic data and processes nothing you supply.</p></section>
-<section class="compiler-section"><h2>Evaluating your evidence</h2><p>You prepare the evidence, identify its issuers, dates and access permissions, declare which source kinds outrank which, and supply typed tasks and the subjects to cover. Under a confidentiality agreement, we check whether the compiled context is complete, correct and traceable on your evidence. Reasoning quality is a separate measurement.</p></section>
+<section class="compiler-section"><h2>Evaluating your evidence</h2><p>Bring a task, its source records and the rules for which sources govern. Under a confidentiality agreement, we check whether the compiled context includes every required input and whether each figure traces back to your evidence.</p></section>
 <div class="cta-band"><a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Request a technical evaluation</a></div>
     </main>
     <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
