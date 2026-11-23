@@ -22,13 +22,13 @@
         <section class="compiler-hero research-hero">
             <p class="label"><strong>cc</strong> · Context Compiler</p>
             <h1>Make AI useful on your firm’s knowledge. Without rebuilding your firm’s knowledge.</h1>
-            <p class="compiler-intro">Your models can read the documents. Your team knows which definitions apply and which sources to trust. cc uses those rules to assemble evidence for each question. Analysts can trace a figure to its filing and use the same definitions next quarter.</p>
+            <p class="compiler-intro">Your firm’s definitions and source rules live in documents, systems and people’s heads. cc turns those rules into evidence-backed context your models can use across questions, without building a firm-wide knowledge graph.</p>
             <ul class="benchmark-highlights" aria-label="Real-bank benchmark results">
-                <li><strong>87.5%</strong> correct, fully supported answers with cc</li>
+                <li><strong>87.5%</strong> correct, fully supported answers</li>
                 <li><strong>148×</strong> as many tokens with whole documents as with cc</li>
-                <li><strong>337</strong> supported answers per million tokens with cc</li>
+                <li><strong>42/44</strong> fully supported answers in recurring research</li>
             </ul>
-            <p class="benchmark-scope">16 questions · Two banks · Claude Sonnet 5.5 · Bank-adapted rules. Graph RAG scored higher on accuracy (93.8%). Comparative engineering cost remains unmeasured.</p>
+            <p class="benchmark-scope">Regions Financial and KeyCorp · Claude Sonnet 5.5 · Adapted investment pack. 16 benchmark questions and a separate 44-request recurring study.</p>
         </section>
         <section class="compiler-section">
             <h2>The right document can still give the wrong answer</h2>
@@ -36,6 +36,7 @@
         </section>
         <section class="compiler-section cc-explanation">
             <h2 id="why-compiler">The model interprets. The compiler governs.</h2>
+            <p>Our design goal is knowledge-graph-quality reasoning without knowledge-graph-scale engineering.</p>
             <p>A model can propose how a line in a filing maps to a measure your team uses. Once that mapping is accepted, cc can apply the same definition to the next question. Automated mapping is still in development. Checking a proposal against declared rules does not establish that a new interpretation is sound.</p>
             <ol class="cc-stages" aria-label="From financial evidence to a supported answer">
                 <li><strong>LLM interprets</strong><span>Propose a measure and its relationships from the filing. Identify the source passage.</span></li>
@@ -52,7 +53,8 @@
                 <a href="/compiler/results/reasoning_yield_frontier_with_graph.png"><img src="/compiler/results/reasoning_yield_frontier_with_graph.png" width="1840" height="1152" alt="Fully supported answers against tokens per question. At a 2,400-token context limit, the well-mapped graph reached 93.8% at 4,112 tokens and cc reached 87.5% at 2,595. Open the full-size chart."></a>
                 <figcaption>16 questions on Regions Financial and KeyCorp, three attempts per question at each tested setting. Claude Sonnet 5.5 made 816 calls in the original frontier and 192 in the later Graph RAG comparison.</figcaption>
             </figure>
-            <p>At its best-accuracy limit of 2,400 context tokens, the well-mapped graph reached 93.8% (45/48) and delivered 228 supported answers per million tokens. The graph’s three additional answers came from one KeyCorp question whose explanation was encoded in a measure label it inherited. Excluding that question gives 42/45 for each system.</p>
+            <p>At the 2,400-token context limit, Graph RAG reached 93.8% accuracy (45/48) and cc reached 87.5% (42/48). The graph used 4,112 model tokens per question and cc used 2,595. That yielded 228 and 337 fully supported answers per million tokens, respectively.</p>
+            <p>Independent review traced the three-answer difference to one KeyCorp question. The graph’s answers relied on a measure label inherited from cc’s development. Its retrieved passages did not supply the explanation. Setting that question aside gives 42/45 for each system. The study did not measure comparative engineering costs.</p>
             <a class="text-link" href="/compiler/results/#graph">Inspect the scores and the KeyCorp question</a>
         </section>
         <section class="compiler-section" id="recurring">
