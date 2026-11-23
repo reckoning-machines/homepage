@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>cc — Context Compiler | Reckoning Machines</title>
-    <meta name="description" content="Use your firm’s definitions and source rules across research questions. See the real-bank results for supported answers, token use and recurring research.">
+    <meta name="description" content="See how Context Compiler carries financial definitions and source evidence from one research question to the next. Explore results from two real banks.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/compiler/compiler.css">
@@ -21,9 +21,8 @@
     <main id="main" class="container">
         <section class="compiler-hero research-hero">
             <p class="label"><strong>cc</strong> · Context Compiler</p>
-            <h1>Better answers. Fewer tokens. Knowledge that grows with use.</h1>
-            <p class="compiler-intro">Your firm’s definitions and source rules live in documents, systems and people. Context Compiler turns financial evidence and those definitions into governed context for AI. New questions build on earlier research without a firm-wide knowledge graph.</p>
-            <p>The LLM interprets. The compiler governs. The knowledge carries forward.</p>
+            <h1>Better answers. Fewer tokens. Less work.</h1>
+            <p class="compiler-intro">AI interprets your filings. Context Compiler checks the evidence against known financial definitions and keeps each figure linked to its source. The next analyst can reuse a verified definition without having to work it out again.</p>
             <ul class="benchmark-highlights" aria-label="Real-bank research results">
                 <li><strong>87.5%</strong> correct, complete, fully supported answers</li>
                 <li><strong>99.3%</strong> fewer model tokens than sending full documents</li>
@@ -34,7 +33,7 @@
         <section class="compiler-section">
             <h2>Which margin did the bank report?</h2>
             <p>An analyst asks why a bank’s net interest margin changed. A model can find both filings and still compare the wrong figures. Did the two quarters use the same accounting basis? Do the income and balance figures support the ratio? Was an amended filing available when the analyst asked?</p>
-            <p>Once the team establishes the definition and which filing governs, the next analyst can apply the same rules to a new quarter.</p>
+            <p><strong>The knowledge builds as you work.</strong> When a new filing arrives, AI can flag a change in how the bank reports its margin and propose a mapping to a known measure. Once the mapping is verified against the filing, the next analyst can use it to compare quarters and inspect the passages behind the comparison.</p>
         </section>
         <section class="compiler-section cc-explanation">
             <h2 id="why-compiler">How a research question becomes reusable context</h2>
@@ -45,11 +44,11 @@
                 <li><strong>Reusable context</strong><span>Keep accepted definitions. Compile the evidence for this question with links to its sources.</span></li>
                 <li><strong>Supported answer</strong><span>The answering model uses that context. An analyst can trace its figures back to the filing.</span></li>
             </ol>
-            <p>The experiments used LLM-assisted preparation. A proposed mapping can pass an arithmetic check and still mean the wrong thing. New interpretations need to be checked against the source before the team reuses them.</p>
+            <p>In the experiments, AI helped prepare the mappings. A ratio can pass an arithmetic check even when its label has been misread. New interpretations still require review against the filing before they can be accepted for reuse.</p>
         </section>
         <section class="compiler-section">
-            <h2>Start with the definitions one task needs</h2>
-            <p>A knowledge graph can grow one task at a time, too. Maintaining one means keeping entities, definitions and relationships aligned as filings change. cc lets a team keep its analytical rules and compile the relationships a question needs directly from governed evidence. A comprehensive graph is optional.</p>
+            <h2>Start with one research question</h2>
+            <p>cc starts with existing domain knowledge and compiles the evidence a question needs. A new bank can use familiar measures even when its filing uses different row labels. A task-specific knowledge graph can grow incrementally too. With cc, the first question can be answered without building a firm-wide graph.</p>
         </section>
         <section class="compiler-section" id="method">
             <h2 id="frontier">Reasoning Yield Frontier</h2>
@@ -78,7 +77,7 @@
         </section>
         <section class="compiler-section">
             <h2>Test Context Compiler on a research problem you already have</h2>
-            <p>Bring one question, your source records and definitions, and the evidence your analysts would accept as support. In a bounded technical evaluation, compare cc with your current approach on supported answers, tokens consumed and engineering hours.</p>
+            <p>Bring one question and the source records your analysts would use to answer it. In a bounded technical evaluation, compare cc with your current approach on supported answers, tokens consumed and engineering hours.</p>
             <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Request a technical evaluation</a>
         </section>
     </main>
