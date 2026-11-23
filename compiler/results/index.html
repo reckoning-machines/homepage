@@ -21,8 +21,9 @@
     <main class="container results-report" id="main">
         <header class="compiler-hero">
             <p class="label">Context Compiler · Real-bank research · November 2026</p>
-            <h1>Whole documents used 148 times as many tokens as cc.</h1>
-            <p class="compiler-intro">On 16 questions about Regions Financial and KeyCorp, cc averaged 2,595 provider tokens per question. Giving the model the full documents took 382,919. Across three attempts per question, cc produced 42 fully supported answers and whole documents produced 38. The small sample leaves the accuracy difference uncertain.</p>
+            <h1>Traceable answers from bank filings with 1/148 of the tokens</h1>
+            <p class="compiler-intro">An analyst needs to check the figures behind a model’s answer. On 16 questions about Regions Financial and KeyCorp, giving the model the evidence selected by cc used 2,595 tokens per question on average. Giving it the full documents used 382,919.</p>
+            <p class="compiler-intro">Across 48 attempts, the model gave 42 correct, fully supported answers with cc and 38 with whole documents. The clearest result was the reduction in tokens. The accuracy difference is uncertain on this sample.</p>
         </header>
         <section class="compiler-section" id="frontier">
             <h2>Answer quality and token use</h2>
@@ -39,7 +40,7 @@
             <p>The original compiler rules assumed annualization by a factor of four. These banks used day counts. Adapting the rules allowed cc to verify more figures. It still refused two KeyCorp margin questions because it could not verify the denominator.</p>
         </section>
         <section class="compiler-section" id="recurring">
-            <h2>Recurring research economics</h2>
+            <h2>What changed when new filings arrived?</h2>
             <p>A separate run followed the same research as questions repeated, new filings arrived, a second bank joined and earlier questions were replayed. cc and whole documents each got the figures and claims right on 42 of 44 requests. Checking the citations left cc with 42 fully supported answers and whole documents with 21.</p>
             <figure class="benchmark"><a href="recurring_research_economics.png"><img src="recurring_research_economics.png" width="2250" height="1410" alt="Six-panel figure. Cumulative model tokens over 44 requests: whole documents reach about 14 million, hybrid retrieval about 525,000, the compiler about 109,000. Cumulative supported answers: compiler 42, hybrid retrieval 24, whole documents 21. Cumulative time: compiler about 109 seconds, whole documents 271, hybrid retrieval 326. Two bar panels show the compiler&#x27;s declarations carried forward and added at each event, and the items written at each event."></a><figcaption>Chart 2. Six lifecycle events and 176 recorded calls. The upper panels track tokens, fully supported answers and elapsed time. The lower panels count the declarations and evidence added as research continued.</figcaption></figure>
             <div class="result-table"><table><caption>Recurring research · 44 requests per method</caption><thead><tr><th scope="col">System</th><th scope="col">Fully supported</th><th scope="col">Correct figures and claims</th><th scope="col">Provider tokens</th></tr></thead><tbody>

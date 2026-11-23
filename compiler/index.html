@@ -23,8 +23,8 @@
             <h1><span class="cc-mark">cc</span> Context Compiler</h1>
             <p class="compiler-deck">More reasoning per token.</p>
             <h2>Knowledge-graph-quality reasoning without knowledge-graph-scale engineering.</h2>
-            <p class="compiler-intro">A firm-wide knowledge graph has to track changes in entities, relationships, definitions and source authority while preserving what was known at each point in time.</p>
-            <p class="compiler-intro">With cc, your team maintains the definitions, source mappings and rules its recurring analyses need. For each question, cc compiles context from the evidence those rules allow.</p>
+            <p class="compiler-intro">Ask how a bank’s deposit cost changed. cc gives the model the reported rates, the inputs behind them and links to the filing cells, so an analyst can check the answer.</p>
+            <p class="compiler-intro">A firm-wide graph tracks changing entities, relationships, definitions and source authority over time. With cc, your team can start with the sources and rules its recurring questions need.</p>
             <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Request a technical evaluation</a>
         </section>
         <p class="compiler-deck">Compile once. Reuse while valid. Recompile when necessary.</p>
@@ -49,7 +49,7 @@
             <p>Regions Financial and KeyCorp · November 2026</p>
             <p class="compiler-intro">On 16 bank research questions, cc averaged 2,595 tokens per question and whole documents averaged 382,919. Across 48 attempts, cc produced 42 fully supported answers and whole documents produced 38.</p>
             <h3>cc versus a well-mapped graph</h3>
-            <p>In a later run at the same 2,400-token context limit, Graph RAG scored 45/48 to cc’s 42/48. The difference came from one KeyCorp question asked three times. The graph inherited a measure label that supplied the explanation. Excluding that question gives 42/45 for each system.</p>
+            <p>At a shared 2,400-token context limit, Graph RAG scored 45/48 and cc scored 42/48. The difference came from one KeyCorp question asked three times. The graph inherited a measure label that supplied the explanation. Excluding that question gives 42/45 for each system.</p>
             <figure class="benchmark">
                 <a href="/compiler/results/#graph"><img src="/compiler/results/reasoning_yield_frontier_with_graph.png" width="1840" height="1152" alt="The original measured frontier with the later Graph RAG run. At a 2,400-token context limit, cc used 2,595 provider tokens per question and the graph used 4,112."></a>
                 <figcaption>At that limit, cc delivered 337 supported answers per million provider tokens. Graph RAG delivered 228.</figcaption>
