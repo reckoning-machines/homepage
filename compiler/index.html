@@ -45,14 +45,12 @@
             <p>In a recorded compilation for Harbor Regional Bank, the June filing supplies the <a class="figure-link" href="/compiler/investing/?state=S4#S4-A2">3.03% cost of deposits</a>. cc includes the interest expense and average deposit balances behind that figure. Each opens at its filing cell.</p>
         </section>
         <section class="compiler-section" id="method">
-            <h2>The evidence</h2>
-            <h3 id="frontier">Reasoning Yield Frontier</h3>
-            <p>At context limits of 600 and 900 tokens, standalone cc and task-aware Graph RAG each produced four correct, fully supported answers out of six under the scoring rules set before the run. cc used fewer tokens at both limits.</p>
+            <h2 id="frontier">Context Compiler — Preliminary Experimental Results</h2>
+            <p>Real-bank research benchmark · November 2026 · Graph RAG comparison in progress</p>
             <figure class="benchmark">
-                <a href="/compiler/reasoning-yield-frontier.svg"><img src="/compiler/reasoning-yield-frontier.svg" width="720" height="440" alt="At context limits of 600, 900 and 1,200 tokens, Graph RAG scored 4, 4 and 5 out of 6. Graph RAG plus cc scored 3, 4 and 6. Standalone cc scored 4 at each limit. Open full-size graph."></a>
-                <figcaption>Six synthetic investment questions, one model, three context limits. The labels give the maximum context allowed. The horizontal axis shows average input plus output tokens actually consumed per question.</figcaption>
+                <a href="/compiler/recurring-research-economics.png"><img src="/compiler/recurring-research-economics.png" width="1448" height="1086" alt="Recurring research on Regions and KeyCorp filings. Of 44 requests per method, full documents (L) produced 21 fully supported answers, hybrid RAG (H) 24, and cc with and without artifact reuse (C1+ and C1) 42 each. Open the full-size dashboard."></a>
+                <figcaption>cc and full documents each got the figures and claims right on 42 of 44 requests. With citations checked, cc supported all 42 answers and full documents supported 21.</figcaption>
             </figure>
-            <p>At 1,200, Graph RAG plus cc scored six, Graph RAG five and standalone cc four. Crediting four disputed replies brings Graph RAG level with the combined system at six, using 1,317 fewer tokens across the six questions. The full competitive benchmark is pending.</p>
         </section>
         <section class="compiler-section" id="demos">
             <h2>See it work</h2>
@@ -63,7 +61,15 @@
         <aside aria-label="Technical evidence" class="compiler-section technical-evidence">
             <details>
                 <summary>Technical evidence</summary>
-                <h2>How the frontier pilot was scored</h2>
+                <h2>Real-bank benchmark</h2>
+                <p>Claude Sonnet 5.5 answered 44 requests per method. Review credited two additional hybrid RAG answers, bringing its score to 26. On historical replay, all six cc answers stayed correct. Reproducing all six contexts byte for byte required the original rules and evidence snapshot.</p>
+                <h2>Earlier frontier pilot on synthetic filings</h2>
+            <p>At context limits of 600 and 900 tokens, standalone cc and task-aware Graph RAG each produced four correct, fully supported answers out of six under the scoring rules set before the run. cc used fewer tokens at both limits.</p>
+            <figure class="benchmark">
+                <a href="/compiler/reasoning-yield-frontier.svg"><img src="/compiler/reasoning-yield-frontier.svg" width="720" height="440" alt="At context limits of 600, 900 and 1,200 tokens, Graph RAG scored 4, 4 and 5 out of 6. Graph RAG plus cc scored 3, 4 and 6. Standalone cc scored 4 at each limit. Open full-size graph."></a>
+                <figcaption>Six synthetic investment questions, one model, three context limits. The labels give the maximum context allowed. The horizontal axis shows average input plus output tokens actually consumed per question.</figcaption>
+            </figure>
+            <p>At 1,200, Graph RAG plus cc scored six, Graph RAG five and standalone cc four. Crediting four disputed replies brings Graph RAG level with the combined system at six, using 1,317 fewer tokens across the six questions. The full competitive benchmark is pending.</p>
                 <p>Claude Sonnet 5.5 answered once per configuration. Independent review reproduced all 54 recorded results and all nine plotted points. Reasoning Yield counts correct, fully supported answers per million measured input and output tokens.</p>
                 <p>Under the frozen rules, cc delivered 715 supported answers per million tokens at the 600-token limit and Graph RAG delivered 570. At the 900-token limit, the corresponding yields were 543 and 510.</p>
                 <p>The four disputed replies turn on two scoring rules. Three Graph RAG replies put the unit of a correctly cited expense in parentheses. One cc reply calculated the difference between two cited estimates and supplied both sources where the scorer expected one.</p>
