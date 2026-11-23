@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>cc — Context Compiler | Reckoning Machines</title>
-    <meta name="description" content="Financial reasoning with evidence you can verify. See how cc compared with whole filings and Graph RAG, and what carried forward when the research changed.">
+    <meta name="description" content="Use your firm’s definitions and source rules across research questions. See the real-bank results for supported answers, token use and recurring research.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/compiler/compiler.css">
@@ -21,22 +21,22 @@
     <main id="main" class="container">
         <section class="compiler-hero research-hero">
             <p class="label"><strong>cc</strong> · Context Compiler</p>
-            <h1>Financial reasoning with evidence you can verify.</h1>
-            <p class="compiler-intro">When a bank reports a change in deposit costs, an analyst needs the rate, the balances behind it and the filing that was available at the time. The model interprets the evidence. cc applies your definitions and source rules to assemble a context the model can cite. Those rules carry forward to the next quarter.</p>
+            <h1>Make AI useful on your firm’s knowledge. Without rebuilding your firm’s knowledge.</h1>
+            <p class="compiler-intro">Your models can read the documents. Your team knows which definitions apply and which sources to trust. cc uses those rules to assemble evidence for each question. Analysts can trace a figure to its filing and use the same definitions next quarter.</p>
+            <ul class="benchmark-highlights" aria-label="Real-bank benchmark results">
+                <li><strong>87.5%</strong> correct, fully supported answers with cc</li>
+                <li><strong>148×</strong> as many tokens with whole documents as with cc</li>
+                <li><strong>337</strong> supported answers per million tokens with cc</li>
+            </ul>
+            <p class="benchmark-scope">16 questions · Two banks · Claude Sonnet 5.5 · Bank-adapted rules. Graph RAG scored higher on accuracy (93.8%). Comparative engineering cost remains unmeasured.</p>
         </section>
-        <section class="compiler-section" id="method">
-            <h2 id="frontier">Reasoning Yield Frontier</h2>
-            <p class="compiler-intro">With cc, 87.5% of answers were correct and fully supported (42 of 48), yielding 337 supported answers per million provider tokens. Whole documents used about 148 times as many tokens per question as cc (382,919 versus 2,595).</p>
-            <figure class="benchmark">
-                <a href="/compiler/results/reasoning_yield_frontier_with_graph.png"><img src="/compiler/results/reasoning_yield_frontier_with_graph.png" width="1840" height="1152" alt="Fully supported answers against tokens per question. At a 2,400-token context limit, the well-mapped graph reached 93.8% at 4,112 tokens and cc reached 87.5% at 2,595. Open the full-size chart."></a>
-                <figcaption>16 questions on Regions Financial and KeyCorp, three attempts per question at each tested setting. Claude Sonnet 5.5 made 816 calls in the original frontier and 192 in the later Graph RAG comparison.</figcaption>
-            </figure>
-            <p>At its best-accuracy limit of 2,400 context tokens, the well-mapped graph reached 93.8% (45/48) and delivered 228 supported answers per million tokens. The graph’s three additional answers came from one KeyCorp question whose explanation was encoded in a measure label it inherited. Excluding that question gives 42/45 for each system.</p>
-            <a class="text-link" href="/compiler/results/#graph">Inspect the scores and the KeyCorp question</a>
+        <section class="compiler-section">
+            <h2>The right document can still give the wrong answer</h2>
+            <p>A search can find a bank’s revised deposit cost when an analyst needs the figure available before the amendment. Even the right rate is hard to check without the expense and balances behind it. Each new question needs the same decisions about dates, sources and definitions.</p>
         </section>
         <section class="compiler-section cc-explanation">
-            <h2 id="why-compiler">From a filing to a checkable answer</h2>
-            <p>A language model can propose what a line in a filing means. Once a mapping is accepted, cc can apply it consistently across questions. Automated mapping is still in development. A rule check alone cannot establish that a new interpretation is sound.</p>
+            <h2 id="why-compiler">The model interprets. The compiler governs.</h2>
+            <p>A model can propose how a line in a filing maps to a measure your team uses. Once that mapping is accepted, cc can apply the same definition to the next question. Automated mapping is still in development. Checking a proposal against declared rules does not establish that a new interpretation is sound.</p>
             <ol class="cc-stages" aria-label="From financial evidence to a supported answer">
                 <li><strong>LLM interprets</strong><span>Propose a measure and its relationships from the filing. Identify the source passage.</span></li>
                 <li><strong>cc validates</strong><span>Apply declared rules to typed claims. Check source authority, dates and required inputs.</span></li>
@@ -44,6 +44,16 @@
                 <li><strong>LLM answers</strong><span>Use the selected evidence and cite the filing that supports each figure.</span></li>
             </ol>
             <p>Compression makes information smaller. Compilation makes it usable.</p>
+        </section>
+        <section class="compiler-section" id="method">
+            <h2 id="frontier">Reasoning Yield Frontier</h2>
+            <p class="compiler-intro">How much evidence does a model need to answer from a filing? Across 48 attempts, cc supplied the context for 42 fully supported answers at an average of 2,595 tokens per question. Supplying whole documents yielded 38 fully supported answers at 382,919 tokens per question.</p>
+            <figure class="benchmark">
+                <a href="/compiler/results/reasoning_yield_frontier_with_graph.png"><img src="/compiler/results/reasoning_yield_frontier_with_graph.png" width="1840" height="1152" alt="Fully supported answers against tokens per question. At a 2,400-token context limit, the well-mapped graph reached 93.8% at 4,112 tokens and cc reached 87.5% at 2,595. Open the full-size chart."></a>
+                <figcaption>16 questions on Regions Financial and KeyCorp, three attempts per question at each tested setting. Claude Sonnet 5.5 made 816 calls in the original frontier and 192 in the later Graph RAG comparison.</figcaption>
+            </figure>
+            <p>At its best-accuracy limit of 2,400 context tokens, the well-mapped graph reached 93.8% (45/48) and delivered 228 supported answers per million tokens. The graph’s three additional answers came from one KeyCorp question whose explanation was encoded in a measure label it inherited. Excluding that question gives 42/45 for each system.</p>
+            <a class="text-link" href="/compiler/results/#graph">Inspect the scores and the KeyCorp question</a>
         </section>
         <section class="compiler-section" id="recurring">
             <h2>Recurring research economics</h2>
@@ -54,55 +64,7 @@
             </figure>
             <a class="text-link" href="/compiler/results/#recurring">Read the recurring-research results</a>
         </section>
-        <section class="compiler-section">
-            <h2>What the evidence supports</h2>
-            <p>On these filings, cc approached the well-mapped graph’s answer quality without building a persistent graph. The benchmark used prepared mappings. It measured tokens and supported answers. Neither build nor maintenance hours were recorded. Lower engineering cost remains an open question.</p>
-            <a class="text-link" href="/compiler/results/">Read the full report and original frontier</a>
-        </section>
-        <section class="compiler-section" id="demos">
-            <h2>Which filing governs the bank’s deposit cost?</h2>
-            <p>In the recorded investment demo, the June filing supplies a <a class="figure-link" href="/compiler/investing/?state=S4#S4-A2">3.03% deposit cost</a>. Open the filing cell, then move the cutoff to before the filing was known. cc names the two inputs it can no longer supply.</p>
-            <a class="text-link" href="/compiler/investing/">Open the investment workbench</a>
-        </section>
-        <aside class="compiler-section technical-evidence" aria-label="Technical evidence">
-            <details>
-                <summary>Recorded sources and verification</summary>
-                <section class="compiler-section"><h2>Recorded example and sources</h2>
-                    <p>Harbor Regional Bank · March and June 2027 · Recorded state S4</p>
-                <!-- recorded excerpt -->
-<div class="exhibit"><div><h3>Selected sources</h3><ul>
-<li>March quarterly filing, deposit schedule<small>Quarterly filing &middot; Harbor Regional Bank</small></li>
-<li>June quarterly filing, deposit schedule<small>Quarterly filing &middot; Harbor Regional Bank</small></li>
-<li>Quarter-end target rate observations<small>Official statistic &middot; Federal Reserve</small></li>
-</ul></div><p class="process">Authority, dependencies, Attention</p><div><h3>Filing evidence</h3>
-<table><thead><tr><th>Measure</th><th>Period</th><th>Value</th></tr></thead><tbody>
-<tr><th scope="row">Cost of total deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A1">2.86 percent</a></td></tr>
-<tr><th scope="row">Cost of total deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A2">3.03 percent</a></td></tr>
-<tr><th scope="row">Average interest-bearing deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A3">6385 USD million</a></td></tr>
-<tr><th scope="row">Average interest-bearing deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A4">6715.000 USD million</a></td></tr>
-<tr><th scope="row">Average noninterest-bearing deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A5">1835 USD million</a></td></tr>
-<tr><th scope="row">Average noninterest-bearing deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A6">1765.000 USD million</a></td></tr>
-<tr><th scope="row">Interest expense on deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A7">58.773 USD million</a></td></tr>
-<tr><th scope="row">Interest expense on deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A8">64.236 USD million</a></td></tr>
-</tbody></table><details><summary>Trace A1 to its filing cell</summary><p>March quarterly filing, deposit schedule</p><code>table:funding ratios/row:cost of total deposits/col:2027-03-31/Q</code><blockquote>2.86</blockquote></details></div></div>
-<!-- end recorded excerpt -->
-                </section>
-                <section class="compiler-section" id="trust"><h2>What you can check</h2><ul class="checks">
-                <li><a href="/compiler/investing/?state=S1#S1">S1</a> refuses when required evidence cannot fit. <a href="/compiler/investing/?state=S2#S2">S2</a> keeps every required component.</li>
-                <li><a href="/compiler/investing/?state=S4#S4">S4</a> and <a href="/compiler/investing/?state=S5#S5">S5</a> use different policies to select optional evidence after the required figures.</li>
-                <li>In <a href="/compiler/investing/?state=S5#S5">S5</a> three estimates conflict. Each keeps its standing and classification. None is chosen.</li>
-                <li><a href="/compiler/investing/?state=S6#S6">S6</a> and <a href="/compiler/investing/?state=S7#S7">S7</a> name the missing components and refuse.</li>
-                <li>The June filing is known in <a href="/compiler/investing/?state=S4#S4">S4</a>. It is too late for the as-of date in <a href="/compiler/investing/?state=S6#S6">S6</a>.</li>
-                <li>Open a figure to see its source, original unit and exact witness text.</li></ul>
-                <h3>Verified privately, shown in an evaluation</h3><ul class="checks"><li>The same inputs give the same bytes in two independent replays of each state.</li>
-                <li>The library calls no model and opens no network connection.</li><li>Adding a source outside the reader's access scope leaves the downloadable exhibit unchanged.</li>
-                <li>The compiler carries source text as data in its rendering.</li></ul>
-                <p>The library runs in your environment. Source and packs are provided under agreement. This exhibit uses synthetic data and processes nothing you supply.</p></section>
-                <h2>Source preparation</h2>
-                <p>The private Python library accepts typed records, declared tables and passages that state a measure with its unit. You prepare the sources and declare their issuers, dates, access permissions and authority.</p>
-            </details>
-            <a class="text-link" href="/compiler/archive/">Earlier synthetic experiments in the technical archive</a>
-        </aside>
+        <p class="research-links"><a class="text-link" href="/compiler/results/">Full results and methodology</a> · <a class="text-link" href="/compiler/archive/#demos">Technical archive and investment demo</a></p>
         <section class="compiler-section">
             <h2>Evaluate cc on your evidence</h2>
             <p>Bring one task, its sources and the rules your team uses to resolve conflicting evidence. In a bounded technical evaluation, compare cc with your current approach on supported answers, tokens consumed and engineering hours.</p>

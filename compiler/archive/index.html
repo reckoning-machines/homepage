@@ -68,6 +68,49 @@
                     <figcaption>Adding typed relationships to Hybrid RAG yielded five correct, fully supported answers using 16,524 tokens, or 302.59 per million. cc answered four using 11,128 tokens.</figcaption>
                 </figure>
                         </section>
+        <section class="compiler-section" id="demos">
+            <h2>Which filing governs the bank’s deposit cost?</h2>
+            <p>In the recorded investment demo, the June filing supplies a <a class="figure-link" href="/compiler/investing/?state=S4#S4-A2">3.03% deposit cost</a>. Open the filing cell, then move the cutoff to before the filing was known. cc names the two inputs it can no longer supply.</p>
+            <a class="text-link" href="/compiler/investing/">Open the investment workbench</a>
+        </section>
+        <aside class="compiler-section technical-evidence" aria-label="Technical evidence">
+            <details>
+                <summary>Recorded sources and verification</summary>
+                <section class="compiler-section"><h2>Recorded example and sources</h2>
+                    <p>Harbor Regional Bank · March and June 2027 · Recorded state S4</p>
+                <!-- recorded excerpt -->
+<div class="exhibit"><div><h3>Selected sources</h3><ul>
+<li>March quarterly filing, deposit schedule<small>Quarterly filing &middot; Harbor Regional Bank</small></li>
+<li>June quarterly filing, deposit schedule<small>Quarterly filing &middot; Harbor Regional Bank</small></li>
+<li>Quarter-end target rate observations<small>Official statistic &middot; Federal Reserve</small></li>
+</ul></div><p class="process">Authority, dependencies, Attention</p><div><h3>Filing evidence</h3>
+<table><thead><tr><th>Measure</th><th>Period</th><th>Value</th></tr></thead><tbody>
+<tr><th scope="row">Cost of total deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A1">2.86 percent</a></td></tr>
+<tr><th scope="row">Cost of total deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A2">3.03 percent</a></td></tr>
+<tr><th scope="row">Average interest-bearing deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A3">6385 USD million</a></td></tr>
+<tr><th scope="row">Average interest-bearing deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A4">6715.000 USD million</a></td></tr>
+<tr><th scope="row">Average noninterest-bearing deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A5">1835 USD million</a></td></tr>
+<tr><th scope="row">Average noninterest-bearing deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A6">1765.000 USD million</a></td></tr>
+<tr><th scope="row">Interest expense on deposits</th><td>2027-03-31/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A7">58.773 USD million</a></td></tr>
+<tr><th scope="row">Interest expense on deposits</th><td>2027-06-30/Q</td><td><a class="figure-link" href="/compiler/investing/?state=S4#S4-A8">64.236 USD million</a></td></tr>
+</tbody></table><details><summary>Trace A1 to its filing cell</summary><p>March quarterly filing, deposit schedule</p><code>table:funding ratios/row:cost of total deposits/col:2027-03-31/Q</code><blockquote>2.86</blockquote></details></div></div>
+<!-- end recorded excerpt -->
+                </section>
+                <section class="compiler-section" id="trust"><h2>What you can check</h2><ul class="checks">
+                <li><a href="/compiler/investing/?state=S1#S1">S1</a> refuses when required evidence cannot fit. <a href="/compiler/investing/?state=S2#S2">S2</a> keeps every required component.</li>
+                <li><a href="/compiler/investing/?state=S4#S4">S4</a> and <a href="/compiler/investing/?state=S5#S5">S5</a> use different policies to select optional evidence after the required figures.</li>
+                <li>In <a href="/compiler/investing/?state=S5#S5">S5</a> three estimates conflict. Each keeps its standing and classification. None is chosen.</li>
+                <li><a href="/compiler/investing/?state=S6#S6">S6</a> and <a href="/compiler/investing/?state=S7#S7">S7</a> name the missing components and refuse.</li>
+                <li>The June filing is known in <a href="/compiler/investing/?state=S4#S4">S4</a>. It is too late for the as-of date in <a href="/compiler/investing/?state=S6#S6">S6</a>.</li>
+                <li>Open a figure to see its source, original unit and exact witness text.</li></ul>
+                <h3>Verified privately, shown in an evaluation</h3><ul class="checks"><li>The same inputs give the same bytes in two independent replays of each state.</li>
+                <li>The library calls no model and opens no network connection.</li><li>Adding a source outside the reader's access scope leaves the downloadable exhibit unchanged.</li>
+                <li>The compiler carries source text as data in its rendering.</li></ul>
+                <p>The library runs in your environment. Source and packs are provided under agreement. This exhibit uses synthetic data and processes nothing you supply.</p></section>
+                <h2>Source preparation</h2>
+                <p>The private Python library accepts typed records, declared tables and passages that state a measure with its unit. You prepare the sources and declare their issuers, dates, access permissions and authority.</p>
+            </details>
+        </aside>
     </main>
     <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
 </body>
