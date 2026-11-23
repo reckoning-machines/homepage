@@ -86,10 +86,6 @@
 .benchmark-highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.65rem, 3vw, 2rem); max-width: 48rem; margin: 1.5rem 0 .8rem; padding: 1rem 0; list-style: none; border-block: 1px solid var(--line); }
 .benchmark-highlights li, .benchmark-scope { color: var(--ink-dim); font-size: .875rem; line-height: 1.4; }
 .benchmark-highlights strong { display: block; font: 400 clamp(28px, 3.3vw, 44px)/1.2 var(--font-serif); color: var(--ink); }
-@media (max-width: 34rem) {
-    .benchmark-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .benchmark-highlights li:last-child { grid-column: 1 / -1; }
-}
 .benchmark-scope { max-width: 78ch; }
 .research-links { margin-bottom: 1.5rem; }
 .research-hero + .compiler-section { padding-top: 24px; }
