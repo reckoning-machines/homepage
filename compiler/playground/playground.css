@@ -3,13 +3,14 @@
 .bench-head h1 { font-size: clamp(40px, 5vw, 67px); margin: .2em 0; }
 .bench-head > p:last-child { color: var(--ink-dim); max-width: 64ch; }
 .desk { border-block: 1px solid var(--line); display: grid; grid-template-columns: minmax(15rem, .75fr) minmax(0, 1.9fr); gap: clamp(1.5rem, 4vw, 3.8rem); padding: 1.7rem 0 2rem; }
-.desk form { border-right: 1px solid var(--line); padding-right: clamp(1rem, 3vw, 2.5rem); }
+.desk #results { grid-column: 2; grid-row: 1; }
+.desk form { grid-column: 1; grid-row: 1; border-right: 1px solid var(--line); padding-right: clamp(1rem, 3vw, 2.5rem); }
 .desk form label { display: block; font-size: .875rem; margin: .95rem 0 .35rem; }
 .desk form label:first-child { margin-top: 0; }
 .desk select { color-scheme: dark; display: block; width: 100%; min-height: 44px; font: inherit; font-size: .95rem; color: var(--ink); background-color: var(--midnight-2); border: 1px solid #536179; border-radius: 3px; padding: .55rem .4rem; }
 .desk select:disabled { color: var(--ink-dim); }
 .desk button { margin: .8rem 0; min-width: 6rem; min-height: 44px; cursor: pointer; }
-.replay-note, #date-note, .file-meta { color: var(--ink-dim); font-size: .83rem; }
+#date-note, .file-meta { color: var(--ink-dim); font-size: .83rem; }
 #date-note { margin-top: .35rem; }
 .record + .record { margin-top: 2rem; }
 .record[hidden], [hidden] { display: none; }
@@ -30,7 +31,7 @@
 .foot-links { display: flex; gap: 1.5rem; margin-top: 1.3rem; font-size: .9rem; }
 @media(max-width: 720px) {
     .desk { display: block; padding-top: 1rem; }
-    .desk form { padding: 0 0 1.2rem; margin-bottom: 1.2rem; border: 0; border-bottom: 1px solid var(--line); }
+    .desk form { padding: 1.2rem 0 0; margin-top: 1.2rem; border: 0; border-top: 1px solid var(--line); }
     .desk button { width: 100%; }
     .bench-head { padding-bottom: 1rem; }
 }
