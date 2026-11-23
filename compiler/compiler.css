@@ -81,9 +81,8 @@
 .compiler-page :focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
 .compiler-page h1, .compiler-page h2, .compiler-page h3 { text-wrap: balance; }
 .compiler-hero h1 { margin: .3em 0; }
-.buyer-hero h1 { max-width: 26ch; font-size: clamp(38px, 5.6vw, 76px); }
-.product-name { color: var(--ink-dim); font-family: var(--font-serif); }
-.product-name span { margin-right: .4em; color: var(--ink); font: 500 2rem/1 var(--font-mono); letter-spacing: -.07em; }
+.buyer-hero h1 { font-size: clamp(32px, 4vw, 46px); }
+.buyer-hero h2 { max-width: 38ch; font-size: clamp(24px, 3vw, 34px); line-height: 1.15; }
 .technical-evidence { padding-block: 1rem; }
 .technical-evidence > details > summary { color: var(--brass); }
 .technical-evidence > details > h2 { margin-top: 1.5rem; }
