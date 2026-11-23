@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real-bank benchmark results | Context Compiler</title>
+    <meta name="description" content="Measured answer quality and token use for cc, whole documents, retrieval and a typed evidence graph on Regions Financial and KeyCorp filings.">
+    <link rel="canonical" href="https://reckoningmachines.com/compiler/results/">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/compiler/compiler.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body class="compiler-page">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="top">
+        <div class="container top-inner">
+            <div><a class="wordmark" href="/">Reckoning Machines</a><p class="brand-motto">Simple yet Powerful.</p></div>
+            <nav class="top-nav" aria-label="Primary"><a href="/compiler/">Context Compiler</a></nav>
+        </div>
+    </header>
+    <main class="container results-report" id="main">
+        <header class="compiler-hero">
+            <p class="label">Context Compiler · Real-bank research · November 2026</p>
+            <h1>Whole documents used 148 times as many tokens as cc.</h1>
+            <p class="compiler-intro">On 16 questions about Regions Financial and KeyCorp, cc averaged 2,595 provider tokens per question. Giving the model the full documents took 382,919. Across three attempts per question, cc produced 42 fully supported answers and whole documents produced 38. The small sample leaves the accuracy difference uncertain.</p>
+        </header>
+        <section class="compiler-section" id="frontier">
+            <h2>Answer quality and token use</h2>
+            <p>Claude Sonnet 5.5 answered questions about margins, deposit costs, conflicting sources and guidance using 41 public filings and earnings documents, from the fourth quarter of 2025 through the third quarter of 2026. Credit required correct figures, complete answers and citations to the passages that supported them. One question called for an abstention.</p>
+            <figure class="benchmark"><a href="reasoning_yield_frontier.png"><img src="reasoning_yield_frontier.png" width="1840" height="1152" alt="Scatter chart of percent of answers correct and fully supported against mean model tokens per question, log scale. The compiler with the real-bank pack sits near 87 percent at about 2,600 tokens. Whole documents sit near 79 percent at about 383,000 tokens. Dense and hybrid retrieval rise from 12 percent to about 50 and 44 percent between 2,500 and 13,000 tokens. The compiler with the unmodified pack sits at 12 percent."></a><figcaption>Chart 1. Five systems, 816 recorded calls. Each point gives the mean across three attempts on the same 16 questions at one context limit. The horizontal axis counts tokens actually consumed.</figcaption></figure>
+            <div class="result-table"><table><caption>Frontier · 48 attempts per row</caption><thead><tr><th scope="col">System</th><th scope="col">Fully supported</th><th scope="col">Tokens per question</th><th scope="col">Supported answers per million tokens</th></tr></thead><tbody>
+<tr><th scope="row">cc, bank-adapted rules</th><td>42/48</td><td>2,595</td><td>337</td></tr>
+<tr><th scope="row">Whole documents</th><td>38/48</td><td>382,919</td><td>2.1</td></tr>
+<tr><th scope="row">Dense retrieval</th><td>24/48</td><td>12,890</td><td>39</td></tr>
+<tr><th scope="row">Hybrid retrieval</th><td>21/48</td><td>12,154</td><td>36</td></tr>
+<tr><th scope="row">cc, original rules</th><td>6/48</td><td>1,647</td><td>76</td></tr>
+</tbody></table></div>
+            <p>The table uses the 2,400-token limit for cc and the 9,600-token limit for retrieval. Dense and hybrid retrieval were still improving at the largest limit tested. Review found valid citations missing from the answer key. Crediting them lifts the retrieval scores to 56% and 50%, respectively, shown by the hollow markers.</p>
+            <p>The original compiler rules assumed annualization by a factor of four. These banks used day counts. Adapting the rules allowed cc to verify more figures. It still refused two KeyCorp margin questions because it could not verify the denominator.</p>
+        </section>
+        <section class="compiler-section" id="recurring">
+            <h2>Recurring research economics</h2>
+            <p>A separate run followed the same research as questions repeated, new filings arrived, a second bank joined and earlier questions were replayed. cc and whole documents each got the figures and claims right on 42 of 44 requests. Checking the citations left cc with 42 fully supported answers and whole documents with 21.</p>
+            <figure class="benchmark"><a href="recurring_research_economics.png"><img src="recurring_research_economics.png" width="2250" height="1410" alt="Six-panel figure. Cumulative model tokens over 44 requests: whole documents reach about 14 million, hybrid retrieval about 525,000, the compiler about 109,000. Cumulative supported answers: compiler 42, hybrid retrieval 24, whole documents 21. Cumulative time: compiler about 109 seconds, whole documents 271, hybrid retrieval 326. Two bar panels show the compiler&#x27;s declarations carried forward and added at each event, and the items written at each event."></a><figcaption>Chart 2. Six lifecycle events and 176 recorded calls. The upper panels track tokens, fully supported answers and elapsed time. The lower panels count the declarations and evidence added as research continued.</figcaption></figure>
+            <div class="result-table"><table><caption>Recurring research · 44 requests per method</caption><thead><tr><th scope="col">System</th><th scope="col">Fully supported</th><th scope="col">Correct figures and claims</th><th scope="col">Provider tokens</th></tr></thead><tbody>
+<tr><th scope="row">cc</th><td>42</td><td>42</td><td>109,190</td></tr>
+<tr><th scope="row">cc with artifact reuse</th><td>42</td><td>42</td><td>109,262</td></tr>
+<tr><th scope="row">Hybrid retrieval</th><td>24</td><td>26</td><td>524,712</td></tr>
+<tr><th scope="row">Whole documents</th><td>21</td><td>42</td><td>14,286,646</td></tr>
+</tbody></table></div>
+            <p>The second bank reused the existing rules and checks but needed its own source mappings. It took 20 new declarations, compared with 69 for the first bank. Each new quarter needed five additional day-count checks.</p>
+            <p>All seven cache hits matched a fresh compilation. Reuse saved 0.14 seconds of compilation against 103 seconds of model time. Replaying the original six questions reproduced every context byte for byte when the original rules and evidence snapshot were pinned.</p>
+        </section>
+        <section class="compiler-section" id="graph">
+            <h2>cc versus a well-mapped graph</h2>
+            <p>We later ran a typed evidence graph on the same questions, model and scorer. It had its own retrieval, authority rules and source citations. It inherited the bank-specific meanings and relationships mapped for cc.</p>
+            <figure class="benchmark"><a href="reasoning_yield_frontier_with_graph.png"><img src="reasoning_yield_frontier_with_graph.png" width="1840" height="1152" alt="Chart 1 with the graph reference added as green diamonds joined by a dashed line: about 81 percent at 2,600 tokens, 94 percent at 4,100, 92 percent at 7,100 and 88 percent at 12,800. The compiler&#x27;s points sit at 81 and 87.5 percent near 2,400 to 2,600 tokens."></a><figcaption>Chart 3. The original frontier with 192 later Graph RAG calls added as diamonds. The original points retain their recorded scores and token counts.</figcaption></figure>
+            <div class="result-table"><table><caption>Graph comparison · 2,400-token context limit</caption><thead><tr><th scope="col">Reading</th><th scope="col">Graph RAG</th><th scope="col">cc</th></tr></thead><tbody>
+<tr><th scope="row">Frozen score, all 16 questions</th><td>45/48 (93.8%)</td><td>42/48 (87.5%)</td></tr>
+<tr><th scope="row">Sensitivity, excluding the KeyCorp margin question</th><td>42/45</td><td>42/45</td></tr>
+<tr><th scope="row">Provider tokens per question, full run</th><td>4,112</td><td>2,595</td></tr>
+<tr><th scope="row">Supported answers per million tokens, full run</th><td>228</td><td>337</td></tr>
+</tbody></table></div>
+            <div class="decision"><p><strong>The frozen result stands.</strong> Graph RAG answered three more attempts correctly. All three were the same question (Q06) about the basis of KeyCorp’s reported net interest margin.</p>
+            <p>The independent check found the graph’s replies relied on an inherited measure label that encoded the fair-value distinction. The graph had supplied no filing passage explaining it. Excluding that question and its three attempts gives the separate 42/45 sensitivity above.</p></div>
+        </section>
+        <section class="compiler-section">
+            <h2>What this does not show</h2>
+            <h3>Semantic inheritance</h3><p>The graph started with measures, relationships and corrections developed for cc. The work a graph builder would need to discover those definitions independently was never timed.</p>
+            <h3>Engineering cost</h3><p>cc needed mappings for 24 exported documents, 705 figures traced to source lines and a typed task for each question. The experiment counted that work in items. It did not measure human hours or establish a saving in setup or maintenance.</p>
+            <h3>Validation</h3><p>cc checked declared accounting identities. The graph reference did not perform arithmetic checks. This run included no deliberately corrupted figures, so it cannot establish how either system performs after an ingestion error.</p>
+            <h3>Scale and independence</h3><p>Two banks, 16 questions and one model. The same author prepared the questions, answer key and adapted rules with the filings in view. The graph was built later with the questions known. One question accounts for 6.25 percentage points.</p>
+        </section>
+        <section class="compiler-section">
+            <h2>How it was measured</h2>
+            <p>The pilot, frontier, lifecycle and later graph run comprised 1,252 recorded calls. Each run used a manifest fixed before execution and one attempt per slot. Provider totals include input, cache writes, cache reads and output. A separate reviewer checked the arithmetic, reran the scorer and examined disputed answers. Alternative readings are reported separately from the frozen scores.</p>
+            <p>Reckoning Machines conducted this research using public SEC filings. Neither bank participated.</p>
+            <a class="text-link" href="/compiler/">Return to Context Compiler</a>
+        </section>
+    </main>
+    <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
+</body>
+</html>
