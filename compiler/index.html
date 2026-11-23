@@ -46,7 +46,14 @@
         </section>
         <section class="compiler-section" id="method">
             <h2 id="frontier">Context Compiler — Preliminary Experimental Results</h2>
-            <p>Real-bank research benchmark · November 2026 · Graph RAG comparison in progress</p>
+            <p>Real-bank research benchmark · November 2026</p>
+            <h3>cc versus a well-mapped Graph RAG system</h3>
+            <p class="compiler-intro">On these bank filings, cc approached graph-level reasoning quality without constructing a persistent knowledge graph. Graph RAG produced 45 fully supported answers to cc’s 42. Per million provider tokens, cc delivered 337 supported answers to the graph’s 228.</p>
+            <figure class="benchmark">
+                <a href="/compiler/cc-vs-graph-rag.png"><img src="/compiler/cc-vs-graph-rag.png" width="1648" height="878" alt="At a 2,400-token context limit, cc produced 42 fully supported answers in 48 attempts (87.5%) and Graph RAG produced 45 (93.8%). cc averaged 2,595 provider tokens per attempt to the graph’s 4,112, yielding 337 versus 228 supported answers per million tokens. cc checked declared arithmetic identities and supported exact replay with pinned inputs. The graph reference had no arithmetic checks or pinned snapshot. Open the full-size comparison."></a>
+                <figcaption>Claude Sonnet 5.5 answered 16 questions three times per method at the same 2,400-token context limit. The gold-standard baseline for this experiment was a graph with the same bank-specific measure mappings and relationships as cc. Both methods were scored against the filings.</figcaption>
+            </figure>
+            <h3>Recurring research economics</h3>
             <figure class="benchmark">
                 <a href="/compiler/recurring-research-economics.png"><img src="/compiler/recurring-research-economics.png" width="1448" height="1086" alt="Recurring research on Regions and KeyCorp filings. Of 44 requests per method, full documents (L) produced 21 fully supported answers, hybrid RAG (H) 24, and cc with and without artifact reuse (C1+ and C1) 42 each. Open the full-size dashboard."></a>
                 <figcaption>cc and full documents each got the figures and claims right on 42 of 44 requests. With citations checked, cc supported all 42 answers and full documents supported 21.</figcaption>
