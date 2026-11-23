@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bank research playground · Context Compiler | Reckoning Machines</title>
+    <meta name="description" content="Replay bank research on public filings. Change the knowledge date to see which source governs and which financial definitions carry forward.">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/compiler/compiler.css">
+    <link rel="stylesheet" href="playground.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script src="playground.js" defer></script>
+</head>
+<body class="compiler-page">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="top"><div class="container top-inner">
+        <div><a class="wordmark" href="/">Reckoning Machines</a><p class="brand-motto">Simple yet Powerful.</p></div>
+        <nav class="top-nav" aria-label="Primary"><a href="/compiler/">Context Compiler</a></nav>
+    </div></header>
+    <main id="main" class="container bench">
+        <header class="bench-head">
+            <p class="label">cc / Research playground</p>
+            <h1>Which filing governs?</h1>
+            <p>Start with Regions’ deposit cost. Change the date and run again to see which filing backs the same figure.</p>
+        </header>
+        <div class="desk">
+            <form id="controls" hidden>
+                <label for="bank">Bank</label><select id="bank"></select>
+                <label for="question">Research question</label><select id="question"></select>
+                <label for="date">Knowledge date</label><select id="date" aria-describedby="date-note"></select>
+                <p id="date-note"></p>
+                <button class="brass-button" type="submit">Run</button>
+                <p class="replay-note">Verified compiler replay. Runs locally in your browser without a model call.</p>
+            </form>
+            <noscript><p>JavaScript is off. All four verified replays are shown below.</p></noscript>
+            <div id="results">
+<!-- Verified records -->
+<article class="record" id="regions-cost-2026-10-20" data-bank="Regions Financial" data-question="Check Q3 deposit cost" data-date="Oct 20, 2026">
+    <p class="result-id">Regions Financial · As of Oct 20, 2026</p>
+    <h2 tabindex="-1">1.17% deposit cost</h2>
+    <p>The earnings supplement governs the third-quarter rate. The 10-Q was not yet available.</p>
+    <p class="file-meta"><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000063/rf-2026930xexhibitx992.htm">Earnings release exhibit ↗</a> · Published 2026-10-16</p>
+    <div class="reuse"><strong>Deposit-cost definition</strong><p>Annualized interest expense on deposits divided by average total deposits. Both interest-bearing and noninterest-bearing deposits count.</p></div>
+    <details><summary>Inspect evidence and checks</summary>
+        <p>382 ÷ (89,364 + 39,776) × 365/92 × 100 = 1.17%. Dollar inputs are in millions. The check uses the 92 actual days in the quarter.</p><p>Only mapped evidence published by the knowledge date qualifies. For the same measure, period and basis, the regulatory filing takes precedence over the release.</p>
+        <dl><dt>Q3 · Cost of total deposits · 1.17%</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000063/rf-2026930xexhibitx992.htm">Financial Supplement to Third Quarter 2026 Earnings Release ↗</a> · 2026-10-16<blockquote>(6) Total deposit costs may be calculated by dividing total interest expense on deposits by the sum of interest-bearing deposits and non-interest-bearing deposits. The rates for total deposit costs equal 1.17% and 1.18% for the quarter ended September 30, 2026 and June 30, 2026, respectively.</blockquote></dd><dt>Q3 · Interest expense on deposits · $382 million</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000063/rf-2026930xexhibitx992.htm">Financial Supplement to Third Quarter 2026 Earnings Release ↗</a> · 2026-10-16<blockquote>Total interest-bearing deposits (6) | 89,364 | 382 | 1.70 | 90,953 | 385 | 1.69</blockquote></dd><dt>Q3 · Average interest-bearing deposits · $89,364 million</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000063/rf-2026930xexhibitx992.htm">Financial Supplement to Third Quarter 2026 Earnings Release ↗</a> · 2026-10-16<blockquote>Total interest-bearing deposits (6) | 89,364 | 382 | 1.70 | 90,953 | 385 | 1.69</blockquote></dd><dt>Q3 · Average noninterest-bearing deposits · $39,776 million</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000063/rf-2026930xexhibitx992.htm">Financial Supplement to Third Quarter 2026 Earnings Release ↗</a> · 2026-10-16<blockquote>Non-interest-bearing deposits (6) | 39,776 | — | — | 39,738 | — | —</blockquote></dd></dl>
+
+    </details>
+    <p class="size">Model context · 961 reference tokens <span>(before prompt and answer)</span></p>
+</article>
+<article class="record" id="regions-cost-2026-11-22" data-bank="Regions Financial" data-question="Check Q3 deposit cost" data-date="Nov 22, 2026">
+    <p class="result-id">Regions Financial · As of Nov 22, 2026</p>
+    <h2 tabindex="-1">1.17% deposit cost</h2>
+    <p>The 10-Q now governs the third-quarter rate. It confirms the figure in the earlier earnings supplement.</p>
+    <p class="file-meta"><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000073/rf-20260930.htm">Form 10-Q ↗</a> · Published 2026-11-09</p>
+    <div class="reuse"><strong>Deposit-cost definition</strong><p>Annualized interest expense on deposits divided by average total deposits. Both interest-bearing and noninterest-bearing deposits count.</p></div>
+    <details><summary>Inspect evidence and checks</summary>
+        <p>382 ÷ (89,364 + 39,776) × 365/92 × 100 = 1.17%. Dollar inputs are in millions. The check uses the 92 actual days in the quarter.</p><p>Only mapped evidence published by the knowledge date qualifies. For the same measure, period and basis, the regulatory filing takes precedence over the release.</p>
+        <dl><dt>Q3 · Cost of total deposits · 1.17%</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000073/rf-20260930.htm">Form 10-Q for the quarter ended September 30, 2026 ↗</a> · 2026-11-09<blockquote>(6)Total deposit costs may be calculated by dividing total interest expense on deposits by the sum of interest-bearing deposits and non-interest-bearing deposits and equaled 1.17% and 1.39% for the three months ended September 30, 2026 and 2025, respectively.</blockquote></dd><dt>Q3 · Interest expense on deposits · $382 million</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000073/rf-20260930.htm">Form 10-Q for the quarter ended September 30, 2026 ↗</a> · 2026-11-09<blockquote>Total interest-bearing deposits (6) | 89,364 | 382 | 1.70 | 90,037 | 456 | 2.01</blockquote></dd><dt>Q3 · Average interest-bearing deposits · $89,364 million</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000073/rf-20260930.htm">Form 10-Q for the quarter ended September 30, 2026 ↗</a> · 2026-11-09<blockquote>Total interest-bearing deposits (6) | 89,364 | 382 | 1.70 | 90,037 | 456 | 2.01</blockquote></dd><dt>Q3 · Average noninterest-bearing deposits · $39,776 million</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/1281761/000128176126000073/rf-20260930.htm">Form 10-Q for the quarter ended September 30, 2026 ↗</a> · 2026-11-09<blockquote>Non-interest-bearing deposits (6) | 39,776 | — | — | 39,538 | — | —</blockquote></dd></dl>
+
+    </details>
+    <p class="size">Model context · 963 reference tokens <span>(before prompt and answer)</span></p>
+</article>
+<article class="record" id="key-change-2026-11-22" data-bank="KeyCorp" data-question="Compare Q2 and Q3 deposit cost" data-date="Nov 22, 2026">
+    <p class="result-id">KeyCorp · As of Nov 22, 2026</p>
+    <h2 tabindex="-1">3 basis points higher</h2>
+    <p>Total deposit cost moved from 1.63% in Q2 to 1.66% in Q3. The compiled rates come from KeyCorp’s earnings release.</p>
+    <p class="file-meta"><a href="https://www.sec.gov/Archives/edgar/data/91576/000009157626000020/a3q26earningsrelease.htm">Earnings release exhibit ↗</a> · Published 2026-10-20</p>
+    <div class="reuse"><strong>Definition reused from Regions</strong><p>KeyCorp needed a new mapping for the interest column on its interest-bearing deposits row. The accepted mapping supplies an expense input to the same deposit-cost check used for Regions.</p></div>
+    <details><summary>Inspect evidence and checks</summary>
+        <p>(1.66% − 1.63%) × 100 = +3 basis points. The recorded compilation supplied both quarterly rates and their required inputs.</p><p>Only mapped evidence published by the knowledge date qualifies. For the same measure, period and basis, the regulatory filing takes precedence over the release.</p>
+        <dl><dt>Q2 · Cost of total deposits · 1.63%</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/91576/000009157626000020/a3q26earningsrelease.htm">Third Quarter 2026 Earnings Release ↗</a> · 2026-10-20<blockquote>Cost of total deposits | 1.66 | % | 1.63 | % | 1.97 | % | 3 bps | (31) bps</blockquote></dd><dt>Q3 · Cost of total deposits · 1.66%</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/91576/000009157626000020/a3q26earningsrelease.htm">Third Quarter 2026 Earnings Release ↗</a> · 2026-10-20<blockquote>Cost of total deposits | 1.66 | % | 1.63 | % | 1.97 | % | 3 bps | (31) bps</blockquote></dd><dt>Q3 · Interest expense on deposits · $634 million</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/91576/000009157626000023/key-20260930.htm">Form 10-Q for the quarter ended September 30, 2026 ↗</a> · 2026-11-03<blockquote>Total interest-bearing deposits | 123,167 | 634 | 2.04 | 122,267 | 748 | 2.43 | (3) | (111) | (114)</blockquote></dd></dl>
+<p>A proposed label match still needs evidence review. This replay uses the accepted KeyCorp mapping; it does not admit new candidates.</p>
+    </details>
+    <p class="size">Model context · 1,241 reference tokens <span>(before prompt and answer)</span></p>
+</article>
+<article class="record" id="key-margin-2026-11-22" data-bank="KeyCorp" data-question="Verify Q3 net interest margin" data-date="Nov 22, 2026">
+    <p class="result-id">KeyCorp · As of Nov 22, 2026</p>
+    <h2 tabindex="-1">Margin withheld</h2>
+    <p>The 10-Q lists earning assets with available-for-sale securities at fair value. The margin calculation requires the amortized-cost basis. The recorded evidence does not supply that denominator.</p>
+    <p class="file-meta"><a href="https://www.sec.gov/Archives/edgar/data/91576/000009157626000023/key-20260930.htm">Form 10-Q ↗</a> · Published 2026-11-03</p>
+    <div class="reuse"><strong>Why the balance cannot be reused</strong><p>The existing margin definition still requires a matching asset basis. The fair-value balance has its own mapping. A new mapping would need evidence for the required basis; the printed balance cannot be admitted as a substitute.</p></div>
+    <details><summary>Inspect evidence and checks</summary>
+        <p>The margin task was refused for a missing required input. A separate task returned the available balance. Footnote (e) to the quarterly average-balance table explains the amortized-cost convention.</p><p>Only mapped evidence published by the knowledge date qualifies. For the same measure, period and basis, the regulatory filing takes precedence over the release.</p>
+        <dl><dt>Q3 · Average earning assets, securities at fair value · $173,765 million</dt><dd><a href="https://www.sec.gov/Archives/edgar/data/91576/000009157626000023/key-20260930.htm">Form 10-Q for the quarter ended September 30, 2026 ↗</a> · 2026-11-03<blockquote>Total earning assets | 173,765 | 2,141 | 4.82 | 170,347 | 2,140 | 4.92 | 69 | (68) | 1</blockquote></dd></dl>
+
+    </details>
+    <p class="size">Model context · 572 reference tokens <span>(before prompt and answer)</span></p>
+</article>
+<!-- End records -->
+            </div>
+        </div>
+        <p class="sr-only" role="status" id="status"></p>
+        <nav class="foot-links" aria-label="Research"><a href="/compiler/">Context Compiler</a><a href="/compiler/results/">Bank research results</a></nav>
+    </main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.bench { padding-bottom: 2rem; }
+.bench-head { padding: clamp(94px, 9vw, 122px) 0 1.8rem; }
+.bench-head h1 { font-size: clamp(40px, 5vw, 67px); margin: .2em 0; }
+.bench-head > p:last-child { color: var(--ink-dim); max-width: 64ch; }
+.desk { border-block: 1px solid var(--line); display: grid; grid-template-columns: minmax(15rem, .75fr) minmax(0, 1.9fr); gap: clamp(1.5rem, 4vw, 3.8rem); padding: 1.7rem 0 2rem; }
+.desk form { border-right: 1px solid var(--line); padding-right: clamp(1rem, 3vw, 2.5rem); }
+.desk form label { display: block; font-size: .875rem; margin: .95rem 0 .35rem; }
+.desk form label:first-child { margin-top: 0; }
+.desk select { color-scheme: dark; display: block; width: 100%; min-height: 44px; font: inherit; font-size: .95rem; color: var(--ink); background-color: var(--midnight-2); border: 1px solid #536179; border-radius: 3px; padding: .55rem .4rem; }
+.desk select:disabled { color: var(--ink-dim); }
+.desk button { margin: .8rem 0; min-width: 6rem; min-height: 44px; cursor: pointer; }
+.replay-note, #date-note, .file-meta { color: var(--ink-dim); font-size: .83rem; }
+#date-note { margin-top: .35rem; }
+.record + .record { margin-top: 2rem; }
+.record[hidden], [hidden] { display: none; }
+.desk:has(form:not([hidden])) .record { margin-top: 0; }
+.record h2 { font-size: clamp(35px, 4.7vw, 64px); line-height: 1.1; margin: .18em 0; }
+.record .result-id { font: .8rem/1.5 var(--font-mono); color: var(--brass); }
+.record a, .foot-links a { text-decoration: underline; text-underline-offset: 3px; }
+.record a:hover, .foot-links a:hover { color: var(--brass); }
+.reuse { border-left: 2px solid var(--brass-2); padding-left: 1rem; margin: 1.35rem 0; }
+.reuse strong, .record summary { font-weight: 600; }
+.reuse p, .record details p { color: var(--ink-dim); }
+.record details { border-block: 1px solid var(--line); }
+.record summary { cursor: pointer; padding: .8rem 0; }
+.record dl { margin: .7rem 0 1rem; }
+.record dt { margin-top: .8rem; font-size: .9rem; }
+.record dd { font-size: .85rem; color: var(--ink-dim); }
+.record blockquote { overflow-wrap: anywhere; margin: .2rem 0 .6rem; }
+.foot-links { display: flex; gap: 1.5rem; margin-top: 1.3rem; font-size: .9rem; }
+@media(max-width: 720px) {
+    .desk { display: block; padding-top: 1rem; }
+    .desk form { padding: 0 0 1.2rem; margin-bottom: 1.2rem; border: 0; border-bottom: 1px solid var(--line); }
+    .desk button { width: 100%; }
+    .bench-head { padding-bottom: 1rem; }
+}
+.size { margin-top: .8rem; font: .8rem/1.5 var(--font-mono); color: var(--brass); }
+.size span { color: var(--ink-dim); }
+.record details > p { margin-bottom: .65rem; }
