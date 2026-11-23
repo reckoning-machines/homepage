@@ -115,6 +115,8 @@
 .compiler-page thead th, .compiler-page small { font: .875rem/1.4 var(--font-sans); color: var(--ink-dim); }
 .compiler-page small { display: block; margin-top: .25em; }
 .compiler-page code, .compiler-page blockquote { overflow-wrap: anywhere; white-space: pre-wrap; }
+#python-interface pre { margin-top: 1rem; padding-left: 1rem; border-left: 1px solid var(--line); }
+#python-interface code { font: .875rem/1.5 var(--font-mono); }
 .compiler-page details > summary { cursor: pointer; padding-block: .55rem; }
 .demo-controls { display: grid; gap: 1.25rem; }
 .demo-controls label { font-weight: 600; }

@@ -100,6 +100,35 @@
             <p>Bring a research question and the documents behind it. We'll measure how Context Compiler turns those sources into governed analytical context, how the resulting answers compare with your existing AI workflow, and what knowledge can be reused on the next question.</p>
             <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Request a technical evaluation</a>
         </section>
+        <section class="compiler-section" id="python-interface">
+            <h2>The Python Interface</h2>
+            <pre><code>pack = cc.load_pack(pack_path)
+
+snapshot = cc.snapshot(
+    sources,
+    inventory
+)
+
+ir = cc.derive(
+    snapshot,
+    read_bytes,
+    pack,
+    extraction_artifacts=()
+)
+
+compilation, run_record = cc.compile(
+    snapshot,
+    ir,
+    task,
+    pack
+)
+
+rendering = cc.render(
+    compilation,
+    target="json_messages.v1",
+    release_scope=["public"]
+)</code></pre>
+        </section>
     </main>
     <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
 </body>
