@@ -26,9 +26,22 @@
             <div class="buyer-context">
                 <p>Every research question draws on more than documents. It depends on definitions, relationships, source authority and analytical judgments established through earlier work. Conventional AI workflows often reconstruct that context each time.</p>
                 <p>Context Compiler makes that knowledge reusable. It turns evidence and validated analytical meaning into compact, governed context that AI models can reason over. As research expands, the underlying semantic knowledge grows with it. A team can extend what it has learned without first building a comprehensive knowledge graph.</p>
-                <p>In our bank research benchmark, the result was more reliable, evidence-supported reasoning with less repeated model work.</p>
             </div>
         </header>
+
+        <section class="compiler-section" id="downstream-benchmark">
+            <h2>Twice as many fully supported answers with about one-ninth the model tokens</h2>
+            <p>We tested CC and hybrid retrieval on the same 18 research questions using financial disclosures from 10 issuers. CC produced 16 fully supported answers. Hybrid retrieval produced 8. The benchmark counted the model work spent verifying and correcting answers.</p>
+            <table class="pilot-results" aria-label="Results of the 10-issuer benchmark">
+                <thead><tr><th scope="col">Measure</th><th scope="col">Context Compiler</th><th scope="col">Hybrid retrieval</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">Fully supported answers</th><td>16 of 18</td><td>8 of 18</td></tr>
+                    <tr><th scope="row">Fully supported answers per million model tokens</th><td>401.98</td><td>22.39</td></tr>
+                    <tr><th scope="row">Median time to a correct answer among successful tasks</th><td>14.92 s</td><td>24.06 s</td></tr>
+                </tbody>
+            </table>
+            <p>CC produced <strong>17.95&times; as many fully supported answers per token</strong> and <strong>12.48&times; as many per inference dollar</strong> as hybrid retrieval.</p>
+        </section>
 
         <section class="compiler-section" id="why-compiler">
             <h2>How it works</h2>
@@ -75,7 +88,7 @@ rendering = cc.render(
         </section>
 
         <section class="compiler-section" id="measured">
-            <h2 id="frontier">Measured Reasoning Yield</h2>
+            <h2 id="frontier">Earlier two-bank study</h2>
             <div class="frontier-reading">
                 <div id="lifecycle">
                     <p>In an exploratory study of two banks, we developed the definitions with the filings in view. A fully supported answer had to give the correct figures and claims and cite the disclosures that established them. Across 44 recurring requests, CC produced <strong>42 fully supported answers versus 24 for hybrid retrieval</strong> under scoring rules fixed before the run, with <strong>73% lower inference expense</strong>. Independent review raised the retrieval count to 26/44.</p>
