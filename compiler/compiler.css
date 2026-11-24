@@ -161,9 +161,8 @@ html:not(.interactive) #states .record-state:target, html:not(.interactive) #sta
 html:has(.compiler-page) { scroll-behavior: auto; }
 
 /* Direct-API brief. The plotted sheets use the paper, ink and brass of the drawing. */
-.brief-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(7rem, 9vw, 8rem) 0 3rem; }
+.brief-hero { padding: clamp(7rem, 9vw, 8rem) 0 3rem; }
 .brief-hero h1 { font-size: clamp(3rem, 4.6vw, 4rem); max-width: 19ch; }
-.brief-hero .compiler-intro { max-width: 51ch; }
 .blueprint { border: 1px solid var(--line); background: #091828; }
 .blueprint img { width: 100%; }
 .blueprint figcaption { padding: .9rem 1.2rem; font-size: .875rem; color: var(--ink-dim); border-top: 1px solid var(--line); }
@@ -197,8 +196,8 @@ html:has(.compiler-page) { scroll-behavior: auto; }
 .economics figcaption { margin-top: .85rem; color: var(--ink-dim); max-width: 88ch; font-size: .9375rem; }
 .compiler-brief .cc-stages { padding-left: 0; }
 @media (max-width: 760px) {
-    .brief-hero, .frontier-reading { grid-template-columns: 1fr; }
-    .brief-hero { gap: 1.5rem; padding: 6.3rem 0 2rem; }
+    .frontier-reading { grid-template-columns: 1fr; }
+    .brief-hero { padding: 6.3rem 0 2rem; }
     .brief-hero h1 { max-width: 19ch; }
     .blueprint { max-width: 36rem; }
     .cost-panels { grid-template-columns: 1fr; }
