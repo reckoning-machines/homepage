@@ -1,0 +1,25 @@
+protocol,method,stage,question,fully_supported,tokens
+continuing thread,Codex SDK,cold,Q08,True,44404
+continuing thread,Codex SDK + CC,cold,Q08,True,47605
+continuing thread,Codex SDK + CC,repeat,Q08,True,47427
+continuing thread,Codex SDK,repeat,Q08,True,40613
+continuing thread,Codex SDK,filing,Q07,True,84291
+continuing thread,Codex SDK + CC,filing,Q07,True,58551
+continuing thread,Codex SDK + CC,format,Q11,False,123860
+continuing thread,Codex SDK,format,Q11,False,120344
+continuing thread,Codex SDK,comparison,Q14,True,147066
+continuing thread,Codex SDK + CC,comparison,Q14,False,106768
+continuing thread,Codex SDK + CC,replay,Q08,True,52111
+continuing thread,Codex SDK,replay,Q08,True,58904
+stateless,Codex SDK,cold,Q08,True,45308
+stateless,Codex SDK + CC,cold,Q08,True,47944
+stateless,Codex SDK + CC,repeat,Q08,True,47704
+stateless,Codex SDK,repeat,Q08,True,44514
+stateless,Codex SDK,filing,Q07,True,65471
+stateless,Codex SDK + CC,filing,Q07,True,50257
+stateless,Codex SDK + CC,format,Q11,False,89172
+stateless,Codex SDK,format,Q11,False,85254
+stateless,Codex SDK,comparison,Q14,False,74431
+stateless,Codex SDK + CC,comparison,Q14,False,79615
+stateless,Codex SDK + CC,replay,Q08,True,47889
+stateless,Codex SDK,replay,Q08,True,46194

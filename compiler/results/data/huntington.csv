@@ -1,0 +1,19 @@
+task,method,fully_supported
+T1,document sections,True
+T2,document sections,True
+T3,document sections,True
+T4,document sections,True
+T5,document sections,False
+T6,document sections,False
+T1,glossary,True
+T2,glossary,False
+T3,glossary,True
+T4,glossary,True
+T5,glossary,False
+T6,glossary,False
+T1,CC,False
+T2,CC,False
+T3,CC,True
+T4,CC,False
+T5,CC,False
+T6,CC,False

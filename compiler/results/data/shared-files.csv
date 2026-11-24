@@ -1,0 +1,23 @@
+stage,method,counterfactual,passed,tokens
+cold,versioned files,False,False,126043
+cold,CC,False,False,92193
+supersession,CC,False,True,95780
+supersession,versioned files,False,True,72040
+legacy,versioned files,False,False,190486
+legacy,CC,False,True,196214
+repair,CC,False,False,230119
+repair,versioned files,False,False,326717
+handoff,versioned files,False,True,127126
+handoff,CC,False,True,175146
+handoff,CC,True,True,139235
+handoff,versioned files,True,True,175873
+key,CC,False,False,123232
+key,versioned files,False,False,184078
+compare,CC,True,True,283350
+compare,versioned files,True,True,240943
+compare,versioned files,False,True,263835
+compare,CC,False,True,223357
+historical,CC,False,False,111999
+historical,versioned files,False,True,128345
+fallback,versioned files,False,False,168317
+fallback,CC,False,False,130671
