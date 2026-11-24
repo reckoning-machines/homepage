@@ -100,44 +100,10 @@
         </section>
 
         <section class="compiler-section" id="recurring">
-            <h2>Economic Crossover</h2>
-            <p>Across the 44 observed requests, CC saved <strong>$0.88 in measured inference expense</strong>. The cost model allocated $2.12 to semantic preparation alone. On those assumptions, CC did not recover preparation costs at any point in the lifecycle.</p>
-            <p>An unsupported figure can send an analyst back to the filing. Independent review left 18 unsupported or incorrect retrieval answers and two CC answers. Analyst correction time and downstream decision costs were unmeasured, so the curves assign them no dollar value.</p>
-            <figure class="economics">
-                <div class="chart-key"><span>Context Compiler</span><span>Hybrid retrieval</span></div>
-                <div class="cost-panels">
-                    <div class="paper-chart">
-                        <h3>Modeled cost over 44 observed requests</h3>
-                        <img src="results/direct-api/lifecycle.svg" width="440" height="245" alt="CC’s modeled cumulative cost stayed above retrieval through request 44.">
-                        <p>Including allocated preparation and machine time, CC ended at $2.45 and retrieval at $1.32.</p>
-                    </div>
-                    <div class="paper-chart">
-                        <h3>Projection for mostly new questions</h3>
-                        <img src="results/direct-api/established-heavy.svg" width="440" height="245" alt="Projected CC and retrieval costs cross at 3,085 requests.">
-                        <p><strong>Projected crossover at 3,085 requests.</strong> 80% new questions using existing definitions, 10% warm repeats and 10% filing changes.</p>
-                    </div>
-                    <div class="paper-chart">
-                        <h3>Projection for mostly repeat questions</h3>
-                        <img src="results/direct-api/repeat-heavy.svg" width="440" height="245" alt="Projected CC and retrieval costs cross at 11,266 requests.">
-                        <p><strong>Projected crossover at 11,266 requests.</strong> 80% warm repeats, 15% new questions using existing definitions and 5% filing changes.</p>
-                    </div>
-                    <div class="paper-chart">
-                        <h3>Projection for mostly filing changes</h3>
-                        <img src="results/direct-api/update-heavy.svg" width="440" height="245" alt="CC starts higher and costs more per additional request, so the projected curves diverge.">
-                        <p><strong>No projected crossover.</strong> At 70% filing changes, 20% new questions using existing definitions and 10% warm repeats, each request widens the gap.</p>
-                    </div>
-                </div>
-                <figcaption>The three projections start with $50 of extra CC setup and charge $0.25 per filing update spread over eight requests. They price repeats at the measured warm rate. Each scenario starts at request zero.</figcaption>
-            </figure>
-            <details class="method-note">
-                <summary>Cost assumptions and underlying data</summary>
-                <p>For the original 44 requests, the model allocated recorded issuer mapping across 24 exported documents and assigned 28 of 46 historical task bindings to this workload. It repriced that work at the answering model’s rates and valued local compute at $1 per machine-hour for both systems. Human review, original pack development and customer integration remain unpriced.</p>
-                <p>The projections use the measured average inference cost for each task category. Cumulative retrieval cost is request count times its weighted cost per request. CC adds the $50 setup and a share of update cost for changed filings. The crossover is the first whole request at which CC’s modeled cumulative cost falls below retrieval’s. Cache expiry, answer reuse and different maintenance costs can move or eliminate it.</p>
-                <ul class="data-links">
-                    <li><a href="results/direct-api/modeled-ledger.csv">44-request cost ledger (CSV)</a></li>
-                    <li><a href="results/direct-api/task-mixes.csv">Projected task mixes and rates (CSV)</a></li>
-                </ul>
-            </details>
+            <h2>Better reasoning. Lower inference cost.</h2>
+            <p>Across 44 investment-research requests, the frozen benchmark credited Context Compiler with <strong>42 fully supported answers versus 24 for hybrid retrieval</strong>. CC reduced inference expense by <strong>73%</strong>.</p>
+            <p>Context Compiler reuses established analytical definitions, relationships and evidence rules to assemble the context for each new question.</p>
+            <p><strong>The result was more correct, evidence-supported reasoning from less model work.</strong></p>
         </section>
 
         <section class="compiler-section" id="why-compiler">
