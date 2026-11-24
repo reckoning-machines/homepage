@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Context Compiler | Reckoning Machines</title>
-    <meta name="description" content="Governed context for recurring AI reasoning. Measured answer quality, direct-API inference costs and the economics of reusing analytical definitions in bank research.">
+    <meta name="description" content="Context Compiler preserves validated definitions, relationships and source authority across research questions. See the measured results against hybrid retrieval and the modeled cost of preparation.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/compiler/compiler.css">
@@ -20,32 +20,22 @@
         <header class="compiler-hero brief-hero">
             <div>
                 <p class="label">cc · Context Compiler</p>
-                <h1>Better AI answers, built on knowledge that accumulates.</h1>
-                <p class="compiler-intro">Context Compiler preserves the analytical definitions a team has validated and compiles source evidence for each new question. We measure the result as <strong>Reasoning Yield</strong> — how many correct, fully supported answers a model produces per million tokens.</p>
+                <h1>Make analytical knowledge reusable.</h1>
+                <p class="compiler-intro">Context Compiler preserves the definitions, relationships and source authority your team has validated. When the next bank filing arrives, the model can compare margins using the same definition of income and trace each figure to its source.</p>
             </div>
             <section class="quality-sheet" aria-labelledby="measured">
                 <h2 id="measured">Fully supported answers</h2>
                 <dl class="quality-pair">
-                    <div><dt>Context Compiler</dt><dd><strong>95.5%</strong><span>42 of 44 requests</span></dd></div>
-                    <div><dt>Hybrid retrieval</dt><dd><strong>54.5%</strong><span>24 of 44 requests</span></dd></div>
+                    <div><dt>Context Compiler</dt><dd><strong>42/44</strong><span>95.5% fully supported</span></dd></div>
+                    <div><dt>Hybrid retrieval</dt><dd><strong>24/44</strong><span>54.5% fully supported</span></dd></div>
                 </dl>
-                <p>44 recurring bank research requests per system. Both used the same model and underlying filings.</p>
+                <p>Direct-API benchmark on 44 recurring bank research requests per system, using the same model and underlying filings.</p>
             </section>
         </header>
 
-        <section class="api-results" aria-labelledby="lifecycle">
-            <p class="label">Measured direct-API results</p>
-            <h2 id="lifecycle">18 more fully supported answers in 44 requests.</h2>
-            <ul class="benchmark-highlights">
-                <li><strong>8.4×</strong>Reasoning Yield<span>CC delivered 75% more fully supported answers while consuming fewer model tokens.</span></li>
-                <li><strong>73%</strong>Lower inference expense<span>$0.33 for CC and $1.21 for retrieval across the original 44 requests.</span></li>
-                <li><strong>38.7%</strong>Lower warm inference expense<span>CC scored 6/6 and retrieval scored 4/6 on immediate repeats. Both systems hit the prompt cache.</span></li>
-            </ul>
-            <p class="benchmark-scope">Experimental results specific to the tested investment-research workloads. Inference expense excludes semantic preparation and maintenance.</p>
-        </section>
-
         <section class="compiler-section" id="method">
             <h2 id="frontier">Reasoning Yield Frontier</h2>
+            <p>How much model context does it take to get a fully supported answer? We varied the context allowance for 16 questions about Regions Financial and KeyCorp and counted the tokens each attempt consumed.</p>
             <div class="frontier-reading">
                 <figure class="paper-chart">
                     <img src="results/direct-api/frontier.svg" width="530" height="325" alt="CC rose from 39 to 42 fully supported answers out of 48 at about 2,400 to 2,600 tokens per attempt. Hybrid retrieval rose from 6 to 21 at about 2,400 to 12,154 tokens.">
@@ -57,9 +47,23 @@
                     <p>Each point represents a tested setting. The three largest CC allowances supplied identical context and their points overlap.</p>
                 </div>
             </div>
+        </section>
+
+        <section class="compiler-section" aria-labelledby="lifecycle">
+            <header class="api-results">
+                <p class="label">Recurring research · Direct API</p>
+                <h2 id="lifecycle">18 more fully supported answers in 44 requests.</h2>
+                <p>Across repeated questions, new filings and a second bank, CC carried forward reviewed financial definitions. The model produced more answers an analyst could trace to the filings, at lower inference cost.</p>
+                <ul class="benchmark-highlights">
+                    <li><strong>8.4×</strong>Reasoning Yield<span>CC delivered 75% more fully supported answers while consuming fewer model tokens.</span></li>
+                    <li><strong>73%</strong>Lower inference expense<span>$0.33 for CC and $1.21 for retrieval across the original 44 requests.</span></li>
+                    <li><strong>38.7%</strong>Lower warm inference expense<span>CC scored 6/6 and retrieval scored 4/6 on immediate repeats. Both systems hit the prompt cache.</span></li>
+                </ul>
+                <p class="benchmark-scope">Experimental results specific to the tested investment-research workloads. Inference expense excludes semantic preparation and maintenance.</p>
+            </header>
             <div class="yield-ledger result-table">
                 <table>
-                    <caption>Reasoning Yield across the separate 44-request lifecycle</caption>
+                    <caption>Reasoning Yield across the 44-request lifecycle</caption>
                     <thead><tr><th scope="col">Measure</th><th scope="col">CC</th><th scope="col">Hybrid retrieval</th></tr></thead>
                     <tbody>
                         <tr><th scope="row">Correct, fully supported answers</th><td>42</td><td>24</td></tr>
@@ -87,13 +91,13 @@
 
         <section class="compiler-section" id="recurring">
             <h2>Economic Crossover</h2>
-            <p>An unsupported figure in a research note can send an analyst back to the filing. CC left two answers to investigate where retrieval left 20. The study measured no analyst correction time or downstream decision costs, so the curves assign those potential benefits no dollar value.</p>
-            <p>Across the 44 observed requests, CC saved $0.88 in inference. Its allocated semantic preparation alone cost an estimated $2.12. <strong>CC did not recover preparation costs at any point in the lifecycle.</strong></p>
+            <p>Across the 44 observed requests, CC saved <strong>$0.88 in measured inference expense</strong>. The cost model allocated $2.12 to semantic preparation alone. On those assumptions, CC did not recover preparation costs at any point in the lifecycle.</p>
+            <p>An unsupported figure can send an analyst back to the filing. The study recorded 20 unsupported or incorrect outcomes with retrieval and two with CC. Analyst correction time and downstream decision costs were unmeasured, so the curves assign them no dollar value.</p>
             <figure class="economics">
                 <div class="chart-key"><span>Context Compiler</span><span>Hybrid retrieval</span></div>
                 <div class="cost-panels">
                     <div class="paper-chart">
-                        <h3>Observed 44-request lifecycle</h3>
+                        <h3>Modeled cost over 44 observed requests</h3>
                         <img src="results/direct-api/lifecycle.svg" width="440" height="245" alt="CC’s modeled cumulative cost stayed above retrieval through request 44.">
                         <p>Including allocated preparation and machine time, CC ended at $2.45 and retrieval at $1.32.</p>
                     </div>
@@ -132,11 +136,12 @@
                 <img src="/compiler/architecture.jpg" width="1881" height="836" alt="A highlighted filing cell passes through the compiler into the model’s context, with its evidence links intact.">
                 <figcaption>From a filing cell to a cited figure. The highlighted path follows the evidence through compilation.</figcaption>
             </figure>
-            <ol class="cc-stages">
-                <li><strong>Sources</strong><span>Identify the bank, reporting period, filing version and evidence available as of the research date.</span></li>
-                <li><strong>Semantic Pack</strong><span>Record what each measure means, which sources govern it and which accounting checks apply.</span></li>
-                <li><strong>Compilation</strong><span>Select the evidence the question needs. Apply those rules and carry source references into the context.</span></li>
-                <li><strong>Model</strong><span>Answer from the compiled context and cite the evidence behind each figure.</span></li>
+            <ol class="cc-stages" aria-label="From a research question to a supported answer">
+                <li><strong>Research question</strong><span>Specify the bank, reporting periods and date of the analysis.</span></li>
+                <li><strong>Source interpretation</strong><span>Read the filings. Propose how reported figures map to measures and cite the passages for review.</span></li>
+                <li><strong>Deterministic compilation</strong><span>Apply the semantic pack’s definitions and source rules. Check dates, required inputs and accounting identities.</span></li>
+                <li><strong>Task-specific context</strong><span>Assemble the evidence for this question with its source references. The reviewed mappings carry forward.</span></li>
+                <li><strong>Supported answer</strong><span>The model answers from the compiled context. An analyst can trace each cited figure back to the filing.</span></li>
             </ol>
             <p>A filing may give both reported net interest income and a taxable-equivalent figure that adjusts for tax-exempt income. An analyst comparing margins across quarters needs to know which basis each figure uses. Once the analyst validates that distinction, the pack can carry it into the next comparison. The firm keeps the definition and source mappings even if it changes the answering model.</p>
             <p>In the lifecycle, KeyCorp reused definitions and accounting checks already established for Regions. It still needed 20 new declarations of its own. That reuse was observed. Whether a growing pack improves answer quality on future tasks remains an open question.</p>
@@ -178,13 +183,14 @@ rendering = cc.render(
             <ul class="data-links">
                 <li><a href="playground/">Bank filing replay</a></li>
                 <li><a href="results/">Detailed benchmark report</a></li>
+                <li><a href="results/#graph">Engineered Graph RAG technical comparison</a></li>
                 <li><a href="archive/">Technical archive</a></li>
             </ul>
         </section>
         <section class="compiler-section cta-band">
             <h2>Technical inquiry</h2>
             <p>Bring a recurring research question and the sources behind it. We can walk through the evidence, the definitions it needs and what carries forward to the next filing.</p>
-            <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20demonstration">Request a demonstration</a>
+            <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Request a technical evaluation</a>
         </section>
     </main>
     <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
