@@ -117,6 +117,19 @@ rendering = cc.render(
             <h3>Cumulative Knowledge Value</h3>
             <p>How much better does CC perform on the next task when it can reuse definitions and mappings validated on earlier tasks?</p>
         </section>
+        <section class="compiler-section" id="what-differentiates-cc">
+            <h2>What differentiates CC</h2>
+            <p>The current specification brings these properties together in one library.</p>
+            <ul class="checks">
+                <li>A task-independent semantic intermediate representation (IR) with its own identifier, reusable across questions.</li>
+                <li>Explicit rules for which source has authority, when one source supersedes another, and what was known at the time of the question.</li>
+                <li>Required dependency closure. A token budget cannot trim evidence the task requires.</li>
+                <li>Deterministic Attention with a record of what it excludes.</li>
+                <li>Complete, incomplete and unknown evidence states, with explicit refusals.</li>
+                <li>Content-addressed provenance, reproducible compilation and source handles that resolve back to the evidence.</li>
+                <li>A small, stateless Python library that runs without a mandatory database, service or graph platform.</li>
+            </ul>
+        </section>
         <section class="compiler-section cta-band">
             <h2>Technical inquiry</h2>
             <p>Bring a recurring research question and the sources behind it. We can walk through the evidence, the definitions it needs and what carries forward to the next filing.</p>
