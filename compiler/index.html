@@ -26,7 +26,8 @@
 
         <section class="compiler-section" id="downstream-benchmark">
             <h2>Twice as many fully supported answers</h2>
-            <p>We tested 18 investment research questions about 10 financial institutions. Context Compiler used prepared financial definitions and rules. The comparison used hybrid retrieval, which searches by keyword and meaning. An answer counted only if it was correct, complete and supported by the underlying disclosures.</p>
+            <p>We tested 18 investment research questions across 10 financial institutions. For each question, Context Compiler applied the relevant financial definitions and relationships and supplied the evidence behind them. The AI model could use that knowledge without having to reconstruct it from source documents each time.</p>
+            <p>Compared with conventional hybrid retrieval, this approach doubled the number of fully supported answers while using about one-ninth as many model tokens. An answer counted only if it was correct, complete and supported by the original disclosures.</p>
             <table class="pilot-results" aria-label="Context Compiler compared with hybrid retrieval">
                 <thead><tr><th scope="col">Measure</th><th scope="col">Result</th></tr></thead>
                 <tbody>
@@ -36,7 +37,7 @@
                     <tr><th scope="row">Median time to a verified answer among successful tasks</th><td>38% lower<small>14.92 s vs. 24.06 s</small></td></tr>
                 </tbody>
             </table>
-            <p>Inference costs exclude the full cost of building and maintaining analytical knowledge. The study did not measure savings in the cost of introducing new types of analysis.</p>
+            <p class="benchmark-scope">The benchmark measures the combined value of established financial knowledge and context compilation against hybrid retrieval. The contribution of compilation alone remains unmeasured. Inference costs exclude the full cost of preparing and maintaining that knowledge.</p>
         </section>
 
         <section class="compiler-section" id="deposit-rates">
