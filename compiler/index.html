@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Context Compiler | Reckoning Machines</title>
-    <meta name="description" content="Context Compiler helps existing AI agents answer specialized questions using the evidence, definitions and rules your firm already trusts.">
+    <meta name="description" content="Context Compiler helps firms build governed analytical knowledge. Capture definitions and rules from research, validate them against sources and reuse them on new questions.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/compiler/compiler.css">
@@ -24,6 +24,47 @@
             <p class="compiler-intro">It works with existing knowledge infrastructure. No replacement required.</p>
         </header>
 
+        <section class="compiler-section" id="knowledge">
+            <h2>How research builds the knowledge base</h2>
+            <p>A research question determines what the team needs to learn. Four layers turn that work into knowledge the firm can use again. Each has its own test.</p>
+            <dl class="knowledge-layers">
+                <div>
+                    <dt>Acquisition</dt>
+                    <dd>A language model interprets source material and proposes definitions and relationships for review, giving analysts a starting point for work they would otherwise do by hand.</dd>
+                    <dd><strong>Measure</strong> Analyst time per accepted definition, compared with manual discovery.</dd>
+                </div>
+                <div>
+                    <dt>Governance</dt>
+                    <dd>The compiler checks a proposal against the evidence and the firm’s rules. It admits supported interpretations with a record of why they qualify.</dd>
+                    <dd><strong>Measure</strong> How often the compiler admits an incorrect interpretation or withholds a valid one, judged against independent review.</dd>
+                </div>
+                <div>
+                    <dt>Accumulation</dt>
+                    <dd>The knowledge base retains admitted definitions, source references and rules. A second analyst can reuse the first analyst’s work when a new question depends on the same definition.</dd>
+                    <dd><strong>Measure</strong> Analyst hours saved through reuse, after accounting for the work of preparing and maintaining the knowledge.</dd>
+                </div>
+                <div>
+                    <dt>Reasoning</dt>
+                    <dd>The reasoning model applies that knowledge to a new question. It can give a supported answer or identify the evidence it still needs. That gap sets the next research task.</dd>
+                    <dd><strong>Measure</strong> Share of answers that are correct, complete and supported by the sources, alongside inference cost per answer.</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="compiler-section" id="deposit-rates">
+            <h2>Can these two deposit rates be compared?</h2>
+            <p>Zions Bancorporation reported a rate of <strong>2.25%</strong> on interest-bearing deposits in the second quarter of 2026 and <strong>2.40%</strong> in the third. An analyst reading the disclosures finds that the bank changed which interest expenses it counted in the third quarter.</p>
+            <p>That change in definition is worth keeping. Asked for the reported rates, a model using Context Compiler can give both figures and cite the disclosures. Asked how much the rate rose on a consistent basis, it declines the comparison. How much of the difference came from the change in expenses? The filings leave that question open.</p>
+            <p>If the team finds and validates that evidence, it can keep the reconciliation alongside the definitions. The next analyst comparing these quarters can start there.</p>
+        </section>
+
+        <section class="compiler-section" id="reuse">
+            <h2>What carries forward to the next bank?</h2>
+            <p>In a recurring bank research study, setting up the first bank took 69 declarations covering definitions, rules and source mappings. The second bank reused existing rules and checks and needed 20 new declarations. Each new quarter still required five additional day-count checks.</p>
+            <p>The study counted the work that carried forward. The commercial question is how much analyst time that reuse saves as coverage grows. Across 44 requests, measured inference savings were $0.88 against $2.12 in estimated preparation costs alone. Analyst hours remain to be measured.</p>
+            <ul class="data-links"><li><a href="/compiler/results/#recurring">See what the second bank reused</a></li><li><a href="/compiler/results/#economics">Review the cost assumptions</a></li></ul>
+        </section>
+
         <section class="compiler-section" id="downstream-benchmark">
             <h2>Twice as many fully supported answers</h2>
             <p>We tested 18 investment research questions across 10 financial institutions. For each question, Context Compiler applied the relevant financial definitions and relationships and supplied the evidence behind them. The AI model could use that knowledge without having to reconstruct it from source documents each time.</p>
@@ -40,16 +81,19 @@
             <p class="benchmark-scope">The comparison tests established financial knowledge and compilation together, and the dollar figures cover model inference only.</p>
         </section>
 
-        <section class="compiler-section" id="deposit-rates">
-            <h2>Can these two deposit rates be compared?</h2>
-            <p>Zions Bancorporation reported a rate of <strong>2.25%</strong> on interest-bearing deposits in the second quarter of 2026 and <strong>2.40%</strong> in the third. Both figures are valid. But in the third quarter, the bank changed which interest expenses it counted toward deposit cost.</p>
-            <p>Asked for the reported rates, Context Compiler returns both with their supporting disclosures. Asked how much the rate rose on a constant basis, it declines the comparison. The filings do not establish how much of the difference came from the reporting change.</p>
+        <section class="compiler-section" id="reasoning-yield">
+            <h2>Answer quality at different inference costs</h2>
+            <p>In a separate four-configuration comparison, the medium Fable setting with enriched Context Compiler knowledge produced fully supported answers 86% of the time at a mean cost of 5.4¢ per answer. The high setting with the same knowledge reached 92% at 6.8¢.</p>
+            <figure class="benchmark">
+                <a href="/compiler/enriched-cc-reasoning-yield.png" aria-label="Open the reasoning yield chart at full size"><img src="/compiler/enriched-cc-reasoning-yield.png" width="2300" height="1240" loading="lazy" alt="Mean inference cost and fully supported answers. Fable Medium with enriched CC: $0.054 and 86%. Fable High with enriched CC: $0.068 and 92%. Fable High with R1200: $0.062 and 80%. Fable High with R4800: $0.095 and 78%."></a>
+                <figcaption>Each point is one observed configuration. Costs cover model inference only. The study did not report uncertainty intervals.</figcaption>
+            </figure>
         </section>
 
         <section class="compiler-section cta-band">
-            <h2>Try it on a question your team already asks.</h2>
-            <p>Bring a recurring analytical question and the sources your team trusts. We can walk through a technical demonstration or scope a small evaluation using your existing knowledge infrastructure.</p>
-            <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Discuss a demonstration or evaluation</a>
+            <h2>Try it across two research cycles</h2>
+            <p>Bring a recurring question, the sources your team trusts and a follow-up from the next reporting period. Together we can measure what it takes to establish a definition the first time, what the team reuses the second time and how well the model answers both questions.</p>
+            <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20technical%20evaluation">Discuss an evaluation</a>
         </section>
     </main>
     <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
