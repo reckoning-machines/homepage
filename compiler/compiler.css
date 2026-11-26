@@ -163,6 +163,24 @@ html:has(.compiler-page) { scroll-behavior: auto; }
 /* Direct-API brief. The plotted sheets use the paper, ink and brass of the drawing. */
 .brief-hero { padding: clamp(7rem, 9vw, 8rem) 0 3rem; }
 .brief-hero h1 { font-size: clamp(3rem, 4.6vw, 4rem); max-width: 19ch; }
+.brief-hero .compiler-product-name {
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    max-width: none;
+    font-size: clamp(2rem, 5.5vw, 4.25rem);
+}
+.compiler-product-name .cc-mark {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 1.55em;
+    height: 1.55em;
+    border: 1px solid var(--brass-2);
+    border-radius: .14em;
+    color: var(--brass);
+    font-size: .65em;
+}
 .blueprint { border: 1px solid var(--line); background: #091828; }
 .blueprint img { width: 100%; }
 .blueprint figcaption { padding: .9rem 1.2rem; font-size: .875rem; color: var(--ink-dim); border-top: 1px solid var(--line); }
