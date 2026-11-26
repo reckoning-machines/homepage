@@ -214,21 +214,28 @@ html:has(.compiler-page) { scroll-behavior: auto; }
 .compiler-page .cost-panels .paper-chart p { border: 0; padding-top: 0; }
 .economics figcaption { margin-top: .85rem; color: var(--ink-dim); max-width: 88ch; font-size: .9375rem; }
 .compiler-brief .cc-stages { padding-left: 0; }
-.knowledge-layers { margin-top: 1.5rem; }
-.knowledge-layers > div {
+.knowledge-layers {
     display: grid;
-    grid-template-columns: minmax(9rem, 0.85fr) minmax(0, 2fr) minmax(0, 1.35fr);
-    gap: clamp(1rem, 3vw, 2.5rem);
-    padding-block: 1.15rem;
-    border-top: 1px solid var(--line);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+    margin-top: 1.75rem;
 }
-.knowledge-layers dt { font: 400 1.5rem/1.2 var(--font-serif); }
-.knowledge-layers dd { margin: 0; }
-.knowledge-layers dd + dd { color: var(--ink-dim); font-size: .875rem; }
-.knowledge-layers strong { display: block; color: var(--brass); font-weight: 500; }
+.knowledge-layers > div {
+    padding-top: .9rem;
+    border-top: 2px solid var(--brass-2);
+}
+.knowledge-layers dt { font: 400 1.75rem/1.2 var(--font-serif); }
+.knowledge-layers dd { margin: .75rem 0 0; color: var(--ink-dim); }
+.knowledge-layers strong { display: block; margin-bottom: .4rem; color: var(--ink); font-weight: 600; }
+.compiler-section .research-loop { margin-top: 1.5rem; max-width: 78ch; padding-left: 1rem; border-left: 2px solid var(--brass-2); }
+.research-loop strong { color: var(--brass); }
+@media (max-width: 900px) {
+    .knowledge-layers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+    .knowledge-layers { grid-template-columns: 1fr; }
+}
 @media (max-width: 760px) {
-    .knowledge-layers > div { grid-template-columns: 1fr; gap: .5rem; }
-    .knowledge-layers strong { display: inline; margin-right: .3em; }
     .frontier-reading { grid-template-columns: 1fr; }
     .brief-hero { padding: 6.3rem 0 2rem; }
     .brief-hero h1 { max-width: 19ch; }
