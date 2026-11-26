@@ -136,7 +136,8 @@ html:not(.interactive) #states .record-state:target, html:not(.interactive) #sta
 .citation h5 { font: 500 1rem/1.4 var(--font-sans); }
 .relationships, .inventory { margin-top: 1.5rem; }
 .benchmark { margin-block: 1.5rem; }
-.yield-highlight { color: #ffeba3; font-weight: 700; }
+.compiler-section .yield-highlight { color: #ffeba3; }
+strong.yield-highlight { font-weight: 700; }
 .benchmark img { display: block; width: 100%; max-width: 48rem; height: auto; margin-bottom: .75rem; }
 .benchmark figcaption { color: var(--brass); }
 .results-report .benchmark img { max-width: 100%; }
