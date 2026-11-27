@@ -20,8 +20,8 @@
         <header class="compiler-hero brief-hero" id="platform">
             <p class="compiler-product-name"><span class="cc-mark" aria-hidden="true">cc</span> Context Compiler</p>
             <h1>Build the knowledge base as you use it.</h1>
-            <p class="compiler-intro">Research platforms retrieve the filing in seconds. Analysts still have to establish what a measure includes, whether two periods are comparable and which disclosure governs the answer. That work is often repeated across teams and quarters.</p>
-            <p class="compiler-intro">Research should accumulate knowledge. Context Compiler (CC) makes those judgments part of the platform. Each research question can contribute a definition, a relationship or a rule that subsequent answers can draw on and cite.</p>
+            <p class="compiler-intro">Context Compiler (CC) is a small, standalone Python library. Your research application imports it to turn approved definitions and supporting evidence into context for the next question.</p>
+            <p class="compiler-intro">Research should accumulate knowledge. When one analyst establishes what a measure includes or whether two periods are comparable, the next analyst can reuse that judgment and cite its source.</p>
             <p class="label objective-label">Design objective</p>
             <p class="compiler-deck">Knowledge-graph-quality reasoning without knowledge-graph-scale engineering.</p>
         </header>
@@ -58,7 +58,7 @@
 
         <section class="compiler-section" id="knowledge">
             <h2>From research to reusable knowledge</h2>
-            <p>Context Compiler integrates with your existing research infrastructure. Your research agents discover analytical knowledge. CC governs its admission, preserves it across research sessions and compiles it into context for subsequent questions.</p>
+            <p>Your research agents propose interpretations. The library checks your platform’s approval, saves accepted knowledge in a private directory your application controls and compiles it for subsequent questions.</p>
             <p>Connect your existing document catalog, evidence reader and authorization infrastructure. Context Compiler handles the governed analytical knowledge.</p>
             <object class="workspace-schematic" type="image/svg+xml" data="/compiler/research-workspace.svg#interface" role="img" aria-label="ResearchWorkspace integration. Research agents call propose() to bind an interpretation to evidence and permitted use. After host approval, admit() validates the decision and persists accepted knowledge under the same domain pack. In a later session, derive() rebuilds native assertions and evidence links. compile() returns approved context for downstream reasoning or identifies a missing definition for further acquisition.">
                 <a href="/compiler/research-workspace.svg">View the ResearchWorkspace interface</a>
