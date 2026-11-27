@@ -7,7 +7,7 @@
     <meta name="description" content="Follow an analyst’s judgment from a filing to an approved definition that another researcher can reuse.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/how-it-works/">
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/compiler/compiler.css?v=graph">
+    <link rel="stylesheet" href="/compiler/compiler.css?v=brief">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body class="compiler-page">
@@ -20,13 +20,13 @@
         <header class="compiler-hero brief-hero">
             <p class="compiler-product-name">Context Compiler</p>
             <h1>How it works</h1>
-            <p class="compiler-intro">A researcher finds a difference that matters, such as a change in how a bank reports a deposit rate. The team decides what the filing supports. Context Compiler keeps that decision with its evidence so the next researcher can use it within the same limits.</p>
+            <p class="compiler-intro">A researcher finds a difference that matters, such as a change in how a bank reports a deposit rate. A reviewer decides what the filing supports. Context Compiler keeps that decision with its evidence so the next researcher can use it within the same limits.</p>
         </header>
         <section class="compiler-section" id="workflow">
             <h2>From research to reusable knowledge</h2>
             <dl class="knowledge-layers">
                 <div><dt>Acquisition</dt><dd>A research agent proposes an interpretation for a specific use and identifies the passages that support it.</dd></div>
-                <div><dt>Governance</dt><dd>Your review system records who approved that interpretation, when it was approved and who may use it.</dd></div>
+                <div><dt>Approval</dt><dd>Your review system records who approved that interpretation, when it was approved and who may use it.</dd></div>
                 <div><dt>Accumulation</dt><dd>Each approved decision and its evidence survive the research session in a workspace your application controls.</dd></div>
                 <div><dt>Reasoning</dt><dd>For a new question, the compiler supplies the applicable knowledge and evidence. A missing definition gives the team its next research task.</dd></div>
             </dl>
@@ -34,8 +34,8 @@
         </section>
         <section class="compiler-section" id="approaches">
             <h2>Where Context Compiler fits</h2>
-            <p>RAG makes information accessible. Knowledge engineering makes analytical meaning explicit.</p>
-            <p class="graph-proposition">Context Compiler builds your knowledge graph as you research. Start with one question. Each definition your team approves becomes part of the graph, linked to the evidence behind it.</p>
+            <p>Retrieval-augmented generation (RAG) makes information accessible by handing a model passages found through search. A knowledge graph makes analytical meaning explicit by recording definitions and the relationships among them, and it is usually engineered before the first question is asked.</p>
+            <p class="graph-proposition">Context Compiler builds the knowledge base as research proceeds. A platform can start with one question, and each definition a reviewer approves joins the knowledge base, linked to the evidence behind it.</p>
             <p><strong>Design objective</strong> · Knowledge-graph-quality reasoning without knowledge-graph-scale engineering.</p>
         </section>
         <section class="compiler-section" id="knowledge">

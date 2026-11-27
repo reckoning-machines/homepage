@@ -320,3 +320,32 @@ html:has(.compiler-page) { scroll-behavior: auto; }
     text-decoration: underline;
     text-underline-offset: .2em;
 }
+
+/* Product brief: study labels, paired demonstrations, integration flow and closing actions. */
+.compiler-brief .study { display: block; font: .8125rem/1.4 var(--font-mono); color: var(--brass-2); }
+.api-results .study { margin-bottom: .35rem; }
+.compiler-section .terms { margin-top: 1rem; max-width: 100ch; font-size: .875rem; }
+.method-note + p { margin-top: 1.25rem; }
+.demo-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 3.5rem); margin-top: 1.5rem; }
+.demo-pair article { padding-top: 1rem; border-top: 2px solid var(--brass-2); }
+.demo-pair h3 { margin: .45rem 0 .7rem; }
+.compiler-section .scope-note { font-size: .875rem; }
+.objective-split { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; margin-top: 1.25rem; }
+.objective-split aside { padding-left: 1.5rem; border-left: 1px solid var(--line); }
+.objective-split aside p { margin-top: .5rem; font-size: .9375rem; }
+.workspace-flow { counter-reset: step; }
+.workspace-flow > div { counter-increment: step; }
+.workspace-flow dt::before { content: counter(step); display: block; margin-bottom: .3rem; font: .8125rem/1.4 var(--font-mono); color: var(--brass-2); }
+.compiler-page .top-nav a { white-space: nowrap; }
+.cta-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem; margin-top: 2rem; }
+.cta-actions .brass-button { margin-top: 0; }
+.ghost-button { display: inline-block; font-size: 14px; font-weight: 600; color: var(--brass); border: 1px solid var(--brass-2); border-radius: 999px; padding: 13px 22px; }
+.ghost-button:hover { border-color: var(--brass); color: var(--ink); }
+@media (max-width: 760px) {
+    .demo-pair, .objective-split { grid-template-columns: 1fr; }
+    .objective-split aside { padding: 1rem 0 0; border-left: 0; border-top: 1px solid var(--line); }
+    .api-results li .study { grid-column: 1 / -1; margin-bottom: 0; }
+    .compiler-page .top-nav .wide-only { display: none; }
+    .cta-actions { flex-direction: column; align-items: stretch; }
+    .ghost-button { text-align: center; }
+}
