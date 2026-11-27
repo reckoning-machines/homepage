@@ -46,6 +46,26 @@
             <p>The direct application programming interface (API) runs sent a prepared evidence packet to an answering model. They recorded input and output tokens, then priced that usage at the study rates. A second run measured prompt caching, where the provider charges a lower rate to reread previously submitted input. The economic model adds estimated preparation costs and varies the mix of repeat questions, new questions and filing changes.</p>
             <ul class="data-links"><li><a href="#direct-api">Direct API results and scoring rules</a></li><li><a href="#economics">Observed workload and projected payback</a></li></ul>
         </section>
+        <section class="compiler-section" id="analytical-context">
+            <h2>The Economics of Analytical Context</h2>
+            <p>The product-page chart compares four observed configurations of Claude Fable 5.2. The compiled context included analytical definitions and source explanations. The retrieval configurations supplied up to 1,200 or 4,800 tokens of evidence. Medium and high refer to the model’s reasoning-effort settings.</p>
+            <div class="result-table"><table>
+                <caption>Quality on the original financial questions and mean inference cost per financial answer</caption>
+                <thead><tr><th scope="col">Evidence</th><th scope="col">Effort</th><th scope="col">Fully supported</th><th scope="col">Mean cost</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">Compiled context</th><td>Medium</td><td>43/50 (86%)</td><td>$0.054</td></tr>
+                    <tr><th scope="row">Compiled context</th><td>High</td><td>46/50 (92%)</td><td>$0.068</td></tr>
+                    <tr><th scope="row">Retrieval, 1,200 tokens</th><td>High</td><td>40/50 (80%)</td><td>$0.062</td></tr>
+                    <tr><th scope="row">Retrieval, 4,800 tokens</th><td>High</td><td>39/50 (78%)</td><td>$0.095</td></tr>
+                </tbody>
+            </table></div>
+            <p>For each configuration, the quality score covers ten original financial questions, each run five times. Judges scored responses blind against a fixed rubric. The mean cost uses all 75 financial attempts, including 25 attempts on five additional questions. It covers input and output charges, including reasoning tokens. Preparation and maintenance costs are excluded.</p>
+            <p>The connecting line identifies the two configurations for which no other displayed observation achieved at least as much quality at equal or lower cost with a strict improvement on either measure. Intermediate performance was not measured. The ten questions limit the precision of the quality differences. In particular, the question-level bootstrap intervals for both medium-effort CC versus high-effort retrieval comparisons include zero.</p>
+            <a class="text-link" href="/compiler/analytical-context-quality-cost.svg">Open the quality–cost chart</a>
+            <h3 id="downstream-benchmark">Reasoning yield on 18 investment questions</h3>
+            <p>A separate benchmark covered 18 questions about ten financial institutions. Compiled definitions and evidence produced 16 fully supported answers (88.9%). Hybrid retrieval produced eight (44.4%). CC delivered 17.95× the reasoning yield and 12.48× as many fully supported answers per dollar spent running the model.</p>
+            <p><strong>Reasoning yield = (fully supported answers ÷ total model tokens used) × 1,000,000.</strong> Tokens from all attempts count. An answer receives credit when its figures and claims are correct, complete and supported by the disclosures.</p>
+        </section>
         <section class="compiler-section" id="direct-api" aria-labelledby="lifecycle">
             <header class="api-results">
                 <p class="label">Recurring research | Direct API</p>
@@ -100,7 +120,7 @@
         <section class="compiler-section" id="economics">
             <h2>Economic Crossover</h2>
             <p>Across the 44 observed requests, CC saved <strong>$0.88 in measured inference expense</strong>. The cost model allocated $2.12 to semantic preparation alone. On those assumptions, CC did not recover preparation costs at any point in the lifecycle.</p>
-            <p>An unsupported figure can send an analyst back to the filing. Independent review left 18 unsupported or incorrect retrieval answers and two CC answers. Analyst correction time and downstream decision costs were unmeasured, so the curves assign them no dollar value.</p>
+            <p>An unsupported figure can send an analyst back to the filing. Independent review left 18 unsupported or incorrect retrieval answers and two CC answers. At an assumed five minutes per correction and $250 per analyst hour, the difference of 16 answers would be worth 80 minutes, or about $333. The curves exclude this sensitivity because the study did not measure analyst correction time.</p>
             <figure class="economics">
                 <div class="chart-key"><span>Context Compiler</span><span>Hybrid retrieval</span></div>
                 <div class="cost-panels">

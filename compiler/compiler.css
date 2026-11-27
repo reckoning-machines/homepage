@@ -167,9 +167,9 @@ html:has(.compiler-page) { scroll-behavior: auto; }
 .brief-hero .compiler-product-name {
     display: flex;
     align-items: center;
-    gap: .3em;
-    max-width: none;
-    font-size: clamp(2rem, 5.5vw, 4.25rem);
+    gap: .5em;
+    color: var(--brass);
+    font: 400 1.25rem/1.2 var(--font-serif);
 }
 .compiler-product-name .cc-mark {
     display: grid;
@@ -180,8 +180,16 @@ html:has(.compiler-page) { scroll-behavior: auto; }
     border: 1px solid var(--brass-2);
     border-radius: .14em;
     color: var(--brass);
-    font-size: .65em;
+    font-size: 1em;
 }
+.compiler-brief .compiler-deck { max-width: 45ch; font-size: clamp(1.35rem, 2.3vw, 1.85rem); }
+.brief-hero .objective-label { margin-top: 1.5rem; }
+.brief-hero .objective-label + .compiler-deck { margin-top: .35rem; }
+.compiler-brief .quality-pair { max-width: 38rem; border-block: 1px solid var(--line); margin-block: 1rem; }
+.compiler-brief #evidence h3 { margin-top: 2rem; font-size: clamp(1.55rem, 3vw, 2rem); line-height: 1.2; }
+.research-questions { max-width: 66ch; margin-top: 1.25rem; padding-left: 1.2rem; border-left: 2px solid var(--brass-2); }
+.research-questions dt { margin-top: 1rem; font-weight: 600; }
+.research-questions dd { margin-top: .25rem; color: var(--ink-dim); }
 .blueprint { border: 1px solid var(--line); background: #091828; }
 .blueprint img { width: 100%; }
 .blueprint figcaption { padding: .9rem 1.2rem; font-size: .875rem; color: var(--ink-dim); border-top: 1px solid var(--line); }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Context Compiler | Reckoning Machines</title>
-    <meta name="description" content="Context Compiler helps firms build governed analytical knowledge. Capture definitions and rules from research, validate them against sources and reuse them on new questions.">
+    <meta name="description" content="Context Compiler keeps the definitions your analysts approve with the evidence behind them, so the next analyst can use that work on a new question.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/compiler/compiler.css">
@@ -17,111 +17,65 @@
         <nav class="top-nav" aria-label="Primary"><a href="/#built">Products</a></nav>
     </div></header>
     <main id="main" class="container compiler-brief">
-        <header class="compiler-hero brief-hero">
-            <h1 class="compiler-product-name"><span class="cc-mark" aria-hidden="true">cc</span> Context Compiler</h1>
-            <p class="compiler-deck">Your knowledge. More powerful AI.</p>
-            <p class="compiler-intro">Firms spend years building institutional knowledge. Context Compiler makes that knowledge more productive by helping AI agents perform new types of analysis, reason more accurately and consume fewer tokens.</p>
-            <p class="compiler-intro">It works with existing knowledge infrastructure. No replacement required.</p>
-            <nav aria-label="On this page"><ul class="data-links"><li><a href="#knowledge">Architecture</a></li><li><a href="#deposit-rates">Research example</a></li><li><a href="#reuse">Evidence of reuse</a></li><li><a href="#reasoning-yield">Reasoning yield</a></li></ul></nav>
+        <header class="compiler-hero brief-hero" id="platform">
+            <p class="compiler-product-name"><span class="cc-mark" aria-hidden="true">cc</span> Context Compiler</p>
+            <h1>Research should accumulate knowledge.</h1>
+            <p class="compiler-intro">Research platforms retrieve the filing in seconds. Analysts still have to establish what a measure includes, whether two periods are comparable and which disclosure governs the answer. That work is often repeated across teams and quarters.</p>
+            <p class="compiler-intro">Context Compiler (CC) makes those judgments part of the platform. Each research question can contribute a definition, a relationship or a rule that subsequent answers can draw on and cite.</p>
+            <p class="label objective-label">Design objective</p>
+            <p class="compiler-deck">Knowledge-graph-quality reasoning without knowledge-graph-scale engineering.</p>
         </header>
 
-        <section class="compiler-section" id="platform">
-            <h2>After your platform answers a question, what does it keep?</h2>
-            <p>Financial research platforms compete on the information they cover, how well they find it and how clearly their AI explains it. A fourth opportunity is the analytical knowledge a platform accumulates as customers do research.</p>
-            <p>An index can locate a bank’s deposit rate. An analyst may still need to establish what the rate includes, which filing governs it and whether last quarter’s figure is comparable. Context Compiler lets a platform keep those findings with their evidence and use them in the research tools its customers already know.</p>
-        </section>
-
-        <section class="compiler-section" aria-labelledby="why-compiler">
-            <h2 id="why-compiler">Why a compiler?</h2>
-            <p>A software compiler turns source code into a form a computer can run. Context Compiler does something similar for research. It takes the evidence and definitions your firm trusts and puts them in a form a reasoning model can use for a particular question.</p>
-            <p>A figure comes with its meaning, its source and the limits on how it can be used. The model can reason from that work, and an analyst can check the answer against the original evidence.</p>
+        <section class="compiler-section" id="deposit-rates">
+            <h2>Did Zions’ deposit rate rise 15 basis points on a comparable basis?</h2>
+            <p>Zions reported <strong>2.25%</strong> on interest-bearing deposits in the second quarter of 2026 and <strong>2.40%</strong> in the third. In the third quarter it began including interest on derivative collateral in deposit expense. Its estimate of the adjustment applied to <em>total</em> deposit cost.</p>
+            <dl class="research-questions">
+                <dt>“What rates did Zions report?”</dt>
+                <dd>CC supplied both figures with their filing citations. A reviewer had approved each rate for use as reported.</dd>
+                <dt>“How much did the rate rise on a consistent basis?”</dt>
+                <dd>CC flagged the missing adjustment for <em>interest-bearing</em> deposits. The next analyst inherits the figures and the judgment about how they can be used.</dd>
+            </dl>
+            <a class="text-link" href="https://www.sec.gov/Archives/edgar/data/109380/000010938026000127/zions-20260930.htm">Read the Zions disclosure</a>
         </section>
 
         <section class="compiler-section" id="knowledge">
-            <h2>How research builds the knowledge base</h2>
-            <dl class="knowledge-layers">
-                <div>
-                    <dt>Acquisition</dt>
-                    <dd><strong>The language model interprets.</strong> It reads the evidence and proposes what a figure means and how it relates to other figures.</dd>
-                </div>
-                <div>
-                    <dt>Governance</dt>
-                    <dd><strong>The compiler governs.</strong> It enforces the firm’s rules for which sources count, what evidence is required and where an interpretation applies.</dd>
-                </div>
-                <div>
-                    <dt>Accumulation</dt>
-                    <dd><strong>The knowledge base accumulates.</strong> It keeps accepted definitions, relationships and their sources for later questions, reporting periods and companies.</dd>
-                </div>
-                <div>
-                    <dt>Reasoning</dt>
-                    <dd><strong>The reasoning model applies the knowledge.</strong> It uses the relevant definitions and evidence to answer a question and identify what the sources leave unresolved.</dd>
-                </div>
-            </dl>
-            <p class="research-loop"><strong>From reasoning back to acquisition.</strong> An unanswered question tells the team what to investigate next. Once the finding is checked and accepted, later research can draw on it.</p>
-            <details class="method-note">
-                <summary>How to measure each layer</summary>
-                <ul class="checks">
-                    <li><strong>Acquisition.</strong> Analyst time per accepted definition compared with manual discovery.</li>
-                    <li><strong>Governance.</strong> Incorrect interpretations admitted and valid ones withheld, checked by independent review.</li>
-                    <li><strong>Accumulation.</strong> Time saved through reuse after accounting for preparation and maintenance.</li>
-                    <li><strong>Reasoning.</strong> Fully supported answers and inference cost per answer.</li>
-                </ul>
-            </details>
+            <h2>How research builds the platform’s knowledge</h2>
+            <ol class="cc-stages" aria-label="Four layers of Context Compiler">
+                <li><strong>Acquisition</strong><span>Interpret source material and propose definitions and relationships.</span></li>
+                <li><strong>Governance</strong><span>Establish which sources govern and which uses the evidence supports.</span></li>
+                <li><strong>Accumulation</strong><span>Preserve accepted judgments and their sources across research sessions.</span></li>
+                <li><strong>Reasoning</strong><span>Deterministically compile the relevant knowledge and evidence for each question.</span></li>
+            </ol>
+            <p class="research-loop">Reasoning feeds acquisition. The missing Zions adjustment gives the team its next research task. Once reviewed, that finding becomes available to every subsequent comparison.</p>
+            <p>Context Compiler works alongside existing retrieval systems, research agents and language models.</p>
         </section>
 
-        <section class="compiler-section" id="deposit-rates">
-            <h2>Did Zions’ deposit rate really rise by 15 basis points?</h2>
-            <p>Zions Bancorporation reported <strong>2.25%</strong> on interest-bearing deposits in the second quarter of 2026 and <strong>2.40%</strong> in the third. The difference is 15 basis points. But in the third quarter Zions began counting interest on derivative collateral as a deposit expense. How much would the rate have risen if the definition had stayed the same?</p>
-            <p>In our demonstration, an AI research agent checked the rates and the change in definition against the filings. A human approved each rate for use as reported. The team’s knowledge base kept that approval with the figures and the filing passages that support them.</p>
-            <p>Context Compiler applied that decision to two questions. Asked for the reported rates, it supplied both figures and citations. Asked for the change on a consistent basis, it flagged the missing evidence. Zions estimated the effect on <em>total</em> deposit cost. Its filing left the adjustment to the narrower <em>interest-bearing</em> rate unresolved.</p>
-            <p>The next analyst can use both reported rates immediately and see exactly what still needs research. The team has already established where the comparison breaks down.</p>
-            <a class="text-link" href="https://www.sec.gov/Archives/edgar/data/109380/000010938026000127/zions-20260930.htm">Read Zions’ third-quarter filing</a>
+        <section class="compiler-section" id="evidence">
+            <h2>Better context. Less inference.</h2>
+            <p>At the same high reasoning effort, the model produced <strong>92% fully supported answers with compiled context</strong>, compared with 80% and 78% at two retrieval budgets. Even at medium effort, compiled context reached <strong>86% at a lower mean cost</strong> than either high-effort retrieval run.</p>
+            <figure class="benchmark">
+                <a href="/compiler/analytical-context-quality-cost.svg" aria-label="Open the answer quality versus inference cost chart at full size"><img src="/compiler/analytical-context-quality-cost.svg" width="590" height="395" loading="lazy" alt="Compiled context achieved 86% at $0.054 per answer and 92% at $0.068. Retrieval achieved 80% at $0.062 and 78% at $0.095."></a>
+                <figcaption>Four observed configurations. Costs cover model inference only. The line joins the two non-dominated observations.</figcaption>
+            </figure>
+            <p>In a separate controlled benchmark, CC achieved 87.5% fully supported answers versus 93.8% for an engineered knowledge graph using the same model, analytical definitions and evidence budget.</p>
+            <ul class="data-links"><li><a href="/compiler/results/#analytical-context">Study design, costs and scoring</a></li><li><a href="/compiler/results/#graph">Engineered knowledge graph experiment</a></li></ul>
         </section>
 
         <section class="compiler-section" id="reuse">
-            <h2>What carries forward to the next bank?</h2>
-            <p>In a recurring bank research study, setting up the first bank took 69 declarations covering definitions, rules and source mappings. The second bank reused existing rules and checks and needed 20 new declarations. Each new quarter still required five additional day-count checks.</p>
-            <p>We also tested whether an answer depended on earlier research. A model comparing M&amp;T’s deposit rates across two quarters cited both filings and correctly reported a 10-basis-point increase. When we removed the earlier links between the June filing labels and the deposit rate, the model could no longer support the June figure. The September filing was the same in both runs.</p>
-            <p>Source attribution mattered across the recurring workload. Context Compiler and a model given whole documents each got the figures and claims right on 42 of 44 requests. When every claim also needed the right citation, <strong>Context Compiler retained 42 fully supported answers. Whole documents retained 21.</strong></p>
-            <p><strong>Model costs.</strong> Across 44 requests, Context Compiler saved $0.88 on inference. Including preparation and compute, modeled costs totaled $2.45 for Context Compiler and $1.32 for retrieval.</p>
-            <p class="yield-highlight"><strong>Analyst time.</strong> Retrieval produced 18 incorrect or unsupported answers. Context Compiler produced two. At five minutes per correction and $250 an hour, those 16 fewer corrections would save <strong>80 minutes of analyst time, worth about $333</strong>.</p>
-            <ul class="data-links"><li><a href="/compiler/results/#recurring">See what the second bank reused</a></li><li><a href="/compiler/results/#economics">Review the cost assumptions</a></li></ul>
-        </section>
-
-        <section class="compiler-section" id="downstream-benchmark">
-            <h2>Twice as many fully supported answers</h2>
-            <p>We tested 18 investment research questions across 10 financial institutions. For each question, Context Compiler applied the relevant financial definitions and relationships and supplied the evidence behind them. The AI model could use that knowledge without having to reconstruct it from source documents each time.</p>
-            <p>Compared with conventional hybrid retrieval, this approach doubled the number of fully supported answers while using about one-ninth as many model tokens. An answer counted only if it was correct, complete and supported by the original disclosures.</p>
-            <details class="method-note"><summary>Results from the 18-question benchmark</summary>
-            <table class="pilot-results" aria-label="Context Compiler compared with hybrid retrieval">
-                <thead><tr><th scope="col">Measure</th><th scope="col">Result</th></tr></thead>
-                <tbody>
-                    <tr><th scope="row">Fully supported answers</th><td>88.9% vs. 44.4%<small>16 of 18 vs. 8 of 18</small></td></tr>
-                    <tr><th scope="row">Fully supported answers per million model tokens</th><td>17.95× as many</td></tr>
-                    <tr><th scope="row">Fully supported answers per inference dollar</th><td>12.48× as many</td></tr>
-                    <tr><th scope="row">Median time to a verified answer among successful tasks</th><td>38% lower<small>14.92 s vs. 24.06 s</small></td></tr>
-                </tbody>
-            </table>
-            <p class="benchmark-scope">The comparison tests established financial knowledge and compilation together, and the dollar figures cover model inference only.</p>
-            </details>
-            <p>In a separate two-bank benchmark, Context Compiler produced fully supported answers on 42 of 48 attempts (87.5%). The answering model used 99.32% fewer tokens than when it received whole documents. An engineered evidence graph using the same bank-specific definitions achieved comparable answer quality on those questions.</p>
-            <ul class="data-links"><li><a href="/compiler/results/#frontier">Benchmark methods and results</a></li><li><a href="/compiler/results/#graph">Engineered graph comparison</a></li></ul>
-        </section>
-
-        <section class="compiler-section" id="reasoning-yield">
-            <h2>Answer quality at different inference costs</h2>
-            <p>In a separate four-configuration comparison, the medium Fable setting with enriched Context Compiler knowledge produced fully supported answers 86% of the time at a mean cost of 5.4¢ per answer. <span class="yield-highlight">The high setting with the same knowledge reached 92% at 6.8¢.</span></p>
-            <figure class="benchmark">
-                <a href="/compiler/enriched-cc-reasoning-yield.png" aria-label="Open the reasoning yield chart at full size"><img src="/compiler/enriched-cc-reasoning-yield.png" width="2300" height="1240" loading="lazy" alt="Mean inference cost and fully supported answers. Fable Medium with enriched CC: $0.054 and 86%. Fable High with enriched CC: $0.068 and 92%. Fable High with R1200: $0.062 and 80%. Fable High with R4800: $0.095 and 78%."></a>
-                <figcaption>On the same ten questions, each run five times at the high model setting, enriched Context Compiler produced 46 fully supported answers. Retrieval with a 1,200-token evidence budget produced 40 (80%) at 6.2¢ per answer. Costs cover model inference.</figcaption>
-            </figure>
+            <h2>What carried forward to the second bank?</h2>
+            <dl class="quality-pair" aria-label="New declarations required per bank">
+                <div><dt>First bank</dt><dd><strong>69</strong><span>new declarations</span></dd></div>
+                <div><dt>Second bank</dt><dd><strong>20</strong><span>new declarations</span></dd></div>
+            </dl>
+            <p>Each declaration records a definition, a rule or a link to source evidence. The second bank inherited the first bank’s rules and checks. Its own disclosures required <strong>71% fewer new declarations</strong>.</p>
+            <ul class="data-links"><li><a href="/compiler/playground/">Replay the bank research demo</a></li><li><a href="/compiler/results/#recurring">Inspect the reuse results</a></li></ul>
         </section>
 
         <section class="compiler-section cta-band" id="opportunity">
             <h2>What should your research platform learn once?</h2>
-            <p>Start with a question your customers keep asking about the same company. We’ll show how Context Compiler can work behind your existing research product. Your team establishes which definitions and sources govern the answer. Your AI can apply those decisions the next time a customer asks a related question.</p>
-            <p>The next commercial test is analyst time. On your research, how much work does it take to establish a definition, and how much checking does it save each time someone uses it?</p>
-            <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20demo">Request a demo on your research</a>
+            <p>What if every research question your platform answered made it better equipped to answer the next one? When one team establishes how a company reports a measure, every analyst covering it next quarter could start with that understanding.</p>
+            <p>Bring a question your customers ask every quarter. We’ll show how the answer changes when your platform can draw on what its analysts have already established.</p>
+            <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20evaluation">Test CC on your research</a>
         </section>
     </main>
     <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
