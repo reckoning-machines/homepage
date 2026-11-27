@@ -110,7 +110,11 @@
 .architecture-comparison caption { margin-bottom: .65rem; text-align: left; color: var(--ink-dim); font-size: .875rem; }
 .architecture-comparison th:first-child { width: 30%; }
 .architecture-comparison td { color: var(--ink-dim); }
-.architecture-flows { display: block; width: 100%; max-width: 54rem; height: 530px; margin-top: 1.75rem; background: #f5f2e9; }
+#approaches { container-type: inline-size; }
+.architecture-flows { display: block; width: 100%; max-width: 39rem; height: 290px; margin-top: 1.75rem; }
+@container (max-width: 550px) {
+    .architecture-flows { height: 342px; }
+}
 .pilot-results { max-width: 46rem; margin-block: 1.25rem; font-variant-numeric: tabular-nums; }
 .pilot-results thead th:first-child { width: 52%; }
 .pilot-results :is(th, td):not(:first-child) { text-align: right; }

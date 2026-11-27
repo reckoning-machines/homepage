@@ -1,88 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" id="schematic" width="100%" height="100%" role="img" aria-labelledby="title description">
   <title id="title">Three ways to establish analytical meaning</title>
-  <desc id="description">Conventional RAG retrieves documents and reconstructs meaning during reasoning. A conventional knowledge graph requires explicit engineering and maintenance. Context Compiler turns research into governed knowledge. The arrow from Knowledge back to Research shows that each new question can draw on what earlier research established.</desc>
+  <desc id="description">Conventional RAG reconstructs meaning from retrieved documents. A conventional knowledge graph requires explicit engineering and maintenance. Context Compiler turns research into governed knowledge. The brass arrow from Knowledge back to Research shows how each new question draws on earlier findings.</desc>
   <style>
     @import url("/fonts/fonts.css");
-    svg { background: #f5f2e9; }
-    .row { color: #555958; }
-    .compiler { color: #795a27; }
-    .heading { font: 400 26px Newsreader, Georgia, serif; fill: currentColor; }
-    .node { fill: none; stroke: currentColor; stroke-width: 1; }
-    .link { stroke: currentColor; stroke-width: 1.4; }
-    .label { font: 500 16px Inter, Arial, sans-serif; fill: currentColor; text-anchor: middle; }
-    p { margin: 0; font: italic 400 19px/1.17 Newsreader, Georgia, serif; }
-    .rule { stroke: #cecac1; }
-    .compiler .node { fill: #eee8d9; }
-    .return { fill: none; stroke: currentColor; stroke-width: 3; }
-    .short-label { display: none; }
-    @media (max-width: 520px) {
-      .heading { font-size: 22px; }
-      .label { font-size: 14px; }
-      p { font-size: 17px; }
-    }
-    @media (max-width: 430px) {
-      .long-label { display: none; }
-      .short-label { display: inline; }
-    }
-    @media (max-width: 330px) {
-      .heading { font-size: 19px; }
-      .label { font-size: 12.5px; }
+    /* The page supplies its own drafting surface. A direct visit uses the same midnight ground. */
+    :root { background: #070e1c; }
+    :root:target { background: transparent; }
+    .heading { font: 400 12px 'JetBrains Mono', monospace; letter-spacing: .09em; fill: #9ba8ba; }
+    .stage { font: 400 17px Inter, Arial, sans-serif; fill: #c2cad5; }
+    .compiler .stage { fill: #cec3ab; }
+    .link { stroke: #718097; stroke-width: 1; marker-end: url(#forward-tip); }
+    .rule { stroke: #8997ac; stroke-opacity: .27; }
+    p { margin: 0; color: #9ba8ba; font: 400 14px/1.35 Inter, Arial, sans-serif; }
+    .return { fill: none; stroke: #d9c9a3; stroke-width: 1.8; }
+    .graph { transform: translateY(94px); }
+    .compiler { transform: translateY(188px); }
+    .wrapped { display: none; }
+    @media (max-width: 550px) {
+      .stage { font-size: 14px; }
+      .heading { font-size: 11px; }
+      .single { display: none; }
+      .wrapped { display: inline; }
+      .graph { transform: translateY(104px); }
+      .graph .note { transform: translateY(14px); }
+      .compiler { transform: translateY(222px); }
+      .rule { transform: translateY(10px); }
+      .graph .rule { transform: translateY(24px); }
     }
   </style>
   <defs>
-    <marker id="tip" viewBox="0 0 7 8" refX="6.5" refY="4" markerWidth="7" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M0 0 7 4 0 8Z" fill="#555958"/>
+    <marker id="forward-tip" viewBox="0 0 6 8" refX="5" refY="4" markerWidth="6" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="m1 1 4 3-4 3" fill="none" stroke="#718097"/>
     </marker>
-    <marker id="brass-tip" viewBox="0 0 7 8" refX="6.5" refY="4" markerWidth="7" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M0 0 7 4 0 8Z" fill="#795a27"/>
+    <marker id="return-tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="m2 1 6 4-6 4" fill="none" stroke="#d9c9a3" stroke-width="1.8"/>
     </marker>
-    <marker id="return-tip" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
-      <path d="M0 0 12 6 0 12Z" fill="#795a27"/>
-    </marker>
-    <g id="nodes">
-      <rect class="node" x="0.2%" y="42" width="29.6%" height="42"/>
-      <rect class="node" x="35.2%" y="42" width="29.6%" height="42"/>
-      <rect class="node" x="70.2%" y="42" width="29.6%" height="42"/>
-      <line class="link" x1="29.8%" x2="35%" y1="63" y2="63"/>
-      <line class="link" x1="64.8%" x2="70%" y1="63" y2="63"/>
+    <g id="connections">
+      <svg width="37%" height="48"><line class="link" x1="5.6em" x2="94%" y1="37" y2="37"/></svg>
+      <svg x="37%" width="37%" height="48"><line class="link" x1="6.1em" x2="94%" y1="37" y2="37"/></svg>
     </g>
   </defs>
-  <svg x="4%" width="92%" y="14" class="row">
-    <text class="heading" y="29">Conventional RAG</text>
-    <use href="#nodes" marker-end="url(#tip)"/>
-    <g class="label" transform="translate(0 68)">
-      <text x="15%">Documents</text>
-      <text x="50%">Retrieval</text>
-      <text x="85%">Reasoning</text>
+  <g class="row">
+    <text class="heading" y="12">CONVENTIONAL RAG</text>
+    <g class="stage">
+      <text y="42">Documents</text><text x="37%" y="42">Retrieval</text><text x="74%" y="42">Reasoning</text>
+      <use href="#connections"/>
     </g>
-    <foreignObject y="96" width="100%" height="50"><p xmlns="http://www.w3.org/1999/xhtml">Analytical meaning reconstructed at query time.</p></foreignObject>
-    <line class="rule" x2="100%" y1="147" y2="147"/>
-  </svg>
-  <svg x="4%" width="92%" y="177" class="row">
-    <text class="heading" y="29">Conventional Knowledge Graph</text>
-    <use href="#nodes" marker-end="url(#tip)"/>
-    <g class="label" transform="translate(0 68)">
-      <text x="15%">Documents</text>
-      <text x="50%">Engineering</text>
-      <text x="85%" class="long-label">Knowledge Graph</text>
-      <text x="85%" class="short-label" y="-8">Knowledge<tspan x="85%" dy="16">Graph</tspan></text>
+    <foreignObject class="note" y="52" width="100%" height="40"><p xmlns="http://www.w3.org/1999/xhtml">Analytical meaning reconstructed at query time.</p></foreignObject>
+    <line class="rule" x2="100%" y1="81" y2="81"/>
+  </g>
+  <g class="row graph">
+    <text class="heading" y="12">CONVENTIONAL KNOWLEDGE GRAPH</text>
+    <g class="stage">
+      <text y="42">Documents</text><text x="37%" y="42">Engineering</text>
+      <text class="single" x="74%" y="42">Knowledge Graph</text>
+      <text class="wrapped" x="74%" y="42">Knowledge<tspan x="74%" dy="16">Graph</tspan></text>
+      <use href="#connections"/>
     </g>
-    <foreignObject y="96" width="100%" height="50"><p xmlns="http://www.w3.org/1999/xhtml">Analytical knowledge explicitly engineered and maintained.</p></foreignObject>
-    <line class="rule" x2="100%" y1="147" y2="147"/>
-  </svg>
-  <svg x="4%" width="92%" y="340" class="row compiler">
-    <text class="heading" y="29">Context Compiler</text>
-    <use href="#nodes" marker-end="url(#brass-tip)"/>
-    <g class="label" transform="translate(0 68)">
-      <text x="15%">Research</text>
-      <text x="50%">Governance</text>
-      <text x="85%">Knowledge</text>
+    <foreignObject class="note" y="52" width="100%" height="40"><p xmlns="http://www.w3.org/1999/xhtml">Analytical knowledge explicitly engineered and maintained.</p></foreignObject>
+    <line class="rule" x2="100%" y1="81" y2="81"/>
+  </g>
+  <g class="row compiler">
+    <text class="heading" y="12">CONTEXT COMPILER</text>
+    <g class="stage">
+      <text y="42">Research</text><text x="37%" y="42">Governance</text><text x="74%" y="42">Knowledge</text>
+      <use href="#connections"/>
     </g>
-    <g class="return">
-      <line x1="85%" x2="85%" y1="84" y2="115"/>
-      <line x1="85%" x2="15%" y1="114" y2="114"/>
-      <line x1="15%" x2="15%" y1="115" y2="86" marker-end="url(#return-tip)"/>
-    </g>
-    <foreignObject y="132" width="100%" height="58"><p xmlns="http://www.w3.org/1999/xhtml">Governed analytical knowledge accumulates through research.</p></foreignObject>
-  </svg>
+    <svg x="30" width="74%" height="70" overflow="visible">
+      <g class="return" stroke-linecap="square">
+        <line x1="100%" x2="100%" y1="51" y2="67"/>
+        <line x1="100%" x2="0" y1="67" y2="67"/>
+        <path d="M0 67V51" marker-end="url(#return-tip)"/>
+      </g>
+    </svg>
+    <foreignObject y="78" width="100%" height="42"><p xmlns="http://www.w3.org/1999/xhtml">Governed analytical knowledge accumulates through research.</p></foreignObject>
+  </g>
 </svg>
