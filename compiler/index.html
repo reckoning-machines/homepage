@@ -7,7 +7,7 @@
     <meta name="description" content="Context Compiler keeps the definitions your analysts approve with the evidence behind them, so the next analyst can use that work on a new question.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/">
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/compiler/compiler.css?v=research">
+    <link rel="stylesheet" href="/compiler/compiler.css?v=proposition">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body class="compiler-page">
@@ -20,11 +20,8 @@
         <header class="compiler-hero brief-hero" id="platform">
             <p class="compiler-product-name"><span class="cc-mark" aria-hidden="true">cc</span> Context Compiler</p>
             <h1>Build the knowledge base as you use it.</h1>
-            <p class="compiler-intro">Every day, investment professionals interpret disclosures, reconcile financial definitions and establish relationships between companies, industries and economic conditions.</p>
-            <p class="compiler-intro">That understanding is valuable. Yet much of it has to be reconstructed the next time someone asks a related question.</p>
-            <p class="compiler-intro">Context Compiler makes the knowledge generated through research available to subsequent research. It preserves what has been established, the evidence behind it and the conditions under which it can be used.</p>
-            <p class="compiler-deck">Better research today. A more knowledgeable research platform tomorrow.</p>
-            <a class="text-link" href="#deposit-rates">See how it works</a>
+            <p class="compiler-intro">Investment research creates valuable knowledge. Yet much of that knowledge has to be reconstructed every time an analyst asks a related question.</p>
+            <p class="compiler-intro">Context Compiler enables research platforms to preserve and reuse that understanding, improving subsequent research and building institutional knowledge through ordinary use.</p>
         </header>
 
         <section class="compiler-section" id="deposit-rates">
@@ -32,46 +29,60 @@
             <p>Zions reported <strong>2.25%</strong> on interest-bearing deposits in the second quarter of 2026 and <strong>2.40%</strong> in the third. Both figures were correct. But in the third quarter the bank began including interest on derivative collateral in deposit expense.</p>
             <p>An analyst asking for the reported rates got both numbers and their sources. An analyst asking how much the rate rose on a consistent basis got a different answer. The bank’s adjustment applied to <em>total</em> deposit cost. The adjustment for <em>interest-bearing</em> deposits was still missing.</p>
             <p>The next analyst inherits that distinction. They can cite either reported rate and know exactly what they need before comparing the two.</p>
-            <p><a class="brass-button" href="/compiler/atlantic-union/">Replay two quarters of research</a></p>
             <a class="text-link" href="https://www.sec.gov/Archives/edgar/data/109380/000010938026000127/zions-20260930.htm">Read the Zions disclosure</a>
         </section>
 
+        <section class="compiler-section" id="evidence">
+            <h2>Better-supported answers. More research carried forward.</h2>
+            <dl class="quality-pair">
+                <div>
+                    <dt>Answer quality</dt>
+                    <dd><strong>92%</strong><span>Fully supported answers with Context Compiler, versus 80% with document retrieval at the better-performing of two tested budgets. Both used the same model at high reasoning effort.</span></dd>
+                </div>
+                <div id="reuse">
+                    <dt>Cross-bank reuse</dt>
+                    <dd><strong>71%</strong><span>Fewer new definitions, rules and source mappings for the second bank. It required 20, down from 69 for the first.</span></dd>
+                </div>
+            </dl>
+            <p>These results come from two separate experiments. Analyst labor savings remain to be measured.</p>
+            <details class="method-note">
+                <summary>View the quality–cost chart and experimental results</summary>
+                <figure class="benchmark">
+                    <a href="/compiler/analytical-context-quality-cost.svg"><img src="/compiler/analytical-context-quality-cost.svg" loading="lazy" width="590" height="395" alt="At high reasoning effort, Context Compiler achieved 92% fully supported answers at $0.068 per answer. Retrieval achieved 80% at $0.062 and 78% at $0.095. At medium effort, Context Compiler achieved 86% at $0.054."></a>
+                    <figcaption>Four observed configurations. Costs cover model inference only.</figcaption>
+                </figure>
+                <ul class="data-links"><li><a href="/compiler/results/#analytical-context">Answer quality and inference cost</a></li><li><a href="/compiler/results/#recurring">Cross-bank reuse results</a></li><li><a href="/compiler/playground/">Explore source authority across two banks</a></li></ul>
+            </details>
+        </section>
+
+        <section class="compiler-section" id="approaches">
+            <p class="label">Design objective</p>
+            <h2>Knowledge-graph-quality reasoning without knowledge-graph-scale engineering.</h2>
+            <p>RAG makes information accessible. Knowledge engineering makes analytical meaning explicit. Context Compiler is designed to make that meaning a governed, reusable asset acquired through research itself.</p>
+            <a class="text-link" href="/compiler/results/#graph">Examine the knowledge graph comparison</a>
+        </section>
+
         <section class="compiler-section" id="knowledge">
-            <h2>What your research platform gains</h2>
-            <div class="research-benefits">
-                <section id="evidence">
-                    <h3>Better research</h3>
-                    <p>On the same 18 investment questions, the model gave <strong>16 fully supported answers</strong> with definitions and evidence supplied by Context Compiler, compared with eight using document retrieval.</p>
-                    <a class="text-link" href="/compiler/results/#downstream-benchmark">See how the answers were scored</a>
-                </section>
-                <section id="atlantic-union">
-                    <h3>Less repeated work</h3>
-                    <p>In the Atlantic Union replay, a fresh June session recovered March’s approved loan-loss provision and its filing evidence. The team could start June’s work with that decision in hand. Analyst time savings remain unmeasured.</p>
-                    <a class="text-link" href="/compiler/atlantic-union/#june">Retrieve the March judgment in June</a>
-                </section>
-                <section id="reuse">
-                    <h3>Compounding knowledge</h3>
-                    <p>When coverage expanded from Regions to KeyCorp, the second bank inherited the deposit-cost definition and checks. The team could use what it had already established and add evidence from KeyCorp’s own disclosures.</p>
-                    <a class="text-link" href="/compiler/playground/?replay=key-change-2026-11-22">Explore source authority across two banks</a>
-                </section>
-            </div>
+            <h2>How it works</h2>
+            <p>Your research application connects its document catalog, evidence reader and approval process. Context Compiler keeps each accepted judgment with its source and permitted use, ready for the next question.</p>
+            <details class="method-note">
+                <summary>View the ResearchWorkspace architecture</summary>
+                <object class="workspace-schematic" type="image/svg+xml" data="/compiler/research-workspace.svg#interface" role="img" aria-label="ResearchWorkspace integration. Research agents call propose() to bind an interpretation to evidence and permitted use. After host approval, admit() validates the decision and persists accepted knowledge under the same domain pack. In a later session, derive() rebuilds native assertions and evidence links. compile() returns approved context for downstream reasoning or identifies a missing definition for further acquisition.">
+                    <a href="/compiler/research-workspace.svg">View the ResearchWorkspace interface</a>
+                </object>
+                <a class="text-link" href="/compiler/how-it-works/#developer-integration">Developer integration</a>
+            </details>
+            <p id="atlantic-union">At Atlantic Union, the same compiler recovered March’s approved loan-loss provision in June and identified the June definition that still needed review.</p>
+            <a class="text-link" href="/compiler/atlantic-union/">Replay two quarters of research</a>
         </section>
 
         <section class="compiler-section cta-band" id="opportunity">
             <h2>What should your research platform learn once?</h2>
             <p>Bring a question your customers ask every quarter. We’ll show what your platform can remember, which teams have permission to use it and where the next answer still needs an analyst’s judgment.</p>
             <a class="brass-button" href="mailto:jedgore@reckoningmachines.com?subject=Context%20Compiler%20evaluation">Test CC on your research</a>
+            <ul class="data-links"><li><a href="/compiler/evaluation/">Commercial evaluation</a></li></ul>
         </section>
 
-        <nav class="compiler-section" id="approaches" aria-labelledby="diligence-title">
-            <h2 id="diligence-title">Examine the evidence</h2>
-            <ul class="data-links">
-                <li><a href="/compiler/how-it-works/">How it works</a></li>
-                <li><a href="/compiler/how-it-works/#developer-integration">Developer integration</a></li>
-                <li><a href="/compiler/results/">Experimental results</a></li>
-                <li><a href="/compiler/evaluation/">Commercial evaluation</a></li>
-            </ul>
-        </nav>
     </main>
     <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
 </body>
