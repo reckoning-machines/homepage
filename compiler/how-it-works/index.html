@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How it works | Context Compiler</title>
+    <meta name="description" content="Follow an analyst’s judgment from a filing to an approved definition that another researcher can reuse.">
+    <link rel="canonical" href="https://reckoningmachines.com/compiler/how-it-works/">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/compiler/compiler.css?v=research">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body class="compiler-page">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="top"><div class="container top-inner">
+        <div><a class="wordmark" href="/">Reckoning Machines</a><p class="brand-motto">Simple yet Powerful.</p></div>
+        <nav class="top-nav" aria-label="Primary"><a href="/compiler/">Context Compiler</a></nav>
+    </div></header>
+    <main id="main" class="container compiler-brief">
+        <header class="compiler-hero brief-hero">
+            <p class="compiler-product-name">Context Compiler</p>
+            <h1>How it works</h1>
+            <p class="compiler-intro">A researcher finds a difference that matters, such as a change in how a bank reports a deposit rate. The team decides what the filing supports. Context Compiler keeps that decision with its evidence so the next researcher can use it within the same limits.</p>
+        </header>
+        <section class="compiler-section" id="workflow">
+            <h2>From research to reusable knowledge</h2>
+            <dl class="knowledge-layers">
+                <div><dt>Acquisition</dt><dd>A research agent proposes an interpretation for a specific use and identifies the passages that support it.</dd></div>
+                <div><dt>Governance</dt><dd>Your review system records who approved that interpretation, when it was approved and who may use it.</dd></div>
+                <div><dt>Accumulation</dt><dd>Each approved decision and its evidence survive the research session in a workspace your application controls.</dd></div>
+                <div><dt>Reasoning</dt><dd>For a new question, the compiler supplies the applicable knowledge and evidence. A missing definition gives the team its next research task.</dd></div>
+            </dl>
+            <a class="text-link" href="/compiler/atlantic-union/">Follow two decisions across quarters at Atlantic Union</a>
+        </section>
+        <section class="compiler-section" id="approaches">
+            <h2>Where Context Compiler fits</h2>
+            <p>RAG makes information accessible. Knowledge engineering makes analytical meaning explicit. Context Compiler is designed to make that meaning a governed, reusable asset acquired through research itself.</p>
+            <p><strong>Design objective</strong> · Knowledge-graph-quality reasoning without knowledge-graph-scale engineering.</p>
+        </section>
+        <section class="compiler-section" id="knowledge">
+            <h2 id="developer-integration">Developer integration</h2>
+            <p>Context Compiler is a small, standalone Python library that runs inside your research application. Connect your existing document catalog, evidence reader and authorization infrastructure. Your application supplies a private workspace directory and retains control of approvals and access.</p>
+            <object class="workspace-schematic" type="image/svg+xml" data="/compiler/research-workspace.svg#interface" role="img" aria-label="ResearchWorkspace integration. Research agents call propose() to bind an interpretation to evidence and permitted use. After host approval, admit() validates the decision and persists accepted knowledge under the same domain pack. In a later session, derive() rebuilds native assertions and evidence links. compile() returns approved context for downstream reasoning or identifies a missing definition for further acquisition.">
+                <a href="/compiler/research-workspace.svg">View the ResearchWorkspace interface</a>
+            </object>
+            <ul class="data-links"><li><a href="/compiler/atlantic-union/#local-demo">Request the runnable Python example</a></li><li><a href="/compiler/results/">Examine the experimental results</a></li></ul>
+        </section>
+    </main>
+    <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
+</body>
+</html>

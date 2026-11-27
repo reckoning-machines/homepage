@@ -311,3 +311,15 @@ html:has(.compiler-page) { scroll-behavior: auto; }
     .admission-results div { flex-direction: row-reverse; justify-content: flex-end; align-items: baseline; gap: 1rem; }
     .admission-results dd { flex: 0 0 6rem; margin: 0; }
 }
+
+.research-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    margin-top: 1.75rem;
+}
+.research-benefits > section { border-top: 1px solid var(--line); }
+.research-benefits h3 { margin-top: .75rem; font-size: 1.75rem; }
+@media (max-width: 760px) {
+    .research-benefits { grid-template-columns: minmax(0, 1fr); }
+}
