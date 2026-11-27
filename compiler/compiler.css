@@ -106,6 +106,10 @@
 .exhibit h3 { margin-top: 0; }
 .process { align-self: center; color: var(--brass); font-family: var(--font-mono); font-size: .875rem; }
 .compiler-page table { width: 100%; border-collapse: collapse; text-align: left; font-size: 1rem; }
+.architecture-comparison { max-width: 54rem; margin-block: 1.5rem; }
+.architecture-comparison caption { margin-bottom: .65rem; text-align: left; color: var(--ink-dim); font-size: .875rem; }
+.architecture-comparison th:first-child { width: 30%; }
+.architecture-comparison td { color: var(--ink-dim); }
 .pilot-results { max-width: 46rem; margin-block: 1.25rem; font-variant-numeric: tabular-nums; }
 .pilot-results thead th:first-child { width: 52%; }
 .pilot-results :is(th, td):not(:first-child) { text-align: right; }

@@ -26,6 +26,21 @@
             <p class="compiler-deck">Knowledge-graph-quality reasoning without knowledge-graph-scale engineering.</p>
         </header>
 
+        <section class="compiler-section" id="approaches">
+            <h2>Beyond retrieval. Beyond conventional knowledge engineering.</h2>
+            <p>The architectural choice is when to establish analytical meaning, and how much of that work the next question can reuse.</p>
+            <table class="architecture-comparison">
+                <caption>Conceptual comparison of architectural approaches</caption>
+                <thead><tr><th scope="col">Approach</th><th scope="col">How the platform establishes meaning</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">RAG retrieves.</th><td>Retrieval-augmented generation can start with an indexed document collection. At answer time, the model must often reconstruct definitions and relationships from the passages it receives.</td></tr>
+                    <tr><th scope="row">Knowledge graphs encode.</th><td>Engineers model entities, definitions and relationships explicitly. Once encoded, that meaning is reusable. Building the graph takes upfront work, and changes in disclosures require maintenance.</td></tr>
+                    <tr><th scope="row">Context Compiler accumulates.</th><td>A research question surfaces a definition or relationship. Once checked against source evidence and approved for a particular use, it becomes available to the next question.</td></tr>
+                </tbody>
+            </table>
+            <p><strong>Build the knowledge base as you use it.</strong> CC works alongside existing retrieval systems, knowledge graphs, research agents and language models.</p>
+        </section>
+
         <section class="compiler-section" id="deposit-rates">
             <h2>Did Zions’ deposit rate rise 15 basis points on a comparable basis?</h2>
             <p>Zions reported <strong>2.25%</strong> on interest-bearing deposits in the second quarter of 2026 and <strong>2.40%</strong> in the third. In the third quarter it began including interest on derivative collateral in deposit expense. Its estimate of the adjustment applied to <em>total</em> deposit cost.</p>
@@ -47,7 +62,6 @@
                 <li><strong>Reasoning</strong><span>Deterministically compile the relevant knowledge and evidence for each question.</span></li>
             </ol>
             <p class="research-loop">Reasoning feeds acquisition. The missing Zions adjustment gives the team its next research task. Once reviewed, that finding becomes available to every subsequent comparison.</p>
-            <p>Context Compiler works alongside existing retrieval systems, research agents and language models.</p>
         </section>
 
         <section class="compiler-section" id="evidence">
@@ -57,8 +71,9 @@
                 <a href="/compiler/analytical-context-quality-cost.svg" aria-label="Open the answer quality versus inference cost chart at full size"><img src="/compiler/analytical-context-quality-cost.svg" width="590" height="395" loading="lazy" alt="Compiled context achieved 86% at $0.054 per answer and 92% at $0.068. Retrieval achieved 80% at $0.062 and 78% at $0.095."></a>
                 <figcaption>Four observed configurations. Costs cover model inference only. The line joins the two non-dominated observations.</figcaption>
             </figure>
+            <p>On 18 investment questions, compiled definitions and their supporting evidence produced <strong>88.9% fully supported answers versus 44.4% for hybrid retrieval</strong>. CC delivered <strong>17.95× the reasoning yield</strong>, measured in fully supported answers per million model tokens.</p>
             <p>In a separate controlled benchmark, CC achieved 87.5% fully supported answers versus 93.8% for an engineered knowledge graph using the same model, analytical definitions and evidence budget.</p>
-            <ul class="data-links"><li><a href="/compiler/results/#analytical-context">Study design, costs and scoring</a></li><li><a href="/compiler/results/#graph">Engineered knowledge graph experiment</a></li></ul>
+            <ul class="data-links"><li><a href="/compiler/results/#analytical-context">Quality and inference cost</a></li><li><a href="/compiler/results/#downstream-benchmark">18-question retrieval benchmark</a></li><li><a href="/compiler/results/#graph">Engineered knowledge graph experiment</a></li></ul>
         </section>
 
         <section class="compiler-section" id="reuse">
@@ -68,6 +83,7 @@
                 <div><dt>Second bank</dt><dd><strong>20</strong><span>new declarations</span></dd></div>
             </dl>
             <p>Each declaration records a definition, a rule or a link to source evidence. The second bank inherited the first bank’s rules and checks. Its own disclosures required <strong>71% fewer new declarations</strong>.</p>
+            <p>Our next experiment will measure whether building knowledge this way reduces total engineering and maintenance costs as research accumulates.</p>
             <ul class="data-links"><li><a href="/compiler/playground/">Replay the bank research demo</a></li><li><a href="/compiler/results/#recurring">Inspect the reuse results</a></li></ul>
         </section>
 
