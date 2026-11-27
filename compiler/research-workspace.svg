@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="interface" width="100%" height="100%" role="img" aria-labelledby="title desc">
+  <title id="title">ResearchWorkspace integration</title>
+  <desc id="desc">A research agent proposes a filing interpretation for a permitted use. An authenticated approval admits it to persistent knowledge. A later process derives native assertions and compiles approved context. A missing definition sends the next question back to research.</desc>
+  <style>
+    @import url("/fonts/fonts.css");
+    :root { background: #070e1c; }
+    :root:target { background: transparent; }
+    text { fill: #c8d0dc; font: 400 16px Inter, Arial, sans-serif; }
+    .api, .interface { font: 400 16px 'JetBrains Mono', monospace; }
+    .interface { fill: #d9c9a3; }
+    p { margin: 0 0 0 306px; color: #a3afc0; font: 400 14px/1.35 Inter, Arial, sans-serif; }
+    .rail { fill: none; stroke: #63738a; }
+    .feedback { fill: none; stroke: #cbbb96; stroke-width: 1.6; }
+    .gap { fill: #d9c9a3; font-size: 14px; }
+    .workspace { transform: translateY(64px); }
+    .proposal { transform: translateY(100px); }
+    .admission { transform: translateY(142px); }
+    .persistence { transform: translateY(184px); }
+    .derive { transform: translateY(226px); }
+    .compile { transform: translateY(268px); }
+    .return { transform: translateY(313px); }
+    .mobile-wire { display: none; }
+    @media (max-width: 640px) {
+      p { margin-left: 36px; }
+      .detail { transform: translateY(23px); }
+      .workspace { transform: translateY(81px); }
+      .proposal { transform: translateY(115px); }
+      .admission { transform: translateY(181px); }
+      .persistence { transform: translateY(247px); }
+      .derive { transform: translateY(313px); }
+      .compile { transform: translateY(379px); }
+      .return { transform: translateY(451px); }
+      .desktop-wire { display: none; }
+      .mobile-wire { display: inline; }
+    }
+  </style>
+  <!-- The return wire joins the missing definition to the host research agent. -->
+  <g class="feedback">
+    <path class="desktop-wire" d="M25 308H4V15H25"/>
+    <path class="mobile-wire" d="M25 446H4V15H25"/>
+    <path d="m20 11 5 4-5 4"/>
+  </g>
+  <text x="36" y="20">Research agents</text>
+  <foreignObject class="detail" y="5" width="100%" height="44"><p xmlns="http://www.w3.org/1999/xhtml">Discover interpretations in source documents.</p></foreignObject>
+  <g class="workspace"><text class="interface" x="36">ResearchWorkspace</text><line class="rail" x1="36" x2="100%" y1="10" y2="10"/></g>
+  <g class="proposal">
+    <text class="api" x="36">propose()</text>
+    <foreignObject class="detail" y="-15" width="100%" height="44"><p xmlns="http://www.w3.org/1999/xhtml">Bind an interpretation to evidence and permitted use.</p></foreignObject>
+  </g>
+  <g class="admission">
+    <text class="api" x="36">admit()</text>
+    <foreignObject class="detail" y="-15" width="100%" height="44"><p xmlns="http://www.w3.org/1999/xhtml">Validate host approval and persist accepted knowledge.</p></foreignObject>
+  </g>
+  <g class="persistence">
+    <text x="36">Persistent analytical knowledge</text>
+    <foreignObject class="detail" y="-15" width="100%" height="44"><p xmlns="http://www.w3.org/1999/xhtml">New admissions use the same domain pack.</p></foreignObject>
+  </g>
+  <g class="derive">
+    <text class="api" x="36">derive()</text>
+    <foreignObject class="detail" y="-15" width="100%" height="44"><p xmlns="http://www.w3.org/1999/xhtml">Rebuild native assertions and required evidence links.</p></foreignObject>
+  </g>
+  <g class="compile">
+    <text class="api" x="36">compile()</text>
+    <foreignObject class="detail" y="-15" width="100%" height="44"><p xmlns="http://www.w3.org/1999/xhtml">Supply approved context or flag a missing definition.</p></foreignObject>
+  </g>
+  <g class="return"><text class="gap" x="36">Missing definition → new research</text></g>
+</svg>

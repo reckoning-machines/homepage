@@ -286,3 +286,28 @@ html:has(.compiler-page) { scroll-behavior: auto; }
 @media (max-width: 760px) {
     .buyer-context { padding-left: 1rem; }
 }
+
+#knowledge { container-type: inline-size; }
+.workspace-schematic { display: block; width: 100%; max-width: 48rem; height: 326px; margin-top: 1.75rem; }
+@container (max-width: 640px) {
+    .workspace-schematic { height: 468px; }
+}
+#atlantic-union h2 { color: var(--brass); }
+.admission-results {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 48rem;
+    margin-block: 1.25rem;
+    padding-block: 1rem;
+    border-block: 1px solid var(--line);
+}
+.admission-results div { display: flex; flex-direction: column-reverse; justify-content: end; }
+.admission-results dt { color: var(--ink-dim); font-size: .875rem; line-height: 1.3; }
+.admission-results dd { margin-bottom: .35rem; font: 400 clamp(1.9rem, 4vw, 3rem)/1.1 var(--font-serif); white-space: nowrap; }
+.admission-results dd span { color: var(--brass-2); font-size: .7em; }
+@media (max-width: 540px) {
+    .admission-results { grid-template-columns: 1fr; gap: .55rem; }
+    .admission-results div { flex-direction: row-reverse; justify-content: flex-end; align-items: baseline; gap: 1rem; }
+    .admission-results dd { flex: 0 0 6rem; margin: 0; }
+}

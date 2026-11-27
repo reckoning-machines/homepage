@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Atlantic Union research replay | Context Compiler</title>
+    <meta name="description" content="How a research platform admitted Atlantic Union filing judgments, reused them in a later process and identified a missing definition with the same investment domain pack.">
+    <link rel="canonical" href="https://reckoningmachines.com/compiler/atlantic-union/">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/compiler/compiler.css?v=workspace">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body class="compiler-page">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="top"><div class="container top-inner">
+        <div><a class="wordmark" href="/">Reckoning Machines</a><p class="brand-motto">Simple yet Powerful.</p></div>
+        <nav class="top-nav" aria-label="Primary"><a href="/compiler/">Context Compiler</a></nav>
+    </div></header>
+    <main id="main" class="container compiler-brief">
+        <header class="compiler-hero brief-hero">
+            <p class="label">ResearchWorkspace implementation · November 2026</p>
+            <h1>Atlantic Union research replay</h1>
+            <p class="compiler-intro">Could a later research process use a judgment approved for one filing and recognize when the next filing needed a decision of its own? We replayed two quarters of Atlantic Union Bankshares research in three separate processes using the same investment domain pack.</p>
+        </header>
+        <section class="compiler-section">
+            <h2>What carried forward</h2>
+            <dl class="research-questions">
+                <dt>March admission</dt>
+                <dd>A reviewer had identified the loan-loss provision as $17.430 million. The broader $17.638 million credit provision also included unfunded commitments. The workspace admitted the narrower definition and amount with seven filing excerpts.</dd>
+                <dt>June admission</dt>
+                <dd>A separately approved judgment distinguished the $28.265 million allowance recorded in purchase accounting from the $89.538 million recorded through expense. Eleven June excerpts supported the classification.</dd>
+                <dt>Fresh, read-only query</dt>
+                <dd>The compiler returned the March amount and June classification with their evidence. The June loan-loss provision needed a filing-specific definition. An agent had proposed adding two June rows, but the review system had no approval for that use. The compiler returned the missing definition.</dd>
+            </dl>
+            <p>Native assertions grew from 9 to 21 and required evidence links from 8 to 19. The domain pack fingerprint stayed the same, with zero new issuer-specific predicates. Checking all 18 locations against the two original SEC filings reproduced the portable replay’s native representation, compiled contexts and evidence.</p>
+        </section>
+        <section class="compiler-section">
+            <h2>What the integration does</h2>
+            <p>The host imports <code>ResearchWorkspace</code> from <code>context_compiler_host</code> and supplies a filing catalog, an evidence reader, an authenticated approval lookup and a private workspace directory.</p>
+            <p><strong>Build the knowledge you need today.</strong> <code>propose()</code> binds the claim, filing, permitted use and evidence to a review card. <code>admit()</code> checks the host’s decision for that exact card, reopens the evidence and saves the approved material.</p>
+            <p><strong>Reuse it tomorrow.</strong> A later process uses <code>derive()</code> to rebuild native assertions and evidence links from the saved material. <code>compile()</code> resolves the approved knowledge for the requested filing, use, access scope and time.</p>
+            <p><strong>Let it grow as the research expands.</strong> A reusable investment host profile supplies the typed declarations for reviewed interpretations, monetary amounts and source excerpts. Each new admission adds filing-specific knowledge under those same declarations.</p>
+        </section>
+        <section class="compiler-section">
+            <h2>What the demonstration establishes</h2>
+            <p><strong>Historical import.</strong> The replay used two recorded proposals and their actual human approvals. We manually assigned two permitted uses, bound the cards to their filing versions and evidence locations, and mapped one recorded operand to the March amount. The reviewer had approved the amount, unit and meaning in prose. The machine-readable binding came later. Professional labor was unmetered, so total knowledge-engineering savings remain unmeasured.</p>
+            <p><strong>Prospective acquisition.</strong> A separate deterministic test proposed a previously unseen permitted use and monetary value under the same domain pack. Admission required a test reviewer’s approval. A fresh workspace then compiled the new use and resolved the value. This establishes the acquisition-to-compilation handoff. Autonomous discovery and unrestricted generation of financial formulas remain outside the demonstrated capability.</p>
+            <p>Verified revision <code>87e1ea7</code>. The replay and prospective test ran offline without model calls.</p>
+            <a class="text-link" href="/compiler/#atlantic-union">Return to the Atlantic Union result</a>
+        </section>
+    </main>
+    <footer><div class="container foot-inner"><a href="/">Reckoning Machines</a><em>Simple yet Powerful.</em></div></footer>
+</body>
+</html>
