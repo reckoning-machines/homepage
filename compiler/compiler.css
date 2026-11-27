@@ -8,6 +8,7 @@
 .compiler-page h1 { max-width: 21ch; font-size: clamp(46px, 7vw, 88px); font-weight: 300; line-height: 1.03; letter-spacing: -0.035em; }
 .compiler-deck { font: italic 300 clamp(24px, 3vw, 37px)/1.18 var(--font-serif); color: var(--brass); margin: 20px 0 28px; max-width: 35ch; }
 .compiler-intro, .compiler-section p, .demo-controls p, .result-note { color: var(--ink-dim); max-width: 66ch; }
+.compiler-section .graph-proposition { color: var(--brass); }
 .compiler-intro { margin-top: 16px; font-size: 17px; }
 .compiler-section { padding: 46px 0 56px; border-top: 1px solid var(--line); }
 .compiler-section h2, .demo-output h2 { font-size: clamp(32px, 4vw, 44px); line-height: 1.1; }
