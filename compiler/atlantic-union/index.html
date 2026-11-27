@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Atlantic Union research replay | Context Compiler</title>
+    <title>Replay two quarters of Atlantic Union research | Context Compiler</title>
     <meta name="description" content="How a research platform admitted Atlantic Union filing judgments, reused them in a later process and identified a missing definition with the same investment domain pack.">
     <link rel="canonical" href="https://reckoningmachines.com/compiler/atlantic-union/">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/compiler/compiler.css?v=workspace">
+    <link rel="stylesheet" href="replay.css">
+    <script src="replay.js" defer></script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body class="compiler-page">
@@ -17,23 +19,79 @@
         <nav class="top-nav" aria-label="Primary"><a href="/compiler/">Context Compiler</a></nav>
     </div></header>
     <main id="main" class="container compiler-brief">
-        <header class="compiler-hero brief-hero">
-            <p class="label">ResearchWorkspace implementation · November 2026</p>
-            <h1>Atlantic Union research replay</h1>
-            <p class="compiler-intro">Could a later research process use a judgment approved for one filing and recognize when the next filing needed a decision of its own? We replayed two quarters of Atlantic Union Bankshares research in three separate processes using the same investment domain pack.</p>
+        <header class="compiler-hero brief-hero replay-title">
+            <p class="label">Atlantic Union Bankshares · Recorded replay</p>
+            <h1>Can I use March’s definition of loan-loss provision in June?</h1>
+            <p class="compiler-intro">Follow two quarters of research through three recorded questions. Inspect what the research desk approved, what a new session could reuse and which judgment June still needed.</p>
         </header>
-        <section class="compiler-section">
-            <h2>What carried forward</h2>
-            <dl class="research-questions">
-                <dt>March admission</dt>
-                <dd>A reviewer had identified the loan-loss provision as $17.430 million. The broader $17.638 million credit provision also included unfunded commitments. The workspace admitted the narrower definition and amount with seven filing excerpts.</dd>
-                <dt>June admission</dt>
-                <dd>A separately approved judgment distinguished the $28.265 million allowance recorded in purchase accounting from the $89.538 million recorded through expense. Eleven June excerpts supported the classification.</dd>
-                <dt>Fresh, read-only query</dt>
-                <dd>The compiler returned the March amount and June classification with their evidence. The June loan-loss provision needed a filing-specific definition. An agent had proposed adding two June rows, but the review system had no approval for that use. The compiler returned the missing definition.</dd>
-            </dl>
-            <p>Native assertions grew from 9 to 21 and required evidence links from 8 to 19. The domain pack fingerprint stayed the same, with zero new issuer-specific predicates. Checking all 18 locations against the two original SEC filings reproduced the portable replay’s native representation, compiled contexts and evidence.</p>
-        </section>
+        <div class="replay-shell">
+            <nav class="replay-questions" aria-label="Recorded research questions">
+                <a href="#march">Open March’s approved definition</a>
+                <a href="#june">Open June in a fresh session</a>
+                <a href="#review">Ask for June’s loan-loss provision</a>
+            </nav>
+            <div>
+                <article class="replay-state" id="march">
+                    <p class="label">March 2025 · Approved definition</p>
+                    <h2 tabindex="-1">$17.430 million in loan-loss provision.</h2>
+                    <p>The research desk approved the allowance table’s “Provision charged to operations” row for this use in Atlantic Union’s March filing. The broader <strong>$17.638 million</strong> credit provision also included unfunded commitments.</p>
+                    <p><a href="https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm">Open the March 10-Q</a></p>
+                    <details><summary>Inspect the historical review and approval</summary>
+                        <p>The host recorded <strong>approve</strong> from <strong>research_desk</strong> at <time datetime="2026-11-26T14:50:39.544524Z">2026-11-26 14:50:39.544524 UTC</time>. The host supplies evidence access, scope and the authenticated decision. CC checks it against the exact card before saving the admission.</p>
+                        <dl><dt>Approved interpretation</dt><dd>For Atlantic Union Bankshares&#x27; Q1 2025 Form 10-Q, the &quot;provision for loan losses&quot; is the ALLL-activity-table line &quot;Provision charged to operations&quot; of $17,430 thousand (three months ended March 31, 2025), which moves only the on-balance-sheet allowance for loan and lease losses. The income-statement &quot;Provision for credit losses&quot; of $17,638 thousand is a broader measure that also includes the provision for unfunded commitments (about $0.2 million; 17,638 − 17,430 = 208, equal to the change in the reserve for unfunded commitments 15,041 → 15,249), and should not be labelled the loan-loss provision.</dd>
+                            <dt>Competing interpretation</dt><dd>Treat the income-statement &quot;Provision for credit losses&quot; of $17,638 thousand as the loan-loss provision (i.e., do not separate the unfunded-commitment component), and compare that total against the loan allowance.</dd>
+                            <dt>Permitted scope</dt><dd>Issuer-only (Atlantic Union Bankshares Corp), this filing only (accession 0000883948-25-000046, sha256 bcd672a2…b51e), three months ended 2025-03-31, USD thousands; term mapping for &quot;loan-loss provision&quot; vs &quot;provision for credit losses&quot;. Not a pack-wide label change.</dd></dl>
+                        <p><a href="march.json">Open exact review card, decision and resolved excerpts (JSON)</a></p>
+                    </details>
+                    <details><summary>Inspect the governing 10-Q and filing excerpts</summary><ul><li><a href="https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm#Tc_iM_q0bIpjEOWdNoZydrSLw_6_3">Allowance table · provision charged to operations</a><blockquote>Provision charged to operations 15,638 1,792 17,430</blockquote></li><li><a href="https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm#Tc_l-V2UQRjTU2iABqHEeEGOQ_17_2">Income statement · provision for credit losses</a><blockquote>Provision for credit losses 17,638 8,239</blockquote></li><li><a href="https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm#:~:text=We%20recorded%20a%20provision%20for%20credit%20losses%20of%20%2417.6%20million%20for%20the">Management’s explanation of credit provision</a><blockquote>We recorded a provision for credit losses of $17.6 million for the first quarter of 2025, an increase of $9.4 million compared to the provision for credit losses of $8.2 million recorded during the same quarter of 2024. The provision for credit losses for the first quarter of 2025 reflected a provision of $17.4 million for loan losses and a $0.2 million provision for unfunded commitments.</blockquote></li></ul></details>
+                    <details><summary>How the approved amount entered the workspace</summary>
+                        <p>The reviewer approved the amount, unit and meaning in prose. During the historical import, the team mapped the recorded operand <code>operands.prov</code> to that judgment. The saved March admission ID is <code>8f37388a17b5f8db882c3308a7561b460f17889f7eeda36aedafe24285a43946</code>.</p>
+                    </details>
+                    <a class="text-link" href="#june">Open June in a fresh session</a>
+                </article>
+                <article class="replay-state" id="june">
+                    <p class="label">June 2025 · Approved classification</p>
+                    <h2 tabindex="-1">March’s judgment is still available.</h2>
+                    <p>A new session recovered the March amount and its evidence. A separate June approval classified <strong>$28.265 million</strong> as a purchase-accounting allowance and <strong>$89.538 million</strong> as acquisition-date provision expense. The <strong>$4.641 million</strong> operating provision appears on its own row.</p>
+                    <p><a href="https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm">Open the June 10-Q</a></p>
+                    <details><summary>Inspect the historical review and approval</summary>
+                        <p>The host recorded <strong>approve</strong> from <strong>research_desk</strong> at <time datetime="2026-11-26T15:19:51.500524Z">2026-11-26 15:19:51.500524 UTC</time>. The host supplies evidence access, scope and the authenticated decision. CC checks it against the exact card before saving the admission.</p>
+                        <dl><dt>Approved interpretation</dt><dd>In Atlantic Union Bankshares&#x27; Q2 2025 Form 10-Q ALLL activity table (three months ended June 30, 2025, USD thousands), two rows are acquisition-date (April 1, 2025, &quot;Day 1&quot;) entries for the Sandy Spring acquisition: &quot;Initial allowance on Sandy Spring PCD loans&quot; 28,265 (recorded in purchase accounting, no income-statement effect) and &quot;Initial Provision - Sandy Spring non-PCD loans&quot; 89,538 (recorded through provision expense on the acquisition date). Together they are the acquisition-date ALLL of 117,803 (filing: &quot;$117.8 million&quot;). The rows &quot;Provision charged to operations&quot; 4,641, &quot;Loans charged-off&quot; (2,579) and &quot;Recoveries credited to allowance&quot; 1,913 are post-acquisition ordinary activity and are not acquisition-date entries.</dd>
+                            <dt>Competing interpretation</dt><dd>Treat only the PCD row (28,265), which is a purchase-accounting balance-sheet entry, as the acquisition-date entry, and group the non-PCD &quot;Initial Provision&quot; of 89,538 with the quarter&#x27;s provision expense as non-acquisition-date movement because it was &quot;established through provision expense&quot; in the income statement.</dd>
+                            <dt>Permitted scope</dt><dd>Issuer-only (Atlantic Union Bankshares Corp), this filing only (accession 0000883948-25-000090, sha256 7ffd26d5…c37d), three months ended 2025-06-30, on-balance-sheet ALLL only (not the reserve for unfunded commitments), USD thousands. Classification of rollforward rows as acquisition-date vs. other; not a pack-wide label change.</dd></dl>
+                        <p><a href="june.json">Open exact review card, decision and resolved excerpts (JSON)</a></p>
+                    </details>
+                    <details><summary>Inspect the governing 10-Q and filing excerpts</summary><ul><li><a href="https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm#Tc_qRVxZOhCQUOiqiIZb4MBlg_5_3">Purchase-accounting allowance</a><blockquote>Initial allowance on Sandy Spring PCD loans (1) 21,255 7,010 28,265 21,255 7,010 28,265</blockquote></li><li><a href="https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm#Tc_cxKpg_rR7E2jS006H6Tm5Q_8_3">Acquisition-date provision expense</a><blockquote>Initial Provision - Sandy Spring non-PCD loans 64,740 24,798 89,538 64,740 24,798 89,538</blockquote></li><li><a href="https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm#Tc_CvNtuzZz50m9rqn66OJ9fQ_9_3">Operating provision</a><blockquote>Provision charged to operations 8,489 ( 3,848 ) 4,641 24,128 ( 2,057 ) 22,071</blockquote></li></ul></details>
+                    <details><summary>Retrieve March from the saved workspace</summary>
+                        <p>The fresh process returned the approved <strong>$17.430 million</strong> for March. It used the same March admission ID, <code>8f37388a17b5f8db882c3308a7561b460f17889f7eeda36aedafe24285a43946</code>. <a href="march.json">Inspect the saved March decision and its seven source excerpts</a>.</p>
+                        <p>Across two human approvals, native assertions grew from 9 to 21, including filing excerpts. Required evidence links grew from 8 to 19 under the same investment domain pack.</p>
+                    </details>
+                    <a class="text-link" href="#review">Ask for June’s loan-loss provision</a>
+                </article>
+                <article class="replay-state" id="review">
+                    <p class="label">June 2025 · Definition requested</p>
+                    <h2 tabindex="-1">A June definition needs review.</h2>
+                    <p>Do the expensed acquisition row and the operating row together define loan-loss provision for this filing? The agent proposed combining them. The desk’s June approval covers classification only, and the March definition applies to March.</p>
+                    <p>The compiler identified the filing-specific judgment that the next analyst needs.</p>
+                    <details><summary>Inspect the pending proposal and the missing key</summary>
+                        <p><strong>Pending agent interpretation · unapproved</strong></p>
+                        <blockquote>Inherited term mapping does not carry over. The earlier approved mapping of &quot;loan-loss provision&quot; to the single row &quot;Provision charged to operations&quot; was scoped to the March quarter. In the June quarter the filing&#x27;s &quot;provision for loan losses&quot; of $94.2 million spans two rows (89,538 + 4,641). That June-quarter reading is mine and has not been put to judgment.</blockquote>
+                        <p><strong>Compiler result</strong> <code>coverage_not_complete</code></p>
+                        <pre>{
+  &quot;subject&quot;: &quot;entity:AUB&quot;,
+  &quot;predicate&quot;: &quot;reviewed_interpretation&quot;,
+  &quot;qualifiers&quot;: {
+    &quot;filing_version&quot;: &quot;7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d&quot;,
+    &quot;period&quot;: &quot;2025-06-30/Q&quot;,
+    &quot;research_use&quot;: &quot;loan_provision_definition&quot;
+  }
+}</pre>
+                        <p><a href="pending.json">Open the exact pending card and missing required key (JSON)</a></p>
+                    </details>
+                    <a class="text-link" href="#march">Revisit March’s approved definition</a>
+                </article>
+            </div>
+        </div>
         <section class="compiler-section">
             <h2>What the integration does</h2>
             <p>The host imports <code>ResearchWorkspace</code> from <code>context_compiler_host</code> and supplies a filing catalog, an evidence reader, an authenticated approval lookup and a private workspace directory.</p>
@@ -45,7 +103,12 @@
             <h2>What the demonstration establishes</h2>
             <p><strong>Historical import.</strong> The replay used two recorded proposals and their actual human approvals. We manually assigned two permitted uses, bound the cards to their filing versions and evidence locations, and mapped one recorded operand to the March amount. The reviewer had approved the amount, unit and meaning in prose. The machine-readable binding came later. Professional labor was unmetered, so total knowledge-engineering savings remain unmeasured.</p>
             <p><strong>Prospective acquisition.</strong> A separate deterministic test proposed a previously unseen permitted use and monetary value under the same domain pack. Admission required a test reviewer’s approval. A fresh workspace then compiled the new use and resolved the value. This establishes the acquisition-to-compilation handoff. Autonomous discovery and unrestricted generation of financial formulas remain outside the demonstrated capability.</p>
-            <p>Verified revision <code>87e1ea7</code>. The replay and prospective test ran offline without model calls.</p>
+        </section>
+        <section class="compiler-section local-demo">
+            <h2>Run this locally</h2>
+            <p><a href="mailto:jedgore@reckoningmachines.com?subject=Atlantic%20Union%20developer%20demo">Demo available upon request</a>.</p>
+            <p>The certified Python example imports <code>from context_compiler_host import ResearchWorkspace</code>. From an installed checkout, run <code>python -m examples.allowance_lifecycle.replay</code> to reproduce both approvals and the missing June definition offline.</p>
+            <p>Accepted implementation <code>87e1ea7</code> · Certified developer demo <code>2ec3185</code></p>
             <a class="text-link" href="/compiler/#atlantic-union">Return to the Atlantic Union result</a>
         </section>
     </main>

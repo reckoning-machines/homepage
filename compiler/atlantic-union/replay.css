@@ -1,0 +1,37 @@
+.replay-title h1 { max-width: 24ch; }
+.replay-shell {
+    display: grid;
+    grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+    gap: clamp(1.5rem, 5vw, 4rem);
+    padding-block: 1.75rem 3rem;
+    border-top: 1px solid var(--line);
+}
+.replay-questions { display: flex; flex-direction: column; align-self: start; }
+.replay-questions a {
+    padding: .8rem 1rem;
+    border-left: 2px solid var(--line);
+    color: var(--ink-dim);
+    font-size: .95rem;
+}
+.replay-questions a:hover, .replay-questions a[aria-current] { color: var(--brass); border-color: var(--brass); }
+.replay-state { scroll-margin-top: 1rem; }
+.replay-state + .replay-state { margin-top: 2rem; }
+.replay-state[hidden] + .replay-state { margin-top: 0; }
+.replay-state h2 { margin: .5rem 0 .75rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
+.replay-state p, .replay-state dd, .replay-state blockquote { max-width: 68ch; color: var(--ink-dim); }
+.replay-state strong { color: var(--ink); }
+.replay-state p + p, .replay-state dl, .replay-state dt { margin-top: .75rem; }
+.replay-state details { border-top: 1px solid var(--line); padding-block: .7rem; }
+.replay-state details:first-of-type { margin-top: 1.3rem; }
+.replay-state summary { cursor: pointer; }
+.replay-state blockquote { margin-top: .25rem; }
+.replay-state ul { padding-left: 1.25rem; }
+.replay-state li { margin-top: .6rem; }
+.replay-state a, .local-demo a { text-decoration: underline; text-underline-offset: .2em; }
+.replay-state .text-link { border: 0; }
+.replay-state pre, .replay-state code { white-space: pre-wrap; overflow-wrap: anywhere; font: .8rem/1.45 var(--font-mono); }
+.replay-state pre { margin-top: .6rem; }
+@media (max-width: 740px) {
+    .replay-shell { grid-template-columns: minmax(0, 1fr); }
+    .replay-questions a { padding-block: .65rem; }
+}

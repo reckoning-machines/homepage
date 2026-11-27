@@ -7,7 +7,7 @@
     <meta name="description" content="Replay bank research on public filings. Change the knowledge date to see which source governs and which financial definitions carry forward.">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/compiler/compiler.css">
-    <link rel="stylesheet" href="playground.css">
+    <link rel="stylesheet" href="playground.css?v=selectors">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <script src="playground.js" defer></script>
 </head>
@@ -25,6 +25,13 @@
         </header>
         <div class="desk">
             <noscript><p>JavaScript is off. All four verified replays are shown below.</p></noscript>
+            <form id="controls" hidden>
+                <label for="bank">Bank</label><select id="bank"></select>
+                <label for="question">Research question</label><select id="question"></select>
+                <label for="date">Knowledge date</label><select id="date" aria-describedby="date-note"></select>
+                <p id="date-note"></p>
+                <button class="brass-button" type="submit">Show recorded result</button>
+            </form>
             <div id="results">
 <!-- Verified records -->
 <article class="record" id="key-change-2026-11-22" data-bank="KeyCorp" data-question="Compare Q2 and Q3 deposit cost" data-date="Nov 22, 2026">
@@ -81,13 +88,7 @@
 </article>
 <!-- End records -->
             </div>
-            <form id="controls" hidden>
-                <label for="bank">Bank</label><select id="bank"></select>
-                <label for="question">Research question</label><select id="question"></select>
-                <label for="date">Knowledge date</label><select id="date" aria-describedby="date-note"></select>
-                <p id="date-note"></p>
-                <button class="brass-button" type="submit">Run</button>
-            </form>
+
         </div>
         <p class="sr-only" role="status" id="status"></p>
         <nav class="foot-links" aria-label="Research"><a href="/compiler/">Context Compiler</a><a href="/compiler/results/">Bank research results</a></nav>

@@ -1,0 +1,188 @@
+{
+  "card": {
+    "id": "batch03-item1",
+    "item": "batch03-item1-version",
+    "claim": "In Atlantic Union Bankshares' Q2 2025 Form 10-Q ALLL activity table (three months ended June 30, 2025, USD thousands), two rows are acquisition-date (April 1, 2025, \"Day 1\") entries for the Sandy Spring acquisition: \"Initial allowance on Sandy Spring PCD loans\" 28,265 (recorded in purchase accounting, no income-statement effect) and \"Initial Provision - Sandy Spring non-PCD loans\" 89,538 (recorded through provision expense on the acquisition date). Together they are the acquisition-date ALLL of 117,803 (filing: \"$117.8 million\"). The rows \"Provision charged to operations\" 4,641, \"Loans charged-off\" (2,579) and \"Recoveries credited to allowance\" 1,913 are post-acquisition ordinary activity and are not acquisition-date entries.",
+    "scope": "Issuer-only (Atlantic Union Bankshares Corp), this filing only (accession 0000883948-25-000090, sha256 7ffd26d5…c37d), three months ended 2025-06-30, on-balance-sheet ALLL only (not the reserve for unfunded commitments), USD thousands. Classification of rollforward rows as acquisition-date vs. other; not a pack-wide label change.",
+    "alternative": "Treat only the PCD row (28,265), which is a purchase-accounting balance-sheet entry, as the acquisition-date entry, and group the non-PCD \"Initial Provision\" of 89,538 with the quarter's provision expense as non-acquisition-date movement because it was \"established through provision expense\" in the income statement.",
+    "witnesses": [
+      "A2 Note 4 ALLL activity table, Three Months Ended 2025 Total column, (tool line 1002): \"Initial allowance on Sandy Spring PCD loans (1) 21,255 7,010 28,265\"",
+      "A2 same table, tr[9] (tool line 1005): \"Initial Provision - Sandy Spring non-PCD loans 64,740 24,798 89,538\"",
+      "A2 same table, tr[10] (tool line 1006): \"Provision charged to operations 8,489 ( 3,848 ) 4,641\"",
+      "A2 MD&A 'Allowance for Credit Losses', (tool line 2994): \"At April 1, 2025, the initial ACL related to the Sandy Spring acquisition was $129.2 million, consisting of an ALLL of $117.8 million and RUC of $11.4 million. The ALLL included an $89.5 million reserve on acquired non-PCD loans established through provision expense, which represents the CECL “double count” of the non-PCD credit mark, and a $28.3 million reserve on PCD loans.\"",
+      "A2 MD&A 'Provision for Credit Losses', (tool line 2992): \"Included in the provision for credit losses for the second quarter of 2025 was $89.5 million of Day 1 initial provision expense on non-PCD loans and $11.4 million on unfunded commitments, each acquired from Sandy Spring.\""
+    ]
+  },
+  "host_decision": {
+    "card_sha256": "8be762df1b80bfcdd23ecb38a39f86e61ab006c3baf87080068cda093178762a",
+    "disposition": "approve",
+    "known_at": "2026-11-26T15:19:51.500524Z",
+    "issuer": "research_desk",
+    "access_labels": [
+      "desk"
+    ],
+    "subject": "entity:AUB",
+    "period": "2025-06-30/Q",
+    "use": "acquisition_date_classification",
+    "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+    "witnesses": {
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/p[1]": "53638ebb6f89cec7ccda95978253c785f804d4a6a3bc1d9ee15debc6ee0337dc",
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[2]": "bd33d1286387fcf10696dd079d2453085bb186b85036382ae86efcfff5c33ac7",
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[3]": "6ef9cbca7a797de28de7c6e14949079d50f7d8939c7ebb2693b60ae5fd9fdd53",
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[4]": "e0071d439661d080c9ae65631d5d8dd18ded1946c136e72913fe82e2f46fdd94",
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[6]": "1ca691e72dafa6c7ff9f35ea7680cc571b2ee91c62b3545b142f6cc8d8414bf5",
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[7]": "44ada3a6b00c33bb86dde122138965e8bef32d4548b370795b4e244b22f8f9ed",
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[8]": "022660aab9fcbfbfd74853f9eae88196c3dc430d90dbdadace7afb8bcd732c4b",
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[9]": "725c7243f9970e7399af1a02a2d46be8bda841d966cdc3c3c005fd2634527d24",
+      "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[10]": "2670a3a07b1b10e62e15fadb92fa2514fc86b2a803d55f4ce2885d080fb5a179",
+      "/html/body/div[171]/div[2]/div/p[4]": "30c5f7badf2726fbf8c22bcf4b867a9df5ef2e0993251800df335f236b50d94e",
+      "/html/body/div[171]/div[2]/div/p[2]": "a4d37f28250f8a8a3004231d13a0dc1c4f4a1ed9a12ba0b5d793f0b2202d63f8"
+    }
+  },
+  "admission_id": "a9cab1f8d37997dae23cd99e7411fcc564cc4753f2569a6575b4470ecf67eddc",
+  "resolved_filing_excerpts": [
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "53a054954c29c038b254992bfb3226180f063d6d38800af531b6d3fc528565fe"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "The following tables show the ALLL activity by loan segment for the three and six months ended June 30, (dollars in thousands):",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/p[1]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "5f74b8ead8dfa3f74617f8b9f551a940fea01c952eecc3586bc8b7f047766bf2"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "Loans charged-off (1) ( 1,534 ) ( 1,045 ) ( 2,579 ) ( 3,382 ) ( 2,082 ) ( 5,464 )",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[7]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "868750b59cdd29be63109cba9c205263f93ade666714140d1f04bd4578dc06f2"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "Recoveries credited to allowance 1,545 368 1,913 1,775 745 2,520",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[8]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "9f9bdd36bd6038524f9a1293fd8dab4d5896690802460add53c09855a7e5a443"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "Initial allowance on Sandy Spring PCD loans (1) 21,255 7,010 28,265 21,255 7,010 28,265",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[6]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "a9583400eca6e2e5335c8332e203f1a9b75c189dd8b164ff50e628049b0fbd9a"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "Commercial Consumer Total Commercial Consumer Total",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[4]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "b9178f9ec0ca262b33a25df118dbf519d66c73ca038fdeede8c73071b6f0f69d"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "Provision charged to operations 8,489 ( 3,848 ) 4,641 24,128 ( 2,057 ) 22,071",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[10]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "c873b63eb1a270687cc0048b56372be5b8a8546aa26486ab1267e086f6c7f945"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "2025 2025",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[3]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "cca36ce5e3de6785e6f09881f1b2724b74c4fee157727f4428b224567a418856"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "At June 30, 2025, the ACL was $342.4 million and included an ALLL of $315.6 million and an RUC of $26.8 million. At April 1, 2025, the initial ACL related to the Sandy Spring acquisition was $129.2 million, consisting of an ALLL of $117.8 million and RUC of $11.4 million. The ALLL included an $89.5 million reserve on acquired non-PCD loans established through provision expense, which represents the CECL “double count” of the non-PCD credit mark, and a $28.3 million reserve on PCD loans. Outside of the initial ACL related to the Sandy Spring acquisition, the ACL at June 30, 2025 increased $19.4 million from December 31, 2024, primarily reflecting the impacts of loan growth and deteriorating macroeconomic forecasts.",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[171]/div[2]/div/p[4]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "dce6f94fb3d956ef9aacf8b97452730dab28a724327eb750ccddc10f9f7d8148"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "Initial Provision - Sandy Spring non-PCD loans 64,740 24,798 89,538 64,740 24,798 89,538",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[9]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "e09112735e389a926506492a4c70d8ce5d87bb1096543f60ad754796d3654a45"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "We recorded a provision for credit losses of $105.7 million for the second quarter of 2025, an increase of $83.9 million compared to the provision for credit losses of $21.8 million recorded during the same quarter of 2024. The provision for credit losses for the second quarter of 2025 reflected a provision of $94.2 million for loan losses and a $11.5 million provision for unfunded commitments. Included in the provision for credit losses for the second quarter of 2025 was $89.5 million of Day 1 initial provision expense on non-PCD loans and $11.4 million on unfunded commitments, each acquired from Sandy Spring. Included in the provision for credit losses for the second quarter of 2024 was $13.2 million of Day 1 initial provision expense on non-PCD loans and $1.4 million on unfunded commitments, each acquired from American National. Outside of Day 1 initial provision expense recorded on non-PCD loans and unfunded commitments acquired from Sandy Spring and American National, the provision for credit losses decreased compared to the same period in the prior year, primarily reflecting the impact of lower net charge-offs in the second quarter of 2025.",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[171]/div[2]/div/p[2]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "period": "2025-06-30/Q",
+        "witness": "ef71a5604e0f6a9038045ea1a0f253bd97112231b0f0e4f3c47e9426ef204f3b"
+      },
+      "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+      "subject": "entity:AUB",
+      "text": "Three Months Ended Six Months Ended",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm",
+      "xpath": "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[2]"
+    }
+  ]
+}

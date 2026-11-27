@@ -1,0 +1,140 @@
+{
+  "card": {
+    "claim": "For Atlantic Union Bankshares' Q1 2025 Form 10-Q, the \"provision for loan losses\" is the ALLL-activity-table line \"Provision charged to operations\" of $17,430 thousand (three months ended March 31, 2025), which moves only the on-balance-sheet allowance for loan and lease losses. The income-statement \"Provision for credit losses\" of $17,638 thousand is a broader measure that also includes the provision for unfunded commitments (about $0.2 million; 17,638 − 17,430 = 208, equal to the change in the reserve for unfunded commitments 15,041 → 15,249), and should not be labelled the loan-loss provision.",
+    "scope": "Issuer-only (Atlantic Union Bankshares Corp), this filing only (accession 0000883948-25-000046, sha256 bcd672a2…b51e), three months ended 2025-03-31, USD thousands; term mapping for \"loan-loss provision\" vs \"provision for credit losses\". Not a pack-wide label change.",
+    "alternative": "Treat the income-statement \"Provision for credit losses\" of $17,638 thousand as the loan-loss provision (i.e., do not separate the unfunded-commitment component), and compare that total against the loan allowance.",
+    "id": "review-02",
+    "item": "interpretation-02",
+    "witnesses": [
+      "A1 Note 4 ALLL activity table, 2025 Total column (tool line 843): \"Provision charged to operations 15,638 1,792 17,430\"; caption (tool line 835): \"The following tables show the ALLL activity by loan segment for the three months ended March 31, (dollars in thousands)\"",
+      "A1 Consolidated Statements of Income, three months ended March 31, 2025 column (tool line 227): \"Provision for credit losses 17,638\"",
+      "A1 MD&A 'Provision for Credit Losses' paragraph (tool line 2487): \"The provision for credit losses for the first quarter of 2025 reflected a provision of $17.4 million for loan losses and a $0.2 million provision for unfunded commitments.\"",
+      "A1 MD&A ACL summary table (tool line 2499): \"Total Reserve for Unfunded Commitments 15,249 15,041\""
+    ]
+  },
+  "host_decision": {
+    "card_sha256": "b0160eabef0adbfa1a6af4caffb64c1abacb2c8fe9287bc1cd2efc44ad8bfde7",
+    "disposition": "approve",
+    "known_at": "2026-11-26T14:50:39.544524Z",
+    "issuer": "research_desk",
+    "access_labels": [
+      "desk"
+    ],
+    "subject": "entity:AUB",
+    "period": "2025-03-31/Q",
+    "use": "loan_provision_definition",
+    "source_sha256": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+    "witnesses": {
+      "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/p[1]": "2d8b1367a8a126b9f3eb5d0c5917c0993c2860f5aa84f82b90ecd0d0826db75b",
+      "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[2]": "b2b2f104d32c638903e151a9b20d6e27b41d8c0c84cf8458738f83ca2f1dd744",
+      "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[3]": "a9ba3e29099d34d0e125067d780255a06251c15830b5fbb2c6ee6d71fd83ce36",
+      "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[7]": "2dc45eb2861a3e472e07c62c02da426ed9ad5792671270cf90f2ca26b2120f03",
+      "/html/body/div[11]/div[2]/div/table/tr[18]": "2b2f42ee55e282b7593bd473047babe852778b34dfc271fde211f9dcbf4ef319",
+      "/html/body/div[141]/div[2]/div/p[12]": "67a4bf353d1d128ac9b7f0429147bd62d292619beacb61131f1ef4a75d3ca138",
+      "/html/body/div[143]/div[2]/div/table[1]/tr[5]": "3eb6bf328d5d4b89deab825b1807ac266d23baee3a9815fa4d6d50ded32dc2b8"
+    },
+    "amount": {
+      "amount": "17430",
+      "unit": "usd_thousands"
+    },
+    "imported_operand": {
+      "artifact_sha256": "673ba721e717eee462ccbf1b2ca33ecb98309c9511d47170331d376c18e5d3df",
+      "field": "operands.prov",
+      "xpath": "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[7]"
+    }
+  },
+  "admission_id": "8f37388a17b5f8db882c3308a7561b460f17889f7eeda36aedafe24285a43946",
+  "resolved_filing_excerpts": [
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+        "period": "2025-03-31/Q",
+        "witness": "206e7b51df404d7824b61d771673b9bb8433ea962f9af560c337853230096bfe"
+      },
+      "source_sha256": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+      "subject": "entity:AUB",
+      "text": "Provision for credit losses 17,638 8,239",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm",
+      "xpath": "/html/body/div[11]/div[2]/div/table/tr[18]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+        "period": "2025-03-31/Q",
+        "witness": "6bfea5891e3456fec7cf4da3ba09521d0ffcf8909752c9f670b0c5bc2cc109a9"
+      },
+      "source_sha256": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+      "subject": "entity:AUB",
+      "text": "Provision charged to operations 15,638 1,792 17,430",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm",
+      "xpath": "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[7]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+        "period": "2025-03-31/Q",
+        "witness": "8fc11370a50be9edbd1dc03afedd121f14616e180f6074ccc71d24eca3906eae"
+      },
+      "source_sha256": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+      "subject": "entity:AUB",
+      "text": "We recorded a provision for credit losses of $17.6 million for the first quarter of 2025, an increase of $9.4 million compared to the provision for credit losses of $8.2 million recorded during the same quarter of 2024. The provision for credit losses for the first quarter of 2025 reflected a provision of $17.4 million for loan losses and a $0.2 million provision for unfunded commitments.",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm",
+      "xpath": "/html/body/div[141]/div[2]/div/p[12]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+        "period": "2025-03-31/Q",
+        "witness": "cccd5e2e3acadc85e038a842b8ef6b5a878497ca4f2f3e3e1a86ee78acf58048"
+      },
+      "source_sha256": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+      "subject": "entity:AUB",
+      "text": "Commercial Consumer Total",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm",
+      "xpath": "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[3]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+        "period": "2025-03-31/Q",
+        "witness": "d7631e39449c67fafc6cef685a8434f3cff54f0b53f635efdc9fda205c9b5aaf"
+      },
+      "source_sha256": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+      "subject": "entity:AUB",
+      "text": "The following tables show the ALLL activity by loan segment for the three months ended March 31, (dollars in thousands):",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm",
+      "xpath": "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/p[1]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+        "period": "2025-03-31/Q",
+        "witness": "ec0ee767182186f2252d15134d1c86a7d00275b9d4344277985e9801a3c5996f"
+      },
+      "source_sha256": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+      "subject": "entity:AUB",
+      "text": "2025",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm",
+      "xpath": "/html/body/div[45]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[2]"
+    },
+    {
+      "predicate": "source_excerpt",
+      "qualifiers": {
+        "filing_version": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+        "period": "2025-03-31/Q",
+        "witness": "f3d307e471aba7b283e02eac6f4b94d00ac8891ce91fce575116bff9f6b7892c"
+      },
+      "source_sha256": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+      "subject": "entity:AUB",
+      "text": "Total Reserve for Unfunded Commitments 15,249 15,041",
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000046/aub-20250331x10q.htm",
+      "xpath": "/html/body/div[143]/div[2]/div/table[1]/tr[5]"
+    }
+  ]
+}

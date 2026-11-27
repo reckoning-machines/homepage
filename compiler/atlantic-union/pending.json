@@ -1,0 +1,90 @@
+{
+  "pending": {
+    "use": "loan_provision_definition",
+    "card_sha256": "ba6e6642446439ed197797bdb9664201a21dfa4a0c541907ebff9cd36db549a6",
+    "status": "no authorized decision",
+    "card": {
+      "claim": "- **Inherited term mapping does not carry over.** The earlier approved mapping of \"loan-loss provision\" to the single row \"Provision charged to operations\" was scoped to the March quarter. In the June quarter the filing's \"provision for loan losses\" of $94.2 million spans two rows (89,538 + 4,641). That June-quarter reading is mine and has not been put to judgment.",
+      "scope": "Atlantic Union, quarter ended June 30, 2025, this 10-Q only",
+      "binding": {
+        "subject": "entity:AUB",
+        "period": "2025-06-30/Q",
+        "source_sha256": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+        "use": "loan_provision_definition",
+        "witnesses": {
+          "/html/body/div[171]/div[2]/div/p[2]": "a4d37f28250f8a8a3004231d13a0dc1c4f4a1ed9a12ba0b5d793f0b2202d63f8",
+          "/html/body/div[171]/div[2]/div/p[4]": "30c5f7badf2726fbf8c22bcf4b867a9df5ef2e0993251800df335f236b50d94e",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/p[1]": "53638ebb6f89cec7ccda95978253c785f804d4a6a3bc1d9ee15debc6ee0337dc",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[10]": "2670a3a07b1b10e62e15fadb92fa2514fc86b2a803d55f4ce2885d080fb5a179",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[2]": "bd33d1286387fcf10696dd079d2453085bb186b85036382ae86efcfff5c33ac7",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[3]": "6ef9cbca7a797de28de7c6e14949079d50f7d8939c7ebb2693b60ae5fd9fdd53",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[4]": "e0071d439661d080c9ae65631d5d8dd18ded1946c136e72913fe82e2f46fdd94",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[6]": "1ca691e72dafa6c7ff9f35ea7680cc571b2ee91c62b3545b142f6cc8d8414bf5",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[7]": "44ada3a6b00c33bb86dde122138965e8bef32d4548b370795b4e244b22f8f9ed",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[8]": "022660aab9fcbfbfd74853f9eae88196c3dc430d90dbdadace7afb8bcd732c4b",
+          "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[9]": "725c7243f9970e7399af1a02a2d46be8bda841d966cdc3c3c005fd2634527d24"
+        }
+      },
+      "evidence": {
+        "/html/body/div[171]/div[2]/div/p[2]": "We recorded a provision for credit losses of $105.7 million for the second quarter of 2025, an increase of $83.9 million compared to the provision for credit losses of $21.8 million recorded during the same quarter of 2024. The provision for credit losses for the second quarter of 2025 reflected a provision of $94.2 million for loan losses and a $11.5 million provision for unfunded commitments. Included in the provision for credit losses for the second quarter of 2025 was $89.5 million of Day 1 initial provision expense on non-PCD loans and $11.4 million on unfunded commitments, each acquired from Sandy Spring. Included in the provision for credit losses for the second quarter of 2024 was $13.2 million of Day 1 initial provision expense on non-PCD loans and $1.4 million on unfunded commitments, each acquired from American National. Outside of Day 1 initial provision expense recorded on non-PCD loans and unfunded commitments acquired from Sandy Spring and American National, the provision for credit losses decreased compared to the same period in the prior year, primarily reflecting the impact of lower net charge-offs in the second quarter of 2025.",
+        "/html/body/div[171]/div[2]/div/p[4]": "At June 30, 2025, the ACL was $342.4 million and included an ALLL of $315.6 million and an RUC of $26.8 million. At April 1, 2025, the initial ACL related to the Sandy Spring acquisition was $129.2 million, consisting of an ALLL of $117.8 million and RUC of $11.4 million. The ALLL included an $89.5 million reserve on acquired non-PCD loans established through provision expense, which represents the CECL “double count” of the non-PCD credit mark, and a $28.3 million reserve on PCD loans. Outside of the initial ACL related to the Sandy Spring acquisition, the ACL at June 30, 2025 increased $19.4 million from December 31, 2024, primarily reflecting the impacts of loan growth and deteriorating macroeconomic forecasts.",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/p[1]": "The following tables show the ALLL activity by loan segment for the three and six months ended June 30, (dollars in thousands):",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[10]": "Provision charged to operations 8,489 ( 3,848 ) 4,641 24,128 ( 2,057 ) 22,071",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[2]": "Three Months Ended Six Months Ended",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[3]": "2025 2025",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[4]": "Commercial Consumer Total Commercial Consumer Total",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[6]": "Initial allowance on Sandy Spring PCD loans (1) 21,255 7,010 28,265 21,255 7,010 28,265",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[7]": "Loans charged-off (1) ( 1,534 ) ( 1,045 ) ( 2,579 ) ( 3,382 ) ( 2,082 ) ( 5,464 )",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[8]": "Recoveries credited to allowance 1,545 368 1,913 1,775 745 2,520",
+        "/html/body/div[53]/div[2]/div/*[name()='ix:continuation']/*[name()='ix:nonnumeric']/table[1]/tr[9]": "Initial Provision - Sandy Spring non-PCD loans 64,740 24,798 89,538 64,740 24,798 89,538"
+      },
+      "url": "https://www.sec.gov/Archives/edgar/data/883948/000088394825000090/aub-20250630x10q.htm"
+    }
+  },
+  "refusal": {
+    "reason": "coverage_not_complete",
+    "detail": {
+      "gaps": [
+        {
+          "kind": "missing_required",
+          "keys": [
+            {
+              "subject": "entity:AUB",
+              "predicate": "reviewed_interpretation",
+              "qualifiers": {
+                "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+                "period": "2025-06-30/Q",
+                "research_use": "loan_provision_definition"
+              }
+            }
+          ],
+          "required_by": [],
+          "detail": {
+            "absence": "not_found",
+            "near_keys": [
+              {
+                "subject": "entity:AUB",
+                "predicate": "reviewed_interpretation",
+                "qualifiers": {
+                  "filing_version": "7ffd26d5297f6b3a92480fa36fb06424064f0b63c924a3e59522ec7e4fd8c37d",
+                  "period": "2025-06-30/Q",
+                  "research_use": "acquisition_date_classification"
+                }
+              },
+              {
+                "subject": "entity:AUB",
+                "predicate": "reviewed_interpretation",
+                "qualifiers": {
+                  "filing_version": "bcd672a2424c08afe160adfaa4d1228adff752747d3b6c73c1e4702c999bb51e",
+                  "period": "2025-03-31/Q",
+                  "research_use": "loan_provision_definition"
+                }
+              }
+            ],
+            "rejection_ids": []
+          }
+        }
+      ]
+    }
+  }
+}
