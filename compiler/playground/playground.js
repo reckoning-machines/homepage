@@ -52,6 +52,7 @@
         const url = new URL(location.href);
         if (url.searchParams.get('replay') !== record.id) {
             url.searchParams.set('replay', record.id);
+            if (url.hash) url.hash = record.id;
             history.pushState(null, '', url);
         }
         display(record);

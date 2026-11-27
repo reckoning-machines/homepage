@@ -312,6 +312,10 @@ html:has(.compiler-page) { scroll-behavior: auto; }
     .admission-results dd { flex: 0 0 6rem; margin: 0; }
 }
 
-@media (max-width: 540px) {
-    #evidence .quality-pair { grid-template-columns: 1fr; }
+#evidence .benchmark-highlights a {
+    display: block;
+    margin-top: .5rem;
+    color: var(--brass);
+    text-decoration: underline;
+    text-underline-offset: .2em;
 }
