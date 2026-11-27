@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" role="img" aria-labelledby="title description">
+  <title id="title">Three ways to establish analytical meaning</title>
+  <desc id="description">Conventional RAG retrieves documents and reconstructs meaning during reasoning. A conventional knowledge graph requires explicit engineering and maintenance. Context Compiler turns research into governed knowledge. The arrow from Knowledge back to Research shows that each new question can draw on what earlier research established.</desc>
+  <style>
+    @import url("/fonts/fonts.css");
+    svg { background: #f5f2e9; }
+    .row { color: #555958; }
+    .compiler { color: #795a27; }
+    .heading { font: 400 26px Newsreader, Georgia, serif; fill: currentColor; }
+    .node { fill: none; stroke: currentColor; stroke-width: 1; }
+    .link { stroke: currentColor; stroke-width: 1.4; }
+    .label { font: 500 16px Inter, Arial, sans-serif; fill: currentColor; text-anchor: middle; }
+    p { margin: 0; font: italic 400 19px/1.17 Newsreader, Georgia, serif; }
+    .rule { stroke: #cecac1; }
+    .compiler .node { fill: #eee8d9; }
+    .return { fill: none; stroke: currentColor; stroke-width: 3; }
+    .short-label { display: none; }
+    @media (max-width: 520px) {
+      .heading { font-size: 22px; }
+      .label { font-size: 14px; }
+      p { font-size: 17px; }
+    }
+    @media (max-width: 430px) {
+      .long-label { display: none; }
+      .short-label { display: inline; }
+    }
+    @media (max-width: 330px) {
+      .heading { font-size: 19px; }
+      .label { font-size: 12.5px; }
+    }
+  </style>
+  <defs>
+    <marker id="tip" viewBox="0 0 7 8" refX="6.5" refY="4" markerWidth="7" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 7 4 0 8Z" fill="#555958"/>
+    </marker>
+    <marker id="brass-tip" viewBox="0 0 7 8" refX="6.5" refY="4" markerWidth="7" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 7 4 0 8Z" fill="#795a27"/>
+    </marker>
+    <marker id="return-tip" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 12 6 0 12Z" fill="#795a27"/>
+    </marker>
+    <g id="nodes">
+      <rect class="node" x="0.2%" y="42" width="29.6%" height="42"/>
+      <rect class="node" x="35.2%" y="42" width="29.6%" height="42"/>
+      <rect class="node" x="70.2%" y="42" width="29.6%" height="42"/>
+      <line class="link" x1="29.8%" x2="35%" y1="63" y2="63"/>
+      <line class="link" x1="64.8%" x2="70%" y1="63" y2="63"/>
+    </g>
+  </defs>
+  <svg x="4%" width="92%" y="14" class="row">
+    <text class="heading" y="29">Conventional RAG</text>
+    <use href="#nodes" marker-end="url(#tip)"/>
+    <g class="label" transform="translate(0 68)">
+      <text x="15%">Documents</text>
+      <text x="50%">Retrieval</text>
+      <text x="85%">Reasoning</text>
+    </g>
+    <foreignObject y="96" width="100%" height="50"><p xmlns="http://www.w3.org/1999/xhtml">Analytical meaning reconstructed at query time.</p></foreignObject>
+    <line class="rule" x2="100%" y1="147" y2="147"/>
+  </svg>
+  <svg x="4%" width="92%" y="177" class="row">
+    <text class="heading" y="29">Conventional Knowledge Graph</text>
+    <use href="#nodes" marker-end="url(#tip)"/>
+    <g class="label" transform="translate(0 68)">
+      <text x="15%">Documents</text>
+      <text x="50%">Engineering</text>
+      <text x="85%" class="long-label">Knowledge Graph</text>
+      <text x="85%" class="short-label" y="-8">Knowledge<tspan x="85%" dy="16">Graph</tspan></text>
+    </g>
+    <foreignObject y="96" width="100%" height="50"><p xmlns="http://www.w3.org/1999/xhtml">Analytical knowledge explicitly engineered and maintained.</p></foreignObject>
+    <line class="rule" x2="100%" y1="147" y2="147"/>
+  </svg>
+  <svg x="4%" width="92%" y="340" class="row compiler">
+    <text class="heading" y="29">Context Compiler</text>
+    <use href="#nodes" marker-end="url(#brass-tip)"/>
+    <g class="label" transform="translate(0 68)">
+      <text x="15%">Research</text>
+      <text x="50%">Governance</text>
+      <text x="85%">Knowledge</text>
+    </g>
+    <g class="return">
+      <line x1="85%" x2="85%" y1="84" y2="115"/>
+      <line x1="85%" x2="15%" y1="114" y2="114"/>
+      <line x1="15%" x2="15%" y1="115" y2="86" marker-end="url(#return-tip)"/>
+    </g>
+    <foreignObject y="132" width="100%" height="58"><p xmlns="http://www.w3.org/1999/xhtml">Governed analytical knowledge accumulates through research.</p></foreignObject>
+  </svg>
+</svg>
